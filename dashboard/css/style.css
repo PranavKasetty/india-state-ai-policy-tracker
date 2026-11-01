@@ -154,8 +154,14 @@ button { font: inherit; }
 .matrix .axis-btn {
   all: unset; cursor: pointer; display: block; border-radius: 3px; padding: 2px;
 }
-.matrix .axis-btn:hover, .matrix .axis-btn[aria-pressed="true"] { color: var(--accent); text-decoration: underline; }
-.matrix .axis-btn[aria-pressed="true"] { font-weight: 700; }
+.matrix .axis-btn:hover { color: var(--accent); text-decoration: underline; }
+/* The chosen state (row) and type (column) are labelled in marigold, like every
+   other selected control, and their cells keep full colour while the rest fade. */
+.matrix .axis-btn[aria-pressed="true"] {
+  background: var(--highlight); color: var(--on-highlight); font-weight: 700; text-decoration: none; padding: 2px 6px;
+}
+.matrix tbody tr.in-focus .total { font-weight: 700; }
+.matrix.has-focus .cell-btn.in-focus, .matrix.has-focus tr.in-focus .cell-btn { font-weight: 700; }
 .matrix .axis-btn:focus-visible { outline: 3px solid var(--accent); }
 .matrix tbody th { position: sticky; left: 0; z-index: 1; background: var(--surface); padding-right: 10px; white-space: nowrap; font-size: 0.95rem; color: var(--ink); }
 .matrix td.cell { padding: 0; }
@@ -171,7 +177,7 @@ button { font: inherit; }
    Only the fill fades: the number switches to full ink, which stays >= 4.5:1 on
    any faded step in both themes. (Opacity would fade the text too.) */
 .matrix.has-focus tbody tr:not(.in-focus) .cell-btn:not(.in-focus) {
-  background: color-mix(in oklab, var(--bg) 40%, var(--surface));
+  background: color-mix(in oklab, var(--bg) 22%, var(--surface));
   color: var(--ink);
 }
 .matrix .total { text-align: right; padding-left: 12px; white-space: nowrap; font-size: 0.95rem; }
@@ -227,11 +233,19 @@ details.data-table td { text-align: right; }
 .outlets p { margin: 2px 0 0; max-width: 75ch; }
 
 /* ---------- AI briefs, above the list ---------- */
-.briefs { margin: 0 0 16px; padding: 14px 16px; border-left: 4px solid var(--highlight); background: var(--highlight-wash); border-radius: 0 var(--radius) var(--radius) 0; }
+/* An inset on the page colour (not a tint), so the text keeps the page's full contrast;
+   the marigold edge marks it as generated commentary, not a record. */
+.briefs {
+  margin: 0 0 16px; padding: 14px 18px; background: var(--page); color: var(--ink);
+  border: 1px solid var(--rule); border-left: 4px solid var(--highlight); border-radius: 0 var(--radius) var(--radius) 0;
+}
 .brief + .brief { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--rule); }
 .brief h3 { font-size: 1.0625rem; font-weight: 600; }
-.brief-label { margin: 2px 0 6px; font-size: 0.85rem; color: var(--ink-2); }
-.brief-text { margin: 0; max-width: 75ch; line-height: 1.6; }
+.brief-label { margin: 2px 0 8px; font-size: 0.85rem; color: var(--ink-2); }
+.brief-points { margin: 0; padding-left: 1.2em; max-width: 72ch; line-height: 1.55; }
+.brief-points li + li { margin-top: 6px; }
+.brief-points li::marker { color: var(--accent); }
+.brief-toggle { margin: 4px 0 0 -10px; }
 .cites { font-size: 0.8em; white-space: nowrap; color: var(--ink-2); }
 .cite { padding: 0 1px; }
 .brief-note { margin: 10px 0 0; font-size: 0.85rem; color: var(--ink-2); }
@@ -301,9 +315,16 @@ details.data-table td { text-align: right; }
 @media (prefers-reduced-motion: reduce) {
   .disclosure::before { transition: none; }
 }
+/* Transitions for the re-rendered marks; js/motion.js starts each at its old value. */
 @media (prefers-reduced-motion: no-preference) {
-  .cell-btn { transition: background-color .15s; }
+  .cell-btn { transition: background-color .35s ease; }
+  .rank-bar { transition: width .5s cubic-bezier(.2, .7, .2, 1); }
+  .rank-row { transition: transform .45s cubic-bezier(.2, .7, .2, 1); }
+  .timechart .bar { transform-box: fill-box; transform-origin: 50% 100%; transition: transform .5s cubic-bezier(.2, .7, .2, 1); }
+  .timechart .label { animation: fade-in .4s .25s both; }
+  .brief-points li { animation: fade-in .3s both; }
 }
+@keyframes fade-in { from { opacity: 0; } }
 @media (forced-colors: active) {
   .cell-btn { border: 1px solid CanvasText; }
   .cell-btn[aria-pressed="true"], .toggle-group button[aria-pressed="true"] { outline: 3px solid Highlight; }

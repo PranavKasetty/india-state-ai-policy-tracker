@@ -77,8 +77,16 @@
 
       // Re-rendering replaces the buttons, so put keyboard focus back where it was.
       const focused = table.contains(document.activeElement) ? { ...document.activeElement.dataset } : null;
+      // Each cell's previous colour, so fills fade to their new step instead of jumping.
+      const key = (b) => `${b.dataset.state}|${b.dataset.cat}`;
+      const oldFill = new Map([...table.querySelectorAll(".cell-btn")].map((b) => [key(b), getComputedStyle(b).backgroundColor]));
       table.innerHTML = head + `<tbody>${body}</tbody>`;
       table.classList.toggle("has-focus", Boolean(state.state || state.cat));
+      T.motion.animateFrom([...table.querySelectorAll(".cell-btn")].filter((b) => oldFill.has(key(b))).map((b) => ({
+        el: b,
+        from() { b.style.backgroundColor = oldFill.get(key(b)); },
+        to() { b.style.backgroundColor = ""; },
+      })));
       if (focused) restoreFocus(table, focused);
 
       sub.textContent = `${mode.sub} Select a state, type or cell to filter the page.`;

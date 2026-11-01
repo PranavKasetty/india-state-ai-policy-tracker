@@ -5,6 +5,9 @@
 // filters links to its card below (itemsList.reveal pages to it); one filtered out
 // links to the publisher's report instead.
 //
+// Each sentence becomes a point; the first is shown and the rest sit behind a
+// "Show N more points" button, so the panel stays short above the list.
+//
 // Briefs are written from all of a group's developments, so they do not follow the
 // date, sector or search filters; a note says so when any of those is set.
 (function (T) {
@@ -13,6 +16,9 @@
   const { isFullRange } = T.query;
 
   const CITES_RE = /\s*\[\s*(R[0-9a-f]{8}(?:\s*,\s*R[0-9a-f]{8})*)\s*\]/g;
+  // Sentence ends: after . ! or ? (and any citation bracket that follows), before a capital.
+  const SENTENCE_END = /(?<=[.!?](?:\s*\[[^\]]*\])?)\s+(?=[A-Z"“‘(])/;
+  const SHOWN_POINTS = 1;
 
   /**
    * @param box     element the briefs render into
@@ -24,6 +30,15 @@
     const label = data.categoryLabel;
 
     box.addEventListener("click", (e) => {
+      const toggle = e.target.closest("button.brief-toggle");
+      if (toggle) {
+        const open = toggle.getAttribute("aria-expanded") !== "true";
+        toggle.setAttribute("aria-expanded", String(open));
+        document.getElementById(toggle.getAttribute("aria-controls"))
+          .querySelectorAll(".extra").forEach((li) => { li.hidden = !open; });
+        toggle.textContent = open ? "Show less" : toggle.dataset.more;
+        return;
+      }
       const a = e.target.closest("a.cite[data-id]");
       if (!a) return;
       e.preventDefault(); // following the #fragment would rewrite the filter hash
@@ -43,18 +58,23 @@
     function renderBrief(b, key, subject, shown) {
       const order = [];
       const num = (id) => (order.includes(id) ? order.indexOf(id) : order.push(id) - 1) + 1;
-      const text = esc(b.text).replace(CITES_RE, (_, ids) => {
+      const points = b.text.trim().split(SENTENCE_END).map((sentence) => esc(sentence).replace(CITES_RE, (_, ids) => {
         const known = ids.split(/\s*,\s*/).filter((id) => shown.has(id) || byId.get(id)?.url);
         return known.length
           ? ` <span class="cites">[${known.map((id) => citation(id, num(id), shown)).join(", ")}]</span>`
           : "";
-      });
+      }));
+      const extra = points.length - SHOWN_POINTS;
+      const more = `Show ${extra} more ${extra === 1 ? "point" : "points"}`;
       const meta = [nounText("AI-generated summary of the {many} below"), b.model,
         b.generated_at && formatDate(b.generated_at.slice(0, 10))].filter(Boolean).map(esc);
       return `<section class="brief" aria-labelledby="brief-${key}">
         <h3 id="brief-${key}">${esc(subject)}</h3>
         <p class="brief-label">${meta.join(" · ")}</p>
-        <p class="brief-text">${text}</p>
+        <ul class="brief-points" id="brief-${key}-points">${points.map((p, i) =>
+          `<li${i >= SHOWN_POINTS ? ` class="extra" hidden` : ""}>${p}</li>`).join("")}</ul>
+        ${extra > 0 ? `<button type="button" class="btn-quiet brief-toggle" aria-expanded="false"
+          aria-controls="brief-${key}-points" data-more="${more}">${more}</button>` : ""}
       </section>`;
     }
 

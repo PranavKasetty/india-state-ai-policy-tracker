@@ -4,6 +4,7 @@
   "use strict";
   const { count, esc, monthFull, monthLong, monthShort, niceStep, nounText } = T.format;
   const { countByMonth, monthsInRange } = T.query;
+  const { animateFrom } = T.motion;
 
   const HEIGHT = 220;
   const MARGIN = { t: 20, r: 8, b: 36, l: 36 };
@@ -13,6 +14,7 @@
   function createTimeChart({ chart, table, sub, note }, { data, tooltip }) {
     tooltip.bind(chart);
     let last = null;
+    let heights = {}; // month -> bar height last drawn, so bars rise or fall from there
 
     function draw() {
       if (!last) return;
@@ -43,7 +45,7 @@
         const cx = MARGIN.l + band * (i + 0.5);
         svg += `<rect class="hit" x="${MARGIN.l + band * i}" y="${MARGIN.t}" width="${band}" height="${ih}"
           data-tip="${esc(`<b>${monthLong(m)}</b><br>${count(v)}`)}"/>`;
-        svg += `<path class="bar" d="${roundedBar(cx - bw / 2, y(v), bw, MARGIN.t + ih - y(v))}"/>`;
+        svg += `<path class="bar" data-m="${m}" data-h="${MARGIN.t + ih - y(v)}" d="${roundedBar(cx - bw / 2, y(v), bw, MARGIN.t + ih - y(v))}"/>`;
         if (m === peak && v) svg += `<text class="label" x="${cx}" y="${y(v) - 6}" text-anchor="middle">${v}</text>`;
         if (labelled(m)) {
           const yearOnly = every === 12;
@@ -54,6 +56,13 @@
         }
       });
       chart.innerHTML = `<svg viewBox="0 0 ${W} ${HEIGHT}" width="${W}" height="${HEIGHT}" aria-hidden="true" focusable="false">${svg}</svg>`;
+      const bars = [...chart.querySelectorAll(".bar")];
+      animateFrom(bars.filter((p) => Number(p.dataset.h) > 0 && heights[p.dataset.m] !== Number(p.dataset.h)).map((p) => ({
+        el: p,
+        from() { p.style.transform = `scaleY(${(heights[p.dataset.m] || 0) / Number(p.dataset.h)})`; },
+        to() { p.style.transform = ""; },
+      })));
+      heights = Object.fromEntries(bars.map((p) => [p.dataset.m, Number(p.dataset.h)]));
     }
 
     if ("ResizeObserver" in window) {
