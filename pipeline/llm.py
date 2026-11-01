@@ -123,9 +123,19 @@ def chat_json(session: requests.Session, base: str, model: str, system: str, use
     return json.loads(resp.json()["choices"][0]["message"]["content"])
 
 
+def _ask(session: requests.Session, base: str, model: str, system: str, user: str, field: str) -> list:
+    """chat_json with one retry: free models occasionally return malformed JSON."""
+    for attempt in (1, 2):
+        try:
+            return chat_json(session, base, model, system, user)[field]
+        except (ValueError, KeyError):
+            if attempt == 2:
+                raise
+
+
 def _call(session: requests.Session, base: str, model: str, batch: list[dict]) -> list[dict]:
     lines = "\n".join(f"{i}. {it['title']} ({it['source_name']})" for i, it in enumerate(batch))
-    return chat_json(session, base, model, RUBRIC, lines)["labels"]
+    return _ask(session, base, model, RUBRIC, lines, "labels")
 
 
 def label(candidates: list[dict]) -> dict[str, dict]:
