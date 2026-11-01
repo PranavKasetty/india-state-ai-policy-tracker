@@ -1,0 +1,66 @@
+name: Update data
+
+on:
+  schedule:
+    # 02:30 UTC = 08:00 IST, daily
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Days of news to fetch"
+        required: false
+        default: "3"
+
+permissions:
+  contents: write
+
+# Never let two runs overlap
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install requirements
+        run: pip install -r requirements.txt
+
+      # Fresh key every run so the cache is re-saved; restore the latest prior one
+      - name: Cache HTTP responses
+        uses: actions/cache@v4
+        with:
+          path: data/cache
+          key: data-cache-${{ github.run_id }}
+          restore-keys: data-cache-
+
+      - name: Run pipeline
+        env:
+          PYTHONUTF8: "1"
+          # Optional: pipeline falls back to rules when empty/unset
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
+          LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
+          DAYS: ${{ inputs.days || '3' }}
+        run: python -m pipeline.run --days "$DAYS"
+
+      - name: Commit and push if changed
+        run: |
+          git add -A data dashboard
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898729+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Daily data update: $(date -u +%F)"
+          git pull --rebase
+          git push
