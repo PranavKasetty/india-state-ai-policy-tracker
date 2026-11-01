@@ -10,6 +10,10 @@ on:
         description: "Days of news to fetch"
         required: false
         default: "3"
+      enrich_limit:
+        description: "Max records to enrich (publisher URL, summary, thumbnail)"
+        required: false
+        default: "200"
 
 permissions:
   contents: write
@@ -22,7 +26,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 120  # a manual backlog run enriches ~4s per record
     steps:
       - uses: actions/checkout@v4
 
@@ -50,7 +54,8 @@ jobs:
           LLM_MODEL: ${{ vars.LLM_MODEL }}
           LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
           DAYS: ${{ inputs.days || '3' }}
-        run: python -m pipeline.run --days "$DAYS"
+          ENRICH_LIMIT: ${{ inputs.enrich_limit || '200' }}
+        run: python -m pipeline.run --days "$DAYS" --enrich-limit "$ENRICH_LIMIT"
 
       - name: Commit and push if changed
         run: |
