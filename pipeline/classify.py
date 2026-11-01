@@ -85,6 +85,14 @@ SECTORS = {
     "Revenue & citizen services": r"citizen|grievance|land|revenue|tax|GST|portal|certificate|ration|welfare|WhatsApp",
     "Industry & startups": r"startup|industr|MSME|jobs|investment|IT sector|company|companies|data cent",
 }
+CATEGORY_IDS = {
+    "Strategy & policy": "strategy_policy", "Regulation & ethics": "regulation_ethics",
+    "Governance bodies": "governance_body", "Funding & budget": "funding_budget",
+    "Infrastructure": "infrastructure", "Partnership / MoU": "partnership",
+    "Deployment": "deployment", "Skilling": "skilling", "Events & outreach": "events_outreach",
+    "Other": "other",
+}
+CATEGORY_LABELS = {v: k for k, v in CATEGORY_IDS.items()}
 _CAT_RES = {k: re.compile(v, re.I) for k, v in CATEGORIES.items()}
 _SEC_RES = {k: re.compile(v, re.I) for k, v in SECTORS.items()}
 

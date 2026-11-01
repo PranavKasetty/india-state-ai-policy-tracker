@@ -13,19 +13,23 @@ paywalled, blocked or has no description, the summary falls back to the headline
 and summary_source says so.
 
 Results are stored in data/raw/enriched.jsonl (committed), keyed by guid, so each
-article is resolved once, ever. Only canonical records (after dedup) are enriched.
+article is resolved once, ever. Only canonical records (after dedup) are enriched,
+newest first, a capped number per run (Google throttles link resolving).
 """
 import html
 import json
 import re
-from concurrent.futures import ThreadPoolExecutor
+import time
 from pathlib import Path
+
+import requests
 
 from .gnews import SESSION
 
 STORE = Path(__file__).resolve().parent.parent / "data" / "raw" / "enriched.jsonl"
 BATCH_URL = "https://news.google.com/_/DotsSplashUi/data/batchexecute"
-WORKERS = 6
+DELAY_SECONDS = 1.0
+MAX_FAILS = 5
 
 
 def resolve_url(gnews_url: str) -> str:
@@ -67,16 +71,23 @@ def page_details(url: str) -> tuple[str, str]:
     return first, image
 
 
-def _enrich_one(rec: dict) -> dict:
-    out = {"guid": rec["guid"], "publisher_url": "", "summary": "", "summary_source": "headline",
+def _enrich_one(rec: dict) -> dict | None:
+    """None when Google refuses (throttling): not stored, so a later run retries it.
+    A publisher page that fails is stored with the headline fallback: paywalls and
+    bot blocks tend to be permanent."""
+    try:
+        url = resolve_url(rec["gnews_url"])
+    except requests.RequestException:
+        return None
+    if not url:
+        return None
+    out = {"guid": rec["guid"], "publisher_url": url, "summary": "", "summary_source": "headline",
            "image_url": ""}
     try:
-        out["publisher_url"] = resolve_url(rec["gnews_url"])
-        if out["publisher_url"]:
-            summary, out["image_url"] = page_details(out["publisher_url"])
-            if summary:
-                out["summary"], out["summary_source"] = summary, "publisher standfirst"
-    except Exception as e:  # one bad page must not stop the run; recorded per record
+        summary, out["image_url"] = page_details(url)
+        if summary:
+            out["summary"], out["summary_source"] = summary, "publisher standfirst"
+    except requests.RequestException as e:
         out["error"] = type(e).__name__
     return out
 
@@ -88,14 +99,29 @@ def load_store() -> dict[str, dict]:
         return {r["guid"]: r for r in map(json.loads, f)}
 
 
-def enrich(records: list[dict]) -> dict[str, dict]:
+def enrich(records: list[dict], limit: int) -> dict[str, dict]:
+    """Enrich up to `limit` un-enriched records, newest first. Google throttles link
+    resolving, so this runs sequentially and stops after MAX_FAILS refusals in a row;
+    the rest are picked up by later (daily) runs."""
     store = load_store()
-    todo = [r for r in records if r["guid"] not in store]
-    print(f"enrich: {len(records) - len(todo)} cached, {len(todo)} to fetch")
-    with ThreadPoolExecutor(WORKERS) as pool, open(STORE, "a", encoding="utf-8") as f:
-        for i, res in enumerate(pool.map(_enrich_one, todo), 1):
+    todo = sorted((r for r in records if r["guid"] not in store), key=lambda r: r["date"], reverse=True)
+    print(f"enrich: {len(records) - len(todo)} done, {len(todo)} pending, fetching up to {limit}")
+    fails = done = 0
+    with open(STORE, "a", encoding="utf-8") as f:
+        for rec in todo[:limit]:
+            res = _enrich_one(rec)
+            time.sleep(DELAY_SECONDS)
+            if res is None:
+                fails += 1
+                if fails >= MAX_FAILS:
+                    print(f"  stopping: Google refused {MAX_FAILS} requests in a row")
+                    break
+                continue
+            fails, done = 0, done + 1
             store[res["guid"]] = res
             f.write(json.dumps(res, ensure_ascii=False) + "\n")
-            if i % 100 == 0:
-                print(f"  {i}/{len(todo)}")
+            f.flush()
+            if done % 50 == 0:
+                print(f"  {done} enriched")
+    print(f"enrich: {done} new this run")
     return store

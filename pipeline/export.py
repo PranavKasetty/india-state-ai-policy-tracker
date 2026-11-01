@@ -6,21 +6,12 @@ from pathlib import Path
 
 from openpyxl import Workbook
 
-from .classify import CATEGORIES, SECTORS
+from .classify import CATEGORIES, CATEGORY_IDS, SECTORS
 from .states import state_code
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "output"
 DASHBOARD_JS = ROOT / "dashboard" / "data.js"
-
-# Category labels (classify.CATEGORIES) -> ids used by the dashboard.
-CATEGORY_IDS = {
-    "Strategy & policy": "strategy_policy", "Regulation & ethics": "regulation_ethics",
-    "Governance bodies": "governance_body", "Funding & budget": "funding_budget",
-    "Infrastructure": "infrastructure", "Partnership / MoU": "partnership",
-    "Deployment": "deployment", "Skilling": "skilling", "Events & outreach": "events_outreach",
-    "Other": "other",
-}
 
 # Column order and meaning of the main dataset. Also written as the XLSX data dictionary.
 COLUMNS = {
@@ -40,6 +31,7 @@ COLUMNS = {
     "n_sources": "Number of distinct outlets that reported it",
     "also_reported_by": "Other outlets, separated by '; ' (full list in sources.csv)",
     "state_evidence": "How the state was identified: name | agency | abbrev | city",
+    "classified_by": "llm (rubric applied by an LLM, cached) | rules (keyword rules, no LLM label)",
 }
 
 
