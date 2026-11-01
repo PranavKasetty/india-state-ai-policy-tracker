@@ -1,0 +1,105 @@
+"""Stage 5 - write the dataset (CSV + XLSX), audit files, and the dashboard's JSON."""
+import csv
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+
+from openpyxl import Workbook
+
+from .classify import CATEGORIES, SECTORS
+from .states import state_code
+
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "data" / "output"
+DASHBOARD_JS = ROOT / "dashboard" / "data.js"
+
+# Category labels (classify.CATEGORIES) -> ids used by the dashboard.
+CATEGORY_IDS = {
+    "Strategy & policy": "strategy_policy", "Regulation & ethics": "regulation_ethics",
+    "Governance bodies": "governance_body", "Funding & budget": "funding_budget",
+    "Infrastructure": "infrastructure", "Partnership / MoU": "partnership",
+    "Deployment": "deployment", "Skilling": "skilling", "Events & outreach": "events_outreach",
+    "Other": "other",
+}
+
+# Column order and meaning of the main dataset. Also written as the XLSX data dictionary.
+COLUMNS = {
+    "record_id": "Stable ID derived from the earliest report of the announcement",
+    "state": "Canonical state name (normalised from names, abbreviations, agencies, cities)",
+    "state_code": "ISO 3166-2:IN code",
+    "date": "Date first reported, in IST. ISO 8601 at the precision known (YYYY-MM-DD / YYYY-MM / YYYY)",
+    "date_precision": "day | month | year | unknown",
+    "title": "Headline of the earliest report",
+    "summary": "One line: the publisher's standfirst, or the headline when unavailable",
+    "summary_source": "publisher standfirst | headline",
+    "primary_category": "Single main category (priority order in classify.CATEGORIES)",
+    "tags": "All matching categories, separated by '; '",
+    "sector": "Policy domain the activity applies to",
+    "source_name": "Outlet of the earliest report",
+    "source_url": "Publisher URL (Google News link when it could not be resolved)",
+    "n_sources": "Number of distinct outlets that reported it",
+    "also_reported_by": "Other outlets, separated by '; ' (full list in sources.csv)",
+    "state_evidence": "How the state was identified: name | agency | abbrev | city",
+}
+
+
+def _flat(r: dict) -> dict:
+    return {k: "; ".join(r[k]) if isinstance(r.get(k), list) else r.get(k, "") for k in COLUMNS}
+
+
+def _csv(path: Path, rows: list[dict], fields: list[str]) -> None:
+    with open(path, "w", newline="", encoding="utf-8-sig") as f:  # BOM so Excel reads ₹ correctly
+        w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
+        w.writeheader()
+        w.writerows(rows)
+
+
+def write_all(records: list[dict], sources: list[dict], excluded: list[dict], audit: list[dict]) -> None:
+    OUT.mkdir(parents=True, exist_ok=True)
+    flat = [_flat(r) for r in records]
+    _csv(OUT / "records.csv", flat, list(COLUMNS))
+    _csv(OUT / "sources.csv", sources, ["record_id", "source_name", "title", "date", "url"])
+    _csv(OUT / "excluded.csv", excluded, ["reason", "state", "date", "title", "source_name", "gnews_url"])
+    _csv(OUT / "dedupe_audit.csv", audit, ["layer", "similarity", "kept_title", "merged_title"])
+
+    wb = Workbook()
+    sheets = [("records", flat, list(COLUMNS)),
+              ("sources", sources, ["record_id", "source_name", "title", "date", "url"]),
+              ("data_dictionary", [{"column": k, "meaning": v} for k, v in COLUMNS.items()],
+               ["column", "meaning"])]
+    for i, (name, rows, fields) in enumerate(sheets):
+        ws = wb.active if i == 0 else wb.create_sheet()
+        ws.title = name
+        ws.append(fields)
+        for row in rows:
+            ws.append([row.get(f, "") for f in fields])
+        ws.freeze_panes = "A2"
+    wb.save(OUT / "records.xlsx")
+
+    write_dashboard(records)
+    print(f"export: {len(records)} records, {len(excluded)} excluded, {len(audit)} merges -> {OUT}")
+
+
+def write_dashboard(records: list[dict]) -> None:
+    """Write dashboard/data.js in the shape documented in dashboard/mock_data.py."""
+    if not records:  # never replace a working dashboard with an empty one
+        print("export: no records, dashboard/data.js left unchanged")
+        return
+    cats = [(CATEGORY_IDS[c], c) for c in [*CATEGORIES, "Other"]]
+    dates = sorted(r["date"] for r in records if r["date"])
+    items = [{"id": r["record_id"], "date": r["date"], "date_precision": r["date_precision"],
+              "state": r["state"], "title": r["title"], "summary": r["summary"],
+              "source": r["source_name"], "url": r["source_url"], "image": r["image_url"],
+              "category": CATEGORY_IDS[r["primary_category"]],
+              "tags": [CATEGORY_IDS[t] for t in r["tags"]], "sector": r["sector"],
+              "n_sources": r["n_sources"], "also_reported_by": r["also_reported_by"]}
+             for r in records]
+    meta = {"is_mock": False,
+            "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "period_start": dates[0] if dates else "", "period_end": dates[-1] if dates else "",
+            "states": [{"name": s, "code": state_code(s)} for s in sorted({r["state"] for r in records})],
+            "categories": [{"id": i, "label": label} for i, label in cats],
+            "sectors": [*SECTORS, "Cross-cutting"]}
+    js = ("// Generated by pipeline/export.py from data/output/records.csv. Do not edit.\n"
+          f"window.TRACKER_DATA = {json.dumps({'meta': meta, 'items': items}, ensure_ascii=False, indent=1)};\n")
+    DASHBOARD_JS.write_text(js, encoding="utf-8")
