@@ -117,7 +117,10 @@ FOREIGN_MARKERS = {
     "Punjab": re.compile(r"pakistan|lahore|rawalpindi|faisalabad|multan|maryam nawaz|\bPITB\b", re.I),
 }
 
-_AGENCY_PATTERNS = [(f" {_key(a)} ", s) for s, names in AGENCIES.items() for a in names]
+# Agency names are proper nouns: match case-sensitively on the raw text, otherwise
+# "Invest UP" matches "invest up to 1 billion".
+_AGENCY_PATTERNS = [(rf"(?<![\w-]){re.escape(a)}(?![\w-])", s)
+                    for s, names in AGENCIES.items() for a in names]
 
 
 def find_states(text: str) -> tuple[list[str], str | None]:
@@ -137,7 +140,7 @@ def find_states(text: str) -> tuple[list[str], str | None]:
     # Strongest evidence first; stop at the first level that finds anything.
     levels = [
         ("name", k, [(f" {_key(v)} ", n) for v, n in _NAME_PATTERNS]),
-        ("agency", k, _AGENCY_PATTERNS),
+        ("agency", text, _AGENCY_PATTERNS),
         ("abbrev", text, [] if mostly_upper else
             [(rf"(?<![A-Za-z])(?:{p})(?![A-Za-z])", n) for p, n in TEXT_ABBREVIATIONS.items()]),
         ("city", k, [(f" {c} ", n) for c, n in CITIES.items()]),
@@ -145,7 +148,7 @@ def find_states(text: str) -> tuple[list[str], str | None]:
     for evidence, haystack, patterns in levels:
         hits: list[tuple[int, str]] = []
         for pattern, name in patterns:
-            if evidence == "abbrev":
+            if evidence in ("abbrev", "agency"):
                 m = re.search(pattern, haystack)
                 pos = m.start() if m else -1
             else:

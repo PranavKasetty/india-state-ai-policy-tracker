@@ -8,7 +8,8 @@ Used two ways:
 Compiled from web searches on 2026-11-01 (sources listed in the README). Acronyms that
 collide with common words or other entities are given only by full name: MARVEL
 (comics), RTGS (bank transfers), KITE, TASK, BMC (Mumbai and Bhubaneswar).
-Matching is case-insensitive after the same normalisation as state names.
+Technopark/Infopark were dropped after matching a story about Azerbaijan.
+Matching is case-sensitive (names are proper nouns; "Invest UP" vs "invest up to").
 """
 
 AGENCIES: dict[str, list[str]] = {
@@ -30,7 +31,7 @@ AGENCIES: dict[str, list[str]] = {
     "Kerala": [
         "KSUM", "Kerala Startup Mission", "Kerala State IT Mission", "KSITM",
         "Digital University Kerala", "K-DISC", "Kerala Infrastructure and Technology for Education",
-        "Technopark", "Infopark", "KELTRON", "Cyberdome",
+        "KELTRON", "Cyberdome",
     ],
     "Maharashtra": [
         "Maharashtra Research and Vigilance for Enhanced Law Enforcement", "MahaCrimeOS",

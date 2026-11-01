@@ -96,6 +96,11 @@ def search_range(query: str, start: date, end: date, days: int) -> list[dict[str
     """
     items: dict[str, dict[str, str]] = {}
     for a, b in date_windows(start, end, days):
-        for it in search(f"{query} after:{a} before:{b}"):
+        try:
+            found = search(f"{query} after:{a} before:{b}")
+        except requests.HTTPError as e:  # Google occasionally 404s one window; skip it, not the run
+            print(f"  skipped window {a}..{b}: {e.response.status_code}")
+            continue
+        for it in found:
             items.setdefault(it["guid"], it)
     return list(items.values())
