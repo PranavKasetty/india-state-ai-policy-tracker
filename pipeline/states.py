@@ -82,6 +82,10 @@ CITIES = {
     "ahmedabad": "Gujarat", "kolkata": "West Bengal", "jaipur": "Rajasthan",
     "bhopal": "Madhya Pradesh", "indore": "Madhya Pradesh", "patna": "Bihar",
     "gurugram": "Haryana", "chandigarh": "Punjab", "guwahati": "Assam",
+    # Capitals of the states added on 2026-11-01 (weakest evidence, used only when no name matches)
+    "raipur": "Chhattisgarh", "ranchi": "Jharkhand", "dehradun": "Uttarakhand", "shimla": "Himachal Pradesh",
+    "panaji": "Goa", "shillong": "Meghalaya", "aizawl": "Mizoram", "kohima": "Nagaland", "imphal": "Manipur",
+    "itanagar": "Arunachal Pradesh", "agartala": "Tripura", "gangtok": "Sikkim", "dispur": "Assam",
 }
 
 

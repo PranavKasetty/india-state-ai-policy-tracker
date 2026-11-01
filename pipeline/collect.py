@@ -16,23 +16,26 @@ from pathlib import Path
 
 from . import gnews
 from .agencies import AGENCIES
+from .states import STATES
 from .terms import AI_QUERY, GOV_QUERY
 
-COVERED_STATES = [
-    "Karnataka", "Gujarat", "Kerala", "Maharashtra", "Tamil Nadu", "Telangana",
-    "Uttar Pradesh", "Bihar", "Odisha", "Punjab", "Andhra Pradesh",
-]
+# All 28 states. Union territories (Delhi, J&K, Puducherry) are recognised by
+# states.py but not collected.
+UNION_TERRITORIES = {"Delhi", "Jammu and Kashmir", "Puducherry"}
+COVERED_STATES = [s for s in STATES if s not in UNION_TERRITORIES]
 STORE = Path(__file__).resolve().parent.parent / "data" / "raw" / "items.jsonl"
 
 
 def queries(state: str) -> list[tuple[str, str, int]]:
     """(variant, query, window_days) for one state, for the 12-month backfill."""
-    agencies = " OR ".join(f'"{a}"' for a in AGENCIES[state])
-    return [
+    found = [
         ("gov", f'"{state}" ({AI_QUERY}) ({GOV_QUERY})', 14),
         ("broad", f'"{state}" ({AI_QUERY})', 14),
-        ("agency", f"({agencies}) ({AI_QUERY})", 30),
     ]
+    if AGENCIES.get(state):  # not every state has an agency list yet
+        agencies = " OR ".join(f'"{a}"' for a in AGENCIES[state])
+        found.append(("agency", f"({agencies}) ({AI_QUERY})", 30))
+    return found
 
 
 def load() -> dict[str, dict]:
@@ -42,14 +45,15 @@ def load() -> dict[str, dict]:
         return {r["guid"]: r for r in map(json.loads, f)}
 
 
-def collect(start: date, end: date, window_days: int | None = None) -> int:
+def collect(start: date, end: date, window_days: int | None = None, states: list[str] | None = None) -> int:
     """Search [start, end) and merge into the store. Returns the number of new items.
 
     window_days overrides each variant's window (the daily run uses one window).
+    states limits collection to some states (e.g. backfilling newly added ones).
     """
     items = load()
     before = len(items)
-    for state in COVERED_STATES:
+    for state in states or COVERED_STATES:
         for variant, query, days in queries(state):
             found = gnews.search_range(query, start, end, window_days or days)
             print(f"{state:15} {variant:6} {len(found):5} items")

@@ -104,16 +104,18 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, help="collect the last N days before processing")
     ap.add_argument("--backfill", action="store_true", help="collect the full 12 months")
+    ap.add_argument("--states", help="comma-separated states to collect (default: all covered)")
     ap.add_argument("--no-enrich", action="store_true", help="use stored enrichment only")
     ap.add_argument("--enrich-limit", type=int, default=200, help="max new records to enrich per run")
     ap.add_argument("--no-llm", action="store_true", help="rules only, even if an API key is set")
     args = ap.parse_args()
 
     today = date.today()
+    states = [s.strip() for s in args.states.split(",")] if args.states else None
     if args.backfill:
-        collect.collect(BACKFILL_START, today + timedelta(days=1))
+        collect.collect(BACKFILL_START, today + timedelta(days=1), states=states)
     elif args.days:
-        collect.collect(today - timedelta(days=args.days), today + timedelta(days=1), args.days + 1)
+        collect.collect(today - timedelta(days=args.days), today + timedelta(days=1), args.days + 1, states)
 
     kept, excluded = classify_all(list(collect.load().values()), use_llm=not args.no_llm)
     records, sources, audit = build_records(kept, use_llm=not args.no_llm)

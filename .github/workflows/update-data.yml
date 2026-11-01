@@ -2,8 +2,9 @@ name: Update data
 
 on:
   schedule:
-    # 02:30 UTC = 08:00 IST, daily
-    - cron: "30 2 * * *"
+    # 00:17 UTC = 05:47 IST, daily: after overnight print-edition stories are posted,
+    # and off the hour to avoid GitHub's on-the-hour scheduling delays
+    - cron: "17 0 * * *"
   workflow_dispatch:
     inputs:
       days:

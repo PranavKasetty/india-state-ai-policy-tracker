@@ -18,6 +18,7 @@ from .classify import CATEGORY_IDS
 
 STORE = Path(__file__).resolve().parent.parent / "data" / "output" / "briefs.json"
 MAX_RECORDS = 60
+MIN_RECORDS = 10  # no brief for a group with fewer records than this
 
 PROMPT = """You write short, neutral briefs for a dataset of AI policy activity by Indian
 state governments (Nov 2025 onwards). Use ONLY the records given; do not add facts,
@@ -46,10 +47,12 @@ def _groups(records: list[dict]) -> dict[str, tuple[str, list[dict]]]:
     groups["overall"] = ("AI policy activity across all covered Indian states",
                          [r for st in states for r in _top([r for r in records if r["state"] == st], k)])
     for state in states:
-        groups[f"state:{state}"] = (f"the state of {state}", [r for r in records if r["state"] == state])
+        members = [r for r in records if r["state"] == state]
+        if len(members) >= MIN_RECORDS:
+            groups[f"state:{state}"] = (f"the state of {state}", members)
     for label, cid in CATEGORY_IDS.items():
         members = [r for r in records if label in r["tags"]]
-        if members and cid != "other":
+        if len(members) >= MIN_RECORDS and cid != "other":
             groups[f"category:{cid}"] = (f"'{label}' activity across states", members)
     return groups
 
