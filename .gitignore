@@ -4,3 +4,4 @@ __pycache__/
 data/cache/
 *.zip
 .DS_Store
+.env
