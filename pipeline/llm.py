@@ -124,11 +124,13 @@ def chat_json(session: requests.Session, base: str, model: str, system: str, use
 
 
 def _ask(session: requests.Session, base: str, model: str, system: str, user: str, field: str) -> list:
-    """chat_json with one retry: free models occasionally return malformed JSON."""
+    """chat_json with one retry: free models occasionally return malformed JSON,
+    or the bare list without the {field: [...]} wrapper."""
     for attempt in (1, 2):
         try:
-            return chat_json(session, base, model, system, user)[field]
-        except (ValueError, KeyError):
+            data = chat_json(session, base, model, system, user)
+            return data if isinstance(data, list) else data[field]
+        except (ValueError, KeyError, TypeError):
             if attempt == 2:
                 raise
 
@@ -154,7 +156,7 @@ def label(candidates: list[dict]) -> dict[str, dict]:
             batch = todo[start:start + BATCH]
             try:
                 labels = _call(session, base, model, batch)
-            except (requests.RequestException, ValueError, KeyError) as e:
+            except (requests.RequestException, ValueError, KeyError, TypeError) as e:
                 print(f"  batch {start // BATCH} failed ({type(e).__name__}); rules will cover it")
                 continue
             for lab in labels:
@@ -200,7 +202,7 @@ def same_development(pairs: list[tuple[dict, dict]]) -> list[bool | None]:
                 lines = "\n".join(f"{i}. A: {a['title']} || B: {b['title']}" for i, (a, b) in enumerate(batch))
                 try:
                     verdicts = _ask(session, base, model, PAIR_PROMPT, lines, "same")
-                except (requests.RequestException, ValueError, KeyError) as e:
+                except (requests.RequestException, ValueError, KeyError, TypeError) as e:
                     print(f"  pair batch {start // PAIR_BATCH} failed ({type(e).__name__})")
                     continue
                 for v in verdicts:
