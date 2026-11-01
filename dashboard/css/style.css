@@ -236,9 +236,11 @@ details.data-table td { text-align: right; }
 /* An inset on the page colour (not a tint), so the text keeps the page's full contrast;
    the marigold edge marks it as generated commentary, not a record. */
 .briefs {
-  margin: 0 0 16px; padding: 14px 18px; background: var(--page); color: var(--ink);
-  border: 1px solid var(--rule); border-left: 4px solid var(--highlight); border-radius: 0 var(--radius) var(--radius) 0;
+  position: relative; margin: 0 0 16px; padding: 14px 18px 14px 22px; background: var(--page); color: var(--ink);
+  border: 1px solid var(--rule); border-left: 0; border-radius: 0 var(--radius) var(--radius) 0;
 }
+/* The marigold edge, drawn separately so it can sweep down when a brief arrives. */
+.briefs::before { content: ""; position: absolute; left: 0; top: -1px; bottom: -1px; width: 4px; background: var(--highlight); transform-origin: top; }
 .brief + .brief { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--rule); }
 .brief h3 { font-size: 1.0625rem; font-weight: 600; }
 .brief-label { margin: 2px 0 8px; font-size: 0.85rem; color: var(--ink-2); }
@@ -322,9 +324,15 @@ details.data-table td { text-align: right; }
   .rank-row { transition: transform .45s cubic-bezier(.2, .7, .2, 1); }
   .timechart .bar { transform-box: fill-box; transform-origin: 50% 100%; transition: transform .5s cubic-bezier(.2, .7, .2, 1); }
   .timechart .label { animation: fade-in .4s .25s both; }
-  .brief-points li { animation: fade-in .3s both; }
+  /* A new brief: the edge sweeps down, then the text rises into place. */
+  .briefs.entering::before { animation: edge-in .45s cubic-bezier(.2, .7, .2, 1) both; }
+  .briefs.entering > * { animation: rise-in .4s .12s cubic-bezier(.2, .7, .2, 1) both; }
+  /* Points revealed by "Show more" fade in one after another. */
+  .brief-points li.extra { animation: rise-in .35s calc(var(--i, 0) * 70ms) cubic-bezier(.2, .7, .2, 1) both; }
 }
 @keyframes fade-in { from { opacity: 0; } }
+@keyframes rise-in { from { opacity: 0; transform: translateY(6px); } }
+@keyframes edge-in { from { transform: scaleY(0); } }
 @media (forced-colors: active) {
   .cell-btn { border: 1px solid CanvasText; }
   .cell-btn[aria-pressed="true"], .toggle-group button[aria-pressed="true"] { outline: 3px solid Highlight; }
@@ -332,6 +340,8 @@ details.data-table td { text-align: right; }
   .rank-row[aria-pressed="true"] { outline: 3px solid Highlight; }
   .mock-banner, .load-error { border-color: CanvasText; }
   .masthead::after, .site-footer::before { display: none; }
+  .briefs { border-left: 4px solid CanvasText; padding-left: 18px; }
+  .briefs::before { display: none; }
 }
 @media print {
   .filters, .toggle-group, .skip-link, .more, .tooltip, .disclosure::before { display: none !important; }
