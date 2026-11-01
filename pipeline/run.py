@@ -82,9 +82,9 @@ def classify_all(raw: list[dict], use_llm: bool) -> tuple[list[dict], list[dict]
     return kept, excluded
 
 
-def build_records(kept: list[dict]) -> tuple[list[dict], list[dict], list[dict]]:
+def build_records(kept: list[dict], use_llm: bool) -> tuple[list[dict], list[dict], list[dict]]:
     """Collapse duplicates. Returns (records, source_rows, audit_rows)."""
-    groups, audit = cluster(kept)
+    groups, audit = cluster(kept, llm.same_development if use_llm else None)
     records, sources = [], []
     for g in groups:
         members = sorted((kept[i] for i in g), key=lambda r: (r["date"] or "9999", r["title"]))
@@ -116,7 +116,7 @@ def main() -> None:
         collect.collect(today - timedelta(days=args.days), today + timedelta(days=1), args.days + 1)
 
     kept, excluded = classify_all(list(collect.load().values()), use_llm=not args.no_llm)
-    records, sources, audit = build_records(kept)
+    records, sources, audit = build_records(kept, use_llm=not args.no_llm)
     print(f"classify: {len(kept)} in scope, {len(excluded)} excluded -> {len(records)} records "
           f"after dedup ({len(kept) - len(records)} duplicates merged)")
 

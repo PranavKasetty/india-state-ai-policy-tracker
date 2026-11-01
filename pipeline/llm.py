@@ -25,24 +25,43 @@ from .classify import CATEGORY_IDS, SECTORS
 
 ROOT = Path(__file__).resolve().parent.parent
 STORE = ROOT / "data" / "raw" / "llm_labels.jsonl"
-PROMPT_VERSION = "v1"
+PAIRS = ROOT / "data" / "raw" / "llm_pairs.jsonl"
+PROMPT_VERSION = "v2"  # v2: stricter on private actors, worked examples
 BATCH = 40
 DEFAULT_BASE = "https://generativelanguage.googleapis.com/v1beta/openai"
 DEFAULT_MODEL = "gemini-3.5-flash-lite"  # free tier: 15 RPM, 500 RPD; pinned for reproducibility
 
 RUBRIC = f"""You label news headlines for a dataset of AI policy activity by Indian state governments.
 
-IN SCOPE when a state government body (department, minister, CM, police, municipal body,
-state agency, state university) - or the central government in a way tied to that specific
-state - acts on AI or robotics: announces, funds, signs, deploys, regulates, trains, hosts
-or endorses. State-backed data centres, state-endorsed conferences and state university
-courses count. Robotics counts even without an AI mention. A CM/minister stating an AI
-goal or vision counts.
+IN SCOPE only when a state government body (department, minister, CM, police, district or
+municipal body, state agency or PSU, state-run university) - or the central government in a way
+tied to that specific state - is the ACTOR: it announces, funds, signs, deploys, regulates,
+trains, hosts, approves or states a goal about AI or robotics. State-backed data centres,
+state-hosted or state-endorsed events and state university courses count. Robotics counts even
+without an AI mention. A CM/minister stating an AI goal or plan counts.
 
-OUT OF SCOPE: private-company news with no government actor; central-government actions
-with no specific state tie; crime stories (deepfake/fraud arrests, cases, fact-checks of
-AI videos); election politics and AI campaign videos; opinion pieces; foreign news
-(e.g. Pakistan's Punjab); stories where the state is only a location or birthplace.
+OUT OF SCOPE:
+- a company, private university, startup, NGO or industry body acting alone, even inside the
+  state (opening an office or centre, a launch, a talk, a survey, a report);
+- a speech or event at a private institution, unless a state official announces something there;
+- advice or exhortation with no government actor ("MSMEs urged to adopt AI");
+- results or news about individuals (a student builds a robot, a professor wins an award);
+- central-government actions with no specific state tie;
+- crime stories (deepfake/fraud arrests, cases, fact-checks of AI videos); election politics
+  and AI campaign videos; opinion pieces; foreign news (e.g. Pakistan's Punjab);
+- stories where the state is only a location or birthplace.
+If the headline does not show a government actor, and none is clearly implied, mark OUT.
+When unsure, mark OUT.
+
+Examples:
+- "Telangana signs MoU with Google for AI skilling" -> IN (partnership, skilling)
+- "Kerala police deploy AI cameras to catch traffic violations" -> IN (deployment)
+- "Tamil Nadu CM says state will become AI hub by 2030" -> IN (strategy_policy)
+- "IBM launches FutureNow Centre in Vizag" -> OUT (company acting alone)
+- "IISc Director at Gujarat's Adani University: we should control AI" -> OUT (talk at a private university)
+- "Gujarat MSMEs urged to embrace AI" -> OUT (no government actor)
+- "Bengaluru startup raises $10 million for AI tool" -> OUT (private company)
+- "Man held for AI deepfake of Maharashtra minister" -> OUT (crime story)
 
 For in-scope headlines give:
 - primary: the single main category id
@@ -139,3 +158,45 @@ def label(candidates: list[dict]) -> dict[str, dict]:
             print(f"  {min(start + BATCH, len(todo))}/{len(todo)}")
             time.sleep(4.5)  # stay under 15 requests per minute
     return store
+
+
+PAIR_PROMPT = """Each line gives two news headlines about the same Indian state, published within a
+week of each other. Answer whether they report the SAME development (one announcement, decision,
+launch or event, possibly reworded or with different details), not merely the same topic.
+Two different decisions by the same cabinet meeting are different developments.
+Return JSON: {"same": [{"i": <number>, "same": true|false}]} - one per line."""
+PAIR_BATCH = 50
+
+
+def _pair_key(a: dict, b: dict) -> str:
+    return "|".join(sorted((a["guid"], b["guid"])))
+
+
+def same_development(pairs: list[tuple[dict, dict]]) -> list[bool | None]:
+    """Judge near-duplicate headline pairs; None when unknown (no key or failed call).
+    Verdicts are cached in data/raw/llm_pairs.jsonl."""
+    cache = {}
+    if PAIRS.exists():
+        with open(PAIRS, encoding="utf-8") as f:
+            cache = {r["pair"]: r["same"] for r in map(json.loads, f)}
+    key, model, base = config()
+    todo = [p for p in pairs if _pair_key(*p) not in cache]
+    if key and todo:
+        print(f"llm pairs: {len(pairs) - len(todo)} cached, {len(todo)} to judge")
+        session = make_session(key)
+        with open(PAIRS, "a", encoding="utf-8") as f:
+            for start in range(0, len(todo), PAIR_BATCH):
+                batch = todo[start:start + PAIR_BATCH]
+                lines = "\n".join(f"{i}. A: {a['title']} || B: {b['title']}" for i, (a, b) in enumerate(batch))
+                try:
+                    verdicts = _ask(session, base, model, PAIR_PROMPT, lines, "same")
+                except (requests.RequestException, ValueError, KeyError) as e:
+                    print(f"  pair batch {start // PAIR_BATCH} failed ({type(e).__name__})")
+                    continue
+                for v in verdicts:
+                    if isinstance(v.get("i"), int) and 0 <= v["i"] < len(batch) and isinstance(v.get("same"), bool):
+                        k = _pair_key(*batch[v["i"]])
+                        cache[k] = v["same"]
+                        f.write(json.dumps({"pair": k, "same": v["same"], "model": model}) + "\n")
+                time.sleep(4.5)
+    return [cache.get(_pair_key(a, b)) for a, b in pairs]
