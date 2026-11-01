@@ -87,13 +87,26 @@ def load_store() -> dict[str, dict]:
         return {r["guid"]: r for r in map(json.loads, f) if r.get("prompt_version") == PROMPT_VERSION}
 
 
-def _call(session: requests.Session, base: str, model: str, batch: list[dict]) -> list[dict]:
-    lines = "\n".join(f"{i}. {it['title']} ({it['source_name']})" for i, it in enumerate(batch))
+def make_session(key: str) -> requests.Session:
+    session = requests.Session()
+    session.headers["Authorization"] = f"Bearer {key}"
+    session.mount("https://", HTTPAdapter(max_retries=Retry(
+        total=6, backoff_factor=5, status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods=["POST"], respect_retry_after_header=True)))
+    return session
+
+
+def chat_json(session: requests.Session, base: str, model: str, system: str, user: str) -> dict:
     resp = session.post(f"{base}/chat/completions", timeout=120, json={
         "model": model, "temperature": 0, "response_format": {"type": "json_object"},
-        "messages": [{"role": "system", "content": RUBRIC}, {"role": "user", "content": lines}]})
+        "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}]})
     resp.raise_for_status()
-    return json.loads(resp.json()["choices"][0]["message"]["content"])["labels"]
+    return json.loads(resp.json()["choices"][0]["message"]["content"])
+
+
+def _call(session: requests.Session, base: str, model: str, batch: list[dict]) -> list[dict]:
+    lines = "\n".join(f"{i}. {it['title']} ({it['source_name']})" for i, it in enumerate(batch))
+    return chat_json(session, base, model, RUBRIC, lines)["labels"]
 
 
 def label(candidates: list[dict]) -> dict[str, dict]:
@@ -105,11 +118,7 @@ def label(candidates: list[dict]) -> dict[str, dict]:
         print("llm: no API key, using rules only")
         return store
     print(f"llm: {len(candidates) - len(todo)} cached, {len(todo)} to label with {model}")
-    session = requests.Session()
-    session.headers["Authorization"] = f"Bearer {key}"
-    session.mount("https://", HTTPAdapter(max_retries=Retry(
-        total=6, backoff_factor=5, status_forcelist=[429, 500, 502, 503, 504],
-        allowed_methods=["POST"], respect_retry_after_header=True)))
+    session = make_session(key)
     STORE.parent.mkdir(parents=True, exist_ok=True)
     with open(STORE, "a", encoding="utf-8") as f:
         for start in range(0, len(todo), BATCH):
