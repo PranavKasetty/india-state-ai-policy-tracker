@@ -27,14 +27,25 @@ brackets, e.g. [R1a2b3c4d, R5e6f7a8b]. Return JSON: {"brief": "<text with citati
 
 
 def _lines(records: list[dict]) -> list[str]:
-    top = sorted(records, key=lambda r: (-r["n_sources"], r["date"]), reverse=False)[:MAX_RECORDS]
+    top = _top(records, MAX_RECORDS)
     return [f"{r['record_id']} | {r['date']} | {r['state']} | {r['title']} - {r['summary']}" for r in top]
+
+
+def _top(records: list[dict], k: int) -> list[dict]:
+    """The k most-covered records, most recent first among equals."""
+    by_date = sorted(records, key=lambda r: r["date"] or "", reverse=True)
+    return sorted(by_date, key=lambda r: -r["n_sources"])[:k]  # stable sort keeps date order
 
 
 def _groups(records: list[dict]) -> dict[str, tuple[str, list[dict]]]:
     """key -> (subject phrase for the prompt, records)."""
     groups = {}
-    for state in sorted({r["state"] for r in records}):
+    states = sorted({r["state"] for r in records})
+    # Overall: the top K per state, so the largest states don't fill the whole input.
+    k = MAX_RECORDS // max(len(states), 1)
+    groups["overall"] = ("AI policy activity across all covered Indian states",
+                         [r for st in states for r in _top([r for r in records if r["state"] == st], k)])
+    for state in states:
         groups[f"state:{state}"] = (f"the state of {state}", [r for r in records if r["state"] == state])
     for label, cid in CATEGORY_IDS.items():
         members = [r for r in records if label in r["tags"]]
