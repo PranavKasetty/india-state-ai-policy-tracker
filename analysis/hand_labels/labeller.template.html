@@ -1,0 +1,260 @@
+<title>State AI Headline Labeller</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
+<style>
+/* Layout: one headline at a time in a reading column, a 60-cell progress strip above it, decision controls below. */
+:root {
+  --bg: #f4f6f5; --surface: #ffffff; --fg: #18211f; --muted: #5b6764; --line: #d7dedb;
+  --accent: #0e6b5c; --accent-soft: #dcefe9;
+  --yes: #1d7a3a; --yes-soft: #dff1e4; --no: #b23a2a; --no-soft: #f7e1dd; --unsure: #9a6400; --unsure-soft: #f6ead2;
+  --display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111816; --surface: #18211f; --fg: #e4ebe8; --muted: #94a39f; --line: #2c3835;
+  --accent: #4fc1a9; --accent-soft: #173a33;
+  --yes: #5cc97c; --yes-soft: #17331f; --no: #ef7f6c; --no-soft: #3c1d18; --unsure: #e2b24f; --unsure-soft: #3a2d12;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #111816; --surface: #18211f; --fg: #e4ebe8; --muted: #94a39f; --line: #2c3835;
+  --accent: #4fc1a9; --accent-soft: #173a33;
+  --yes: #5cc97c; --yes-soft: #17331f; --no: #ef7f6c; --no-soft: #3c1d18; --unsure: #e2b24f; --unsure-soft: #3a2d12;
+  color-scheme: dark }
+
+body { background: var(--bg); color: var(--fg); font: 15px/1.5 var(--ui); }
+.wrap { max-width: 760px; margin: 0 auto; padding-block: 24px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 20px; }
+header { display: grid; gap: 6px; }
+h1 { font: 600 1.35rem/1.2 var(--display); margin: 0; text-wrap: balance; }
+.sub { color: var(--muted); margin: 0; max-width: 62ch; }
+.status { font: 500 0.8rem var(--mono); color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; }
+.status b { color: var(--fg); font-weight: 500; }
+.status .warn { color: var(--no); }
+
+.strip { display: grid; grid-template-columns: repeat(20, 1fr); gap: 3px; }
+.cell { height: 14px; border: 0; border-radius: 2px; background: var(--line); cursor: pointer; padding: 0; }
+.cell.yes { background: var(--yes); } .cell.no { background: var(--no); } .cell.unsure { background: var(--unsure); }
+.cell.current { outline: 2px solid var(--fg); outline-offset: 1px; }
+.cell:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 22px; display: grid; gap: 18px; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font: 0.8rem var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.meta .state { color: var(--accent); font-weight: 500; }
+.headline { font: 600 1.45rem/1.3 var(--display); margin: 0; text-wrap: balance; overflow-wrap: anywhere; }
+.headline a { color: inherit; text-decoration: none; }
+.headline a:hover, .headline a:focus-visible { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.open { font-size: 0.85rem; color: var(--accent); width: fit-content; }
+
+fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; min-width: 0; }
+legend { font: 600 0.72rem var(--ui); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 0; margin-bottom: 8px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; }
+.choice { font: 500 0.92rem var(--ui); border: 1px solid var(--line); background: var(--surface); color: var(--fg);
+  border-radius: 4px; padding: 8px 12px; cursor: pointer; display: inline-flex; gap: 8px; align-items: baseline; text-align: left; }
+.choice kbd { font: 0.72rem var(--mono); color: var(--muted); }
+.choice:hover { border-color: var(--muted); }
+.choice:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.choice[aria-pressed="true"].yes { background: var(--yes-soft); border-color: var(--yes); color: var(--yes); }
+.choice[aria-pressed="true"].no { background: var(--no-soft); border-color: var(--no); color: var(--no); }
+.choice[aria-pressed="true"].unsure { background: var(--unsure-soft); border-color: var(--unsure); color: var(--unsure); }
+.cats { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 6px; }
+.cat { display: grid; gap: 2px; padding: 8px 10px; }
+.cat small { color: var(--muted); font-weight: 400; font-size: 0.76rem; line-height: 1.3; }
+.cat[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); }
+.cats[aria-disabled="true"] { opacity: 0.45; pointer-events: none; }
+textarea { font: 0.92rem/1.4 var(--ui); color: var(--fg); background: var(--bg); border: 1px solid var(--line);
+  border-radius: 4px; padding: 8px 10px; min-height: 60px; resize: vertical; width: 100%; box-sizing: border-box; }
+textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.nav-btn { font: 500 0.9rem var(--ui); background: transparent; color: var(--fg); border: 1px solid var(--line); border-radius: 4px; padding: 8px 14px; cursor: pointer; }
+.nav-btn:disabled { opacity: 0.4; cursor: default; }
+.nav-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.keys { font: 0.75rem var(--mono); color: var(--muted); }
+.saved { font: 0.78rem var(--mono); color: var(--muted); min-height: 1.2em; }
+.rubric { font-size: 0.86rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 14px; }
+.rubric summary { cursor: pointer; color: var(--fg); font-weight: 500; }
+.rubric ul { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 4px; }
+@media (max-width: 480px) { .strip { grid-template-columns: repeat(12, 1fr); } .headline { font-size: 1.2rem; } .card { padding: 16px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>State AI Headline Labeller</h1>
+    <p class="sub">Decide whether each headline belongs in the tracker, and if so, its main category. These 60 headlines are a random sample of the 3,279 that the pipeline sends to its LLM judge. The system's own labels are hidden.</p>
+    <div class="status" aria-live="polite">
+      <span><b id="done">0</b> / 60 labelled</span>
+      <span id="tally"></span>
+      <span id="conn">Connecting to label store…</span>
+    </div>
+  </header>
+
+  <div class="strip" id="strip" role="list" aria-label="Headlines"></div>
+
+  <article class="card" id="card">
+    <div class="meta"><span class="state" id="m-state"></span><span id="m-date"></span><span id="m-source"></span><span id="m-id"></span></div>
+    <h2 class="headline"><a id="m-title" target="_blank" rel="noopener"></a></h2>
+    <a class="open" id="m-open" target="_blank" rel="noopener">Open the article ↗</a>
+
+    <fieldset>
+      <legend>In scope?</legend>
+      <div class="row" id="scope">
+        <button type="button" class="choice yes" data-v="yes" id="s-yes">Yes <kbd>Y</kbd></button>
+        <button type="button" class="choice no" data-v="no" id="s-no">No <kbd>N</kbd></button>
+        <button type="button" class="choice unsure" data-v="unsure" id="s-unsure">Unsure <kbd>U</kbd></button>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Primary category (only if in scope)</legend>
+      <div class="cats" id="cats"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend><label for="notes">Notes</label></legend>
+      <textarea id="notes" placeholder="Optional: why, or which rule this tests"></textarea>
+    </fieldset>
+    <div class="saved" id="saved"></div>
+  </article>
+
+  <nav>
+    <button type="button" class="nav-btn" id="prev">← Previous</button>
+    <span class="keys">Y / N / U · 1–9 category · J / K next / previous · Enter next unlabelled</span>
+    <button type="button" class="nav-btn" id="next">Next →</button>
+  </nav>
+
+  <details class="rubric">
+    <summary>Inclusion rule</summary>
+    <ul>
+      <li><b>In:</b> a state government body (department, minister, CM, police, municipal body, state agency, state university), or the central government acting on that specific state, acts on AI or robotics: announces, funds, signs, deploys, regulates, trains, hosts, endorses or states a goal.</li>
+      <li><b>In:</b> state-backed data centres, state-hosted or state-endorsed events, state university courses, robotics with no AI mention.</li>
+      <li><b>Out:</b> companies, private universities or NGOs acting alone; talks at private institutions; advice with no government actor; crime and deepfake cases; election politics; opinion; foreign news; the state appearing only as a location.</li>
+    </ul>
+  </details>
+</div>
+
+<script>
+const ITEMS = __ITEMS__;
+const CATS = [
+  ["strategy_policy", "Strategy & policy", "policy, mission, roadmap, stated goal"],
+  ["regulation_ethics", "Regulation & ethics", "rules, guidelines, mandates, data governance"],
+  ["governance_body", "Governance bodies", "task force, committee, AI cell, new department"],
+  ["funding_budget", "Funding & budget", "allocation, fund, grant, investment commitment"],
+  ["infrastructure", "Infrastructure", "data centre, compute, CoE, AI city or lab"],
+  ["partnership", "Partnership / MoU", "MoU, pact, tie-up with a company or institute"],
+  ["deployment", "Deployment", "AI used in a government service"],
+  ["skilling", "Skilling", "training officials, teachers, students; courses"],
+  ["events_outreach", "Events & outreach", "summit, hackathon, challenge hosted or endorsed"],
+];
+const labels = {};          // item_id -> {in_scope, primary, notes}
+let idx = 0, db = null, writable = true;
+const $ = (id) => document.getElementById(id);
+
+// --- rendering -------------------------------------------------------------
+const strip = $("strip");
+ITEMS.forEach((it, i) => {
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "cell"; b.id = "cell-" + it.item_id; b.setAttribute("role", "listitem");
+  b.setAttribute("aria-label", `Headline ${i + 1}`); b.title = `${i + 1}. ${it.title}`;
+  b.onclick = () => go(i);
+  strip.appendChild(b);
+});
+CATS.forEach(([id, name, hint], k) => {
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "choice cat"; b.dataset.v = id; b.id = "c-" + id;
+  b.innerHTML = `<span>${name} <kbd>${k + 1}</kbd></span><small>${hint}</small>`;
+  b.onclick = () => choose({ primary: labels[cur().item_id]?.primary === id ? null : id });
+  $("cats").appendChild(b);
+});
+document.querySelectorAll("#scope .choice").forEach((b) => (b.onclick = () => choose({ in_scope: b.dataset.v })));
+
+function cur() { return ITEMS[idx]; }
+
+function render() {
+  const it = cur(), lab = labels[it.item_id] || {};
+  $("m-state").textContent = it.state;
+  $("m-date").textContent = it.date || "date unknown";
+  $("m-source").textContent = it.source_name;
+  $("m-id").textContent = `${idx + 1} / ${ITEMS.length}`;
+  $("m-title").textContent = it.title; $("m-title").href = it.url; $("m-open").href = it.url;
+  document.querySelectorAll("#scope .choice").forEach((b) => b.setAttribute("aria-pressed", String(lab.in_scope === b.dataset.v)));
+  document.querySelectorAll("#cats .choice").forEach((b) => b.setAttribute("aria-pressed", String(lab.primary === b.dataset.v)));
+  $("cats").setAttribute("aria-disabled", String(lab.in_scope === "no"));
+  if (document.activeElement !== $("notes")) $("notes").value = lab.notes || "";
+  $("prev").disabled = idx === 0; $("next").disabled = idx === ITEMS.length - 1;
+  ITEMS.forEach((x, i) => {
+    const c = $("cell-" + x.item_id), s = labels[x.item_id]?.in_scope;
+    c.className = "cell" + (s ? " " + s : "") + (i === idx ? " current" : "");
+  });
+  const vals = Object.values(labels).filter((l) => l.in_scope);
+  $("done").textContent = vals.length;
+  const n = (v) => vals.filter((l) => l.in_scope === v).length;
+  $("tally").textContent = vals.length ? `${n("yes")} yes · ${n("no")} no · ${n("unsure")} unsure` : "";
+}
+
+function go(i) { idx = Math.max(0, Math.min(ITEMS.length - 1, i)); $("saved").textContent = ""; render(); }
+
+// --- saving: one write at a time per document ------------------------------
+const chains = {};
+function save(id) {
+  if (!db || !writable) { $("saved").textContent = db ? "Read-only: your changes are not saved." : "Not saved: the label store is not connected."; return; }
+  const body = { ...labels[id], item_id: id, updated_at: new Date().toISOString() };
+  $("saved").textContent = "Saving…";
+  chains[id] = (chains[id] || Promise.resolve()).then(() => db.collection("labels").doc(id).set(body))
+    .then(() => { if (cur().item_id === id) $("saved").textContent = "Saved"; })
+    .catch((e) => {
+      if (e && e.code === "invalid_argument") writable = false;
+      $("saved").textContent = writable ? "Save failed. Change the label again to retry." : "Read-only: you cannot save labels on this page.";
+    });
+}
+function choose(patch) {
+  const id = cur().item_id, lab = { in_scope: null, primary: null, notes: "", ...labels[id], ...patch };
+  if (lab.in_scope === "no") lab.primary = null;
+  labels[id] = lab; render(); save(id);
+}
+let noteTimer;
+$("notes").addEventListener("input", () => {
+  const id = cur().item_id;
+  labels[id] = { in_scope: null, primary: null, ...labels[id], notes: $("notes").value };
+  clearTimeout(noteTimer); noteTimer = setTimeout(() => save(id), 700);
+});
+
+$("prev").onclick = () => go(idx - 1);
+$("next").onclick = () => go(idx + 1);
+function nextUnlabelled() {
+  for (let k = 1; k <= ITEMS.length; k++) { const i = (idx + k) % ITEMS.length; if (!labels[ITEMS[i].item_id]?.in_scope) return go(i); }
+}
+document.addEventListener("keydown", (e) => {
+  if (e.target.tagName === "TEXTAREA" || e.metaKey || e.ctrlKey || e.altKey) return;
+  const k = e.key.toLowerCase();
+  if (k === "y") choose({ in_scope: "yes" });
+  else if (k === "n") choose({ in_scope: "no" });
+  else if (k === "u") choose({ in_scope: "unsure" });
+  else if (k === "j" || e.key === "ArrowRight") go(idx + 1);
+  else if (k === "k" || e.key === "ArrowLeft") go(idx - 1);
+  else if (e.key === "Enter" && e.target.tagName !== "BUTTON") nextUnlabelled();
+  else if (/^[1-9]$/.test(e.key) && labels[cur().item_id]?.in_scope !== "no") {
+    const id = CATS[+e.key - 1][0]; choose({ primary: labels[cur().item_id]?.primary === id ? null : id });
+  } else return;
+  e.preventDefault();
+});
+
+render();
+
+// --- label store -----------------------------------------------------------
+(async () => {
+  db = window.claude ? await window.claude.use("db") : null;
+  if (!db) { $("conn").textContent = "Label store unavailable: labels will not be saved."; $("conn").className = "warn"; return; }
+  const timer = setTimeout(() => { $("conn").textContent = "Label store not reachable yet. Labels may not be saved."; $("conn").className = "warn"; }, 10000);
+  let first = true;
+  db.collection("labels").onSnapshot((snap) => {
+    if (!snap.metadata.fromCache) { clearTimeout(timer); $("conn").textContent = "Labels save automatically"; $("conn").className = ""; }
+    snap.docs.forEach((d) => { const v = d.data(); if (v) labels[d.id] = { in_scope: v.in_scope ?? null, primary: v.primary ?? null, notes: v.notes || "" }; });
+    if (first && !snap.metadata.fromCache) { first = false; const i = ITEMS.findIndex((x) => !labels[x.item_id]?.in_scope); if (i > 0) idx = i; }
+    render();
+  }, (e) => { clearTimeout(timer); $("conn").textContent = "Label store disconnected. Reload the page to reconnect."; $("conn").className = "warn"; });
+})();
+</script>
