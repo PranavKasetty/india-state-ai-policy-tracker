@@ -1,0 +1,318 @@
+/* Layout and components. Colours come only from tokens.css. */
+
+/* ---------- base ---------- */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font: 400 1rem/1.5 var(--font);
+}
+h1, h2, h3 { margin: 0; line-height: 1.15; }
+a { color: var(--accent); text-underline-offset: 2px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+button { font: inherit; }
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip-link {
+  position: absolute; left: var(--gutter); top: -100px; z-index: 30;
+  background: var(--accent); color: var(--on-accent); padding: 8px 14px; border-radius: 4px;
+}
+.skip-link:focus { top: 8px; }
+
+.page { max-width: 1180px; margin: 0 auto; padding: 20px var(--gutter) 40px; }
+
+/* ---------- masthead ---------- */
+.masthead { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 4px; }
+/* Sari border: a row of marigold triangles on a peacock line, closing the masthead
+   the way a woven border closes a sari's body. Decorative; hidden in forced colours. */
+.masthead::after {
+  content: ""; flex-basis: 100%; height: 11px; margin-top: 6px;
+  background:
+    conic-gradient(from 135deg at 50% 0, var(--highlight) 90deg, transparent 0) 0 0 / 16px 8px repeat-x,
+    linear-gradient(var(--accent), var(--accent)) 0 100% / 100% 2px no-repeat;
+}
+.brand { display: flex; align-items: flex-start; gap: 14px; }
+.brand-mark { width: clamp(40px, 5vw, 52px); height: auto; flex: none; margin-top: 4px; border-radius: 6px; }
+.masthead h1 { font-size: clamp(1.9rem, 4.4vw, 2.9rem); font-weight: 700; letter-spacing: -0.015em; }
+.lede { margin: 6px 0 0; max-width: 70ch; color: var(--ink-2); font-size: 1.125rem; }
+
+.mock-banner {
+  margin: 0 0 20px; padding: 10px 14px;
+  border: 1.5px dashed var(--mock); border-radius: var(--radius);
+  background: var(--mock-wash); font-size: 0.95rem;
+}
+.mock-banner strong { color: var(--mock); }
+
+/* ---------- toggle groups (theme, cell values) ---------- */
+.toggle-group { display: inline-flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--ink-2); }
+.toggle-group .buttons { display: inline-flex; border: 1px solid var(--control); border-radius: 4px; overflow: hidden; }
+.toggle-group button {
+  color: var(--ink-2); background: var(--surface); border: 0; cursor: pointer;
+  padding: 4px 12px; min-height: 34px; font-size: 0.875rem;
+}
+.toggle-group button + button { border-left: 1px solid var(--control); }
+.toggle-group button:hover { background: var(--accent-wash); color: var(--ink); }
+.toggle-group button[aria-pressed="true"] { background: var(--highlight); color: var(--on-highlight); font-weight: 600; }
+.toggle-group button:focus-visible { outline-offset: -3px; }
+
+/* ---------- filters: one row above everything they scope ---------- */
+.filters {
+  display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 12px;
+  padding: 14px 0; border-bottom: 1px solid var(--rule);
+  background: var(--page);
+}
+/* Sticky only where there is room for it; at high zoom it would hide the content. */
+@media (min-width: 900px) and (min-height: 640px) {
+  .filters { position: sticky; top: 0; z-index: 5; }
+  /* Keep focused or scrolled-to content clear of the sticky bar (WCAG 2.4.11). */
+  html { scroll-padding-top: 120px; }
+}
+.filters label { display: flex; flex-direction: column; gap: 2px; font-size: 0.85rem; color: var(--ink-2); min-width: 0; }
+.filters .grow { flex: 1 1 200px; }
+.filters select, .filters input {
+  font: inherit; font-size: 0.95rem; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--control); border-radius: 4px; padding: 5px 8px; min-height: 38px; max-width: 100%;
+}
+.filters .is-set { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.btn-quiet {
+  color: var(--accent); background: none; border: 1px solid transparent; border-radius: 4px;
+  padding: 5px 10px; min-height: 38px; cursor: pointer; font-size: 0.95rem;
+}
+.btn-quiet:hover { background: var(--accent-wash); text-decoration: underline; }
+.result-count { margin: 8px 0 20px; color: var(--ink-2); font-size: 0.95rem; }
+
+/* ---------- panels ---------- */
+.panel {
+  background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius);
+  padding: 20px 20px 16px; margin-bottom: 20px;
+}
+.panel-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+.panel h2 { font-size: 1.375rem; font-weight: 600; }
+.panel-sub { margin: 2px 0 0; color: var(--ink-2); font-size: 0.95rem; max-width: 72ch; }
+
+/* Two panels side by side on wide screens, stacked on narrow ones. */
+.panel-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 0 20px; }
+
+/* ---------- type colours ---------- */
+/* Anything carrying a type id gets that type's colour as --c (tokens.css).
+   Unknown ids keep the neutral --cat-other. */
+[data-cat] { --c: var(--cat-other); }
+[data-cat="strategy_policy"]   { --c: var(--cat-strategy_policy); }
+[data-cat="regulation_ethics"] { --c: var(--cat-regulation_ethics); }
+[data-cat="governance_body"]   { --c: var(--cat-governance_body); }
+[data-cat="funding_budget"]    { --c: var(--cat-funding_budget); }
+[data-cat="infrastructure"]    { --c: var(--cat-infrastructure); }
+[data-cat="partnership"]       { --c: var(--cat-partnership); }
+[data-cat="deployment"]        { --c: var(--cat-deployment); }
+[data-cat="skilling"]          { --c: var(--cat-skilling); }
+[data-cat="events_outreach"]   { --c: var(--cat-events_outreach); }
+
+/* ---------- ranked bars (by state, by type) ---------- */
+.ranked { list-style: none; margin: 0; padding: 0; }
+.rank-row {
+  all: unset; box-sizing: border-box; cursor: pointer; width: 100%;
+  display: grid; grid-template-columns: minmax(7.5rem, 11rem) 1fr 3ch; align-items: center; gap: 12px;
+  padding: 5px 8px; margin: 0 -8px; border-radius: 4px; min-height: 34px; font-size: 0.95rem;
+}
+.rank-row:hover { background: var(--accent-wash); }
+.rank-row:focus-visible { outline: 3px solid var(--accent); outline-offset: -1px; }
+.rank-row[aria-pressed="true"] { background: var(--highlight-wash); font-weight: 600; }
+.rank-track { height: 10px; }
+.rank-bar { display: block; height: 100%; min-width: 2px; border-radius: 0 4px 4px 0; background: var(--c, var(--bar)); }
+.rank-row.is-zero .rank-bar { min-width: 0; }
+.rank-value { text-align: right; font-variant-numeric: tabular-nums; }
+/* With a choice made, the others step back; their numbers stay at full ink. */
+.ranked.has-choice .rank-row[aria-pressed="false"] .rank-bar { background: color-mix(in oklab, var(--c, var(--bar)) 40%, var(--surface)); }
+
+/* ---------- collapsible panel: a heading holding a button (main.js initDisclosures) ---------- */
+.disclosure {
+  all: unset; box-sizing: border-box; display: flex; align-items: center; gap: 10px;
+  width: 100%; min-height: 32px; cursor: pointer; border-radius: 4px;
+}
+.disclosure::before {
+  content: ""; width: 0.5em; height: 0.5em; flex: none; margin-left: 2px;
+  border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent);
+  transform: rotate(-45deg); transition: transform .15s;
+}
+.disclosure[aria-expanded="true"]::before { transform: rotate(45deg); }
+.disclosure:hover { color: var(--accent); }
+.disclosure:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.matrix-panel { padding-bottom: 20px; }
+.disclosure-body { margin-top: 14px; }
+
+/* ---------- state x type matrix ---------- */
+.matrix-scroll { overflow-x: auto; margin: 0 -4px; padding: 4px; }
+.matrix { border-collapse: separate; border-spacing: 2px; font-variant-numeric: tabular-nums; min-width: 880px; width: 100%; }
+.matrix th { font-weight: 500; font-size: 0.85rem; color: var(--ink-2); text-align: left; }
+.matrix thead th { vertical-align: bottom; padding: 0 4px 6px; line-height: 1.2; }
+.matrix thead th.num { text-align: right; }
+.matrix thead .axis-btn { border-bottom: 3px solid var(--c, transparent); border-radius: 3px 3px 0 0; }
+.matrix .axis-btn {
+  all: unset; cursor: pointer; display: block; border-radius: 3px; padding: 2px;
+}
+.matrix .axis-btn:hover, .matrix .axis-btn[aria-pressed="true"] { color: var(--accent); text-decoration: underline; }
+.matrix .axis-btn[aria-pressed="true"] { font-weight: 700; }
+.matrix .axis-btn:focus-visible { outline: 3px solid var(--accent); }
+.matrix tbody th { position: sticky; left: 0; z-index: 1; background: var(--surface); padding-right: 10px; white-space: nowrap; font-size: 0.95rem; color: var(--ink); }
+.matrix td.cell { padding: 0; }
+.cell-btn {
+  all: unset; box-sizing: border-box; display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 38px; min-width: 58px; border-radius: 3px; cursor: pointer; font-size: 0.95rem;
+  background: var(--bg); color: var(--fg);  /* set per cell from the ramp, see matrix.js */
+}
+.cell-btn:hover { box-shadow: inset 0 0 0 2px var(--ink); }
+.cell-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; }
+.cell-btn[aria-pressed="true"] { box-shadow: inset 0 0 0 2px var(--surface), 0 0 0 3px var(--ink); font-weight: 700; }
+/* When a state or type is chosen, fade the fill of cells outside its row and column.
+   Only the fill fades: the number switches to full ink, which stays >= 4.5:1 on
+   any faded step in both themes. (Opacity would fade the text too.) */
+.matrix.has-focus tbody tr:not(.in-focus) .cell-btn:not(.in-focus) {
+  background: color-mix(in oklab, var(--bg) 40%, var(--surface));
+  color: var(--ink);
+}
+.matrix .total { text-align: right; padding-left: 12px; white-space: nowrap; font-size: 0.95rem; }
+
+.scale { display: flex; align-items: flex-start; gap: 10px; flex-wrap: wrap; margin-top: 12px; font-size: 0.85rem; color: var(--ink-2); }
+.scale ol { display: flex; gap: 2px; list-style: none; margin: 0; padding: 0; }
+.scale li { width: 50px; text-align: center; font-size: 0.75rem; font-variant-numeric: tabular-nums; }
+.scale .sw { display: block; height: 12px; border-radius: 2px; margin-bottom: 2px; }
+
+/* ---------- monthly bars ---------- */
+.timechart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.timechart .grid { stroke: var(--rule); }
+.timechart .base { stroke: var(--control); }
+.timechart .tick { fill: var(--ink-3); font-size: 12px; font-variant-numeric: tabular-nums; }
+.timechart .label { fill: var(--ink-2); font-size: 12px; font-variant-numeric: tabular-nums; }
+.timechart .bar { fill: var(--bar); }
+.timechart .hit { fill: transparent; }
+.timechart .hit:hover + .bar { fill: var(--bar-hover); }
+
+details.data-table { margin-top: 10px; }
+details.data-table summary { cursor: pointer; color: var(--accent); font-size: 0.95rem; width: fit-content; }
+details.data-table table { margin-top: 8px; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: 0.95rem; }
+details.data-table th, details.data-table td { padding: 3px 18px 3px 0; border-bottom: 1px solid var(--rule); text-align: left; }
+details.data-table td { text-align: right; }
+
+.chart-note { margin: 6px 0 0; font-size: 0.875rem; color: var(--ink-2); }
+
+/* ---------- record list ---------- */
+.item-list { list-style: none; margin: 0; padding: 0; }
+.item {
+  display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px;
+  padding: 14px 0; border-top: 1px solid var(--rule);
+}
+.item:first-child { border-top: 0; padding-top: 4px; }
+/* The tile is the fallback: the state code shows when there is no image or it fails. */
+.thumb {
+  position: relative; aspect-ratio: 3 / 2; border-radius: 4px; overflow: hidden;
+  background: var(--accent-wash); display: grid; place-items: center;
+}
+.thumb-code { font-weight: 700; font-size: 1.25rem; letter-spacing: 0.04em; color: var(--accent); }
+.thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: var(--accent-wash); }
+/* Headlines: larger, looser and not underlined, so a column of them scans easily.
+   They are links by position (every headline is one); hover and focus add the underline. */
+.item-title { font-size: 1.1875rem; font-weight: 600; line-height: 1.35; max-width: 68ch; text-wrap: pretty; }
+.item-title a { color: var(--ink); text-decoration: none; }
+.item-title a:hover, .item-title a:focus-visible { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; }
+.item-title:focus { outline: none; }
+.item-title:focus-visible { outline: 3px solid var(--accent); }
+.item-summary { margin: 4px 0 0; color: var(--ink-2); max-width: 75ch; }
+.item-meta { margin: 6px 0 0; font-size: 0.9rem; color: var(--ink-2); }
+.outlets { font-size: 0.9rem; color: var(--ink-2); }
+.outlets summary { cursor: pointer; color: var(--accent); width: fit-content; }
+.outlets p { margin: 2px 0 0; max-width: 75ch; }
+
+/* ---------- AI briefs, above the list ---------- */
+.briefs { margin: 0 0 16px; padding: 14px 16px; border-left: 4px solid var(--highlight); background: var(--highlight-wash); border-radius: 0 var(--radius) var(--radius) 0; }
+.brief + .brief { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--rule); }
+.brief h3 { font-size: 1.0625rem; font-weight: 600; }
+.brief-label { margin: 2px 0 6px; font-size: 0.85rem; color: var(--ink-2); }
+.brief-text { margin: 0; max-width: 75ch; line-height: 1.6; }
+.cites { font-size: 0.8em; white-space: nowrap; color: var(--ink-2); }
+.cite { padding: 0 1px; }
+.brief-note { margin: 10px 0 0; font-size: 0.85rem; color: var(--ink-2); }
+.item-tags { display: flex; flex-wrap: wrap; gap: 4px 6px; list-style: none; margin: 6px 0 0; padding: 0; font-size: 0.85rem; }
+/* Tags: a tint of the type's colour with a solid edge, like a dyed selvedge.
+   The primary type is a deeper tint and bold; text is always full ink. */
+.tag { padding: 0 7px 0 6px; border-radius: 2px; border-left: 4px solid var(--c);
+  background: color-mix(in oklab, var(--c) 12%, var(--surface)); color: var(--ink); }
+.tag.primary { background: color-mix(in oklab, var(--c) 26%, var(--surface)); font-weight: 600; }
+/* Shown only when more than one outlet covered it, so heavy coverage stands out. */
+.item-tags .coverage { padding: 0 7px; border-radius: 2px; border: 1px solid var(--control); color: var(--ink); font-weight: 600; }
+.item-tags .sector { color: var(--ink-2); padding: 0 4px; }
+.empty { color: var(--ink-2); }
+.more { margin-top: 10px; }
+
+/* ---------- footer, errors, tooltip ---------- */
+/* Full-width footer, opened by the same sari border as the masthead, mirrored. */
+.site-footer { margin-top: 24px; background: var(--surface); border-top: 1px solid var(--rule); color: var(--ink-2); }
+.site-footer::before {
+  content: ""; display: block; height: 11px;
+  background:
+    conic-gradient(from -45deg at 50% 100%, var(--highlight) 90deg, transparent 0) 0 100% / 16px 8px repeat-x,
+    linear-gradient(var(--accent), var(--accent)) 0 0 / 100% 2px no-repeat;
+}
+.site-footer-inner {
+  max-width: 1180px; margin: 0 auto; padding: 28px var(--gutter) 20px;
+  display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 24px 48px;
+}
+.site-footer h2 { font-size: 1.0625rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+.site-footer p { margin: 0 0 8px; }
+.footer-about { max-width: 68ch; font-size: 0.95rem; }
+.footer-links ul { list-style: none; margin: 0; padding: 0; }
+.footer-links li { margin-bottom: 6px; }
+/* Bottom bar: update date on the left; back-to-top and the GitHub mark on the right. */
+.footer-bar {
+  max-width: 1180px; margin: 0 auto; padding: 10px var(--gutter) 24px;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 24px;
+  font-size: 0.9rem;
+}
+.footer-bar p { margin: 0; }
+.footer-bar::before { content: ""; flex: 1 0 100%; border-top: 1px solid var(--rule); margin-bottom: 4px; }
+.footer-bar-links { display: flex; align-items: center; gap: 16px; }
+/* Icon-only link: 32px target, ink colour, accent on hover. */
+.icon-link { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 6px; color: var(--ink); }
+.icon-link:hover { color: var(--accent); background: var(--accent-wash); }
+@media (max-width: 720px) { .site-footer-inner { grid-template-columns: 1fr; } }
+
+.load-error { border: 2px solid var(--mock); background: var(--mock-wash); border-radius: var(--radius); padding: 14px 16px; }
+.load-error code { font-size: 0.95em; }
+
+.tooltip {
+  position: fixed; z-index: 20; pointer-events: none; max-width: 260px;
+  background: var(--ink); color: var(--page); border-radius: 4px; padding: 6px 9px;
+  font-size: 0.875rem; line-height: 1.35;
+}
+.tooltip b { font-weight: 600; }
+
+/* ---------- small screens ---------- */
+@media (max-width: 640px) {
+  .filters label { flex: 1 1 140px; }
+  .panel { padding: 16px 12px 12px; }
+  .item { grid-template-columns: 76px minmax(0, 1fr); gap: 12px; }
+  .thumb-code { font-size: 1rem; }
+}
+
+/* ---------- user preferences ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .disclosure::before { transition: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cell-btn { transition: background-color .15s; }
+}
+@media (forced-colors: active) {
+  .cell-btn { border: 1px solid CanvasText; }
+  .cell-btn[aria-pressed="true"], .toggle-group button[aria-pressed="true"] { outline: 3px solid Highlight; }
+  .rank-bar, .timechart .bar { forced-color-adjust: none; background: CanvasText; fill: CanvasText; }
+  .rank-row[aria-pressed="true"] { outline: 3px solid Highlight; }
+  .mock-banner, .load-error { border-color: CanvasText; }
+  .masthead::after, .site-footer::before { display: none; }
+}
+@media print {
+  .filters, .toggle-group, .skip-link, .more, .tooltip, .disclosure::before { display: none !important; }
+  .panel { break-inside: avoid; }
+}

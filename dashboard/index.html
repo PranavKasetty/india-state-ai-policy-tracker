@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Indian States AI Policy Tracker</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>
+    // Apply a saved theme before first paint so the page does not flash. See js/theme.js.
+    try { var t = localStorage.getItem("tracker-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Plain scripts, not ES modules, so the page works when opened straight from disk
+       (browsers block modules on file://). Deferred scripts run in this order after
+       the page is parsed: data first, then helpers, then views, then main.js.
+       data.js sets window.TRACKER_DATA (written by pipeline/export.py; contract in schema.py). -->
+  <script src="data.js" defer></script>
+  <script src="js/format.js" defer></script>
+  <script src="js/query.js" defer></script>
+  <script src="js/dataset.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/theme.js" defer></script>
+  <script src="js/tooltip.js" defer></script>
+  <script src="js/views/filters.js" defer></script>
+  <script src="js/views/rankedBars.js" defer></script>
+  <script src="js/views/matrix.js" defer></script>
+  <script src="js/views/timechart.js" defer></script>
+  <script src="js/views/itemsList.js" defer></script>
+  <script src="js/views/briefs.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the data</a>
+  <div class="page" id="top">
+    <p class="mock-banner" id="mock-banner" hidden>
+      <strong>Mock data.</strong> Headlines, outlets and counts on this page are synthetic
+      placeholders until the pipeline produces the real dataset.
+    </p>
+
+    <header class="masthead">
+      <div class="brand">
+        <!-- Same drawing as favicon.svg; keep them in step. Decorative: the h1 names the page. -->
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="7" fill="#0e6e6e"/><circle cx="16" cy="16" r="10" fill="none" stroke="#fffdf8" stroke-width="1.5" stroke-opacity="0.9"/><g stroke="#fffdf8" stroke-width="1.2" stroke-opacity="0.75"><line x1="16" y1="16" x2="16" y2="6"/><line x1="16" y1="16" x2="23.07" y2="8.93"/><line x1="16" y1="16" x2="26" y2="16"/><line x1="16" y1="16" x2="23.07" y2="23.07"/><line x1="16" y1="16" x2="16" y2="26"/><line x1="16" y1="16" x2="8.93" y2="23.07"/><line x1="16" y1="16" x2="6" y2="16"/><line x1="16" y1="16" x2="8.93" y2="8.93"/></g><g fill="#fffdf8"><circle cx="16" cy="6" r="1.9"/><circle cx="23.07" cy="8.93" r="1.9"/><circle cx="26" cy="16" r="1.9"/><circle cx="23.07" cy="23.07" r="1.9"/><circle cx="16" cy="26" r="1.9"/><circle cx="8.93" cy="23.07" r="1.9"/><circle cx="6" cy="16" r="1.9"/><circle cx="8.93" cy="8.93" r="1.9"/></g><circle cx="16" cy="16" r="3.6" fill="#f2b544"/></svg>
+        <div>
+          <h1>Indian States AI Policy Tracker</h1>
+          <p class="lede" id="lede"></p>
+        </div>
+      </div>
+      <div class="toggle-group" role="group" aria-labelledby="theme-label" id="theme-toggle">
+        <span id="theme-label">Theme</span>
+        <span class="buttons">
+          <button type="button" data-theme-choice="system">System</button>
+          <button type="button" data-theme-choice="light">Light</button>
+          <button type="button" data-theme-choice="dark">Dark</button>
+        </span>
+      </div>
+    </header>
+
+    <form class="filters" id="filters" role="search" aria-label="Filter developments" data-noun="Filter {many}">
+      <label>State
+        <select name="state"><option value="">All states</option></select>
+      </label>
+      <label>Type of activity
+        <select name="cat"><option value="">All types</option></select>
+      </label>
+      <label>Sector
+        <select name="sector"><option value="">All sectors</option></select>
+      </label>
+      <label>From
+        <select name="from"></select>
+      </label>
+      <label>To
+        <select name="to"></select>
+      </label>
+      <label class="grow">Search headlines and summaries
+        <input type="search" name="q" placeholder="For example: chatbot, MoU, police" autocomplete="off">
+      </label>
+      <button type="reset" class="btn-quiet">Clear filters</button>
+    </form>
+    <p class="result-count" id="result-count" role="status"></p>
+
+    <main id="main" tabindex="-1">
+      <div class="panel-pair">
+        <section class="panel" aria-labelledby="states-title">
+          <div class="panel-head">
+            <div>
+              <h2 id="states-title">By state</h2>
+              <p class="panel-sub">Select a state to filter the page and read its AI summary.</p>
+            </div>
+          </div>
+          <ol class="ranked" id="state-bars" aria-labelledby="states-title"></ol>
+        </section>
+        <section class="panel" aria-labelledby="types-title">
+          <div class="panel-head">
+            <div>
+              <h2 id="types-title">By type of activity</h2>
+              <p class="panel-sub" data-noun="One {one} can have several types, so these add up to more than the total.">One development can have several types, so these add up to more than the total.</p>
+            </div>
+          </div>
+          <ol class="ranked" id="type-bars" aria-labelledby="types-title"></ol>
+        </section>
+      </div>
+
+      <section class="panel" aria-labelledby="time-title">
+        <div class="panel-head">
+          <div>
+            <h2 id="time-title" data-noun="{Many} per month">Developments per month</h2>
+            <p class="panel-sub" id="time-sub"></p>
+          </div>
+        </div>
+        <div class="timechart" id="timechart"></div>
+        <p class="chart-note" id="time-note" hidden></p>
+        <details class="data-table">
+          <summary>Show the numbers</summary>
+          <table id="time-table"></table>
+        </details>
+      </section>
+
+      <section class="panel matrix-panel" aria-labelledby="matrix-title">
+        <!-- A heading containing a button, not <details>: a heading inside <summary> loses its role. -->
+        <h2 id="matrix-title"><button type="button" class="disclosure" aria-expanded="false" aria-controls="matrix-body">Compare every state and type</button></h2>
+        <div class="disclosure-body" id="matrix-body" hidden>
+        <div class="panel-head">
+          <p class="panel-sub" id="matrix-sub"></p>
+          <div class="toggle-group" role="group" aria-labelledby="values-label" id="matrix-mode">
+            <span id="values-label">Show</span>
+            <span class="buttons">
+              <button type="button" data-mode="count" data-noun="Count">Count</button>
+              <button type="button" data-mode="share" data-noun="Share of state's {many}">Share of state's developments</button>
+            </span>
+          </div>
+        </div>
+        <div class="matrix-scroll" tabindex="0" role="region" aria-label="State by type table, scrolls sideways">
+          <table class="matrix" id="matrix"></table>
+        </div>
+        <div class="scale" id="matrix-scale"></div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="items-title">
+        <div class="panel-head">
+          <div>
+            <h2 id="items-title" data-noun="{Many}">Developments</h2>
+            <p class="panel-sub" id="items-sub"></p>
+          </div>
+          <div class="toggle-group" role="group" aria-labelledby="sort-label" id="items-sort">
+            <span id="sort-label">Sort by</span>
+            <span class="buttons">
+              <button type="button" data-sort="newest">Newest</button>
+              <button type="button" data-sort="covered">Most covered</button>
+              <button type="button" data-sort="trending">Trending</button>
+            </span>
+          </div>
+        </div>
+        <!-- AI-written summary of the chosen state and/or type (js/views/briefs.js). -->
+        <div class="briefs" id="briefs" hidden></div>
+        <ol class="item-list" id="items-list" aria-labelledby="items-title"></ol>
+        <p class="empty" id="items-empty" hidden data-noun="No {many} match these filters. Clear a filter or widen the date range.">No developments match these filters. Clear a filter or widen the date range.</p>
+        <button type="button" class="btn-quiet more" id="items-more" hidden></button>
+      </section>
+    </main>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <section class="footer-about" aria-labelledby="about-title">
+        <h2 id="about-title">About the data</h2>
+        <p data-noun="Each {one} is an action on AI or robotics by a state government, or by the central government in a specific state: announcing, funding, signing, deploying, regulating, training, hosting or endorsing. Private-sector news with no government involved, crime stories, opinion pieces and social media posts are left out.">Each development is an action on AI or robotics by a state government, or by the central government in a specific state: announcing, funding, signing, deploying, regulating, training, hosting or endorsing. Private-sector news with no government involved, crime stories, opinion pieces and social media posts are left out.</p>
+        <p data-noun="Headlines come from daily Google News searches for each state in English-language Indian outlets, from 1 November 2025. A language model checks each headline against a written rubric and assigns its types and sector; keyword rules stand in where it has not. Reports of the same announcement by several outlets are merged into one {one}, shown under the earliest report.">Headlines come from daily Google News searches for each state in English-language Indian outlets, from 1 November 2025. A language model checks each headline against a written rubric and assigns its types and sector; keyword rules stand in where it has not. Reports of the same announcement by several outlets are merged into one development, shown under the earliest report.</p>
+        <p>Known gaps: only headlines are read, not full articles, and regional-language coverage is missed. Counts measure news coverage of government activity, not the activity itself, and some entries will be misclassified. The AI summaries draw only on this dataset and cite their sources; check them before quoting.</p>
+      </section>
+      <section class="footer-links" aria-labelledby="links-title">
+        <h2 id="links-title">Data and code</h2>
+        <!-- Pages publishes only dashboard/, so the full dataset is linked from the repo,
+             where the daily workflow commits data/output/. -->
+        <ul>
+          <li><a href="https://github.com/PranavKasetty/india-state-ai-policy-tracker/raw/main/data/output/records.csv" data-noun="Download all {many} (CSV)">Download all developments (CSV)</a></li>
+          <li><a href="https://github.com/PranavKasetty/india-state-ai-policy-tracker/raw/main/data/output/records.xlsx">Download as Excel, with a data dictionary</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="footer-bar">
+      <p id="generated"></p>
+      <p class="footer-bar-links">
+        <a href="#top">Back to top</a>
+        <!-- GitHub mark: Octicons "mark-github" (MIT). Icon-only, so the name comes from aria-label. -->
+        <a class="icon-link" href="https://github.com/PranavKasetty/india-state-ai-policy-tracker"
+           aria-label="Source code on GitHub" title="Source code on GitHub">
+          <svg viewBox="0 0 16 16" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
+</body>
+</html>

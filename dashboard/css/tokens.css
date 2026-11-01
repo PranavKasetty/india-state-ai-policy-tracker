@@ -1,0 +1,75 @@
+/* Design tokens. Every colour is defined once, as light-dark(<light>, <dark>).
+   The theme follows the OS unless the viewer picks one: js/theme.js sets
+   data-theme on <html>, which pins color-scheme and so picks a side here.
+
+   Palette, from Indian textiles and their dyes:
+     khadi paper  the page: undyed handspun cotton, warm off-white
+     peacock      (mor) teal: links, focus, bars, and the one-hue scale for counts,
+                  so a deeper teal always means more activity
+     marigold     (genda) the highlight: selected controls, the primary type tag,
+                  the sari-border band under the title
+     madder       the red of block-printed cloth: used only for the "Mock data" flag
+   Dark mode keeps the same hues on a teal-black ground.
+
+   Contrast (WCAG 2.2), checked when these values were chosen:
+     text on surface/page        >= 4.5:1 (ink-3 is the lowest: 5.08 light, 5.42 dark)
+     control borders, chart bars >= 3:1 against the surface
+     --sN-ink on --sN            >= 4.5:1 for every ramp step
+   Re-check if you change a value. */
+:root {
+  color-scheme: light dark;
+
+  --page:           light-dark(#f5f0e6, #121614);
+  --surface:        light-dark(#fffdf8, #1a1f1d);
+  --ink:            light-dark(#1f1a14, #f2ede4);
+  --ink-2:          light-dark(#5a5045, #c9c1b4);
+  --ink-3:          light-dark(#6f6457, #9a9284);
+  --rule:           light-dark(#e8dfcf, #2a302d);   /* decorative dividers only */
+  --rule-strong:    light-dark(#d6c9b1, #3a413d);   /* decorative dividers only */
+  --control:        light-dark(#8a7d6b, #6f776f);   /* form borders: >= 3:1 */
+
+  --accent:         light-dark(#0e6e6e, #5ec4bb);   /* peacock: links, focus */
+  --on-accent:      light-dark(#fffdf8, #10201e);
+  --accent-wash:    light-dark(#e3f1ef, #1d3533);
+  --highlight:      light-dark(#f2b544, #f2b544);   /* marigold: selected things */
+  --on-highlight:   #1f1a14;
+  --highlight-wash: light-dark(#fbecc9, #3a2f17);
+  --mock:           light-dark(#9c2f1f, #f0a48f);   /* madder */
+  --mock-wash:      light-dark(#f9e3dc, #3a201a);
+  --bar:            light-dark(#1d7a74, #3fa79e);
+  --bar-hover:      light-dark(#0c4245, #b3e0d9);
+
+  /* Sequential ramp: --s0 means zero, --s1..--s7 run from little to most activity.
+     --sN-ink is the text colour that is legible on that step. */
+  --s0: light-dark(#f0ece3, #232927);  --s0-ink: var(--ink);
+  --s1: light-dark(#dcefec, #183634);  --s1-ink: var(--ink);
+  --s2: light-dark(#b5dcd6, #1d4a47);  --s2-ink: var(--ink);
+  --s3: light-dark(#7fc0b8, #22625c);  --s3-ink: var(--ink);
+  --s4: light-dark(#3d958d, #2b6f68);  --s4-ink: var(--ink);
+  --s5: light-dark(#25786f, #5aa99f);  --s5-ink: light-dark(#ffffff, #10201e);
+  --s6: light-dark(#175f5a, #79c0b6);  --s6-ink: light-dark(#ffffff, #10201e);
+  --s7: light-dark(#0c4245, #b3e0d9);  --s7-ink: light-dark(#ffffff, #10201e);
+
+  /* One colour per type of activity, from Indian dyes, so a type is recognisable on
+     tags, the "By type" bars and the matrix headers. Colour is only an aid: the
+     label is always shown (ten hues cannot all be told apart with colour blindness).
+     Keys are category ids from the data; style.css maps [data-cat] to these.
+     An id without a colour here falls back to --cat-other.
+     Contrast: every hue >= 3.9:1 on the surface; ink on a tag tint >= 7.7:1. */
+  --cat-strategy_policy:   light-dark(#3b4cc0, #8796f0);  /* indigo (neel) */
+  --cat-regulation_ethics: light-dark(#b3261e, #f07a6e);  /* madder */
+  --cat-governance_body:   light-dark(#7a2e6e, #d58cc8);  /* jamun */
+  --cat-funding_budget:    light-dark(#a07800, #e6c14d);  /* turmeric */
+  --cat-infrastructure:    light-dark(#8a4b24, #d39566);  /* laterite */
+  --cat-partnership:       light-dark(#4f7a1f, #9cc66a);  /* mehendi */
+  --cat-deployment:        light-dark(#c85d10, #f39a52);  /* saffron */
+  --cat-skilling:          light-dark(#1f7fb8, #6db8e6);  /* sky */
+  --cat-events_outreach:   light-dark(#c2185b, #f06aa0);  /* rani pink */
+  --cat-other:             light-dark(#7d766b, #9a9284);  /* undyed */
+
+  --font: "Mukta", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius: 6px;
+  --gutter: 16px;
+}
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"]  { color-scheme: dark; }
