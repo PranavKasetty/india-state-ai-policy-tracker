@@ -31,7 +31,8 @@ STATE_ACTOR_VERBS = (r"(launch|sign|ink|unveil|roll|introduc|approv|announc|set|
 
 EXCLUDE_RE = {
     "crime story (deepfake/fraud case)": re.compile(
-        r"\b(arrest|booked|books|FIR|held for|nabbed|duped|cheated|morphed|extort|remand|"
+        # (?![a-z]) stops "FIR" matching "first" and "books" matching "bookstore".
+        r"\b(arrest|booked|books(?![a-z])|FIR(?![a-z])|held for|nabbed|duped|cheated|morphed|extort|remand|fraud|scam|"
         r"case against|AI[- ](generated )?(video|image|clip)s? (of|linking|showing)|"
         r"(deepfake|fake|viral) (AI )?(video|image|clip))", re.I),
     "politics, not policy": re.compile(

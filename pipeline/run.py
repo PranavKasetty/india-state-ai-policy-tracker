@@ -10,13 +10,23 @@ import argparse
 import hashlib
 from datetime import date, timedelta
 
-from . import collect, enrich, export, llm
+from . import briefs, collect, enrich, export, llm
 from .classify import CATEGORY_LABELS, SECTORS, categorise, relevance
 from .dates import normalize_date
 from .dedupe import cluster
 from .states import state_code
 
 BACKFILL_START = date(2025, 11, 1)
+SOCIAL_SOURCES = {"LinkedIn", "Instagram", "Facebook", "YouTube", "X", "Threads"}
+# Pakistani outlets: their "Punjab" is Pakistan's province, and headlines often don't say so.
+# ("The Tribune" is Indian, Chandigarh; "The Express Tribune" is Pakistani.)
+FOREIGN_SOURCES = {"ProPakistani", "The Express Tribune", "TechJuice", "Business Recorder", "Dawn",
+                   "The Nation (Pakistan )", "Digital Pakistan", "Pakistan Today", "Dunya News",
+                   "Geo News", "ARY News", "SAMAA", "Samaa TV", "The News International", "Daily Times",
+                   "Aaj News", "Bol News", "Associated Press of Pakistan", "Daily Pakistan",
+                   "Mettis Global", "Pakistan Observer", "Arab News PK", "UrduPoint", "Profit by Pakistan Today",
+                   "PhoneWorld", "https://cpecinfo.com/", "Aaj English TV", "The Friday Times", "LUMS",
+                   "Academia Mag"}
 
 # Google News outlet names that vary for the same outlet.
 SOURCE_ALIASES = {"Times of India": "The Times of India", "TOI": "The Times of India",
@@ -31,8 +41,17 @@ def classify_all(raw: list[dict], use_llm: bool) -> tuple[list[dict], list[dict]
     decided = []
     for it in raw:
         ok, reason, state, evidence = relevance(it["title"], collect.COVERED_STATES)
+        iso, _ = normalize_date(it["published_raw"])
+        if it["source_name"] in SOCIAL_SOURCES:  # posts, not news reports
+            ok, reason = False, "social media post"
+        elif it["source_name"] in FOREIGN_SOURCES or "pakistan" in it["source_name"].lower():
+            ok, reason = False, "foreign outlet (Pakistan)"
+        elif iso and iso < BACKFILL_START.isoformat():  # Google's after: filter is not strict
+            ok, reason = False, "dated before the tracking window"
         decided.append((it, ok, reason, state, evidence))
-    candidates = [it for it, _, reason, state, _ in decided if state and "no AI" not in reason]
+    hard_out = ("no AI", "social media", "before the tracking window", "foreign outlet")
+    candidates = [it for it, _, reason, state, _ in decided
+                  if state and not any(h in reason for h in hard_out)]
     labels = llm.label(candidates) if use_llm else {}
 
     kept, excluded, agree = [], [], 0
@@ -44,7 +63,7 @@ def classify_all(raw: list[dict], use_llm: bool) -> tuple[list[dict], list[dict]
                 "variants": it.get("variants", [])}
         primary, tags, sector = categorise(it["title"])
         lab, by = labels.get(it["guid"]), "rules"
-        if lab and lab.get("in_scope") is not None:
+        if lab and lab.get("in_scope") is not None and not any(h in reason for h in hard_out):
             agree += bool(lab["in_scope"]) == ok
             ok, reason, by = bool(lab["in_scope"]), f"llm: {lab.get('reason') or ''}", "llm"
             if ok:
@@ -108,7 +127,8 @@ def main() -> None:
         r["summary"] = e.get("summary") or r["title"]
         r["summary_source"] = e.get("summary_source", "headline")
         r["image_url"] = e.get("image_url", "")
-    export.write_all(records, sources, excluded, audit)
+    briefs_store = {} if args.no_llm else briefs.build(records)
+    export.write_all(records, sources, excluded, audit, briefs_store)
 
 
 if __name__ == "__main__":
