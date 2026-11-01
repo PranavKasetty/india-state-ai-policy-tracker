@@ -1,0 +1,2 @@
+# Only third-party dependency. Everything else is the Python standard library.
+openpyxl>=3.1
