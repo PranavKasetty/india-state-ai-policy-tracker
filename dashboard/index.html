@@ -106,35 +106,47 @@
     </header>
 
     <form class="filters" id="filters" role="search" aria-label="Filter developments" data-noun="Filter {many}">
-      <label>State
-        <select name="state"><option value="">All states</option></select>
-      </label>
-      <label>Type of activity
-        <select name="cat"><option value="">All types</option></select>
-      </label>
-      <label>Sector
-        <select name="sector"><option value="">All sectors</option></select>
-      </label>
-      <label>From
-        <select name="from"></select>
-      </label>
-      <label>To
-        <select name="to"></select>
-      </label>
-      <label class="grow">Search headlines and summaries
+      <!-- On phones the fields fold behind this button (search stays out); on wider
+           screens the button is hidden and the fields sit in the row. -->
+      <button type="button" class="filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="filter-fields">Filters</button>
+      <div class="filter-fields" id="filter-fields">
+        <label>State
+          <select name="state"><option value="">All states</option></select>
+        </label>
+        <label>Type of activity
+          <select name="cat"><option value="">All types</option></select>
+        </label>
+        <label>Sector
+          <select name="sector"><option value="">All sectors</option></select>
+        </label>
+        <label>From
+          <select name="from"></select>
+        </label>
+        <label>To
+          <select name="to"></select>
+        </label>
+        <label class="check">
+          <input type="checkbox" name="focus" value="policy">
+          Policy actions only
+        </label>
+      </div>
+      <label class="grow search">Search headlines and summaries
         <input type="search" name="q" placeholder="For example: chatbot, MoU, police" autocomplete="off">
       </label>
       <button type="reset" class="btn-quiet">Clear filters</button>
     </form>
-    <p class="result-count" id="result-count" role="status"></p>
+    <div class="result-bar">
+      <p class="result-count" id="result-count" role="status"></p>
+      <button type="button" class="btn-quiet" id="to-list" data-noun="Go to the {many}">Go to the developments</button>
+    </div>
 
     <main id="main" tabindex="-1">
       <div class="panel-pair">
         <section class="panel" aria-labelledby="states-title">
           <div class="panel-head">
             <div>
-              <h2 id="states-title">By state</h2>
-              <p class="panel-sub">Select a state to filter the page and read its AI summary.</p>
+              <h2 id="states-title">News coverage by state</h2>
+              <p class="panel-sub" data-noun="{Many} reported in the news, per state. Big states and tech hubs get more coverage, so a longer bar does not prove more activity. Select a state to filter the page.">Developments reported in the news, per state. Big states and tech hubs get more coverage, so a longer bar does not prove more activity. Select a state to filter the page.</p>
             </div>
           </div>
           <ol class="ranked" id="state-bars" aria-labelledby="states-title"></ol>
@@ -190,7 +202,7 @@
       <section class="panel" aria-labelledby="items-title">
         <div class="panel-head">
           <div>
-            <h2 id="items-title" data-noun="{Many}">Developments</h2>
+            <h2 id="items-title" data-noun="{Many}" tabindex="-1">Developments</h2>
             <p class="panel-sub" id="items-sub"></p>
           </div>
           <div class="toggle-group" role="group" aria-labelledby="sort-label" id="items-sort">

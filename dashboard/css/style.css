@@ -78,12 +78,24 @@ button { font: inherit; }
   border: 1px solid var(--control); border-radius: 4px; padding: 5px 8px; min-height: 38px; max-width: 100%;
 }
 .filters .is-set { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+/* Wide screens: the fields sit in the row and the phone-only toggle is hidden. */
+.filter-fields { display: contents; }
+.filters-toggle { display: none; }
+.filters label.check {
+  flex-direction: row; align-items: center; gap: 8px; min-height: 38px;
+  color: var(--ink); font-size: 0.95rem; cursor: pointer;
+}
+.filters label.check input { width: 18px; height: 18px; min-height: 0; margin: 0; accent-color: var(--accent); }
+.filters label.check:has(input:checked) { font-weight: 600; }
 .btn-quiet {
   color: var(--accent); background: none; border: 1px solid transparent; border-radius: 4px;
   padding: 5px 10px; min-height: 38px; cursor: pointer; font-size: 0.95rem;
 }
 .btn-quiet:hover { background: var(--accent-wash); text-decoration: underline; }
-.result-count { margin: 8px 0 20px; color: var(--ink-2); font-size: 0.95rem; }
+.result-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 16px; margin: 6px 0 16px; }
+.result-count { margin: 0; color: var(--ink-2); font-size: 0.95rem; }
+#to-list { margin-inline: -10px; }
+#items-title:focus { outline: none; }
 
 /* ---------- panels ---------- */
 .panel {
@@ -194,6 +206,8 @@ button { font: inherit; }
 .timechart .tick { fill: var(--ink-3); font-size: 12px; font-variant-numeric: tabular-nums; }
 .timechart .label { fill: var(--ink-2); font-size: 12px; font-variant-numeric: tabular-nums; }
 .timechart .bar { fill: var(--bar); }
+/* The month still in progress: a light fill and dashed edge, so a short bar is not read as a drop. */
+.timechart .bar.partial { fill: color-mix(in oklab, var(--bar) 35%, var(--surface)); stroke: var(--bar); stroke-width: 1.5; stroke-dasharray: 3 2; }
 .timechart .hit { fill: transparent; }
 .timechart .hit:hover + .bar { fill: var(--bar-hover); }
 
@@ -307,10 +321,38 @@ details.data-table td { text-align: right; }
 
 /* ---------- small screens ---------- */
 @media (max-width: 640px) {
-  .filters label { flex: 1 1 140px; }
+  /* Filters: search on its own line, then "Filters" and "Clear"; the fields open below. */
+  .filters { gap: 8px; padding: 12px 0; }
+  .filters .search { order: 0; flex: 1 1 100%; }
+  .filters-toggle {
+    order: 1; display: inline-flex; align-items: center; gap: 8px;
+    min-height: 40px; padding: 6px 14px; border: 1px solid var(--control); border-radius: 4px;
+    background: var(--surface); color: var(--ink); font-size: 0.95rem; font-weight: 600; cursor: pointer;
+  }
+  .filters-toggle::after {
+    content: ""; width: 0.45em; height: 0.45em; margin-top: -0.2em;
+    border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(45deg);
+  }
+  .filters-toggle[aria-expanded="true"]::after { transform: rotate(-135deg); margin-top: 0.2em; }
+  .filters [type="reset"] { order: 2; }
+  .filter-fields { order: 3; display: none; flex: 1 1 100%; }
+  .filters.is-open .filter-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 12px; padding-top: 4px; }
+  /* State | Type, then Sector across, so From | To share a row. */
+  .filter-fields label:nth-child(3), .filter-fields label.check { grid-column: 1 / -1; }
+  .filter-fields select { width: 100%; }
+
+  .masthead { gap: 12px; }
+  .lede { font-size: 1.0625rem; }
   .panel { padding: 16px 12px 12px; }
-  .item { grid-template-columns: 76px minmax(0, 1fr); gap: 12px; }
-  .thumb-code { font-size: 1rem; }
+  .panel h2 { font-size: 1.25rem; }
+  .rank-row { grid-template-columns: minmax(7rem, 9.5rem) 1fr 3ch; gap: 10px; }
+  .item { grid-template-columns: 64px minmax(0, 1fr); gap: 12px; }
+  .item-title { font-size: 1.0625rem; }
+  .item-summary { font-size: 0.95rem; }
+  .thumb-code { font-size: 0.95rem; }
+  .briefs { padding: 12px 12px 12px 16px; }
+  .cell-btn { height: 34px; min-width: 46px; font-size: 0.875rem; }
+  .matrix { min-width: 0; }
 }
 
 /* ---------- user preferences ---------- */
@@ -344,6 +386,6 @@ details.data-table td { text-align: right; }
   .briefs::before { display: none; }
 }
 @media print {
-  .filters, .toggle-group, .skip-link, .more, .tooltip, .disclosure::before { display: none !important; }
+  .filters, .toggle-group, .skip-link, .more, .tooltip, .disclosure::before, #to-list { display: none !important; }
   .panel { break-inside: avoid; }
 }

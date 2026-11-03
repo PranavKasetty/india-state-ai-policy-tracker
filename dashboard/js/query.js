@@ -4,8 +4,15 @@
   "use strict";
   /** The filter keys and their "unset" values. Order is the URL order. */
   function defaultFilters(data) {
-    return { state: "", cat: "", sector: "", from: data.months[0] || "", to: data.months.at(-1) || "", q: "" };
+    return { state: "", cat: "", sector: "", focus: "", from: data.months[0] || "", to: data.months.at(-1) || "", q: "" };
   }
+
+  // "Policy actions only" (focus=policy): types that commit a government to something
+  // (a policy, a rule, a body, money or a signed agreement), leaving out deployments,
+  // infrastructure, skilling and events. Types come from headlines, so an announced
+  // plan counts as well as an adopted one.
+  const POLICY_TYPES = ["strategy_policy", "regulation_ethics", "governance_body", "funding_budget", "partnership"];
+  const FOCUS = { policy: (it) => it.tags.some((t) => POLICY_TYPES.includes(t)) };
 
   const isFullRange = (data, filters) =>
     filters.from === data.months[0] && filters.to === data.months.at(-1);
@@ -23,6 +30,7 @@
       (!use("state") || it.state === filters.state) &&
       (!use("cat") || it.tags.includes(filters.cat)) &&
       (!use("sector") || it.sector === filters.sector) &&
+      (!use("focus") || (FOCUS[filters.focus] || (() => true))(it)) &&
       (it.month ? it.month >= filters.from && it.month <= filters.to : full) &&
       (!q || it.search.includes(q)));
   }
@@ -116,6 +124,6 @@
     return Date.UTC(d.getFullYear(), d.getMonth(), d.getDate());
   }
 
-  T.query = { defaultFilters, isFullRange, filterItems, monthsInRange, countByMonth, stateByCategory, rankBy,
+  T.query = { defaultFilters, isFullRange, POLICY_TYPES, FOCUS_VALUES: Object.keys(FOCUS), filterItems, monthsInRange, countByMonth, stateByCategory, rankBy,
     sortItems, trendScore, outlets, SORT_MODES: Object.keys(SORTS) };
 })(window.Tracker = window.Tracker || {});

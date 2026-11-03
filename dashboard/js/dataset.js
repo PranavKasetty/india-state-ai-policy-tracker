@@ -17,15 +17,35 @@
 
     const { meta } = raw;
     const items = raw.items.map(prepareItem);
+    const months = periodMonths(meta, items);
     return {
       meta,
       items,
-      months: periodMonths(meta, items),
+      months,
+      partialMonth: partialMonth(meta, months),
       categoryLabel: Object.fromEntries(meta.categories.map((c) => [c.id, c.label])),
     };
   }
 
-  function prepareItem(it) {
+  /** The last month, as { month, through } when the data stops before its end; else null. */
+  function partialMonth(meta, months) {
+    const end = meta.period_end;
+    if (!months.length || !/^\d{4}-\d{2}-\d{2}/.test(end) || end.slice(0, 7) !== months.at(-1)) return null;
+    const [y, m, d] = end.slice(0, 10).split("-").map(Number);
+    const days = new Date(Date.UTC(y, m, 0)).getUTCDate();
+    return d < days ? { month: months.at(-1), through: end.slice(0, 10) } : null;
+  }
+
+  // Some publishers' pages were read as Latin-1 when they were UTF-8, so "’" arrived
+  // as "â€™". Re-decode such text; anything that is not a clean round trip is kept.
+  const GARBLED = /[Â-ô][\u0080-¿]/;
+  function repairText(s) {
+    if (typeof s !== "string" || !GARBLED.test(s)) return s;
+    try { return decodeURIComponent(escape(s)); } catch { return s; }
+  }
+
+  function prepareItem(raw) {
+    const it = { ...raw, title: repairText(raw.title), summary: repairText(raw.summary), source: repairText(raw.source) };
     const precision = it.date_precision || (it.date.length >= 10 ? "day" : it.date.length === 7 ? "month" : it.date ? "year" : "unknown");
     const others = Array.isArray(it.also_reported_by)
       ? it.also_reported_by
@@ -71,5 +91,5 @@
     return out;
   }
 
-  T.dataset = { loadDataset };
+  T.dataset = { loadDataset, repairText };
 })(window.Tracker = window.Tracker || {});

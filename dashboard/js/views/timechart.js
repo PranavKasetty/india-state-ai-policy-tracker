@@ -2,7 +2,7 @@
 // from screen readers; the table (inside <details>) is the accessible version.
 (function (T) {
   "use strict";
-  const { count, esc, monthFull, monthLong, monthShort, niceStep, nounText } = T.format;
+  const { count, esc, formatDate, monthFull, monthLong, monthShort, niceStep, nounText } = T.format;
   const { countByMonth, monthsInRange } = T.query;
   const { animateFrom } = T.motion;
 
@@ -43,9 +43,11 @@
       months.forEach((m, i) => {
         const v = counts[m];
         const cx = MARGIN.l + band * (i + 0.5);
+        const partial = data.partialMonth?.month === m;
+        const tip = `<b>${monthLong(m)}</b>${partial ? ` (to ${formatDate(data.partialMonth.through)})` : ""}<br>${count(v)}`;
         svg += `<rect class="hit" x="${MARGIN.l + band * i}" y="${MARGIN.t}" width="${band}" height="${ih}"
-          data-tip="${esc(`<b>${monthLong(m)}</b><br>${count(v)}`)}"/>`;
-        svg += `<path class="bar" data-m="${m}" data-h="${MARGIN.t + ih - y(v)}" d="${roundedBar(cx - bw / 2, y(v), bw, MARGIN.t + ih - y(v))}"/>`;
+          data-tip="${esc(tip)}"/>`;
+        svg += `<path class="bar${partial ? " partial" : ""}" data-m="${m}" data-h="${MARGIN.t + ih - y(v)}" d="${roundedBar(cx - bw / 2, y(v), bw, MARGIN.t + ih - y(v))}"/>`;
         if (m === peak && v) svg += `<text class="label" x="${cx}" y="${y(v) - 6}" text-anchor="middle">${v}</text>`;
         if (labelled(m)) {
           const yearOnly = every === 12;
@@ -87,8 +89,13 @@
           `${monthLong(months[0])} to ${monthLong(months.at(-1))}. The busiest month is labelled.`;
 
         const undated = items.filter((it) => !it.month).length;
-        note.hidden = undated === 0;
-        note.textContent = `${count(undated)} with only a year or no date ${undated === 1 ? "is" : "are"} not in this chart.`;
+        const partial = data.partialMonth && months.includes(data.partialMonth.month)
+          ? `${monthFull(data.partialMonth.month)} is incomplete: the data runs to ${formatDate(data.partialMonth.through)}, so its lighter bar is not a drop.`
+          : "";
+        const notes = [partial,
+          undated && `${count(undated)} with only a year or no date ${undated === 1 ? "is" : "are"} not in this chart.`].filter(Boolean);
+        note.hidden = !notes.length;
+        note.textContent = notes.join(" ");
       },
     };
   }

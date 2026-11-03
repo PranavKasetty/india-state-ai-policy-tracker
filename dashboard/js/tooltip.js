@@ -23,14 +23,18 @@
 
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") hide(); });
     addEventListener("scroll", hide, { passive: true });
+    document.addEventListener("pointerdown", (e) => { if (!e.target.closest("[data-tip]")) hide(); });
 
     return {
       bind(root) {
-        root.addEventListener("pointermove", (e) => {
+        const follow = (e) => {
           const t = e.target.closest("[data-tip]");
           t ? show(t, e) : hide();
-        });
-        root.addEventListener("pointerleave", hide);
+        };
+        root.addEventListener("pointermove", follow);
+        root.addEventListener("pointerdown", follow); // a tap on a touch screen fires no move
+        // A tap ends with pointerleave; on touch, keep the tip until the next tap or scroll.
+        root.addEventListener("pointerleave", (e) => { if (e.pointerType !== "touch") hide(); });
         root.addEventListener("focusin", (e) => { const t = e.target.closest("[data-tip]"); if (t) show(t); });
         root.addEventListener("focusout", hide);
       },

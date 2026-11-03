@@ -11,7 +11,7 @@
   "use strict";
   const { loadDataset } = T.dataset;
   const { count, formatDate, formatNumber, monthLong, nounText } = T.format;
-  const { defaultFilters, filterItems, SORT_MODES } = T.query;
+  const { defaultFilters, filterItems, FOCUS_VALUES, SORT_MODES } = T.query;
   const { createStore, readHash, writeHash } = T.store;
   const { initTheme } = T.theme;
   const { createTooltip } = T.tooltip;
@@ -40,6 +40,7 @@
       state: data.meta.states.map((s) => s.name),
       cat: data.meta.categories.map((c) => c.id),
       sector: data.meta.sectors,
+      focus: FOCUS_VALUES,
       from: data.months,
       to: data.months,
       view: ["count", "share"],
@@ -62,11 +63,20 @@
 
     renderStatic(data);
     initDisclosures();
+    // The hash holds the filters, so a plain #fragment link would clear them.
+    $("to-list").addEventListener("click", () => {
+      const heading = $("items-title");
+      heading.scrollIntoView({ block: "start" });
+      heading.focus({ preventScroll: true });
+    });
+    // Names the types in query.POLICY_TYPES; keep the two in step.
+    const policyNote = " Policy actions only: strategies and policies, regulation, governance bodies, funding and partnerships (MoUs).";
     const render = (state) => {
       const items = filterItems(data, state);
-      $("result-count").textContent = items.length === data.items.length
+      $("result-count").textContent = (items.length === data.items.length
         ? `Showing all ${count(items.length)}.`
-        : `Showing ${formatNumber(items.length)} of ${count(data.items.length)}.`;
+        : `Showing ${formatNumber(items.length)} of ${count(data.items.length)}.`) +
+        (state.focus === "policy" ? policyNote : "");
       for (const view of views) view.render({ state, data, items });
       writeHash(state, defaults);
     };

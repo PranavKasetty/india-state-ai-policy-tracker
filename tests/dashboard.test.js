@@ -137,3 +137,27 @@ test("outlets falls back to also-reported-by when n_sources is missing", () => {
   assert.equal(T.query.outlets(it4), 3);
   assert.equal(T.query.outlets(data.items.find((it) => it.id === "1")), 1);
 });
+
+test("policy focus keeps only records with a policy-type tag", () => {
+  const raw = structuredClone(RAW);
+  raw.meta.categories.push({ id: "funding_budget", label: "Funding & budget" });
+  raw.items[1].tags.push("funding_budget");
+  const d = T.dataset.loadDataset(raw);
+  const f = T.query.defaultFilters(d);
+  assert.equal(f.focus, "");
+  assert.deepEqual(plain(T.query.filterItems(d, { ...f, focus: "policy" }).map((it) => it.id)), ["2"]);
+  assert.equal(T.query.filterItems(d, { ...f, focus: "policy" }, { ignore: ["focus"] }).length, 4);
+});
+
+test("dataset flags the last month when the data stops before its end", () => {
+  assert.equal(data.partialMonth, null, "period ends on 31 Mar");
+  const raw = structuredClone(RAW);
+  raw.meta.period_end = "2026-03-09";
+  assert.deepEqual(plain(T.dataset.loadDataset(raw).partialMonth), { month: "2026-03", through: "2026-03-09" });
+});
+
+test("repairText fixes UTF-8 read as Latin-1 and leaves other text alone", () => {
+  assert.equal(T.dataset.repairText("Lucknowâ\u0080\u0099s policing"), "Lucknow’s policing");
+  assert.equal(T.dataset.repairText("Café ₹1,725 crore"), "Café ₹1,725 crore");
+  assert.equal(T.dataset.repairText(undefined), undefined);
+});
