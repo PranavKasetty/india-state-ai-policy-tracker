@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Submit this in Google Search Console (Sitemaps). A robots.txt pointing here would
+     only count at the domain root (pranavkasetty.github.io/robots.txt), outside this site. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://pranavkasetty.github.io/india-state-ai-policy-tracker/</loc>
+    <changefreq>daily</changefreq>
+  </url>
+</urlset>

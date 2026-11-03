@@ -88,6 +88,21 @@
     $("generated").textContent = meta.generated_at
       ? `${meta.is_mock ? "Mock data generated" : "Data last updated"} ${formatDate(meta.generated_at.slice(0, 10))}.`
       : "";
+    updateDatasetLd(meta, months);
+  }
+
+  /** Put the covered period and last update into the page's schema.org Dataset. */
+  function updateDatasetLd(meta, months) {
+    const el = $("dataset-ld");
+    if (!el) return;
+    try {
+      const ld = JSON.parse(el.textContent);
+      if (months.length) ld.temporalCoverage = `${months[0]}/${months.at(-1)}`;
+      if (meta.generated_at) ld.dateModified = meta.generated_at;
+      el.textContent = JSON.stringify(ld);
+    } catch (err) {
+      console.warn("Could not update the dataset description", err);
+    }
   }
 
   /** Buttons with aria-expanded show and hide the element named by aria-controls. */
