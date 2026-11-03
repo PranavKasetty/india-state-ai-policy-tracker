@@ -62,6 +62,12 @@
        (browsers block modules on file://). Deferred scripts run in this order after
        the page is parsed: data first, then helpers, then views, then main.js.
        data.js sets window.TRACKER_DATA (written by pipeline/export.py; contract in schema.py). -->
+  <!-- Visit counts: GoatCounter (no cookies, no personal data). The code in the URL is
+       the account's site code; count.v4.js is pinned by its hash. It skips file:// and
+       localhost, so local testing is not counted. main.js also counts filter choices. -->
+  <script data-goatcounter="https://india-state-ai-tracker.goatcounter.com/count" async
+    src="https://gc.zgo.at/count.v4.js" crossorigin="anonymous"
+    integrity="sha384-nRw6qfbWyJha9LhsOtSb2YJDyZdKvvCFh0fJYlkquSFjUxp9FVNugbfy8q1jdxI+"></script>
   <script src="data.js" defer></script>
   <script src="js/format.js" defer></script>
   <script src="js/query.js" defer></script>
@@ -241,6 +247,7 @@
           <li><a href="https://github.com/PranavKasetty/india-state-ai-policy-tracker/raw/main/data/output/records.xlsx">Download as Excel, with a data dictionary</a></li>
           <li><a href="https://github.com/PranavKasetty/india-state-ai-policy-tracker/blob/main/data/README.md">How the data is made: full method notes</a></li>
         </ul>
+        <p class="footer-privacy">Visits and filter choices are counted with <a href="https://www.goatcounter.com/">GoatCounter</a>, without cookies or personal data.</p>
       </section>
     </div>
     <div class="footer-bar">

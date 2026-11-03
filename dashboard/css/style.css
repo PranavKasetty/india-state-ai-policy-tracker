@@ -295,6 +295,7 @@ details.data-table td { text-align: right; }
 .footer-about { max-width: 68ch; font-size: 0.95rem; }
 .footer-links ul { list-style: none; margin: 0; padding: 0; }
 .footer-links li { margin-bottom: 6px; }
+.site-footer .footer-privacy { margin-top: 14px; font-size: 0.875rem; }
 /* Bottom bar: update date on the left; back-to-top and the GitHub mark on the right. */
 .footer-bar {
   max-width: 1180px; margin: 0 auto; padding: 10px var(--gutter) 24px;

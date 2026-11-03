@@ -81,6 +81,7 @@
       writeHash(state, defaults);
     };
     store.subscribe(render);
+    store.subscribe(countFilterChoices(store.get()));
     render(store.get());
 
     addEventListener("hashchange", () => store.set({ ...defaults, ...readHash(defaults, allowed) }));
@@ -113,6 +114,24 @@
     } catch (err) {
       console.warn("Could not update the dataset description", err);
     }
+  }
+
+  /**
+   * Count which state, type, sector and policy filter readers choose, as GoatCounter
+   * events (e.g. "filter/state/Kerala"). Search text is never sent. Does nothing when
+   * the counter has not loaded (blocked, offline or opened from disk).
+   */
+  function countFilterChoices(initial) {
+    let prev = initial;
+    return (state) => {
+      const gc = window.goatcounter;
+      for (const key of ["state", "cat", "sector", "focus"]) {
+        if (state[key] && state[key] !== prev[key] && gc?.count) {
+          gc.count({ path: `filter/${key}/${state[key]}`, title: `Filter: ${key} = ${state[key]}`, event: true });
+        }
+      }
+      prev = state;
+    };
   }
 
   /** Buttons with aria-expanded show and hide the element named by aria-controls. */
