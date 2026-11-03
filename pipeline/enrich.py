@@ -55,9 +55,36 @@ def _meta(page: str, *names: str) -> str:
     return ""
 
 
+META_CHARSET = re.compile(rb"""<meta[^>]+charset=["']?\s*([\w.:-]+)""", re.I)
+GARBLED_RUN = re.compile(r"[Â-ô][\u0080-¿]+")
+
+
+def page_text(resp: requests.Response) -> str:
+    """Decode a page with the charset it declares (header, then <meta>), else UTF-8.
+
+    requests falls back to ISO-8859-1 when the Content-Type header has no charset,
+    which turns UTF-8 punctuation into mojibake ("’" -> "â\x80\x99")."""
+    if "charset" not in resp.headers.get("content-type", "").lower():
+        m = META_CHARSET.search(resp.content[:4096])
+        resp.encoding = m[1].decode("ascii") if m else "utf-8"
+    return resp.text  # an unknown charset name falls back to replacing bad bytes
+
+
+def repair_mojibake(text: str) -> str:
+    """Undo UTF-8 that was decoded as Latin-1, one run at a time (stored summaries
+    mix such runs with real non-Latin-1 text, e.g. the "…" added on truncation).
+    A run that does not decode cleanly as UTF-8 is left alone."""
+    def fix(m: re.Match) -> str:
+        try:
+            return m[0].encode("latin-1").decode("utf-8")
+        except UnicodeError:
+            return m[0]
+    return GARBLED_RUN.sub(fix, text)
+
+
 def page_details(url: str) -> tuple[str, str]:
     """(standfirst, image_url) from the publisher page's Open Graph tags."""
-    page = SESSION.get(url, timeout=20).text[:200_000]
+    page = page_text(SESSION.get(url, timeout=20))[:200_000]
     image = _meta(page, "og:image", "twitter:image")
     text = _meta(page, "og:description", "description")
     if not text:
@@ -96,7 +123,11 @@ def load_store() -> dict[str, dict]:
     if not STORE.exists():
         return {}
     with open(STORE, encoding="utf-8") as f:
-        return {r["guid"]: r for r in map(json.loads, f)}
+        rows = [json.loads(line) for line in f]
+    for r in rows:  # summaries stored before page_text decoded pages properly
+        if r.get("summary"):
+            r["summary"] = repair_mojibake(r["summary"])
+    return {r["guid"]: r for r in rows}
 
 
 def enrich(records: list[dict], limit: int) -> dict[str, dict]:

@@ -159,5 +159,6 @@ test("dataset flags the last month when the data stops before its end", () => {
 test("repairText fixes UTF-8 read as Latin-1 and leaves other text alone", () => {
   assert.equal(T.dataset.repairText("Lucknowâ\u0080\u0099s policing"), "Lucknow’s policing");
   assert.equal(T.dataset.repairText("Café ₹1,725 crore"), "Café ₹1,725 crore");
+  assert.equal(T.dataset.repairText("The stateâ\u0080\u0099s system…"), "The state’s system…", "mixed with real Unicode");
   assert.equal(T.dataset.repairText(undefined), undefined);
 });

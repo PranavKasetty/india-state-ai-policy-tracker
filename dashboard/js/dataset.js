@@ -37,11 +37,14 @@
   }
 
   // Some publishers' pages were read as Latin-1 when they were UTF-8, so "’" arrived
-  // as "â€™". Re-decode such text; anything that is not a clean round trip is kept.
-  const GARBLED = /[Â-ô][\u0080-¿]/;
+  // as "â€™" (fixed in pipeline/enrich.py; this covers data built before the fix).
+  // Re-decode each garbled run; a run that is not valid UTF-8 is kept as it was.
+  const GARBLED = /[Â-ô][\u0080-¿]+/g;
   function repairText(s) {
-    if (typeof s !== "string" || !GARBLED.test(s)) return s;
-    try { return decodeURIComponent(escape(s)); } catch { return s; }
+    if (typeof s !== "string") return s;
+    return s.replace(GARBLED, (run) => {
+      try { return decodeURIComponent(escape(run)); } catch { return run; }
+    });
   }
 
   function prepareItem(raw) {
