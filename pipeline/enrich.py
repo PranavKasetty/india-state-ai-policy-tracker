@@ -7,6 +7,11 @@ batchexecute endpoint returns the publisher URL.
 Thumbnail: the page's og:image (the preview image publishers set for link sharing),
 read from the same request. The dashboard hotlinks it; some publishers block that.
 
+Headline: Google News sometimes carries a headline cut short, usually because the
+publisher's own <title> tag is cut ("...adopted at National e"). When the headline
+looks cut (it ends in "..", or the article's URL slug carries on mid-word), the full
+headline is taken from the article page and stored as full_title.
+
 Summary: the publisher's own standfirst (og:description / meta description), cut to
 its first sentence. It is extractive, so nothing is invented. When the page is
 paywalled, blocked or has no description, the summary falls back to the headline
@@ -21,6 +26,9 @@ import json
 import re
 import time
 from pathlib import Path
+
+from collections import Counter
+from urllib.parse import urlparse
 
 import requests
 
@@ -82,20 +90,66 @@ def repair_mojibake(text: str) -> str:
     return GARBLED_RUN.sub(fix, text)
 
 
-def page_details(url: str) -> tuple[str, str]:
-    """(standfirst, image_url) from the publisher page's Open Graph tags."""
+ELLIPSIS = re.compile(r"\s*(\.{2,}|…)$")
+
+
+def _slug(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+
+
+def looks_cut(title: str, url: str) -> bool:
+    """True when the headline ends in an ellipsis, or the URL slug carries on with more
+    words ("...-national-e" then "-governance-conference"). URLs without a slug say
+    nothing. Slugs often add words of their own, so this only decides which pages to
+    check; full_headline decides whether the headline was really cut."""
+    if ELLIPSIS.search(title):
+        return True
+    head, path = _slug(title), _slug(urlparse(url).path)
+    at = path.find(head)
+    return len(head) > 20 and at >= 0 and re.match(r"-?[a-z]", path[at + len(head):]) is not None
+
+
+def full_headline(page: str, title: str) -> str:
+    """The page's longer version of a cut headline, or "" when the page has none.
+
+    The page text is searched for the headline; what follows it, up to the end of that
+    piece of text, is the missing part. Without an ellipsis, the continuation must go on
+    mid-word, so a headline that merely starts a longer sentence is not extended."""
+    stem = ELLIPSIS.sub("", title)
+    cut_by_ellipsis = stem != title
+    text = html.unescape(re.sub(r"<[^>]+>", "\n", page))
+    found = Counter()
+    for m in re.finditer(re.escape(stem), text):
+        rest = re.match(r'[^\n|"\\]{1,200}', text[m.end():])  # stop at a tag, " | Outlet" or JSON
+        if not rest:
+            continue
+        rest = rest[0].rstrip()
+        if ELLIPSIS.search(rest):  # the page's copy is cut too
+            continue
+        if rest and (cut_by_ellipsis or re.match(r"[\w-]", rest)):
+            found[rest] += 1
+    if not found:
+        return ""
+    rest = max(found, key=lambda r: (found[r], -len(r)))  # most repeated, then shortest
+    return stem + rest
+
+
+def page_details(url: str, title: str = "") -> tuple[str, str, str]:
+    """(standfirst, image_url, full_title) from the publisher page. full_title is ""
+    unless the headline looks cut and the page has its full version."""
     page = page_text(SESSION.get(url, timeout=20))[:200_000]
+    full = full_headline(page, title) if title and looks_cut(title, url) else ""
     image = _meta(page, "og:image", "twitter:image")
     text = _meta(page, "og:description", "description")
     if not text:
-        return "", image
+        return "", image, full
     text = re.sub(r"^[A-Z][A-Z .,/]{2,40}:\s*", "", text)  # drop dateline, e.g. "HYDERABAD: "
     first = re.split(r"(?<=[.!?])\s+", text)[0]
     if len(first) > 280:
         first = first[:280].rsplit(" ", 1)[0]
     if not first.endswith((".", "!", "?", "…")):  # publishers often truncate their own tags
         first += "…"
-    return first, image
+    return first, image, full
 
 
 def _enrich_one(rec: dict) -> dict | None:
@@ -111,7 +165,8 @@ def _enrich_one(rec: dict) -> dict | None:
     out = {"guid": rec["guid"], "publisher_url": url, "summary": "", "summary_source": "headline",
            "image_url": ""}
     try:
-        summary, out["image_url"] = page_details(url)
+        summary, out["image_url"], out["full_title"] = page_details(
+            url, rec["title"] if rec.get("language", "en") == "en" else "")
         if summary:
             out["summary"], out["summary_source"] = summary, "publisher standfirst"
     except requests.RequestException as e:
@@ -154,5 +209,28 @@ def enrich(records: list[dict], limit: int) -> dict[str, dict]:
             f.flush()
             if done % 50 == 0:
                 print(f"  {done} enriched")
+        retitle(records, store, f)
     print(f"enrich: {done} new this run")
     return store
+
+
+def retitle(records: list[dict], store: dict[str, dict], f) -> None:
+    """Records enriched before headlines were checked: fetch the page again for the few
+    whose headline looks cut. Stored with full_title ("" when the page had none), so each
+    is checked once."""
+    todo = [r for r in records
+            if r.get("language", "en") == "en" and r["guid"] in store and "full_title" not in store[r["guid"]]
+            and store[r["guid"]].get("publisher_url") and looks_cut(r["title"], store[r["guid"]]["publisher_url"])]
+    if todo:
+        print(f"enrich: checking {len(todo)} headlines that look cut")
+    for rec in todo:
+        row = {**store[rec["guid"]], "full_title": ""}
+        try:
+            page = page_text(SESSION.get(row["publisher_url"], timeout=20))[:200_000]
+            row["full_title"] = full_headline(page, rec["title"])
+        except requests.RequestException:
+            pass
+        store[rec["guid"]] = row
+        f.write(json.dumps(row, ensure_ascii=False) + "\n")
+        f.flush()
+        time.sleep(DELAY_SECONDS)
