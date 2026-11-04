@@ -328,16 +328,16 @@ details.data-table td { text-align: right; }
     conic-gradient(from -45deg at 50% 100%, var(--highlight) 90deg, transparent 0) 0 100% / 16px 8px repeat-x,
     linear-gradient(var(--accent), var(--accent)) 0 0 / 100% 2px no-repeat;
 }
-.site-footer-inner {
-  max-width: 1180px; margin: 0 auto; padding: 28px var(--gutter) 20px;
-  display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 24px 48px;
-}
-.site-footer h2 { font-size: 1.0625rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
-.site-footer p { margin: 0 0 8px; }
-.footer-about { max-width: 68ch; font-size: 0.95rem; }
+.site-footer-inner { max-width: 1180px; margin: 0 auto; padding: 28px var(--gutter) 8px; }
+.site-footer h3 { font-size: 1rem; font-weight: 600; color: var(--ink); margin: 0 0 6px; }
+.site-footer p { margin: 0; }
+/* Three short blocks, then three link groups under a rule: each column scans on its own. */
+.footer-about, .footer-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 40px; }
+.footer-about { font-size: 0.95rem; line-height: 1.55; }
+.footer-links { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--rule); }
 .footer-links ul { list-style: none; margin: 0; padding: 0; }
 .footer-links li { margin-bottom: 6px; }
-.site-footer .footer-privacy { margin-top: 14px; font-size: 0.875rem; }
+.footer-links li a { font-weight: 500; }
 /* Bottom bar: update date on the left; back-to-top and the GitHub mark on the right. */
 .footer-bar {
   max-width: 1180px; margin: 0 auto; padding: 10px var(--gutter) 24px;
@@ -345,12 +345,13 @@ details.data-table td { text-align: right; }
   font-size: 0.9rem;
 }
 .footer-bar p { margin: 0; }
+.footer-fine { flex: 1 1 32rem; font-size: 0.85rem; }
 .footer-bar::before { content: ""; flex: 1 0 100%; border-top: 1px solid var(--rule); margin-bottom: 4px; }
 .footer-bar-links { display: flex; align-items: center; gap: 16px; }
 /* Icon-only link: 32px target, ink colour, accent on hover. */
 .icon-link { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 6px; color: var(--ink); }
 .icon-link:hover { color: var(--accent); background: var(--accent-wash); }
-@media (max-width: 720px) { .site-footer-inner { grid-template-columns: 1fr; } }
+@media (max-width: 720px) { .footer-about, .footer-links { grid-template-columns: 1fr; } }
 
 .load-error { border: 2px solid var(--mock); background: var(--mock-wash); border-radius: var(--radius); padding: 14px 16px; }
 .load-error code { font-size: 0.95em; }
