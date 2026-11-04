@@ -10,8 +10,8 @@
 (function (T) {
   "use strict";
   const { loadDataset } = T.dataset;
-  const { count, formatDate, formatNumber, monthLong, nounText } = T.format;
-  const { defaultFilters, filterItems, FOCUS_VALUES, SORT_MODES } = T.query;
+  const { count, formatDate, formatNumber, issueUrl, monthLong, nounText } = T.format;
+  const { defaultFilters, filterItems, FOCUS_VALUES, STAGE_VALUES, SORT_MODES } = T.query;
   const { createStore, readHash, writeHash } = T.store;
   const { initTheme } = T.theme;
   const { createTooltip } = T.tooltip;
@@ -21,6 +21,7 @@
   const { createRankedBars } = T.rankedBars;
   const { createTimeChart } = T.timechart;
   const { createBriefs } = T.briefs;
+  const { createStatusTable } = T.statusTable;
 
   const $ = (id) => document.getElementById(id);
 
@@ -41,11 +42,15 @@
       cat: data.meta.categories.map((c) => c.id),
       sector: data.meta.sectors,
       focus: FOCUS_VALUES,
+      stage: STAGE_VALUES,
       from: data.months,
       to: data.months,
       view: ["count", "share"],
       sort: SORT_MODES,
     };
+    // A shared entry link (#item=R...) opens the full list on that entry.
+    const linkedItem = () => new URLSearchParams(location.hash.slice(1)).get("item");
+    const openItem = linkedItem();
     const store = createStore({ ...defaults, ...readHash(defaults, allowed) });
     const tooltip = createTooltip($("tooltip"));
     const deps = { store, data, tooltip, defaults };
@@ -53,6 +58,7 @@
     const itemsList = createItemsList({ list: $("items-list"), empty: $("items-empty"), more: $("items-more"), sortGroup: $("items-sort"), sub: $("items-sub") }, deps);
     const views = [
       createFilters($("filters"), deps),
+      createStatusTable({ table: $("status-table"), more: $("status-more"), panel: $("status-panel") }, deps, itemsList.reveal),
       createRankedBars({ list: $("state-bars"), more: $("state-more") }, deps, "state", { limit: 12, noun: "states" }),
       createRankedBars({ list: $("type-bars") }, deps, "cat"),
       createMatrix({ table: $("matrix"), scale: $("matrix-scale"), sub: $("matrix-sub"), modeGroup: $("matrix-mode") }, deps),
@@ -70,21 +76,30 @@
       heading.focus({ preventScroll: true });
     });
     // Names the types in query.POLICY_TYPES; keep the two in step.
-    const policyNote = " Policy actions only: strategies and policies, regulation, governance bodies, funding and partnerships (MoUs).";
+    const policyNote = " Policy and governance only: strategies and policies, regulation, governance bodies, funding and partnerships (MoUs).";
+    const stageNotes = {
+      action: " Action taken: approved, signed, launched or in use, not just announced.",
+      announced: " Announced or planned: intentions, proposals and statements, not yet approved or launched.",
+    };
     const render = (state) => {
       const items = filterItems(data, state);
       $("result-count").textContent = (items.length === data.items.length
         ? `Showing all ${count(items.length)}.`
         : `Showing ${formatNumber(items.length)} of ${count(data.items.length)}.`) +
-        (state.focus === "policy" ? policyNote : "");
+        (state.focus === "policy" ? policyNote : "") + (stageNotes[state.stage] || "");
       for (const view of views) view.render({ state, data, items });
       writeHash(state, defaults);
     };
     store.subscribe(render);
     store.subscribe(countFilterChoices(store.get()));
     render(store.get());
+    if (openItem) itemsList.reveal(openItem);
 
-    addEventListener("hashchange", () => store.set({ ...defaults, ...readHash(defaults, allowed) }));
+    addEventListener("hashchange", () => {
+      const id = linkedItem();
+      store.set({ ...defaults, ...readHash(defaults, allowed) });
+      if (id) itemsList.reveal(id);
+    });
   }
 
   function renderStatic(data) {
@@ -94,6 +109,8 @@
       if (el.hasAttribute("aria-label")) el.setAttribute("aria-label", text); else el.textContent = text;
     }
     $("mock-banner").hidden = !meta.is_mock;
+    $("suggest-link").href = issueUrl("Missing development: ",
+      ["State:", "What happened:", "Link to a news report or government source:", ""].join("\n"));
     $("lede").textContent = `AI-related activity by ${meta.states.length} state governments, as reported in the news` +
       (months.length ? `, ${monthLong(months[0])} to ${monthLong(months.at(-1))}.` : ".");
     $("generated").textContent = meta.generated_at
@@ -117,7 +134,7 @@
   }
 
   /**
-   * Count which state, type, sector and policy filter readers choose, as GoatCounter
+   * Count which state, type, sector, stage and policy filter readers choose, as GoatCounter
    * events (e.g. "filter/state/Kerala"). Search text is never sent. Does nothing when
    * the counter has not loaded (blocked, offline or opened from disk).
    */
@@ -125,7 +142,7 @@
     let prev = initial;
     return (state) => {
       const gc = window.goatcounter;
-      for (const key of ["state", "cat", "sector", "focus"]) {
+      for (const key of ["state", "cat", "sector", "stage", "focus"]) {
         if (state[key] && state[key] !== prev[key] && gc?.count) {
           gc.count({ path: `filter/${key}/${state[key]}`, title: `Filter: ${key} = ${state[key]}`, event: true });
         }

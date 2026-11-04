@@ -10,7 +10,7 @@
 // carries the meaning.
 (function (T) {
   "use strict";
-  const { esc, formatDate, formatNumber, monthLong, nounText, plural } = T.format;
+  const { esc, formatDate, formatNumber, issueUrl, monthLong, nounText, permalink, plural } = T.format;
   const { outlets, sortItems } = T.query;
 
   const PAGE_SIZE = 25;
@@ -25,6 +25,7 @@
 
   function createItemsList({ list, empty, more, sortGroup, sub }, { store, data }) {
     const label = data.categoryLabel;
+    const stageLabel = Object.fromEntries((data.meta.stages || []).map((s) => [s.id, s.label]));
     const code = Object.fromEntries(data.meta.states.map((s) => [s.name, s.code || s.name.slice(0, 2)]));
     let items = [];
     let shown = PAGE_SIZE;
@@ -32,6 +33,21 @@
     sortGroup.addEventListener("click", (e) => {
       const b = e.target.closest("[data-sort]");
       if (b) store.set({ sort: b.dataset.sort });
+    });
+
+    // "Copy link": the page address that opens on this entry. Where the clipboard is
+    // unavailable (opened from disk, old browsers), show the link to copy by hand.
+    list.addEventListener("click", async (e) => {
+      const b = e.target.closest("[data-copy]");
+      if (!b) return;
+      const url = permalink(b.dataset.copy);
+      try {
+        await navigator.clipboard.writeText(url);
+        b.firstChild.textContent = "Link copied";
+        setTimeout(() => { b.firstChild.textContent = "Copy link"; }, 2000);
+      } catch {
+        window.prompt("Copy this link:", url);
+      }
     });
 
     // Image errors do not bubble, so listen in the capture phase.
@@ -57,6 +73,8 @@
         : "";
       const n = outlets(it);
       const coverage = n > 1 ? `<li class="coverage">${n} outlets</li>` : "";
+      const stage = it.stage && stageLabel[it.stage]
+        ? `<li class="stage" data-stage="${esc(it.stage)}">${esc(stageLabel[it.stage])}</li>` : "";
       const tags = it.tags.map((t) => `<li class="tag${t === it.category ? " primary" : ""}" data-cat="${esc(t)}">${esc(label[t] || t)}</li>`).join("");
       return `<li class="item" id="item-${esc(it.id)}">
         <div class="thumb" aria-hidden="true"><span class="thumb-code">${esc(code[it.state] || "")}</span>${img}</div>
@@ -65,7 +83,11 @@
           ${it.summary ? `<p class="item-summary">${esc(it.summary)}</p>` : ""}
           <p class="item-meta">${itemDate(it)}, ${esc(it.state)}. Reported by ${reportedBy}.</p>
           ${outletList}
-          <ul class="item-tags" aria-label="Coverage, types and sector">${coverage}${tags}<li class="sector">${esc(it.sector)}</li></ul>
+          <ul class="item-tags" aria-label="Coverage, stage, types and sector">${coverage}${stage}${tags}<li class="sector">${esc(it.sector)}</li></ul>
+          <p class="item-actions">
+            <button type="button" class="link-btn" data-copy="${esc(it.id)}">Copy link<span class="visually-hidden"> to this entry</span></button>
+            <a href="${esc(reportUrl(it))}" target="_blank" rel="noopener">Report a problem<span class="visually-hidden"> with this entry (opens GitHub in a new tab)</span></a>
+          </p>
         </div></li>`;
     }
 
@@ -116,6 +138,14 @@
         draw();
       },
     };
+  }
+
+  function reportUrl(it) {
+    return issueUrl(`Problem with ${it.id}: ${it.title.slice(0, 80)}`,
+      [`Entry: ${permalink(it.id)}`, `Headline: ${it.title}`, `State: ${it.state}`, `Date: ${it.date}`,
+        `Source: ${it.url}`, "",
+        "What is wrong? (for example: not a government action, wrong state, duplicate, wrong type or stage, broken link)",
+        "", ""].join("\n"));
   }
 
   function itemDate(it) {

@@ -12,13 +12,15 @@ for real; dashboard/mock_data.py writes a placeholder. Both should produce:
     states         [{name, code}]
     categories     [{id, label}]   display order
     sectors        [str]           display order
+    stages         [{id, label}]   optional; the stage ids items may carry
   items: one per record
     required  id, date, state, title, source, url, category, tags, sector
               date: "YYYY-MM-DD", "YYYY-MM", "YYYY" or "" (see date_precision)
               category: primary category id; tags: all category ids incl. the primary
     optional  date_precision ("day" | "month" | "year" | "unknown"), summary,
               image (thumbnail URL, "" if none), n_sources (int),
-              also_reported_by ([str] or "; "-joined str)
+              also_reported_by ([str] or "; "-joined str),
+              stage (an id from meta.stages, or "" when not judged)
 
 The taxonomy, states and sectors travel in meta, so changing them needs no
 dashboard code changes. validate() is the full check; js/data.js runs a lighter one.
@@ -33,7 +35,7 @@ _DATE = re.compile(r"^(\d{4}(-\d{2}(-\d{2})?)?)?$")
 REQUIRED = {"id": str, "date": str, "state": str, "title": str, "source": str,
             "url": str, "category": str, "tags": list, "sector": str}
 OPTIONAL = {"date_precision": str, "summary": str, "image": str, "n_sources": int,
-            "also_reported_by": (list, str)}
+            "also_reported_by": (list, str), "stage": str}
 MAX_ERRORS = 10
 
 
@@ -50,6 +52,7 @@ def validate(data: dict) -> None:
     states = {s.get("name") for s in meta.get("states", [])}
     categories = {c.get("id") for c in meta.get("categories", [])}
     sectors = set(meta.get("sectors", []))
+    stages = {s.get("id") for s in meta.get("stages", [])} | {""}
     if not (states and categories and sectors):
         errors.append("meta.states, meta.categories and meta.sectors must be non-empty")
 
@@ -76,6 +79,8 @@ def validate(data: dict) -> None:
             errors.append(f"{where}.tags has unknown ids {sorted(unknown)}")
         if it["sector"] not in sectors:
             errors.append(f"{where}.sector {it['sector']!r} is not in meta.sectors")
+        if it.get("stage", "") not in stages:
+            errors.append(f"{where}.stage {it['stage']!r} is not in meta.stages")
     if errors:
         raise SchemaError("; ".join(errors[:MAX_ERRORS]))
 

@@ -78,6 +78,14 @@ class WriteTest(unittest.TestCase):
         body = text[text.index("{"): text.rindex("}") + 1]
         self.assertEqual(json.loads(body), VALID)
 
+    def test_stage_must_be_listed_in_meta(self):
+        data = with_item(stage="decided")
+        data["meta"]["stages"] = [{"id": "decided", "label": "Approved or signed"}]
+        schema.validate(data)
+        schema.validate(with_item(stage=""))  # not judged
+        with self.assertRaises(schema.SchemaError):
+            schema.validate(with_item(stage="decided"))  # no meta.stages
+
     def test_does_not_write_invalid_data(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "data.js"

@@ -8,6 +8,7 @@
   <link rel="canonical" href="https://pranavkasetty.github.io/india-state-ai-policy-tracker/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="alternate" type="application/rss+xml" title="Indian States AI Policy Tracker" href="feed.xml">
   <meta name="description" content="What India's 28 state governments are doing on AI: policies, funding, partnerships and deployments, tracked from the news and updated daily, with the full dataset to download.">
   <!-- Search engines: describes the page as a dataset, so it can appear in Google Dataset
        Search. main.js fills in the covered period and last update from data.js. -->
@@ -82,6 +83,7 @@
   <script src="js/views/timechart.js" defer></script>
   <script src="js/views/itemsList.js" defer></script>
   <script src="js/views/briefs.js" defer></script>
+  <script src="js/views/statusTable.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -122,6 +124,9 @@
         <label>Type of activity
           <select name="cat"><option value="">All types</option></select>
         </label>
+        <label>Stage
+          <select name="stage"><option value="">Any stage</option></select>
+        </label>
         <label>Sector
           <select name="sector"><option value="">All sectors</option></select>
         </label>
@@ -133,7 +138,7 @@
         </label>
         <label class="check">
           <input type="checkbox" name="focus" value="policy">
-          Policy actions only
+          Policy and governance only
         </label>
       </div>
       <label class="grow search">Search headlines and summaries
@@ -147,6 +152,19 @@
     </div>
 
     <main id="main" tabindex="-1">
+      <section class="panel" id="status-panel" aria-labelledby="status-title">
+        <div class="panel-head">
+          <div>
+            <h2 id="status-title">Where each state stands</h2>
+            <p class="panel-sub">Four markers of state AI policy, drafted by a language model from the news records and linked to them. "None found" means the news we collect does not show it, not that the state has none. "Action taken" counts developments approved, signed, launched or in use, out of all reported. The filters do not change this table.</p>
+          </div>
+        </div>
+        <div class="matrix-scroll" tabindex="0" role="region" aria-label="State status table, scrolls sideways">
+          <table class="status-table" id="status-table"></table>
+        </div>
+        <button type="button" class="btn-quiet more" id="status-more" aria-controls="status-table" hidden></button>
+      </section>
+
       <div class="panel-pair">
         <section class="panel" aria-labelledby="states-title">
           <div class="panel-head">
@@ -235,7 +253,7 @@
       <section class="footer-about" aria-labelledby="about-title">
         <h2 id="about-title">About the data</h2>
         <p data-noun="Each {one} is an action on AI or robotics by a state government, or by the central government in a specific state: announcing, funding, signing, deploying, regulating, training, hosting or endorsing. Private-sector news with no government involved, crime stories, opinion pieces and social media posts are left out.">Each development is an action on AI or robotics by a state government, or by the central government in a specific state: announcing, funding, signing, deploying, regulating, training, hosting or endorsing. Private-sector news with no government involved, crime stories, opinion pieces and social media posts are left out.</p>
-        <p data-noun="Headlines come from daily Google News searches for each state in English-language Indian outlets, from 1 November 2025. A language model checks each headline against a written rubric and assigns its types and sector; keyword rules stand in where it has not. Reports of the same announcement by several outlets are merged into one {one}, shown under the earliest report; the model also judges close calls between similar headlines.">Headlines come from daily Google News searches for each state in English-language Indian outlets, from 1 November 2025. A language model checks each headline against a written rubric and assigns its types and sector; keyword rules stand in where it has not. Reports of the same announcement by several outlets are merged into one development, shown under the earliest report; the model also judges close calls between similar headlines.</p>
+        <p data-noun="Headlines come from daily Google News searches for each state in English-language Indian outlets, from 1 November 2025. A language model checks each headline against a written rubric and assigns its types and sector; keyword rules stand in where it has not. Reports of the same announcement by several outlets are merged into one {one}, shown under the earliest report; the model also judges close calls between similar headlines. It also judges how far each one has gone: announced or planned, approved or signed, or launched or in use.">Headlines come from daily Google News searches for each state in English-language Indian outlets, from 1 November 2025. A language model checks each headline against a written rubric and assigns its types and sector; keyword rules stand in where it has not. Reports of the same announcement by several outlets are merged into one development, shown under the earliest report; the model also judges close calls between similar headlines. It also judges how far each one has gone: announced or planned, approved or signed, or launched or in use.</p>
         <p>Known gaps: only headlines are read, not full articles, and regional-language coverage is missed. Counts measure news coverage of government activity, not the activity itself, and some entries will be misclassified. The AI summaries draw only on this dataset and cite their sources; check them before quoting.</p>
       </section>
       <section class="footer-links" aria-labelledby="links-title">
@@ -246,6 +264,9 @@
           <li><a href="https://github.com/PranavKasetty/india-state-ai-policy-tracker/raw/main/data/output/records.csv" data-noun="Download all {many} (CSV)">Download all developments (CSV)</a></li>
           <li><a href="https://github.com/PranavKasetty/india-state-ai-policy-tracker/raw/main/data/output/records.xlsx">Download as Excel, with a data dictionary</a></li>
           <li><a href="https://github.com/PranavKasetty/india-state-ai-policy-tracker/blob/main/data/README.md">How the data is made: full method notes</a></li>
+          <li><a href="state/">A page for each state</a></li>
+          <li><a href="feed.xml">RSS feed of new developments</a> (each state page has its own)</li>
+          <li><a id="suggest-link" href="https://github.com/PranavKasetty/india-state-ai-policy-tracker/issues/new" data-noun="Suggest a missing {one} (GitHub)">Suggest a missing development (GitHub)</a></li>
         </ul>
         <p class="footer-privacy">Visits and filter choices are counted with <a href="https://www.goatcounter.com/">GoatCounter</a>, without cookies or personal data.</p>
       </section>

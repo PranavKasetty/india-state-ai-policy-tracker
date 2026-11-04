@@ -5,7 +5,7 @@
   const { monthLong } = T.format;
 
   const SEARCH_DELAY_MS = 250; // wait for typing to pause before filtering
-  const FIELDS = ["state", "cat", "sector", "focus", "from", "to", "q"]; // store keys owned by this form
+  const FIELDS = ["state", "cat", "sector", "stage", "focus", "from", "to", "q"]; // store keys owned by this form
 
   function createFilters(form, { store, data, defaults }) {
     // Phones: the fields fold behind a button that counts the filters set.
@@ -24,6 +24,14 @@
     fill("state", meta.states.map((s) => [s.name, s.name]));
     fill("cat", meta.categories.map((c) => [c.id, c.label]));
     fill("sector", meta.sectors.map((s) => [s, s]));
+    // "Action taken" first: it is the useful cut. Data built before stages existed has no
+    // meta.stages, and then the control is hidden.
+    const stageLabel = Object.fromEntries((meta.stages || []).map((s) => [s.id, s.label]));
+    if (meta.stages?.length) {
+      fill("stage", [["action", "Action taken"], ...["decided", "underway", "announced"].map((id) => [id, stageLabel[id]])]);
+    } else {
+      form.elements.stage.closest("label").hidden = true;
+    }
     fill("from", data.months.map((m) => [m, monthLong(m)]));
     fill("to", data.months.map((m) => [m, monthLong(m)]));
 
@@ -55,7 +63,7 @@
           el.classList.toggle("is-set", state[key] !== defaults[key]);
         }
         // The date range counts once; search sits outside the folded fields.
-        const set = ["state", "cat", "sector", "focus"].filter((k) => state[k] !== defaults[k]).length +
+        const set = ["state", "cat", "sector", "stage", "focus"].filter((k) => state[k] !== defaults[k]).length +
           (state.from !== defaults.from || state.to !== defaults.to ? 1 : 0);
         toggle.textContent = set ? `Filters (${set} set)` : "Filters";
       },

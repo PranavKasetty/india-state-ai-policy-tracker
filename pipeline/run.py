@@ -1,4 +1,4 @@
-"""Run the pipeline: collect -> classify -> dedupe -> enrich -> export.
+"""Run the pipeline: collect -> classify -> dedupe -> enrich -> stage -> briefs, profiles -> export.
 
   python -m pipeline.run --backfill        12-month collection (first run, ~15 min)
   python -m pipeline.run --days 3          daily update: last 3 days, merged in
@@ -10,7 +10,7 @@ import argparse
 import hashlib
 from datetime import date, timedelta
 
-from . import briefs, collect, enrich, export, llm
+from . import briefs, collect, enrich, export, llm, profiles, stage
 from .classify import CATEGORY_LABELS, SECTORS, categorise, relevance
 from .dates import normalize_date
 from .dedupe import cluster
@@ -129,8 +129,12 @@ def main() -> None:
         r["summary"] = e.get("summary") or r["title"]
         r["summary_source"] = e.get("summary_source", "headline")
         r["image_url"] = e.get("image_url", "")
+    stages = stage.load_store() if args.no_llm else stage.label(records)
+    for r in records:
+        r["stage"] = stages.get(r["guid"], "")
     briefs_store = {} if args.no_llm else briefs.build(records)
-    export.write_all(records, sources, excluded, audit, briefs_store)
+    profiles_store = profiles.load() if args.no_llm else profiles.build(records)
+    export.write_all(records, sources, excluded, audit, briefs_store, profiles_store)
 
 
 if __name__ == "__main__":

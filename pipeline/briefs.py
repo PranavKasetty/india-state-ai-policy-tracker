@@ -80,6 +80,7 @@ def build(records: list[dict]) -> dict[str, dict]:
         cited = [c for c in re.findall(r"R[0-9a-f]{8}", text) if c in valid]
         text = re.sub(r"R[0-9a-f]{8}", lambda m: m[0] if m[0] in valid else "", text)
         text = re.sub(r"\[\s*(,\s*)*\]", "", re.sub(r",\s*(?=[,\]])|(?<=\[)\s*,\s*", "", text))
+        text = re.sub(r"\s*\[(?![^\]]*R[0-9a-f]{8})[^\]]*\]", "", text)  # garbled IDs, e.g. "[Ref58a154]"
         if not cited:
             print(f"  {gkey}: no valid citations, discarded")
             continue

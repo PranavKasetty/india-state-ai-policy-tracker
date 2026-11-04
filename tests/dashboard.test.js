@@ -10,7 +10,7 @@ const path = require("node:path");
 const vm = require("node:vm");
 
 function load() {
-  const sandbox = { Intl, console };
+  const sandbox = { Intl, console, URLSearchParams };
   sandbox.window = sandbox;
   vm.createContext(sandbox);
   for (const f of ["format.js", "query.js", "dataset.js"]) {
@@ -161,4 +161,23 @@ test("repairText fixes UTF-8 read as Latin-1 and leaves other text alone", () =>
   assert.equal(T.dataset.repairText("Café ₹1,725 crore"), "Café ₹1,725 crore");
   assert.equal(T.dataset.repairText("The stateâ\u0080\u0099s system…"), "The state’s system…", "mixed with real Unicode");
   assert.equal(T.dataset.repairText(undefined), undefined);
+});
+
+test("stage filter: action means approved, signed, launched or in use", () => {
+  const raw = structuredClone(RAW);
+  raw.meta.stages = [{ id: "announced", label: "A" }, { id: "decided", label: "D" }, { id: "underway", label: "U" }];
+  ["announced", "decided", "underway", ""].forEach((st, i) => { raw.items[i].stage = st; });
+  const d = T.dataset.loadDataset(raw);
+  const f = T.query.defaultFilters(d);
+  const ids = (stage) => plain(T.query.filterItems(d, { ...f, stage }).map((it) => it.id));
+  assert.deepEqual(ids("action"), ["2", "3"]);
+  assert.deepEqual(ids("announced"), ["1"]);
+  assert.deepEqual(ids(""), ["1", "2", "3", "4"], "unjudged records show when no stage is chosen");
+});
+
+test("permalink and issueUrl build shareable links", () => {
+  assert.equal(T.format.permalink("R1a2b3c4d", "https://x.test/tracker/"), "https://x.test/tracker/#item=R1a2b3c4d");
+  const url = new URL(T.format.issueUrl("Problem with R1", "Line 1\nLine 2 & more"));
+  assert.equal(url.pathname, "/PranavKasetty/india-state-ai-policy-tracker/issues/new");
+  assert.equal(url.searchParams.get("body"), "Line 1\nLine 2 & more");
 });

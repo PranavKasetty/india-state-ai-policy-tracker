@@ -199,6 +199,40 @@ button { font: inherit; }
 .scale li { width: 50px; text-align: center; font-size: 0.75rem; font-variant-numeric: tabular-nums; }
 .scale .sw { display: block; height: 12px; border-radius: 2px; margin-bottom: 2px; }
 
+/* ---------- where each state stands ---------- */
+.status-table { border-collapse: collapse; width: 100%; min-width: 860px; font-size: 0.9rem; }
+.status-table th, .status-table td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--rule); }
+.status-table thead th { font-weight: 500; font-size: 0.85rem; color: var(--ink-2); border-bottom: 1px solid var(--control); }
+.status-table tbody th { position: sticky; left: 0; z-index: 1; background: var(--surface); white-space: nowrap; font-weight: 600; }
+.status-table td { max-width: 24ch; }
+.status-table td.num { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.status-table .st-none { color: var(--ink-2); }
+.status-table tr.is-chosen th, .status-table tr.is-chosen td { background: var(--highlight-wash); }
+/* Status words: done is solid, announced dashed (as the stage tags on cards). */
+.st { display: inline-block; padding: 0 6px; border-radius: 2px; border: 1px solid var(--ink-2); font-size: 0.8rem; font-weight: 600; color: var(--ink); }
+.st-announced { border-style: dashed; font-weight: 500; color: var(--ink-2); }
+
+/* ---------- static state pages (pipeline/pages.py) ---------- */
+.crumbs { font-size: 0.9rem; color: var(--ink-2); margin-bottom: 8px; }
+.static-head { display: block; }
+.static-status { display: grid; gap: 10px; margin: 12px 0 0; }
+.static-status div { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: 12px; }
+.static-status dt { font-weight: 600; }
+.static-status dd { margin: 0; max-width: 70ch; }
+.static-status .st-none { color: var(--ink-2); }
+.static-brief { max-width: 72ch; line-height: 1.6; margin: 0; }
+.static-item { padding: 14px 0; border-top: 1px solid var(--rule); scroll-margin-top: 12px; }
+.static-item:first-child { border-top: 0; }
+.static-item:target { background: var(--highlight-wash); }
+.static-states { columns: 2 18rem; list-style: none; padding: 0; margin: 0; }
+.static-states li { break-inside: avoid; padding: 6px 0; }
+.static-states a { font-weight: 600; font-size: 1.0625rem; }
+.static-count { display: block; color: var(--ink-2); font-size: 0.9rem; }
+.static-foot { margin-top: 24px; padding-top: 14px; border-top: 1px solid var(--rule); color: var(--ink-2); font-size: 0.9rem; max-width: 80ch; }
+@media (max-width: 640px) {
+  .static-status div { grid-template-columns: 1fr; gap: 2px; }
+}
+
 /* ---------- monthly bars ---------- */
 .timechart svg { display: block; width: 100%; height: auto; overflow: visible; }
 .timechart .grid { stroke: var(--rule); }
@@ -243,6 +277,9 @@ details.data-table td { text-align: right; }
 .item-summary { margin: 4px 0 0; color: var(--ink-2); max-width: 75ch; }
 .item-meta { margin: 6px 0 0; font-size: 0.9rem; color: var(--ink-2); }
 .outlets { font-size: 0.9rem; color: var(--ink-2); }
+.item-actions { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 6px 0 0; font-size: 0.85rem; }
+.link-btn { font: inherit; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.link-btn:hover, .item-actions a:hover { text-decoration-thickness: 2px; }
 .outlets summary { cursor: pointer; color: var(--accent); width: fit-content; }
 .outlets p { margin: 2px 0 0; max-width: 75ch; }
 
@@ -274,6 +311,9 @@ details.data-table td { text-align: right; }
 /* Shown only when more than one outlet covered it, so heavy coverage stands out. */
 .item-tags .coverage { padding: 0 7px; border-radius: 2px; border: 1px solid var(--control); color: var(--ink); font-weight: 600; }
 .item-tags .sector { color: var(--ink-2); padding: 0 4px; }
+/* Stage: done things get a solid outline, announcements a dashed one. */
+.item-tags .stage { padding: 0 7px; border-radius: 2px; border: 1px solid var(--ink-2); color: var(--ink); }
+.item-tags .stage[data-stage="announced"] { border-style: dashed; color: var(--ink-2); }
 .empty { color: var(--ink-2); }
 .more { margin-top: 10px; }
 
@@ -339,7 +379,7 @@ details.data-table td { text-align: right; }
   .filter-fields { order: 3; display: none; flex: 1 1 100%; }
   .filters.is-open .filter-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 12px; padding-top: 4px; }
   /* State | Type, then Sector across, so From | To share a row. */
-  .filter-fields label:nth-child(3), .filter-fields label.check { grid-column: 1 / -1; }
+  .filter-fields label.check { grid-column: 1 / -1; }
   .filter-fields select { width: 100%; }
 
   .masthead { gap: 12px; }
@@ -387,6 +427,6 @@ details.data-table td { text-align: right; }
   .briefs::before { display: none; }
 }
 @media print {
-  .filters, .toggle-group, .skip-link, .more, .tooltip, .disclosure::before, #to-list { display: none !important; }
+  .filters, .toggle-group, .skip-link, .more, .tooltip, .disclosure::before, #to-list, .item-actions { display: none !important; }
   .panel { break-inside: avoid; }
 }

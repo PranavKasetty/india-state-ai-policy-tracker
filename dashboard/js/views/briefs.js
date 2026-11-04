@@ -65,7 +65,9 @@
     function renderBrief(b, key, subject, shown, labelText) {
       const order = [];
       const num = (id) => (order.includes(id) ? order.indexOf(id) : order.push(id) - 1) + 1;
-      const points = b.text.trim().split(SENTENCE_END).map((sentence) => esc(sentence).replace(CITES_RE, (_, ids) => {
+      // Brackets holding no valid ID (a garbled citation such as "[Ref58a154]") are dropped.
+      const text = b.text.replace(/\s*\[(?![^\]]*R[0-9a-f]{8})[^\]]*\]/g, "");
+      const points = text.trim().split(SENTENCE_END).map((sentence) => esc(sentence).replace(CITES_RE, (_, ids) => {
         const known = ids.split(/\s*,\s*/).filter((id) => shown.has(id) || byId.get(id)?.url);
         return known.length
           ? ` <span class="cites">[${known.map((id) => citation(id, num(id), shown)).join(", ")}]</span>`
@@ -106,9 +108,9 @@
         if (!found.length) { box.innerHTML = ""; return; }
 
         const shown = new Set(items.map((it) => it.id));
-        const narrowed = state.sector || state.focus || state.q || !isFullRange(data, state);
+        const narrowed = state.sector || state.stage || state.focus || state.q || !isFullRange(data, state);
         box.innerHTML = found.map(([b, key, subject, text]) => renderBrief(b, key, subject, shown, text)).join("") +
-          (narrowed ? `<p class="brief-note">${nounText("The summary covers all dates, sectors and types of action, not only the {many} matching the current filters.")}</p>` : "") +
+          (narrowed ? `<p class="brief-note">${nounText("The summary covers all dates, sectors, stages and types of action, not only the {many} matching the current filters.")}</p>` : "") +
           `<p class="brief-note">Numbers mark the reports each sentence relies on. Check them before quoting.</p>`;
         if (changed && !T.motion.reduced()) {
           box.classList.remove("entering");

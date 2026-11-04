@@ -48,5 +48,18 @@
     return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * p;
   }
 
-  T.format = { monthRange, monthShort, monthLong, monthFull, formatDate, formatNumber, plural, esc, niceStep, NOUN, count, nounText };
+  // ---------- links out ----------
+
+  const REPO = "https://github.com/PranavKasetty/india-state-ai-policy-tracker";
+
+  /** A GitHub "new issue" link with the title and body filled in. */
+  const issueUrl = (title, body) => `${REPO}/issues/new?${new URLSearchParams({ title, body })}`;
+
+  /** The page address that opens on record `id` (main.js reads #item=). */
+  const permalink = (id, base = location.origin + location.pathname) => `${base}#item=${encodeURIComponent(id)}`;
+
+  /** URL segment of a state's page (pipeline/pages.py writes state/<slug>/). */
+  const stateSlug = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+  T.format = { REPO, issueUrl, permalink, stateSlug, monthRange, monthShort, monthLong, monthFull, formatDate, formatNumber, plural, esc, niceStep, NOUN, count, nounText };
 })(window.Tracker = window.Tracker || {});

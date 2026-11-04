@@ -4,15 +4,23 @@
   "use strict";
   /** The filter keys and their "unset" values. Order is the URL order. */
   function defaultFilters(data) {
-    return { state: "", cat: "", sector: "", focus: "", from: data.months[0] || "", to: data.months.at(-1) || "", q: "" };
+    return { state: "", cat: "", sector: "", stage: "", focus: "", from: data.months[0] || "", to: data.months.at(-1) || "", q: "" };
   }
 
-  // "Policy actions only" (focus=policy): types that commit a government to something
-  // (a policy, a rule, a body, money or a signed agreement), leaving out deployments,
-  // infrastructure, skilling and events. Types come from headlines, so an announced
-  // plan counts as well as an adopted one.
+  // "Policy and governance only" (focus=policy): types about the rules of the game
+  // (a policy, a rule, a body, money or an agreement), leaving out deployments,
+  // infrastructure, skilling and events. Whether it was only announced or actually
+  // done is the separate stage filter.
   const POLICY_TYPES = ["strategy_policy", "regulation_ethics", "governance_body", "funding_budget", "partnership"];
   const FOCUS = { policy: (it) => it.tags.some((t) => POLICY_TYPES.includes(t)) };
+
+  // Stage (pipeline/stage.py): "action" groups the two stages where something was done.
+  const STAGE = {
+    action: (it) => it.stage === "decided" || it.stage === "underway",
+    decided: (it) => it.stage === "decided",
+    underway: (it) => it.stage === "underway",
+    announced: (it) => it.stage === "announced",
+  };
 
   const isFullRange = (data, filters) =>
     filters.from === data.months[0] && filters.to === data.months.at(-1);
@@ -31,6 +39,7 @@
       (!use("cat") || it.tags.includes(filters.cat)) &&
       (!use("sector") || it.sector === filters.sector) &&
       (!use("focus") || (FOCUS[filters.focus] || (() => true))(it)) &&
+      (!use("stage") || (STAGE[filters.stage] || (() => true))(it)) &&
       (it.month ? it.month >= filters.from && it.month <= filters.to : full) &&
       (!q || it.search.includes(q)));
   }
@@ -124,6 +133,6 @@
     return Date.UTC(d.getFullYear(), d.getMonth(), d.getDate());
   }
 
-  T.query = { defaultFilters, isFullRange, POLICY_TYPES, FOCUS_VALUES: Object.keys(FOCUS), filterItems, monthsInRange, countByMonth, stateByCategory, rankBy,
+  T.query = { defaultFilters, isFullRange, POLICY_TYPES, FOCUS_VALUES: Object.keys(FOCUS), STAGE_VALUES: Object.keys(STAGE), filterItems, monthsInRange, countByMonth, stateByCategory, rankBy,
     sortItems, trendScore, outlets, SORT_MODES: Object.keys(SORTS) };
 })(window.Tracker = window.Tracker || {});
