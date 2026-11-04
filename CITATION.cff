@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this dataset or code, please cite it as below. The data is CC BY 4.0, so credit is required."
+title: "Indian States AI Policy Tracker"
+type: dataset
+authors:
+  - family-names: Kasetty
+    given-names: Pranav
+repository-code: "https://github.com/PranavKasetty/india-state-ai-policy-tracker"
+url: "https://pranavkasetty.github.io/india-state-ai-policy-tracker/"
+license: CC-BY-4.0
+date-released: 2026-11-05
+keywords:
+  - artificial intelligence
+  - AI policy
+  - India
+  - state governments
