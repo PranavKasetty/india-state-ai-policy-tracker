@@ -18,7 +18,7 @@ Several reports of the same development are merged into one row.
 | `raw/llm_labels.jsonl` | The LLM's label for each candidate headline, by prompt version (cache) |
 | `raw/llm_pairs.jsonl` | The LLM's same-development verdict for each near-duplicate pair (cache) |
 | `raw/enriched.jsonl` | Publisher URL, standfirst and image per record (cache) |
-| `scan/state_scan.csv` | The 28-state scan used to choose which states to cover |
+| `scan/state_scan.csv` | The 28-state scan used to choose the first 11 states (all 28 are now covered) |
 
 CSV files are UTF-8 with a byte-order mark, so Excel shows ₹ correctly.
 
@@ -66,7 +66,9 @@ counts tag frequency and overlap) rather than taken from the OECD.AI policy
 instrument types, which describe national strategies and fit state-level news
 poorly.
 
-## How states were chosen
+## How the first states were chosen
+
+All 28 states are now covered. The first version covered 11, chosen as follows.
 
 `scan/state_scan.csv` ran the same Google News query for all 28 states over the
 12 months and counted the headlines that name the state, an AI term, and a
@@ -110,9 +112,9 @@ government signal (`plus_gov_signal`).
 - **Headline-only judgement.** Neither the rules nor the LLM read the article.
 - **Coverage, not activity.** Counts measure how much the news covered a state's
   AI activity. States with more English-language business press look more active.
-- **Not validated yet.** A random sample of 60 candidate headlines is being hand
-  labelled (`analysis/hand_labels/`) to measure precision and recall of the rules
-  and the LLM.
+- **Some real items are missed.** On 60 hand-labelled headlines
+  (`analysis/hand_labels/scores.csv`) the LLM rubric in use (v2) scored 97%
+  precision and 81% recall. A sample this small gives wide error margins.
 - **Missing sources.** No government press releases, gazettes, assembly records
   or regional-language news.
 - **AI briefs** are generated from these records only and cite record IDs.

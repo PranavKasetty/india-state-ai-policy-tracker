@@ -8,7 +8,7 @@ as a static dashboard that refreshes daily.
 - **Dataset:** [`data/output/records.csv`](data/output/records.csv) and
   [`records.xlsx`](data/output/records.xlsx) (with a data dictionary sheet).
   See [`data/README.md`](data/README.md) for what each file and column means.
-- **Coverage:** 11 states, 1 November 2025 onwards, English-language news.
+- **Coverage:** all 28 states, 1 November 2025 onwards, English-language news.
 
 ## How it works
 
@@ -22,7 +22,7 @@ Google News RSS ─► collect ─► classify ─► dedupe ─► enrich ─�
 
 | Stage | Module | What it does |
 |---|---|---|
-| Scan | `pipeline/scan.py` | One-off: counts AI + government headlines for all 28 states to choose which to cover |
+| Scan | `pipeline/scan.py` | One-off: counts AI + government headlines for all 28 states (used to choose the first 11; all 28 are now covered) |
 | Collect | `pipeline/collect.py`, `gnews.py` | Three queries per state (government terms, broad AI terms, named state agencies) in 14- or 30-day windows, merged by Google News guid |
 | Normalise | `pipeline/states.py`, `dates.py` | State from names, agencies, abbreviations and cities; dates converted to IST with an explicit precision |
 | Classify | `pipeline/classify.py`, `llm.py` | Keyword rules give a first in/out decision and categories; an LLM applies a written rubric to every candidate and overrides the rules when it answers |
@@ -59,9 +59,12 @@ Without a key the pipeline runs on keyword rules alone. LLM answers are cached i
 
 ## Daily refresh
 
-- `.github/workflows/update-data.yml` runs at 08:00 IST: collects the last 3 days,
+- `.github/workflows/update-data.yml` is scheduled for 05:47 IST (00:17 UTC);
+  GitHub often starts scheduled runs hours late. It collects the last 3 days,
   classifies, dedupes, enriches up to 200 new records, and commits the changed
-  data. The LLM key is the `LLM_API_KEY` repository secret.
+  data. It also runs on pushes to `main` that change `pipeline/`,
+  `requirements.txt` or the workflow, and can be started by hand with a larger
+  enrichment limit. The LLM key is the `LLM_API_KEY` repository secret.
 - `.github/workflows/pages.yml` deploys `dashboard/` to GitHub Pages after each
   successful data run, or when the dashboard code changes.
 
@@ -72,7 +75,7 @@ pipeline/            the pipeline (one module per stage)
 dashboard/           static dashboard; data.js is generated
 data/raw/            collected items, LLM labels and pair verdicts, enrichment (committed caches)
 data/output/         the dataset and audit files
-data/scan/           the 28-state scan used to choose states
+data/scan/           the 28-state scan used to choose the first states
 analysis/            taxonomy probe and the hand-labelling sample
 tests/               dashboard tests
 ```
@@ -98,15 +101,19 @@ tests/               dashboard tests
 - **Google News is the only source.** Results are a relevance-ranked sample with
   no real pagination (narrow date windows recover more). Government press releases,
   gazettes and regional-language outlets are not covered.
-- **LLM labels are unvalidated at scale.** The rules and the LLM agreed on 58% of
-  in/out decisions before the rubric was tightened. A 60-item hand-labelled sample
-  (`analysis/hand_labels/`) measures precision and recall; until it is complete,
-  expect some false positives.
+- **The LLM misses some real items.** On a random sample of 60 hand-labelled
+  headlines (`analysis/hand_labels/scores.csv`), the rubric in use (v2) had 97%
+  precision and 81% recall: about one in five real developments is left out,
+  such as company-run programmes in a state and court rulings. The earlier v1
+  rubric had higher recall (91%) but let in more items where the government was
+  not the actor. A sample of 60 gives wide error margins.
 - **Deduplication** compares headlines within one state and 7 days. Follow-up
   stories (an MoU, then its cancellation) are kept separate on purpose; slow-moving
   stories reported more than a week apart may appear twice.
-- **11 of 28 states.** Chosen from the scan (see `data/README.md`). The other 17
-  are not tracked, so absence from the dashboard says nothing about their activity.
+- **Coverage, not activity.** Counts measure how much English-language news
+  covered a state's AI work. Large states and tech hubs get more coverage; small
+  north-eastern states have only a handful of records, which says little about
+  their activity.
 - **Link resolution and thumbnails** depend on an undocumented Google endpoint
   that rate-limits; unresolved records link to Google News and show no image.
 - **The repository grows daily** because the workflow commits data.
