@@ -42,7 +42,11 @@ def search_url(query: str) -> str:
 
 def fetch(query: str, refresh: bool = False) -> bytes:
     """Return raw RSS XML for a query, from cache when available."""
-    url = search_url(query)
+    return fetch_url(search_url(query), refresh)
+
+
+def fetch_url(url: str, refresh: bool = False) -> bytes:
+    """Return raw RSS XML for a search URL (any language edition), from cache when available."""
     path = CACHE_DIR / (hashlib.sha1(url.encode()).hexdigest()[:16] + ".xml")
     if path.exists() and not refresh:
         return path.read_bytes()

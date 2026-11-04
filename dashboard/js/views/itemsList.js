@@ -14,6 +14,7 @@
   const { outlets, sortItems } = T.query;
 
   const PAGE_SIZE = 25;
+  const LANGUAGES = { hi: "Hindi", mr: "Marathi" };
   const MAX_NAMED = 4; // outlets named inline; more go in a "List all" disclosure
   const LIST = new Intl.ListFormat("en-IN", { style: "long", type: "conjunction" });
   const SORT_NOTES = {
@@ -80,10 +81,12 @@
         <div class="thumb" aria-hidden="true"><span class="thumb-code">${esc(code[it.state] || "")}</span>${img}</div>
         <div class="item-body">
           <h3 class="item-title">${title}</h3>
-          ${it.summary ? `<p class="item-summary">${esc(it.summary)}</p>` : ""}
+          ${it.lang && it.title_original
+            ? `<p class="item-original" lang="${esc(it.lang)}">${esc(it.title_original)}</p>`
+            : it.summary ? `<p class="item-summary">${esc(it.summary)}</p>` : ""}
           <p class="item-meta">${itemDate(it)}, ${esc(it.state)}. Reported by ${reportedBy}.</p>
           ${outletList}
-          <ul class="item-tags" aria-label="Coverage, stage, types and sector">${coverage}${stage}${tags}<li class="sector">${esc(it.sector)}</li></ul>
+          <ul class="item-tags" aria-label="Coverage, stage, types and sector">${coverage}${it.lang && LANGUAGES[it.lang] ? `<li class="translated">Translated from ${LANGUAGES[it.lang]}</li>` : ""}${stage}${tags}<li class="sector">${esc(it.sector)}</li></ul>
           <p class="item-actions">
             <button type="button" class="link-btn" data-copy="${esc(it.id)}">Copy link<span class="visually-hidden"> to this entry</span></button>
             <a href="${esc(reportUrl(it))}" target="_blank" rel="noopener">Report a problem<span class="visually-hidden"> with this entry (opens GitHub in a new tab)</span></a>

@@ -20,7 +20,8 @@ for real; dashboard/mock_data.py writes a placeholder. Both should produce:
     optional  date_precision ("day" | "month" | "year" | "unknown"), summary,
               image (thumbnail URL, "" if none), n_sources (int),
               also_reported_by ([str] or "; "-joined str),
-              stage (an id from meta.stages, or "" when not judged)
+              stage (an id from meta.stages, or "" when not judged),
+              lang ("hi" | "mr") and title_original, for a headline translated into English
 
 The taxonomy, states and sectors travel in meta, so changing them needs no
 dashboard code changes. validate() is the full check; js/data.js runs a lighter one.
@@ -35,7 +36,7 @@ _DATE = re.compile(r"^(\d{4}(-\d{2}(-\d{2})?)?)?$")
 REQUIRED = {"id": str, "date": str, "state": str, "title": str, "source": str,
             "url": str, "category": str, "tags": list, "sector": str}
 OPTIONAL = {"date_precision": str, "summary": str, "image": str, "n_sources": int,
-            "also_reported_by": (list, str), "stage": str}
+            "also_reported_by": (list, str), "stage": str, "lang": str, "title_original": str}
 MAX_ERRORS = 10
 
 

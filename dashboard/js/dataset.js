@@ -62,7 +62,7 @@
       summary: it.summary && it.summary !== it.title ? it.summary : "",
       image: it.image || "",
       alsoReportedBy: others,
-      search: `${it.title} ${it.summary || ""}`.toLowerCase(),
+      search: `${it.title} ${it.title_original || ""} ${it.summary || ""}`.toLowerCase(),
     };
   }
 

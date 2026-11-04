@@ -23,7 +23,9 @@ COLUMNS = {
     "state_code": "ISO 3166-2:IN code",
     "date": "Date first reported, in IST. ISO 8601 at the precision known (YYYY-MM-DD / YYYY-MM / YYYY)",
     "date_precision": "day | month | year | unknown",
-    "title": "Headline of the earliest report",
+    "title": "Headline of the earliest report (an English translation when that report is in Hindi or Marathi)",
+    "language": "Language of the earliest report: en, hi (Hindi) or mr (Marathi)",
+    "title_original": "The headline as published, when it is not in English",
     "summary": "One line: the publisher's standfirst, or the headline when unavailable",
     "summary_source": "publisher standfirst | headline",
     "primary_category": "Single main category (priority order in classify.CATEGORIES)",
@@ -57,7 +59,7 @@ def write_all(records: list[dict], sources: list[dict], excluded: list[dict], au
     OUT.mkdir(parents=True, exist_ok=True)
     flat = [_flat(r) for r in records]
     _csv(OUT / "records.csv", flat, list(COLUMNS))
-    _csv(OUT / "sources.csv", sources, ["record_id", "source_name", "title", "date", "url"])
+    _csv(OUT / "sources.csv", sources, ["record_id", "source_name", "title", "date", "url", "language", "title_original"])
     _csv(OUT / "excluded.csv", excluded, ["reason", "state", "date", "title", "source_name", "gnews_url"])
     _csv(OUT / "dedupe_audit.csv", audit, ["layer", "similarity", "kept_title", "merged_title"])
     status_rows = [{"state": s, **{f"{f}{suffix}": (p.get(f) or {}).get(key, "") if key != "cites"
@@ -70,7 +72,7 @@ def write_all(records: list[dict], sources: list[dict], excluded: list[dict], au
 
     wb = Workbook()
     sheets = [("records", flat, list(COLUMNS)),
-              ("sources", sources, ["record_id", "source_name", "title", "date", "url"]),
+              ("sources", sources, ["record_id", "source_name", "title", "date", "url", "language", "title_original"]),
               ("data_dictionary", [{"column": k, "meaning": v} for k, v in COLUMNS.items()],
                ["column", "meaning"])]
     for i, (name, rows, fields) in enumerate(sheets):
@@ -98,7 +100,8 @@ def write_dashboard(records: list[dict], briefs: dict[str, dict], profiles: dict
               "source": r["source_name"], "url": r["source_url"], "image": r["image_url"],
               "category": CATEGORY_IDS[r["primary_category"]],
               "tags": [CATEGORY_IDS[t] for t in r["tags"]], "sector": r["sector"], "stage": r.get("stage", ""),
-              "n_sources": r["n_sources"], "also_reported_by": r["also_reported_by"]}
+              "n_sources": r["n_sources"], "also_reported_by": r["also_reported_by"],
+              **({"lang": r["language"], "title_original": r["title_original"]} if r.get("language", "en") != "en" else {})}
              for r in records]
     meta = {"is_mock": False,
             "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),

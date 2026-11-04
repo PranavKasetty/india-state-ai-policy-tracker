@@ -8,7 +8,7 @@ as a static dashboard that refreshes daily.
 - **Dataset:** [`data/output/records.csv`](data/output/records.csv) and
   [`records.xlsx`](data/output/records.xlsx) (with a data dictionary sheet).
   See [`data/README.md`](data/README.md) for what each file and column means.
-- **Coverage:** all 28 states, 1 November 2025 onwards, English-language news.
+- **Coverage:** all 28 states, 1 November 2025 onwards. English-language news, plus Hindi news for the nine Hindi-speaking states and Marathi news for Maharashtra.
 
 ## How it works
 
@@ -24,6 +24,7 @@ Google News RSS ─► collect ─► classify ─► dedupe ─► enrich ─�
 |---|---|---|
 | Scan | `pipeline/scan.py` | One-off: counts AI + government headlines for all 28 states (used to choose the first 11; all 28 are now covered) |
 | Collect | `pipeline/collect.py`, `gnews.py` | Three queries per state (government terms, broad AI terms, named state agencies) in 14- or 30-day windows, merged by Google News guid |
+| Regional | `pipeline/regional.py` | Hindi (nine Hindi-speaking states) and Marathi (Maharashtra) news: an AI term must be in the original headline; the LLM applies the same rubric, translates the headline and names its state. Translated items then go through the same deduplication. Chosen from a 12-language probe (`analysis/regional/`) |
 | Normalise | `pipeline/states.py`, `dates.py` | State from names, agencies, abbreviations and cities; dates converted to IST with an explicit precision |
 | Classify | `pipeline/classify.py`, `llm.py` | Keyword rules give a first in/out decision and categories; an LLM applies a written rubric to every candidate and overrides the rules when it answers |
 | Dedupe | `pipeline/dedupe.py` | Same headline, then TF-IDF similarity within a state and 7 days; near misses go to an LLM "same development?" check |
@@ -102,7 +103,7 @@ tests/               dashboard tests
   are missed or misjudged.
 - **Google News is the only source.** Results are a relevance-ranked sample with
   no real pagination (narrow date windows recover more). Government press releases,
-  gazettes and regional-language outlets are not covered.
+  gazettes and regional languages other than Hindi and Marathi are not covered.
 - **The LLM misses some real items.** On a random sample of 60 hand-labelled
   headlines (`analysis/hand_labels/scores.csv`), the rubric in use (v2) had 97%
   precision and 81% recall: about one in five real developments is left out,
@@ -112,7 +113,7 @@ tests/               dashboard tests
 - **Deduplication** compares headlines within one state and 7 days. Follow-up
   stories (an MoU, then its cancellation) are kept separate on purpose; slow-moving
   stories reported more than a week apart may appear twice.
-- **Coverage, not activity.** Counts measure how much English-language news
+- **Coverage, not activity.** Counts measure how much the news
   covered a state's AI work. Large states and tech hubs get more coverage; small
   north-eastern states have only a handful of records, which says little about
   their activity.

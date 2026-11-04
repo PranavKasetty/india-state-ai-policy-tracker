@@ -10,7 +10,7 @@ import argparse
 import hashlib
 from datetime import date, timedelta
 
-from . import briefs, collect, enrich, export, llm, profiles, stage
+from . import briefs, collect, enrich, export, llm, profiles, regional, stage
 from .classify import CATEGORY_LABELS, SECTORS, categorise, relevance
 from .dates import normalize_date
 from .dedupe import cluster
@@ -35,6 +35,15 @@ SOURCE_ALIASES = {"Times of India": "The Times of India", "TOI": "The Times of I
                   "ETTelecom.com": "Economic Times", "ETCIO.com": "Economic Times"}
 
 
+def source_reason(name: str) -> str:
+    """Why an outlet's items are left out, or "" when they are not."""
+    if name in SOCIAL_SOURCES:  # posts, not news reports
+        return "social media post"
+    if name in FOREIGN_SOURCES or "pakistan" in name.lower():
+        return "foreign outlet (Pakistan)"
+    return ""
+
+
 def classify_all(raw: list[dict], use_llm: bool) -> tuple[list[dict], list[dict]]:
     """Rules give state, date and a first decision; an LLM label, when present, overrides
     the in/out decision and the categories for candidates (state + AI term)."""
@@ -42,10 +51,8 @@ def classify_all(raw: list[dict], use_llm: bool) -> tuple[list[dict], list[dict]
     for it in raw:
         ok, reason, state, evidence = relevance(it["title"], collect.COVERED_STATES)
         iso, _ = normalize_date(it["published_raw"])
-        if it["source_name"] in SOCIAL_SOURCES:  # posts, not news reports
-            ok, reason = False, "social media post"
-        elif it["source_name"] in FOREIGN_SOURCES or "pakistan" in it["source_name"].lower():
-            ok, reason = False, "foreign outlet (Pakistan)"
+        if source_reason(it["source_name"]):
+            ok, reason = False, source_reason(it["source_name"])
         elif iso and iso < BACKFILL_START.isoformat():  # Google's after: filter is not strict
             ok, reason = False, "dated before the tracking window"
         decided.append((it, ok, reason, state, evidence))
@@ -88,14 +95,20 @@ def build_records(kept: list[dict], use_llm: bool) -> tuple[list[dict], list[dic
     records, sources = [], []
     for g in groups:
         members = sorted((kept[i] for i in g), key=lambda r: (r["date"] or "9999", r["title"]))
-        canon = members[0]
+        # The record shows its earliest English report when it has one (an original
+        # headline rather than a translation, and record IDs that stay stable when a
+        # Hindi or Marathi report joins), but is dated by its earliest report overall.
+        english = [m for m in members if m.get("language", "en") == "en"]
+        canon = english[0] if english else members[0]
         rid = "R" + hashlib.sha1(canon["guid"].encode()).hexdigest()[:8]
-        others = list(dict.fromkeys(m["source_name"] for m in members[1:]
+        others = list(dict.fromkeys(m["source_name"] for m in members
                                     if m["source_name"] != canon["source_name"]))
-        records.append({**canon, "record_id": rid, "n_sources": 1 + len(others),
-                        "also_reported_by": others})
+        records.append({"language": "en", "title_original": "", **canon, "record_id": rid,
+                        "date": members[0]["date"], "date_precision": members[0]["date_precision"],
+                        "n_sources": 1 + len(others), "also_reported_by": others})
         sources += [{"record_id": rid, "source_name": m["source_name"], "title": m["title"],
-                     "date": m["date"], "url": m["gnews_url"]} for m in members]
+                     "date": m["date"], "url": m["gnews_url"], "language": m.get("language", "en"),
+                     "title_original": m.get("title_original", "")} for m in members]
     records.sort(key=lambda r: r["date"], reverse=True)
     return records, sources, audit
 
@@ -108,16 +121,25 @@ def main() -> None:
     ap.add_argument("--no-enrich", action="store_true", help="use stored enrichment only")
     ap.add_argument("--enrich-limit", type=int, default=200, help="max new records to enrich per run")
     ap.add_argument("--no-llm", action="store_true", help="rules only, even if an API key is set")
+    ap.add_argument("--no-regional", action="store_true", help="English news only (skip Hindi and Marathi)")
     args = ap.parse_args()
 
     today = date.today()
     states = [s.strip() for s in args.states.split(",")] if args.states else None
     if args.backfill:
         collect.collect(BACKFILL_START, today + timedelta(days=1), states=states)
+        if not args.no_regional:
+            regional.collect(BACKFILL_START, today + timedelta(days=1), states=states)
     elif args.days:
         collect.collect(today - timedelta(days=args.days), today + timedelta(days=1), args.days + 1, states)
+        if not args.no_regional:
+            regional.collect(today - timedelta(days=args.days), today + timedelta(days=1), args.days + 1, states)
 
     kept, excluded = classify_all(list(collect.load().values()), use_llm=not args.no_llm)
+    if not args.no_regional:
+        r_kept, r_excluded = regional.classify(BACKFILL_START.isoformat(), not args.no_llm,
+                                               collect.COVERED_STATES, source_reason)
+        kept, excluded = kept + r_kept, excluded + r_excluded
     records, sources, audit = build_records(kept, use_llm=not args.no_llm)
     print(f"classify: {len(kept)} in scope, {len(excluded)} excluded -> {len(records)} records "
           f"after dedup ({len(kept) - len(records)} duplicates merged)")

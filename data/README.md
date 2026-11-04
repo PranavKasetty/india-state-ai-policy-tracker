@@ -2,7 +2,7 @@
 
 Each row of `output/records.csv` is one **development**: an action on AI or
 robotics by an Indian state government, or by the central government in a way
-tied to one state, as reported in English-language news from 1 November 2025.
+tied to one state, as reported in the news from 1 November 2025: English-language news for every state, plus Hindi news for the nine Hindi-speaking states (Uttar Pradesh, Bihar, Madhya Pradesh, Rajasthan, Haryana, Uttarakhand, Himachal Pradesh, Jharkhand, Chhattisgarh) and Marathi news for Maharashtra. Translated headlines keep their original in `title_original`.
 Several reports of the same development are merged into one row.
 
 ## Files
@@ -94,6 +94,13 @@ government signal (`plus_gov_signal`).
    terms + government terms; the state + AI terms; and the state's named AI and IT
    agencies + AI terms. Each runs over narrow date windows (14 or 30 days)
    because Google returns at most about 100 items per query.
+   For the nine Hindi-speaking states and Maharashtra, Google News is also searched in
+   Hindi or Marathi (state name and AI terms in that script, weekly windows). Only
+   headlines with an AI or robotics term in the original are kept; the LLM applies the
+   same rubric, translates the headline and names the state it is about, which must be
+   the state searched. The translation is then used for deduplication, so a Hindi and an
+   English report of the same development become one record (shown with its English
+   report when it has one).
 2. **Normalise.** The state is found in the headline from its name, an agency, a
    common abbreviation, or a major city, in that order of confidence. Publication
    times are converted from UTC to IST before taking the date.
@@ -115,12 +122,12 @@ government signal (`plus_gov_signal`).
   dated by the report.
 - **Headline-only judgement.** Neither the rules nor the LLM read the article.
 - **Coverage, not activity.** Counts measure how much the news covered a state's
-  AI activity. States with more English-language business press look more active.
+  AI activity. States with more English-language business press look more active, and so do the ten states whose Hindi or Marathi news is also read.
 - **Some real items are missed.** On 60 hand-labelled headlines
   (`analysis/hand_labels/scores.csv`) the LLM rubric in use (v2) scored 97%
   precision and 81% recall. A sample this small gives wide error margins.
 - **Missing sources.** No government press releases, gazettes, assembly records
-  or regional-language news.
+  or news in regional languages other than Hindi and Marathi.
 - **AI briefs** are generated from these records only and cite record IDs.
   Uncited claims are removed, but the wording still needs a human check before it
   is quoted.

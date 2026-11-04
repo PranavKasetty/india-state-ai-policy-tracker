@@ -275,6 +275,8 @@ details.data-table td { text-align: right; }
 .item-title:focus { outline: none; }
 .item-title:focus-visible { outline: 3px solid var(--accent); }
 .item-summary { margin: 4px 0 0; color: var(--ink-2); max-width: 75ch; }
+.item-original { margin: 4px 0 0; color: var(--ink-2); max-width: 75ch; }
+.item-tags .translated { padding: 0 4px; color: var(--ink-2); font-style: italic; }
 .item-meta { margin: 6px 0 0; font-size: 0.9rem; color: var(--ink-2); }
 .outlets { font-size: 0.9rem; color: var(--ink-2); }
 .item-actions { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 6px 0 0; font-size: 0.85rem; }

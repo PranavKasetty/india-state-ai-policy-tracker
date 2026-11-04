@@ -20,6 +20,7 @@ from urllib.parse import quote
 
 from .classify import CATEGORY_IDS
 from .profiles import FIELDS as PROFILE_FIELDS
+from .regional import LANGUAGE_NAMES as LANGUAGES
 from .stage import LABELS as STAGE_LABELS
 
 SITE = "https://pranavkasetty.github.io/india-state-ai-policy-tracker/"
@@ -90,7 +91,7 @@ def _foot(depth: int, updated: str) -> str:
     up = "../" * depth
     return f"""    <footer class="static-foot">
       <p>From the <a href="{up}">Indian States AI Policy Tracker</a>: AI-related actions by India's state
-      governments, gathered daily from English-language news. Data last updated {e(updated)}.
+      governments, gathered daily from English, Hindi and Marathi news. Data last updated {e(updated)}.
       <a href="https://github.com/PranavKasetty/india-state-ai-policy-tracker/blob/main/data/README.md">How the data is made</a>.</p>
     </footer>
   </div>
@@ -134,8 +135,13 @@ def _record(r: dict) -> str:
     stage_tag = f'<li class="stage" data-stage="{stage}">{STAGE_LABELS[stage]}</li>' if stage in STAGE_LABELS else ""
     tags = "".join(f'<li class="tag{" primary" if t == r["primary_category"] else ""}" data-cat="{CATEGORY_IDS[t]}">{e(t)}</li>'
                    for t in r["tags"])
-    summary = (f'<p class="item-summary">{e(r["summary"])}</p>'
-               if r.get("summary_source") == "publisher standfirst" and r.get("summary") else "")
+    lang = LANGUAGES.get(r.get("language") or "en")
+    if lang and r.get("title_original"):
+        summary = f'<p class="item-original" lang="{r["language"]}">{e(r["title_original"])}</p>'
+        stage_tag = f'<li class="translated">Translated from {lang}</li>' + stage_tag
+    else:
+        summary = (f'<p class="item-summary">{e(r["summary"])}</p>'
+                   if r.get("summary_source") == "publisher standfirst" and r.get("summary") else "")
     return f"""<li class="static-item" id="{r['record_id']}">
         <h3 class="item-title"><a href="{e(r['source_url'])}" rel="noopener">{e(r['title'])}</a></h3>
         {summary}
@@ -172,7 +178,7 @@ def state_page(state: str, recs: list[dict], profile: dict, brief: dict | None, 
     <header class="masthead static-head">
       <div>
         <h1>{e(state)}: AI policy and activity</h1>
-        <p class="lede">What the {e(state)} government has done on AI, as reported in English-language news since {e(start)}:
+        <p class="lede">What the {e(state)} government has done on AI, as reported in the news since {e(start)}:
         {n} developments, {action} of them approved, signed, launched or in use.</p>
       </div>
     </header>
