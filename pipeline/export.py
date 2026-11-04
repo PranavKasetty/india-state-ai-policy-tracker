@@ -42,6 +42,17 @@ COLUMNS = {
 }
 
 
+# Shown in the XLSX "about" sheet, for anyone who only has the spreadsheet.
+ABOUT = {
+    "title": "Indian States AI Policy Tracker",
+    "source": "https://pranavkasetty.github.io/india-state-ai-policy-tracker/",
+    "license": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/) - see data/LICENSE.md",
+    "not covered": "Headlines and publishers' summaries are quoted for reference and remain the publishers'",
+    "credit": "Indian States AI Policy Tracker, Pranav Kasetty, 2026 (CC BY 4.0)",
+    "method": "https://github.com/PranavKasetty/india-state-ai-policy-tracker/blob/main/data/README.md",
+}
+
+
 def _flat(r: dict) -> dict:
     return {k: "; ".join(r[k]) if isinstance(r.get(k), list) else r.get(k, "") for k in COLUMNS}
 
@@ -74,7 +85,8 @@ def write_all(records: list[dict], sources: list[dict], excluded: list[dict], au
     sheets = [("records", flat, list(COLUMNS)),
               ("sources", sources, ["record_id", "source_name", "title", "date", "url", "language", "title_original"]),
               ("data_dictionary", [{"column": k, "meaning": v} for k, v in COLUMNS.items()],
-               ["column", "meaning"])]
+               ["column", "meaning"]),
+              ("about", [{"item": k, "value": v} for k, v in ABOUT.items()], ["item", "value"])]
     for i, (name, rows, fields) in enumerate(sheets):
         ws = wb.active if i == 0 else wb.create_sheet()
         ws.title = name

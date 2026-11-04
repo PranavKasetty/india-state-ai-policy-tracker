@@ -8,6 +8,8 @@ as a static dashboard that refreshes daily.
 - **Dataset:** [`data/output/records.csv`](data/output/records.csv) and
   [`records.xlsx`](data/output/records.xlsx) (with a data dictionary sheet).
   See [`data/README.md`](data/README.md) for what each file and column means.
+- **License:** the data is [CC BY 4.0](data/LICENSE.md). Headlines and publishers'
+  summaries are quoted for reference and remain theirs.
 - **Coverage:** all 28 states, 1 November 2025 onwards. English-language news, plus Hindi news for the nine Hindi-speaking states and Marathi news for Maharashtra.
 
 ## How it works

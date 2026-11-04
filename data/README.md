@@ -25,6 +25,9 @@ Several reports of the same development are merged into one row.
 
 CSV files are UTF-8 with a byte-order mark, so Excel shows ₹ correctly.
 
+The data is licensed CC BY 4.0, except the headlines and publishers' summaries, which
+remain the publishers'. See [`LICENSE.md`](LICENSE.md).
+
 ## Columns (`records.csv`)
 
 | Column | Meaning |

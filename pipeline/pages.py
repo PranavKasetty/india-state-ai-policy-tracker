@@ -92,7 +92,9 @@ def _foot(depth: int, updated: str) -> str:
     return f"""    <footer class="static-foot">
       <p>From the <a href="{up}">Indian States AI Policy Tracker</a>: AI-related actions by India's state
       governments, gathered daily from English, Hindi and Marathi news. Data last updated {e(updated)}.
-      <a href="https://github.com/PranavKasetty/india-state-ai-policy-tracker/blob/main/data/README.md">How the data is made</a>.</p>
+      <a href="https://github.com/PranavKasetty/india-state-ai-policy-tracker/blob/main/data/README.md">How the data is made</a>.
+      Data licence: <a href="https://github.com/PranavKasetty/india-state-ai-policy-tracker/blob/main/data/LICENSE.md">CC BY 4.0</a>;
+      headlines and summaries belong to their publishers.</p>
     </footer>
   </div>
 </body>
