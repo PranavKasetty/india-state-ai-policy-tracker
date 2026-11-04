@@ -5,6 +5,15 @@ on:
     # 00:17 UTC = 05:47 IST, daily: after overnight print-edition stories are posted,
     # and off the hour to avoid GitHub's on-the-hour scheduling delays
     - cron: "17 0 * * *"
+  # Rebuild when a push changes how the data is made, so the live data never lags
+  # the code. Dashboard-only pushes are left to the deploy workflow. The bot's own
+  # data commits use GITHUB_TOKEN, which does not trigger workflows, so no loop.
+  push:
+    branches: [main]
+    paths:
+      - "pipeline/**"
+      - "requirements.txt"
+      - ".github/workflows/update-data.yml"
   workflow_dispatch:
     inputs:
       days:
