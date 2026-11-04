@@ -13,10 +13,13 @@ Several reports of the same development are merged into one row.
 | `output/sources.csv` | Every report behind each record (`record_id`, outlet, headline, date, link) |
 | `output/excluded.csv` | Every collected headline that was left out, with the reason |
 | `output/dedupe_audit.csv` | Every merge: which layer merged it, the similarity score, and both headlines |
+| `output/state_status.csv` | One row per state: AI policy, dedicated AI body, state AI funding and AI infrastructure, each with a status (`done`, `announced` or `none`), a short description and the record IDs it relies on. Drafted by the LLM from the records (`pipeline/profiles.py`) |
+| `output/profiles.json` | The same, as stored by the pipeline (with the model and an input hash) |
 | `output/briefs.json` | The AI-written summaries per state and per category, with the record IDs each one cites |
 | `raw/items.jsonl` | Everything collected from Google News, one line per item |
 | `raw/llm_labels.jsonl` | The LLM's label for each candidate headline, by prompt version (cache) |
 | `raw/llm_pairs.jsonl` | The LLM's same-development verdict for each near-duplicate pair (cache) |
+| `raw/llm_stages.jsonl` | The LLM's stage for each record, by prompt version (cache) |
 | `raw/enriched.jsonl` | Publisher URL, standfirst and image per record (cache) |
 | `scan/state_scan.csv` | The 28-state scan used to choose the first 11 states (all 28 are now covered) |
 
@@ -35,6 +38,7 @@ CSV files are UTF-8 with a byte-order mark, so Excel shows ₹ correctly.
 | `summary_source` | `publisher standfirst` or `headline` |
 | `primary_category` | The single main category (below) |
 | `tags` | All categories that apply, separated by `; ` |
+| `stage` | How far it has gone, judged by the LLM from the headline and standfirst: `announced` (a plan, proposal, promise or statement), `decided` (approved, notified, signed, allocated or constituted, not yet running) or `underway` (launched, deployed, in use, held or opened). Empty if not yet judged |
 | `sector` | Policy area: Health, Agriculture, Education, Policing & safety, Urban & transport, Revenue & citizen services, Industry & startups, or Cross-cutting |
 | `source_name` | Outlet of the earliest report |
 | `source_url` | Publisher URL; a Google News link when it could not be resolved |

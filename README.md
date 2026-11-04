@@ -28,8 +28,10 @@ Google News RSS ─► collect ─► classify ─► dedupe ─► enrich ─�
 | Classify | `pipeline/classify.py`, `llm.py` | Keyword rules give a first in/out decision and categories; an LLM applies a written rubric to every candidate and overrides the rules when it answers |
 | Dedupe | `pipeline/dedupe.py` | Same headline, then TF-IDF similarity within a state and 7 days; near misses go to an LLM "same development?" check |
 | Enrich | `pipeline/enrich.py` | Resolves Google links to publisher URLs and reads the standfirst and image |
+| Stage | `pipeline/stage.py` | How far each development has gone: announced, decided (approved, signed) or underway (launched, in use). A separate LLM pass, so inclusion is unchanged |
 | Briefs | `pipeline/briefs.py` | 3–4 sentence summaries per state and per category, written only from the records, with every claim cited by record ID |
-| Export | `pipeline/export.py` | Dataset files, audit files, and `dashboard/data.js` |
+| State status | `pipeline/profiles.py` | One row per state: AI policy, dedicated AI body, state AI funding, AI infrastructure, each with a status and the record IDs behind it |
+| Export | `pipeline/export.py`, `pages.py` | Dataset files, audit files, `dashboard/data.js`, a static page and RSS feed per state, the site feed and the sitemap |
 
 The dashboard (`dashboard/`) is plain HTML, CSS and JavaScript with no build
 step. It reads `dashboard/data.js`.
