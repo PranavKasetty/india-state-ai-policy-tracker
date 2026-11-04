@@ -1,0 +1,3 @@
+# Append-only caches (one JSON object per line, last line wins): keep both sides
+# when the daily bot and a local run both add lines, instead of a merge conflict.
+data/raw/*.jsonl merge=union
