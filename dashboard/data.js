@@ -2,7 +2,7 @@
 window.TRACKER_DATA = {
  "meta": {
   "is_mock": false,
-  "generated_at": "2026-11-05T02:10:07+00:00",
+  "generated_at": "2026-11-05T04:35:58+00:00",
   "period_start": "2025-11-01",
   "period_end": "2026-11-05",
   "states": [
@@ -516,22 +516,20 @@ window.TRACKER_DATA = {
      "generated_at": "2026-11-05T00:02+00:00"
     },
     "Meghalaya": {
-     "text": "Meghalaya is actively integrating artificial intelligence across multiple sectors, including governance, public health, agriculture, and education, highlighted by initiatives like the Regional AI Impact Conference and partnerships with organizations such as Wadhwani AI [Rd7994ab1, R84a1eeb7, Rf1f88f85]. Significant actions involve drafting a new IT policy focused on AI, proposing a Rs 20 crore AI Centre of Excellence, and introducing AI-enabled interactive learning and skill training programs for youth [R9625f972, Rf277c3a3, R24be49c9, Rc935224b]. Additionally, the state has deployed AI solutions for administrative governance, facial recognition integration, and landslide mapping [R6dd95eb1, Rfbdf90e5].",
+     "text": "Meghalaya has actively integrated artificial intelligence across governance, education, and public services, highlighted by initiatives such as drafting a new IT policy focusing on AI and global capability centres [R9625f972]. Significant actions include launching the AI-powered CM IMPACT guidebook [R5f7260ed], proposing an AI Centre of Excellence at Shillong Technology Park [Rf277c3a3], and partnering with Wadhwani AI to deploy solutions in agriculture and education [Rf1f88f85]. The state has also introduced interactive AI learning in schools [R24be49c9], showcased its edGrid governance tool [R73c7e0d9], and utilized data-driven governance to improve public health outcomes [R84a1eeb7].",
      "cited": [
-      "Rd7994ab1",
-      "R84a1eeb7",
-      "Rf1f88f85",
       "R9625f972",
+      "R5f7260ed",
       "Rf277c3a3",
+      "Rf1f88f85",
       "R24be49c9",
-      "Rc935224b",
-      "R6dd95eb1",
-      "Rfbdf90e5"
+      "R73c7e0d9",
+      "R84a1eeb7"
      ],
      "n_records": 17,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "03459aef14c0",
-     "generated_at": "2026-11-05T00:27+00:00"
+     "input_hash": "b5752201d9d6",
+     "generated_at": "2026-11-05T04:35+00:00"
     },
     "Tripura": {
      "text": "Tripura has undertaken significant policy and governance actions in artificial intelligence, including plans to launch India's first state-level AI policy [Rc68da9b5] and participating in national forums like the AI Impact Summit [R1fa5d707]. The state has forged key partnerships, such as signing an MoU with Google India to build an AI ecosystem [R33168f25] and collaborating with IIT Kharagpur for an innovation hub [R9435f1d2]. In education and healthcare, Tripura has introduced an AI-powered school monitoring system [R20047d48], AI skills initiatives for students [R3fff65a8], robotics labs in schools [R311a6da8], and an agreement with the Centre to supply AI-enabled medical devices like portable X-ray machines [R2235629e, R52c24900]. Furthermore, leadership has advocated for adopting AI-based technology in police traffic management [R8edb04a8] and expanding employment opportunities through targeted AI training programs [Rb70cb3d9].",
