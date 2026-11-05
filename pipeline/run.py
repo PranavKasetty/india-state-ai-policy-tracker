@@ -147,6 +147,7 @@ def main() -> None:
     store = enrich.load_store() if args.no_enrich else enrich.enrich(records, args.enrich_limit)
     for r in records:
         e = store.get(r["guid"], {})
+        r["title"] = e.get("full_title") or r["title"]  # Google's copy was cut short
         r["source_url"] = e.get("publisher_url") or r["gnews_url"]
         r["summary"] = e.get("summary") or r["title"]
         r["summary_source"] = e.get("summary_source", "headline")
