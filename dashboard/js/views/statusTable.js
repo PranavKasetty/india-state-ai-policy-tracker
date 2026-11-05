@@ -7,11 +7,17 @@
 // The markers describe the state, not the filtered view, so filters do not change
 // the rows; the chosen state is highlighted. Rows are ordered by how many markers
 // are done, then announced, then by the number of actions taken.
+//
+// Each marker shows the month of its newest cited report, and "New" when that is
+// within NEW_DAYS of the latest data. On phones the rows become one card per state
+// (CSS, from each cell's data-label) and fewer are shown at first.
 (function (T) {
   "use strict";
-  const { esc, stateSlug } = T.format;
+  const { esc, monthLong, stateSlug } = T.format;
 
-  const LIMIT = 10;
+  const LIMIT = window.matchMedia?.("(max-width: 640px)").matches ? 5 : 10;
+  const NEW_DAYS = 30;
+  const DAY = 864e5;
   const COLUMNS = [
     ["ai_policy", "AI policy", { done: "Adopted", announced: "Announced" }],
     ["ai_body", "Dedicated AI body", { done: "Set up", announced: "Announced" }],
@@ -19,7 +25,7 @@
     ["infrastructure", "AI infrastructure", { done: "Set up", announced: "Announced" }],
   ];
 
-  function createStatusTable({ table, more, panel }, { store, data }, reveal) {
+  function createStatusTable({ table, more, panel, jump }, { store, data }, reveal) {
     const profiles = data.meta.profiles || {};
     if (!Object.keys(profiles).length) {
       panel.hidden = true;
@@ -37,6 +43,11 @@
     const rows = data.meta.states.map((s) => s.name)
       .sort((a, b) => score(b) - score(a) || (counts[b]?.action || 0) - (counts[a]?.action || 0) || a.localeCompare(b));
     let showAll = false;
+    const end = Date.parse(data.meta.period_end);
+
+    jump.innerHTML = `<option value="">Choose a state</option>${data.meta.states
+      .map((s) => `<option value="state/${esc(stateSlug(s.name))}/">${esc(s.name)}</option>`).join("")}`;
+    jump.addEventListener("change", () => { if (jump.value) window.location.href = jump.value; });
 
     table.addEventListener("click", (e) => {
       const a = e.target.closest("a.cite[data-id]");
@@ -51,15 +62,21 @@
 
     function cell(state, [field, name, words], shown) {
       const c = profiles[state]?.[field];
-      if (!c || c.status === "none") return `<td class="st-none"><span class="visually-hidden">${esc(name)}: </span>None found</td>`;
+      const label = `data-label="${esc(name)}"`;
+      if (!c || c.status === "none") return `<td class="st-none" ${label}><span class="visually-hidden">${esc(name)}: </span>None found</td>`;
       const cites = c.cites.filter((id) => byId.has(id)).map((id, i) => {
         const it = byId.get(id);
         return shown.has(id)
           ? `<a class="cite" href="#item-${esc(id)}" data-id="${esc(id)}" aria-label="Source ${i + 1}: ${esc(it.title)}, in the list below">${i + 1}</a>`
           : `<a class="cite" href="${esc(it.url)}" target="_blank" rel="noopener" aria-label="Source ${i + 1}: ${esc(it.title)}, ${esc(it.source)} (opens in a new tab)">${i + 1}</a>`;
       });
-      return `<td><span class="st st-${esc(c.status)}">${esc(words[c.status])}</span> ${esc(c.text)}${
-        cites.length ? ` <span class="cites">[${cites.join(", ")}]</span>` : ""}</td>`;
+      // When: the newest report it cites, the latest evidence for the marker.
+      const latest = c.cites.map((id) => byId.get(id)?.date).filter(Boolean).sort().pop();
+      const fresh = latest && end - Date.parse(latest) <= NEW_DAYS * DAY;
+      const when = latest
+        ? `<span class="st-when">${fresh ? '<span class="st-new">New</span> ' : ""}${esc(monthLong(latest.slice(0, 7)))}</span>` : "";
+      return `<td ${label}><span class="st st-${esc(c.status)}">${esc(words[c.status])}</span> ${esc(c.text)}${
+        cites.length ? ` <span class="cites">[${cites.join(", ")}]</span>` : ""}${when}</td>`;
     }
 
     let lastShown = new Set();
@@ -73,7 +90,7 @@
           return `<tr${s === state.state ? ' class="is-chosen"' : ""}>
             <th scope="row"><a href="state/${esc(stateSlug(s))}/">${esc(s)}</a></th>
             ${COLUMNS.map((col) => cell(s, col, shown)).join("")}
-            <td class="num">${c.all ? `${c.action} of ${c.all}` : "0"}</td></tr>`;
+            <td class="num" data-label="Action taken">${c.all ? `${c.action} of ${c.all}` : "0"}</td></tr>`;
         }).join("")}</tbody>`;
       more.hidden = rows.length <= LIMIT;
       more.textContent = showAll ? `Show the first ${LIMIT} states` : `Show all ${rows.length} states`;

@@ -94,7 +94,16 @@ button { font: inherit; }
 .btn-quiet:hover { background: var(--accent-wash); text-decoration: underline; }
 .result-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 16px; margin: 6px 0 16px; }
 .result-count { margin: 0; color: var(--ink-2); font-size: 0.95rem; }
-#to-list { margin-inline: -10px; }
+.result-actions { display: inline-flex; flex-wrap: wrap; gap: 0 6px; margin-inline: -10px; }
+
+/* ---------- this week (views/thisWeek.js) ---------- */
+.week-list { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 1fr)); gap: 4px 28px; }
+.week-list li { padding: 8px 0; border-top: 1px solid var(--rule); }
+.week-list a { font-weight: 600; color: var(--ink); text-decoration: none; line-height: 1.35; }
+.week-list a:hover, .week-list a:focus-visible { color: var(--accent); text-decoration: underline; }
+.week-meta { display: block; margin-top: 2px; font-size: 0.85rem; color: var(--ink-2); }
+.week-states { margin: 12px 0 0; font-size: 0.95rem; }
+.week-of { color: var(--ink-2); }
 #items-title:focus { outline: none; }
 
 /* ---------- panels ---------- */
@@ -211,6 +220,13 @@ button { font: inherit; }
 /* Status words: done is solid, announced dashed (as the stage tags on cards). */
 .st { display: inline-block; padding: 0 6px; border-radius: 2px; border: 1px solid var(--ink-2); font-size: 0.8rem; font-weight: 600; color: var(--ink); }
 .st-announced { border-style: dashed; font-weight: 500; color: var(--ink-2); }
+.st-when { display: block; margin-top: 2px; font-size: 0.8rem; color: var(--ink-2); }
+.st-new { font-weight: 700; color: var(--accent); }
+.status-jump { display: flex; flex-direction: column; gap: 2px; font-size: 0.85rem; color: var(--ink-2); }
+.status-jump select {
+  font: inherit; font-size: 0.95rem; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--control); border-radius: 4px; padding: 5px 8px; min-height: 38px;
+}
 
 /* ---------- static state pages (pipeline/pages.py) ---------- */
 .crumbs { font-size: 0.9rem; color: var(--ink-2); margin-bottom: 8px; }
@@ -229,6 +245,24 @@ button { font: inherit; }
 .static-states a { font-weight: 600; font-size: 1.0625rem; }
 .static-count { display: block; color: var(--ink-2); font-size: 0.9rem; }
 .static-foot { margin-top: 24px; padding-top: 14px; border-top: 1px solid var(--rule); color: var(--ink-2); font-size: 0.9rem; max-width: 80ch; }
+/* Updates page (pipeline/pages.py updates_page) */
+.updates h2 { margin: 22px 0 2px; font-size: 1.25rem; }
+.updates-pick { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; font-size: 1.0625rem; }
+.updates-pick select, .feed-copy input {
+  font: inherit; font-size: 0.95rem; font-weight: 400; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--control); border-radius: 4px; padding: 5px 8px; min-height: 38px; max-width: 100%;
+}
+.updates-steps { margin: 10px 0 0; padding-left: 1.4em; max-width: 72ch; }
+.updates-steps li { margin: 0 0 10px; padding-left: 4px; }
+.feed-copy { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.feed-copy input { flex: 1 1 22rem; font-family: ui-monospace, Consolas, monospace; font-size: 0.85rem; }
+.updates-readers { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 0; }
+.sub-btn {
+  display: inline-flex; align-items: center; min-height: 38px; padding: 5px 14px; border-radius: 4px;
+  border: 1px solid var(--accent); background: var(--surface); color: var(--accent); font: inherit;
+  font-size: 0.95rem; font-weight: 600; text-decoration: none; cursor: pointer;
+}
+.sub-btn:hover { background: var(--accent-wash); }
 @media (max-width: 640px) {
   .static-status div { grid-template-columns: 1fr; gap: 2px; }
 }
@@ -365,6 +399,18 @@ details.data-table td { text-align: right; }
 .tooltip b { font-weight: 600; }
 
 /* ---------- small screens ---------- */
+/* Phones: the status table becomes one card per state, each marker labelled from its
+   cell's data-label (statusTable.js), so nothing scrolls sideways. */
+@media (max-width: 640px) {
+  .status-table { min-width: 0; }
+  .status-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .status-table, .status-table tbody, .status-table tr, .status-table th, .status-table td { display: block; }
+  .status-table tr { padding: 10px 0 12px; border-bottom: 1px solid var(--control); }
+  .status-table tbody th { position: static; padding: 0 0 6px; border: 0; font-size: 1.0625rem; }
+  .status-table td { position: relative; max-width: none; padding: 4px 0 4px 7.5rem; border: 0; }
+  .status-table td::before { content: attr(data-label); position: absolute; left: 0; top: 6px; width: 7rem; font-size: 0.8rem; line-height: 1.3; color: var(--ink-2); }
+  .status-table td .visually-hidden { display: none; }
+}
 @media (max-width: 640px) {
   /* Filters: search on its own line, then "Filters" and "Clear"; the fields open below. */
   .filters { gap: 8px; padding: 12px 0; }

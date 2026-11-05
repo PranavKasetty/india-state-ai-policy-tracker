@@ -21,7 +21,9 @@
   const { createRankedBars } = T.rankedBars;
   const { createTimeChart } = T.timechart;
   const { createBriefs } = T.briefs;
+  const download = T.download;
   const { createStatusTable } = T.statusTable;
+  const { createThisWeek } = T.thisWeek;
 
   const $ = (id) => document.getElementById(id);
 
@@ -58,7 +60,8 @@
     const itemsList = createItemsList({ list: $("items-list"), empty: $("items-empty"), more: $("items-more"), sortGroup: $("items-sort"), sub: $("items-sub") }, deps);
     const views = [
       createFilters($("filters"), deps),
-      createStatusTable({ table: $("status-table"), more: $("status-more"), panel: $("status-panel") }, deps, itemsList.reveal),
+      createThisWeek({ panel: $("week-panel"), sub: $("week-sub"), list: $("week-list"), states: $("week-states"), follow: $("week-follow") }, deps, itemsList.reveal),
+      createStatusTable({ table: $("status-table"), more: $("status-more"), panel: $("status-panel"), jump: $("status-jump") }, deps, itemsList.reveal),
       createRankedBars({ list: $("state-bars"), more: $("state-more") }, deps, "state", { limit: 12, noun: "states" }),
       createRankedBars({ list: $("type-bars") }, deps, "cat"),
       createMatrix({ table: $("matrix"), scale: $("matrix-scale"), sub: $("matrix-sub"), modeGroup: $("matrix-mode") }, deps),
@@ -74,6 +77,10 @@
       const heading = $("items-title");
       heading.scrollIntoView({ block: "start" });
       heading.focus({ preventScroll: true });
+    });
+    $("download-csv").addEventListener("click", () => {
+      const state = store.get();
+      download.save(filterItems(data, state), data, state);
     });
     // Names the types in query.POLICY_TYPES; keep the two in step.
     const policyNote = " Policy and governance only: strategies and policies, regulation, governance bodies, funding and partnerships (MoUs).";

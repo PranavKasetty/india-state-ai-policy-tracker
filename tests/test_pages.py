@@ -39,6 +39,17 @@ class Pages(unittest.TestCase):
         self.assertIn('onerror="this.remove()"', with_image)
         self.assertNotIn("<img", pages._record({**REC, "image_url": ""}))
 
+    def test_updates_page_offers_email_and_readers_for_every_state(self):
+        html = pages.updates_page(["Bihar", "Tamil Nadu"], "5 November 2026")
+        self.assertIn('<option value="state/tamil-nadu/feed.xml" data-slug="tamil-nadu">Tamil Nadu</option>', html)
+        self.assertIn(f'value="{pages.SITE}feed.xml"', html)
+        self.assertIn("https://blogtrottr.com/", html)
+        self.assertIn("https://feedly.com/i/subscription/feed/https%3A%2F%2Fpranavkasetty.github.io%2F", html)
+
+    def test_state_page_links_to_its_updates(self):
+        html = pages.state_page("Tamil Nadu", [REC], {}, None, "4 November 2026", "November 2025")
+        self.assertIn('href="../../updates/#tamil-nadu"', html)
+
     def test_feed_is_valid_rss(self):
         root = ET.fromstring(pages._rss("T", pages.SITE, "D", [REC], pages.SITE + "feed.xml"))
         item = root.find("channel/item")

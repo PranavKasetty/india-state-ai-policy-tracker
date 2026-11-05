@@ -4,13 +4,25 @@
   dashboard/state/<slug>/index.html   one state: where it stands, its AI brief, all its records
   dashboard/state/<slug>/feed.xml     that state's newest records (RSS 2.0)
   dashboard/feed.xml                  the newest records across states
+  dashboard/updates/index.html        how to follow the feeds by email or in a feed reader
   dashboard/sitemap.xml               the dashboard, the state index and every state page
 
 The dashboard itself is one page whose filters live in the URL hash, which search
 engines ignore; these pages give each state an address of its own ("Telangana AI
 policy"). They are plain HTML with the dashboard's stylesheet and no scripts beyond
-the theme and the visit counter.
+the theme and the visit counter (and, on the updates page, a state picker and a copy
+button).
+
+The site links people to the updates page rather than to the feeds, which a browser
+shows as raw XML. (An XSLT stylesheet would style them, but Chrome is removing XSLT
+and shows visitors a warning banner on pages that use it.)
 """
+
+# Third-party services that turn a feed into email or add it to a reader. Free, and
+# none needs an account on our side; we never see subscribers' addresses.
+EMAIL_SERVICE = ("Blogtrottr", "https://blogtrottr.com/")
+READERS = (("Feedly", "https://feedly.com/i/subscription/feed/{}"),
+           ("Inoreader", "https://www.inoreader.com/?add_feed={}"))
 import html
 import re
 from datetime import date, datetime, timezone
@@ -205,7 +217,7 @@ def state_page(state: str, recs: list[dict], profile: dict, brief: dict | None, 
       <h2 id="list-title">All {n} developments</h2>
       <p class="panel-sub">Newest first. By type: {e(types)}.
       <a href="../../#state={quote(state)}">Filter and chart them in the tracker</a>,
-      or follow new ones with the <a href="feed.xml">RSS feed</a>.</p>
+      or <a href="../../updates/#{slug(state)}">get new ones by email or in a feed reader</a>.</p>
       <ol class="item-list static-list">
       {items}
       </ol>
@@ -230,6 +242,77 @@ def index_page(states: list[str], by_state: dict, profiles: dict, updated: str) 
       {chr(10).join(rows)}
     </ul></section>
     </main>
+""" + _foot(1, updated)
+
+
+def updates_page(states: list[str], updated: str) -> str:
+    """How to follow new developments, for all states or one, by email or in a feed reader.
+    The picker sets the feed in every option; #<slug> in the address preselects a state."""
+    options = "".join(f'<option value="state/{slug(s)}/feed.xml" data-slug="{slug(s)}">{e(s)}</option>' for s in states)
+    readers = " ".join(f'<a class="sub-btn" data-reader="{e(url)}" href="{e(url.format(quote(SITE + "feed.xml", safe="")))}" '
+                       f'target="_blank" rel="noopener">Add to {name}<span class="visually-hidden"> (opens in a new tab)</span></a>'
+                       for name, url in READERS)
+    name, service = EMAIL_SERVICE
+    return _head("Get new AI developments by email or feed", "Follow new AI developments by India's state "
+                 "governments, for every state or just one, by email or in a feed reader. Updated daily.",
+                 "updates/", 1, "../feed.xml") + f"""    <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Indian States AI Policy Tracker</a> / Get updates</nav>
+    <header class="masthead static-head"><div><h1>Get new developments as they are reported</h1>
+      <p class="lede">The tracker adds new developments every morning. Follow every state or just one, by email or in a feed reader.</p></div></header>
+    <main>
+    <section class="panel updates">
+      <label class="updates-pick">Follow
+        <select id="feed-pick"><option value="feed.xml" data-slug="">All states</option>{options}</select>
+      </label>
+
+      <h2>By email</h2>
+      <p class="panel-sub">{name} is a free service that emails you a feed's new entries. We never see your address.</p>
+      <ol class="updates-steps">
+        <li>Copy the feed address:
+          <span class="feed-copy"><input id="feed-url" type="text" readonly value="{SITE}feed.xml" aria-label="Feed address">
+          <button type="button" class="sub-btn" id="feed-copy-btn">Copy</button></span></li>
+        <li>Open <a href="{service}" target="_blank" rel="noopener">{name}<span class="visually-hidden"> (opens in a new tab)</span></a>,
+          paste the address into "Feed URL" and enter your email address.</li>
+        <li>Choose how often: as entries arrive, or a daily digest. Then confirm the email {name} sends you.</li>
+      </ol>
+
+      <h2>In a feed reader</h2>
+      <p class="panel-sub">One click adds the feed to these readers. Any other reader, and the RSS apps for Slack
+      and Microsoft Teams, take the feed address above.</p>
+      <p class="updates-readers">{readers}</p>
+
+      <h2>What you get</h2>
+      <p class="panel-sub">Each new development: its headline, state, types and stage, a link to the
+      report, and a link to it in the tracker. The all-states feed carries the newest {FEED_SIZE}, each state's feed its
+      newest {STATE_FEED_SIZE}.</p>
+    </section>
+    </main>
+    <script>
+      (function () {{
+        var site = "{SITE}", pick = document.getElementById("feed-pick"), box = document.getElementById("feed-url");
+        function show() {{
+          var url = site + pick.value;
+          box.value = url;
+          document.querySelectorAll("[data-reader]").forEach(function (a) {{
+            a.href = a.dataset.reader.replace("{{}}", encodeURIComponent(url));
+          }});
+        }}
+        var want = location.hash.slice(1);
+        if (want) for (var i = 0; i < pick.options.length; i++) if (pick.options[i].dataset.slug === want) pick.selectedIndex = i;
+        pick.addEventListener("change", function () {{
+          var o = pick.options[pick.selectedIndex];
+          history.replaceState(null, "", o.dataset.slug ? "#" + o.dataset.slug : location.pathname);
+          show();
+        }});
+        document.getElementById("feed-copy-btn").addEventListener("click", function () {{
+          var b = this;
+          (navigator.clipboard ? navigator.clipboard.writeText(box.value) : Promise.reject()).then(function () {{
+            b.textContent = "Copied";
+            setTimeout(function () {{ b.textContent = "Copy"; }}, 2000);
+          }}, function () {{ box.select(); }});
+        }});
+        show();
+      }})();
+    </script>
 """ + _foot(1, updated)
 
 
@@ -285,13 +368,15 @@ def write_all(records: list[dict], briefs: dict, profiles: dict) -> None:
             f"New AI developments by the {s} government, from the Indian States AI Policy Tracker.",
             by_state[s][:STATE_FEED_SIZE], f"{SITE}state/{slug(s)}/feed.xml"), encoding="utf-8")
     (DASHBOARD / "state" / "index.html").write_text(index_page(states, by_state, profiles, updated), encoding="utf-8")
+    (DASHBOARD / "updates").mkdir(exist_ok=True)
+    (DASHBOARD / "updates" / "index.html").write_text(updates_page(states, updated), encoding="utf-8")
     (DASHBOARD / "feed.xml").write_text(_rss(
         "Indian States AI Policy Tracker", SITE,
         "New AI developments by India's state governments, gathered daily from the news.",
         newest[:FEED_SIZE], f"{SITE}feed.xml"), encoding="utf-8")
 
     today = datetime.now(timezone.utc).date().isoformat()
-    urls = ["", "state/", *[f"state/{slug(s)}/" for s in states]]
+    urls = ["", "state/", "updates/", *[f"state/{slug(s)}/" for s in states]]
     (DASHBOARD / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         "<!-- Written by pipeline/pages.py. Submitted in Google Search Console. -->\n"

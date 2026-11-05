@@ -13,7 +13,7 @@ function load() {
   const sandbox = { Intl, console, URLSearchParams };
   sandbox.window = sandbox;
   vm.createContext(sandbox);
-  for (const f of ["format.js", "query.js", "dataset.js"]) {
+  for (const f of ["format.js", "query.js", "dataset.js", "download.js"]) {
     const file = path.join(__dirname, "..", "dashboard", "js", f);
     vm.runInContext(fs.readFileSync(file, "utf8"), sandbox, { filename: file });
   }
@@ -180,4 +180,16 @@ test("permalink and issueUrl build shareable links", () => {
   const url = new URL(T.format.issueUrl("Problem with R1", "Line 1\nLine 2 & more"));
   assert.equal(url.pathname, "/PranavKasetty/india-state-ai-policy-tracker/issues/new");
   assert.equal(url.searchParams.get("body"), "Line 1\nLine 2 & more");
+});
+
+test("CSV download: newest first, quoted, with readable labels and a byte-order mark", () => {
+  const items = [data.items.find((it) => it.id === "1"), data.items.find((it) => it.id === "2")];
+  items[0] = { ...items[0], title: 'Kerala "AI" chatbot, phase 1' };
+  const csv = T.download.toCsv(items, data);
+  const lines = csv.split("\r\n");
+  assert.equal(lines[0].charCodeAt(0), 0xfeff);
+  assert.ok(lines[0].endsWith("record_id,date,state,title,title_original,language,stage,primary_category,tags,sector,n_sources,source_name,also_reported_by,source_url,summary,tracker_url"));
+  assert.ok(lines[1].startsWith("2,2026-02-05,Kerala,Kerala trains staff,,en,,Skilling,Skilling; Deployment,Education,1,B,"));
+  assert.ok(lines[2].includes(',"Kerala ""AI"" chatbot, phase 1",'));
+  assert.equal(T.download.fileName({ state: "Tamil Nadu", cat: "" }, "2026-11-05"), "india-ai-tracker-tamil-nadu-2026-11-05.csv");
 });

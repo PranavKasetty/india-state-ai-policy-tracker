@@ -74,6 +74,7 @@
   <script src="js/format.js" defer></script>
   <script src="js/query.js" defer></script>
   <script src="js/dataset.js" defer></script>
+  <script src="js/download.js" defer></script>
   <script src="js/store.js" defer></script>
   <script src="js/theme.js" defer></script>
   <script src="js/tooltip.js" defer></script>
@@ -85,6 +86,7 @@
   <script src="js/views/itemsList.js" defer></script>
   <script src="js/views/briefs.js" defer></script>
   <script src="js/views/statusTable.js" defer></script>
+  <script src="js/views/thisWeek.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -149,16 +151,32 @@
     </form>
     <div class="result-bar">
       <p class="result-count" id="result-count" role="status"></p>
-      <button type="button" class="btn-quiet" id="to-list" data-noun="Go to the {many}">Go to the developments</button>
+      <span class="result-actions">
+        <button type="button" class="btn-quiet" id="download-csv">Download these as CSV</button>
+        <button type="button" class="btn-quiet" id="to-list" data-noun="Go to the {many}">Go to the developments</button>
+      </span>
     </div>
 
     <main id="main" tabindex="-1">
+      <section class="panel" id="week-panel" aria-labelledby="week-title">
+        <div class="panel-head">
+          <div>
+            <h2 id="week-title">This week</h2>
+            <p class="panel-sub" id="week-sub"></p>
+          </div>
+          <a class="sub-btn" id="week-follow" href="updates/">Get new developments by email or feed</a>
+        </div>
+        <ol class="week-list" id="week-list"></ol>
+        <p class="week-states" id="week-states"></p>
+      </section>
+
       <section class="panel" id="status-panel" aria-labelledby="status-title">
         <div class="panel-head">
           <div>
             <h2 id="status-title">Where each state stands</h2>
-            <p class="panel-sub">Four markers of state AI policy, drafted by a language model from the news records and linked to them. "None found" means the news we collect does not show it, not that the state has none. "Action taken" counts developments approved, signed, launched or in use, out of all reported. The filters do not change this table.</p>
+            <p class="panel-sub">Four markers of state AI policy, drafted by a language model from the news records and linked to them. "None found" means the news we collect does not show it, not that the state has none. Each marker gives the month of its newest report, marked "New" if within the last 30 days. "Action taken" counts developments approved, signed, launched or in use, out of all reported. The filters do not change this table.</p>
           </div>
+          <label class="status-jump">Open a state's page <select id="status-jump"></select></label>
         </div>
         <div class="matrix-scroll" tabindex="0" role="region" aria-label="State status table, scrolls sideways">
           <table class="status-table" id="status-table"></table>
@@ -282,7 +300,7 @@
           <h3>Follow</h3>
           <ul>
             <li><a href="state/">A page for each state</a></li>
-            <li><a href="feed.xml">RSS feed</a> (state pages have their own)</li>
+            <li><a href="updates/">Email or feed updates</a>, for every state or one</li>
           </ul>
         </section>
         <section>
