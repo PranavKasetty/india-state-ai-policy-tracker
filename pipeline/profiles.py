@@ -20,6 +20,12 @@ reset to "none", so every claim links to the news reports behind it.
 
 Stored in data/output/profiles.json with a hash of each state's input, and redone
 only when that input changes.
+
+Hand-checked corrections in data/curated/status.json replace the model's cell for a
+state and marker (apply_curated): the model only sees the news since the tracking
+window opened, so it misses older policies and can mistake a draft for an adopted
+one. A corrected cell links the government's own document, or a report, and has no
+record citations.
 """
 import hashlib
 import json
@@ -31,6 +37,8 @@ from pathlib import Path
 from . import llm
 
 STORE = Path(__file__).resolve().parent.parent / "data" / "output" / "profiles.json"
+CURATED = Path(__file__).resolve().parent.parent / "data" / "curated" / "status.json"
+CURATED_KEYS = ("status", "text", "date", "document", "source", "checked")
 PROFILE_VERSION = "p1"
 MAX_RECORDS = 80
 FIELDS = ("ai_policy", "ai_body", "funding", "infrastructure")
@@ -86,6 +94,22 @@ def _clean(answer: dict, valid: set[str]) -> dict:
         text = re.sub(r"\s+", " ", str(cell.get("text") or "")).strip()
         row[field] = {"status": status, "text": text, "cites": cites} if status != "none" and cites and text else dict(EMPTY)
     return row
+
+
+def apply_curated(profiles: dict[str, dict], path: Path = CURATED) -> dict[str, dict]:
+    """profiles with the hand-checked cells in place of the model's."""
+    if not path.exists():
+        return profiles
+    curated = json.loads(path.read_text(encoding="utf-8"))
+    out = {s: dict(p) for s, p in profiles.items()}
+    for state, cells in curated.items():
+        if state.startswith("_"):
+            continue
+        for field, cell in cells.items():
+            if field in FIELDS and cell.get("status") in ("done", "announced", "none"):
+                out.setdefault(state, {})[field] = {"cites": [], "curated": True,
+                                                    **{k: cell[k] for k in CURATED_KEYS if cell.get(k)}}
+    return out
 
 
 def load() -> dict[str, dict]:

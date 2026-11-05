@@ -122,8 +122,11 @@ def _status_rows(profile: dict, cite_href) -> str:
         if cell.get("status") in ("done", "announced"):
             word = CELL_WORDS[f][0 if cell["status"] == "done" else 1]
             cites = ", ".join(f'<a class="cite" href="{cite_href(c)}">{i + 1}</a>' for i, c in enumerate(cell["cites"]))
+            link = cell.get("document") or cell.get("source")
             value = (f'<span class="st st-{cell["status"]}">{word}</span> {e(cell["text"])}'
-                     f' <span class="cites">[{cites}]</span>')
+                     + (f' <span class="cites">[{cites}]</span>' if cites else "")
+                     + (f' <a class="st-doc" href="{e(link)}" rel="noopener">'
+                        f'{"Government document" if cell.get("document") else "Report"}</a>' if link else ""))
         else:
             value = '<span class="st-none">None found</span>'
         rows.append(f"<div><dt>{CELL_NAMES[f]}</dt><dd>{value}</dd></div>")
@@ -207,7 +210,8 @@ def state_page(state: str, recs: list[dict], profile: dict, brief: dict | None, 
     <main>
     <section class="panel" aria-labelledby="stand-title">
       <h2 id="stand-title">Where {e(state)} stands</h2>
-      <p class="panel-sub">Drafted by a language model from the news records and linked to them. "None found"
+      <p class="panel-sub">Drafted by a language model from the news records and linked to them; some are corrected
+      by hand and link the government's document or a report instead. "None found"
       means the news we collect does not show it, not that the state has none.</p>
       <dl class="static-status">
 {_status_rows(profile, lambda c: f"#{c}")}

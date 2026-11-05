@@ -1,0 +1,35 @@
+{
+  "_about": "Hand-checked corrections to the state status table ('Where each state stands'). Each entry replaces the language model's cell for that state and marker. Fields: status (done | announced | none), text, date (YYYY-MM or YYYY-MM-DD), document (the government's own page or file), source (a report, when there is no official page), checked (the date someone confirmed the link and the text). Markers: ai_policy, ai_body, funding, infrastructure. Applied by pipeline/profiles.py apply_curated.",
+  "Gujarat": {
+    "ai_policy": {"status": "done", "text": "Gujarat AI Action Plan 2025-2030, approved by the Chief Minister", "date": "2025-07",
+                  "source": "https://www.theweek.in/wire-updates/national/2025/07/27/bes8-gj-ai-action-plan.html", "checked": ""}
+  },
+  "Jharkhand": {
+    "ai_policy": {"status": "announced", "text": "Draft Jharkhand AI Policy 2026-31 released for consultation", "date": "2026-07",
+                  "source": "https://newsonair.gov.in/jharkhand-govt-presents-roadmap-to-become-indias-leading-ai-driven-governance-hub/", "checked": ""}
+  },
+  "Karnataka": {
+    "ai_policy": {"status": "announced", "text": "Responsible AI policy being drafted by a committee set up in March 2026", "date": "2026-03",
+                  "source": "https://www.drishtiias.com/state-pcs-current-affairs/karnataka-constituted-committee-for-ethical-use-of-ai-in-governance", "checked": ""}
+  },
+  "Maharashtra": {
+    "ai_policy": {"status": "done", "text": "Maharashtra AI Policy 2026, approved by the cabinet in April 2026", "date": "2026-05-16",
+                  "document": "https://it.maharashtra.gov.in/documents/", "checked": ""}
+  },
+  "Odisha": {
+    "ai_policy": {"status": "done", "text": "Odisha Artificial Intelligence Policy 2025", "date": "2025-06-18",
+                  "document": "https://it.odisha.gov.in/en/notification/circulars", "checked": ""}
+  },
+  "Rajasthan": {
+    "ai_policy": {"status": "done", "text": "Rajasthan AI/ML Policy 2026", "date": "2026-01-07",
+                  "document": "https://doitc.rajasthan.gov.in/Content/PoliciesandGuidelines.aspx", "checked": ""}
+  },
+  "Tamil Nadu": {
+    "ai_policy": {"status": "done", "text": "Tamil Nadu Safe and Ethical Artificial Intelligence Policy 2020", "date": "2020-09-18",
+                  "document": "https://spc.tn.gov.in/policy/tamil-nadu-safe-and-ethical-artificial-intelligence-policy-2020/", "checked": ""}
+  },
+  "Telangana": {
+    "ai_policy": {"status": "done", "text": "Telangana AI Framework, from the IT department", "date": "2020-06",
+                  "document": "https://startup.telangana.gov.in/wp-content/uploads/2021/04/AI-framework.pdf", "checked": ""}
+  }
+}

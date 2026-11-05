@@ -221,6 +221,7 @@ button { font: inherit; }
 .st { display: inline-block; padding: 0 6px; border-radius: 2px; border: 1px solid var(--ink-2); font-size: 0.8rem; font-weight: 600; color: var(--ink); }
 .st-announced { border-style: dashed; font-weight: 500; color: var(--ink-2); }
 .st-when { display: block; margin-top: 2px; font-size: 0.8rem; color: var(--ink-2); }
+.st-doc { font-size: 0.85rem; white-space: nowrap; }
 .st-new { font-weight: 700; color: var(--accent); }
 .status-jump { display: flex; flex-direction: column; gap: 2px; font-size: 0.85rem; color: var(--ink-2); }
 .status-jump select {

@@ -8,7 +8,7 @@ from openpyxl import Workbook
 
 from .classify import CATEGORIES, CATEGORY_IDS, SECTORS
 from . import pages
-from .profiles import FIELDS as PROFILE_FIELDS
+from .profiles import FIELDS as PROFILE_FIELDS, apply_curated
 from .stage import LABELS as STAGE_LABELS
 from .states import state_code
 
@@ -66,7 +66,7 @@ def _csv(path: Path, rows: list[dict], fields: list[str]) -> None:
 
 def write_all(records: list[dict], sources: list[dict], excluded: list[dict], audit: list[dict],
               briefs: dict[str, dict], profiles: dict[str, dict] | None = None) -> None:
-    profiles = {s: {f: p[f] for f in PROFILE_FIELDS if f in p} for s, p in (profiles or {}).items()}
+    profiles = {s: {f: p[f] for f in PROFILE_FIELDS if f in p} for s, p in apply_curated(profiles or {}).items()}
     OUT.mkdir(parents=True, exist_ok=True)
     flat = [_flat(r) for r in records]
     _csv(OUT / "records.csv", flat, list(COLUMNS))
@@ -76,10 +76,12 @@ def write_all(records: list[dict], sources: list[dict], excluded: list[dict], au
     status_rows = [{"state": s, **{f"{f}{suffix}": (p.get(f) or {}).get(key, "") if key != "cites"
                                    else "; ".join((p.get(f) or {}).get("cites", []))
                                    for f in PROFILE_FIELDS for suffix, key in
-                                   (("_status", "status"), ("", "text"), ("_records", "cites"))}}
+                                   (("_status", "status"), ("", "text"), ("_records", "cites"))},
+                    **{f"{f}_link": (p.get(f) or {}).get("document") or (p.get(f) or {}).get("source", "")
+                       for f in PROFILE_FIELDS}}
                    for s, p in sorted(profiles.items())]
     _csv(OUT / "state_status.csv", status_rows,
-         ["state", *[f"{f}{x}" for f in PROFILE_FIELDS for x in ("_status", "", "_records")]])
+         ["state", *[f"{f}{x}" for f in PROFILE_FIELDS for x in ("_status", "", "_records", "_link")]])
 
     wb = Workbook()
     sheets = [("records", flat, list(COLUMNS)),
