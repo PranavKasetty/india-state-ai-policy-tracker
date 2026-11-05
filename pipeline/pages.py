@@ -22,6 +22,7 @@ from .classify import CATEGORY_IDS
 from .profiles import FIELDS as PROFILE_FIELDS
 from .regional import LANGUAGE_NAMES as LANGUAGES
 from .stage import LABELS as STAGE_LABELS
+from .states import state_code
 
 SITE = "https://pranavkasetty.github.io/india-state-ai-policy-tracker/"
 DASHBOARD = Path(__file__).resolve().parent.parent / "dashboard"
@@ -144,11 +145,18 @@ def _record(r: dict) -> str:
     else:
         summary = (f'<p class="item-summary">{e(r["summary"])}</p>'
                    if r.get("summary_source") == "publisher standfirst" and r.get("summary") else "")
-    return f"""<li class="static-item" id="{r['record_id']}">
-        <h3 class="item-title"><a href="{e(r['source_url'])}" rel="noopener">{e(r['title'])}</a></h3>
-        {summary}
-        <p class="item-meta">{_long_date(r['date'] or '')}. Reported by {by}.</p>
-        <ul class="item-tags">{stage_tag}{tags}<li class="sector">{e(r['sector'])}</li></ul>
+    # As on the dashboard: the publisher's image over a tile with the state code, which
+    # is what remains when there is no image or it fails to load (hotlinking blocked).
+    img = (f'<img src="{e(r["image_url"])}" alt="" loading="lazy" decoding="async" '
+           f'referrerpolicy="no-referrer" onerror="this.remove()">' if r.get("image_url") else "")
+    return f"""<li class="item static-item" id="{r['record_id']}">
+        <div class="thumb" aria-hidden="true"><span class="thumb-code">{e(state_code(r["state"]) or "")}</span>{img}</div>
+        <div class="item-body">
+          <h3 class="item-title"><a href="{e(r['source_url'])}" rel="noopener">{e(r['title'])}</a></h3>
+          {summary}
+          <p class="item-meta">{_long_date(r['date'] or '')}. Reported by {by}.</p>
+          <ul class="item-tags">{stage_tag}{tags}<li class="sector">{e(r['sector'])}</li></ul>
+        </div>
       </li>"""
 
 

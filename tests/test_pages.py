@@ -33,6 +33,12 @@ class Pages(unittest.TestCase):
         self.assertIn('id="R1a2b3c4d"', html)
         self.assertIn("1 of them approved, signed, launched or in use", html)
 
+    def test_entries_have_a_thumbnail_over_the_state_tile(self):
+        with_image = pages._record({**REC, "image_url": "https://example.com/a.jpg?w=1&h=2"})
+        self.assertIn('<span class="thumb-code">TN</span><img src="https://example.com/a.jpg?w=1&amp;h=2"', with_image)
+        self.assertIn('onerror="this.remove()"', with_image)
+        self.assertNotIn("<img", pages._record({**REC, "image_url": ""}))
+
     def test_feed_is_valid_rss(self):
         root = ET.fromstring(pages._rss("T", pages.SITE, "D", [REC], pages.SITE + "feed.xml"))
         item = root.find("channel/item")
