@@ -2,7 +2,7 @@
 window.TRACKER_DATA = {
  "meta": {
   "is_mock": false,
-  "generated_at": "2026-11-05T01:03:43+00:00",
+  "generated_at": "2026-11-05T01:29:04+00:00",
   "period_start": "2025-11-01",
   "period_end": "2026-11-05",
   "states": [
