@@ -87,7 +87,7 @@
  "Bihar": {
   "ai_policy": {
    "status": "announced",
-   "text": "Bihar AI Policy 2026 proposed to train 5 lakh students",
+   "text": "Bihar AI Policy 2026 proposed by CM Samrat Choudhary",
    "cites": [
     "R4af400f2",
     "R0d276784",
@@ -96,23 +96,22 @@
   },
   "ai_body": {
    "status": "done",
-   "text": "Bihar AI Mission and AI division inside CM Secretariat",
+   "text": "Bihar AI division and AI committee for land department",
    "cites": [
-    "Rc9c3c4c4",
     "Rf1432c09",
-    "Rb70e845b"
+    "Rdc0edc3a"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 209 crore Arya Bhatta Drishti Project for AI training",
+   "text": "Rs 209 crore Aryabhatta Drishti Project for AI training",
    "cites": [
     "Rc36ba196"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "AI Center of Excellence established with industry partners in 2026",
+   "text": "Artificial Intelligence Center of Excellence established in Patna",
    "cites": [
     "R771b1fe3",
     "Rb48bf0e9",
@@ -120,8 +119,8 @@
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "a77cdb902b95",
-  "generated_at": "2026-11-05T00:05+00:00"
+  "input_hash": "ed6c183cd9f2",
+  "generated_at": "2026-11-05T01:03+00:00"
  },
  "Chhattisgarh": {
   "ai_policy": {
@@ -188,38 +187,34 @@
  },
  "Gujarat": {
   "ai_policy": {
-   "status": "done",
-   "text": "Data Center Policy 2026-29 adopted to attract AI investments",
-   "cites": [
-    "Re041bd74",
-    "R43f4ae2b"
-   ]
+   "status": "none",
+   "text": "",
+   "cites": []
   },
   "ai_body": {
    "status": "done",
-   "text": "Indian AI Research Organization SPV established for GIFT City CoE",
+   "text": "Indian AI Research Organization (IAIRO) established in 2026",
    "cites": [
     "Ra9ed9573"
    ]
   },
   "funding": {
    "status": "announced",
-   "text": "Rs 20 crore AI training mission announced for students",
+   "text": "Rs 20 crore AI training mission announced in 2026",
    "cites": [
     "Ra6932da2"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "AI Centre of Excellence established at GIFT City",
+   "text": "AI Centre of Excellence established at GIFT City in 2026",
    "cites": [
-    "Ra9ed9573",
-    "R8f2c57a6"
+    "Ra9ed9573"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "8f78f5d687f7",
-  "generated_at": "2026-11-05T00:05+00:00"
+  "input_hash": "f6e1848549cd",
+  "generated_at": "2026-11-05T01:03+00:00"
  },
  "Haryana": {
   "ai_policy": {
@@ -283,37 +278,34 @@
  "Jharkhand": {
   "ai_policy": {
    "status": "done",
-   "text": "Jharkhand AI Policy 2026 unveiled targeting over Rs 10,000 crore investment",
+   "text": "Jharkhand AI Policy 2026 unveiled and approved in July 2026",
    "cites": [
     "Rb9553546",
-    "R4b4e0b34",
-    "R2269e1a7"
+    "R4b4e0b34"
    ]
   },
   "ai_body": {
    "status": "announced",
-   "text": "Jharkhand Police to Form AI Task Force announced in 2026",
+   "text": "Jharkhand Police to form AI task force",
    "cites": [
     "R25c27df1"
    ]
   },
   "funding": {
-   "status": "done",
-   "text": "Rs 23 crore approved for Centre of Excellence in Palamu engineering college",
-   "cites": [
-    "Re6d71311"
-   ]
+   "status": "none",
+   "text": "",
+   "cites": []
   },
   "infrastructure": {
    "status": "done",
-   "text": "Rs 100 crore AI Center of Excellence at BIT Mesra started",
+   "text": "Rs 100 crore AI Center of Excellence at BIT Mesra approved",
    "cites": [
     "R86310780"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "21d372b3f65b",
-  "generated_at": "2026-11-05T00:29+00:00"
+  "input_hash": "ec7ba13fe4b0",
+  "generated_at": "2026-11-05T01:03+00:00"
  },
  "Karnataka": {
   "ai_policy": {
@@ -332,58 +324,56 @@
   },
   "funding": {
    "status": "done",
-   "text": "Rs 1000 crore corpus for startups and data centre mapping announced",
+   "text": "Rs 1000 crore corpus for startups and data centre mapping announced in 2026",
    "cites": [
     "R1b763bdb"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Karnataka Approves ₹35 Cr AI Hub at IIIT Bangalore",
+   "text": "Karnataka approves Rs 35 crore AI Hub at IIIT Bangalore",
    "cites": [
     "R567ab120"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "944530c49071",
-  "generated_at": "2026-11-05T00:05+00:00"
+  "input_hash": "7e7d75cbfe92",
+  "generated_at": "2026-11-05T01:03+00:00"
  },
  "Kerala": {
   "ai_policy": {
    "status": "announced",
-   "text": "Kerala AI-driven governance and data policy announced in 2026",
+   "text": "Kerala AI policy to be brought out for governance reform",
    "cites": [
-    "R219d98d4",
-    "R6cbb8cbf"
+    "R219d98d4"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "Kerala creates country's first AI department in May 2026",
+   "text": "Kerala Artificial Intelligence Mission and AI department",
    "cites": [
     "R435f8de7",
-    "R14e3f009",
-    "Ref58a154"
+    "R9641614e"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs. 50 crore Gen-Z Startup Fund and Malayalam AI Mission",
+   "text": "Rs. 50 Cr Gen-Z Startup Fund and Malayalam AI Mission",
    "cites": [
     "R1db5da2a"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Kerala AI Centre of Excellence launched in Thiruvananthapuram in 2026",
+   "text": "Twin AI Centres of Excellence launched under India AI Mission",
    "cites": [
     "Rcaa18758",
-    "Rd47ca5ca"
+    "R82061b81"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "93af57bd5031",
-  "generated_at": "2026-11-05T00:30+00:00"
+  "input_hash": "af7160ce3117",
+  "generated_at": "2026-11-05T01:03+00:00"
  },
  "Madhya Pradesh": {
   "ai_policy": {
@@ -721,9 +711,11 @@
    "cites": []
   },
   "ai_body": {
-   "status": "none",
-   "text": "",
-   "cites": []
+   "status": "done",
+   "text": "Tech team formed in DGP's office to drive AI-based policing",
+   "cites": [
+    "Ra1409382"
+   ]
   },
   "funding": {
    "status": "none",
@@ -732,19 +724,19 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "Telangana Green Skills & Applied AI Centre of Excellence launched in 2026",
+   "text": "Telangana Green Skills and Applied AI Centre of Excellence launched",
    "cites": [
     "R998e03d5"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "f7ceca08926a",
-  "generated_at": "2026-11-05T00:07+00:00"
+  "input_hash": "7433a4039240",
+  "generated_at": "2026-11-05T01:03+00:00"
  },
  "Tripura": {
   "ai_policy": {
    "status": "announced",
-   "text": "Tripura to launch state AI policy",
+   "text": "Tripura to launch India's first state AI policy",
    "cites": [
     "Rc68da9b5"
    ]
@@ -760,15 +752,13 @@
    "cites": []
   },
   "infrastructure": {
-   "status": "announced",
-   "text": "First-of-its-kind innovation hub pact with IIT Kharagpur",
-   "cites": [
-    "R9435f1d2"
-   ]
+   "status": "none",
+   "text": "",
+   "cites": []
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "afdb50577846",
-  "generated_at": "2026-11-05T00:30+00:00"
+  "input_hash": "413864df9198",
+  "generated_at": "2026-11-05T01:03+00:00"
  },
  "Uttar Pradesh": {
   "ai_policy": {
