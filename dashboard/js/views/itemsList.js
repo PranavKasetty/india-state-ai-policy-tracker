@@ -10,7 +10,7 @@
 // carries the meaning.
 (function (T) {
   "use strict";
-  const { esc, formatDate, formatNumber, issueUrl, monthLong, nounText, permalink, plural } = T.format;
+  const { esc, formatDate, formatNumber, issueUrl, mailUrl, monthLong, nounText, permalink, plural } = T.format;
   const { outlets, sortItems } = T.query;
 
   const PAGE_SIZE = 25;
@@ -89,7 +89,9 @@
           <ul class="item-tags" aria-label="Coverage, stage, types and sector">${coverage}${it.lang && LANGUAGES[it.lang] ? `<li class="translated">Translated from ${LANGUAGES[it.lang]}</li>` : ""}${stage}${tags}<li class="sector">${esc(it.sector)}</li></ul>
           <p class="item-actions">
             <button type="button" class="link-btn" data-copy="${esc(it.id)}">Copy link<span class="visually-hidden"> to this entry</span></button>
-            <a href="${esc(reportUrl(it))}" target="_blank" rel="noopener">Report a problem<span class="visually-hidden"> with this entry (opens GitHub in a new tab)</span></a>
+            <span>Report a problem<span class="visually-hidden"> with this entry</span>:
+              <a href="${esc(reportUrl(it, mailUrl))}">by email</a> or
+              <a href="${esc(reportUrl(it, issueUrl))}" target="_blank" rel="noopener">on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></span>
           </p>
         </div></li>`;
     }
@@ -143,8 +145,9 @@
     };
   }
 
-  function reportUrl(it) {
-    return issueUrl(`Problem with ${it.id}: ${it.title.slice(0, 80)}`,
+  /** A prefilled report, as a GitHub issue (issueUrl) or an email (mailUrl). */
+  function reportUrl(it, url) {
+    return url(`Problem with ${it.id}: ${it.title.slice(0, 80)}`,
       [`Entry: ${permalink(it.id)}`, `Headline: ${it.title}`, `State: ${it.state}`, `Date: ${it.date}`,
         `Source: ${it.url}`, "",
         "What is wrong? (for example: not a government action, wrong state, duplicate, wrong type or stage, broken link)",

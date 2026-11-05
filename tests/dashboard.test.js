@@ -193,3 +193,9 @@ test("CSV download: newest first, quoted, with readable labels and a byte-order 
   assert.ok(lines[2].includes(',"Kerala ""AI"" chatbot, phase 1",'));
   assert.equal(T.download.fileName({ state: "Tamil Nadu", cat: "" }, "2026-11-05"), "india-ai-tracker-tamil-nadu-2026-11-05.csv");
 });
+
+test("mailUrl prefills an email report", () => {
+  const url = T.format.mailUrl("Problem with R1", "Line 1\nLine 2 & more");
+  assert.ok(url.startsWith("mailto:pranav.kasetty@gmail.com?subject=Problem%20with%20R1&body="));
+  assert.equal(decodeURIComponent(url.split("body=")[1]), "Line 1\nLine 2 & more");
+});

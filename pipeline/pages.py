@@ -18,6 +18,8 @@ shows as raw XML. (An XSLT stylesheet would style them, but Chrome is removing X
 and shows visitors a warning banner on pages that use it.)
 """
 
+CONTACT = "pranav.kasetty@gmail.com"  # for corrections; keep in step with CONTACT in dashboard/js/format.js
+
 # Third-party services that turn a feed into email or add it to a reader. Free, and
 # none needs an account on our side; we never see subscribers' addresses.
 EMAIL_SERVICE = ("Blogtrottr", "https://blogtrottr.com/")
@@ -107,7 +109,8 @@ def _foot(depth: int, updated: str) -> str:
       governments, gathered daily from English, Hindi and Marathi news. Data last updated {e(updated)}.
       <a href="https://github.com/PranavKasetty/india-state-ai-policy-tracker/blob/main/data/README.md">How the data is made</a>.
       Data licence: <a href="https://github.com/PranavKasetty/india-state-ai-policy-tracker/blob/main/data/LICENSE.md">CC BY 4.0</a>;
-      headlines and summaries belong to their publishers.</p>
+      headlines and summaries belong to their publishers. Spotted a mistake?
+      <a href="mailto:{CONTACT}?subject=Indian%20States%20AI%20Policy%20Tracker">Email a correction</a>.</p>
     </footer>
   </div>
 </body>
