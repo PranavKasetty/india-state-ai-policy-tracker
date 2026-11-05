@@ -54,6 +54,9 @@
 
   /** A GitHub "new issue" link with the title and body filled in. */
   const issueUrl = (title, body) => `${REPO}/issues/new?${new URLSearchParams({ title, body })}`;
+  /** The no-account way to report a problem (keep in step with CONTACT in pipeline/pages.py). */
+  const CONTACT = "pranav.kasetty@gmail.com";
+  const mailUrl = (subject, body) => `mailto:${CONTACT}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   /** The page address that opens on record `id` (main.js reads #item=). */
   const permalink = (id, base = location.origin + location.pathname) => `${base}#item=${encodeURIComponent(id)}`;
@@ -61,5 +64,5 @@
   /** URL segment of a state's page (pipeline/pages.py writes state/<slug>/). */
   const stateSlug = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
-  T.format = { REPO, issueUrl, permalink, stateSlug, monthRange, monthShort, monthLong, monthFull, formatDate, formatNumber, plural, esc, niceStep, NOUN, count, nounText };
+  T.format = { REPO, CONTACT, issueUrl, mailUrl, permalink, stateSlug, monthRange, monthShort, monthLong, monthFull, formatDate, formatNumber, plural, esc, niceStep, NOUN, count, nounText };
 })(window.Tracker = window.Tracker || {});

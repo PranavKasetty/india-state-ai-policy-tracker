@@ -46,6 +46,10 @@ class Pages(unittest.TestCase):
         self.assertIn("https://blogtrottr.com/", html)
         self.assertIn("https://feedly.com/i/subscription/feed/https%3A%2F%2Fpranavkasetty.github.io%2F", html)
 
+    def test_pages_offer_a_correction_email(self):
+        html = pages.state_page("Tamil Nadu", [REC], {}, None, "4 November 2026", "November 2025")
+        self.assertIn('href="mailto:pranav.kasetty@gmail.com?subject=Indian%20States%20AI%20Policy%20Tracker"', html)
+
     def test_state_page_links_to_its_updates(self):
         html = pages.state_page("Tamil Nadu", [REC], {}, None, "4 November 2026", "November 2025")
         self.assertIn('href="../../updates/#tamil-nadu"', html)
