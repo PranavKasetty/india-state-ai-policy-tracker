@@ -88,6 +88,9 @@ def collect(start: date, end: date, window_days: int = WINDOW_DAYS, states: list
                 except requests.HTTPError as e:
                     print(f"  skipped {state} {lang} {a}..{b}: {e.response.status_code}")
                     continue
+                except requests.RequestException as e:  # e.g. a read timeout; uncached, so a rerun fills it
+                    print(f"  skipped {state} {lang} {a}..{b}: {type(e).__name__}")
+                    continue
                 for it in found:
                     n += 1
                     items.setdefault(it["guid"], {**it, "lang": lang, "state_queried": state})

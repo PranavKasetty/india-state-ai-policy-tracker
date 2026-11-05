@@ -105,6 +105,9 @@ def search_range(query: str, start: date, end: date, days: int) -> list[dict[str
         except requests.HTTPError as e:  # Google occasionally 404s one window; skip it, not the run
             print(f"  skipped window {a}..{b}: {e.response.status_code}")
             continue
+        except requests.RequestException as e:  # e.g. a read timeout mid-response, which is not retried;
+            print(f"  skipped window {a}..{b}: {type(e).__name__}")  # uncached, so a rerun fills it
+            continue
         for it in found:
             items.setdefault(it["guid"], it)
     return list(items.values())
