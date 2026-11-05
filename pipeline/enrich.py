@@ -33,6 +33,7 @@ from urllib.parse import urlparse
 import requests
 
 from .gnews import SESSION
+from .tidy import first_sentence, strip_dateline
 
 STORE = Path(__file__).resolve().parent.parent / "data" / "raw" / "enriched.jsonl"
 BATCH_URL = "https://news.google.com/_/DotsSplashUi/data/batchexecute"
@@ -143,8 +144,7 @@ def page_details(url: str, title: str = "") -> tuple[str, str, str]:
     text = _meta(page, "og:description", "description")
     if not text:
         return "", image, full
-    text = re.sub(r"^[A-Z][A-Z .,/]{2,40}:\s*", "", text)  # drop dateline, e.g. "HYDERABAD: "
-    first = re.split(r"(?<=[.!?])\s+", text)[0]
+    first = first_sentence(strip_dateline(text))  # datelines are dropped again by tidy.clean_summary
     if len(first) > 280:
         first = first[:280].rsplit(" ", 1)[0]
     if not first.endswith((".", "!", "?", "…")):  # publishers often truncate their own tags

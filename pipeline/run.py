@@ -10,7 +10,7 @@ import argparse
 import hashlib
 from datetime import date, timedelta
 
-from . import briefs, collect, enrich, export, llm, profiles, regional, stage
+from . import briefs, collect, enrich, export, llm, profiles, regional, stage, tidy
 from .classify import CATEGORY_LABELS, SECTORS, categorise, relevance
 from .dates import normalize_date
 from .dedupe import cluster
@@ -149,9 +149,14 @@ def main() -> None:
         e = store.get(r["guid"], {})
         r["title"] = e.get("full_title") or r["title"]  # Google's copy was cut short
         r["source_url"] = e.get("publisher_url") or r["gnews_url"]
-        r["summary"] = e.get("summary") or r["title"]
-        r["summary_source"] = e.get("summary_source", "headline")
+        summary = tidy.clean_summary(e.get("summary", ""))
+        r["summary"] = summary or r["title"]
+        r["summary_source"] = e.get("summary_source", "headline") if summary else "headline"
         r["image_url"] = e.get("image_url", "")
+    stock = tidy.stock_images(records)
+    for r in records:
+        if r["image_url"] in stock:
+            r["image_url"] = ""
     stages = stage.load_store() if args.no_llm else stage.label(records)
     for r in records:
         r["stage"] = stages.get(r["guid"], "")
