@@ -2,9 +2,9 @@
 window.TRACKER_DATA = {
  "meta": {
   "is_mock": false,
-  "generated_at": "2026-11-06T12:33:21+00:00",
+  "generated_at": "2026-11-06T12:41:20+00:00",
   "period_start": "2022-12-01",
-  "period_end": "2026-11-05",
+  "period_end": "2026-11-06",
   "states": [
    {
     "name": "Andhra Pradesh",
@@ -1650,26 +1650,246 @@ window.TRACKER_DATA = {
  },
  "items": [
   {
-   "id": "R7fc90bf6",
-   "date": "2026-11-05",
+   "id": "Rbc10366f",
+   "date": "2026-11-06",
    "date_precision": "day",
-   "state": "Uttar Pradesh",
-   "title": "UP roadways bus system to run on AI: new system with Rs 30 crore",
-   "summary": "UP Roadways AI-based digital platform for bus management.",
-   "source": "Dainik Bhaskar",
-   "url": "https://www.bhaskar.com/local/uttar-pradesh/lucknow/news/up-roadways-buses-ai-system-dayashankar-singh-tech-update-139594898.html",
-   "image": "https://images.bhaskarassets.com/thumb/730x0/web2images/521/2026/11/05/1001707702_1793821008.png",
-   "category": "deployment",
+   "state": "Himachal Pradesh",
+   "title": "AI, machine learning and drone technician courses to start soon in Himachal government schools",
+   "summary": "हिमाचल के सरकारी स्कूलों में जल्द AI, मशीन लर्निंग, डाटा साइंस और ड्रोन तकनीशियन पाठ्यक्रम शुरू होंगे। मंत्री जगत सिंह नेगी ने इसकी जानकारी दी।…",
+   "source": "Himachal Now News",
+   "url": "https://www.himachalnownews.com/himachal-government-schools-ai-machine-learning-drone-courses.html",
+   "image": "https://www.himachalnownews.com/wp-content/uploads/2026/11/himachal-schools-ai-technology-courses.jpg",
+   "category": "skilling",
    "tags": [
-    "deployment",
-    "funding_budget"
+    "skilling"
    ],
-   "sector": "Urban & transport",
+   "sector": "Education",
    "stage": "announced",
    "n_sources": 1,
    "also_reported_by": [],
    "lang": "hi",
-   "title_original": "यूपी में AI से चलेगी रोडवेज बसों की व्यवस्था: 30 करोड़ रुपये से बनेगा नया सिस्टम, 120 डिपो की 14,300 बसों क..."
+   "title_original": "हिमाचल के सरकारी स्कूलों में जल्द शुरू होंगे AI, मशीन लर्निंग और ड्रोन तकनीशियन पाठ्यक्रम"
+  },
+  {
+   "id": "R31638b73",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Chhattisgarh",
+   "title": "NIT Raipur and CMDC Sign MoU to Boost AI-Driven Innovations in the Mining and Mineral Sector",
+   "summary": "The MeitY IndiaAI Chhattisgarh Center of Excellence in Artificial Intelligence (AI-CoE) and the NIT…",
+   "source": "www.pib.gov.in",
+   "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2333057",
+   "image": "",
+   "category": "partnership",
+   "tags": [
+    "partnership"
+   ],
+   "sector": "Industry & startups",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R044b5fa1",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Karnataka",
+   "title": "Karnataka to train 5,000 government school teachers in AI literacy under JanAI initiative",
+   "summary": "Chief Minister D.K. Shivakumar announced the programme at the <em>Namma Shaale, Namma Javabdari</em>event at Vidhana Soudha on November 4.",
+   "source": "Economic Times",
+   "url": "https://m.economictimes.com/tech/artificial-intelligence/karnataka-to-train-5000-government-school-teachers-in-ai-literacy-under-janai-initiative/articleshow/135576628.cms",
+   "image": "https://img.etimg.com/thumb/width-1200,height-900,imgsize-4708990,resizemode-75,msid-135576628/tech/artificial-intelligence/karnataka-to-train-5000-government-school-teachers-in-ai-literacy-under-janai-initiative.jpg",
+   "category": "skilling",
+   "tags": [
+    "skilling"
+   ],
+   "sector": "Education",
+   "stage": "announced",
+   "n_sources": 2,
+   "also_reported_by": [
+    "The Hindu"
+   ]
+  },
+  {
+   "id": "R85600d54",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Karnataka",
+   "title": "\"How can a few crores replace what our land gives our grandchildren?\": Bidadi farmers fight to save 9,000 acres of fertile land from Karnataka's AI city",
+   "summary": "For over 500 days, farmers across 26 villages near Bengaluru have resisted Karnataka’s proposed 9,000-acre AI city, fearing the loss of fertile farmland, ancest...",
+   "source": "Maktoob",
+   "url": "https://maktoobmedia.com/post?id=116868&slug=how-can-a-few-crores-replace-what-our-land-gives-our-grandchildren-bidadi-farmers-fight-to-save-9000-acres-of-fertile-land-from-karnatakas-ai-city",
+   "image": "https://maktoobmedia.com/og/e4548013fcb4a1399ea1981fc009c5db9874f111.jpg",
+   "category": "infrastructure",
+   "tags": [
+    "infrastructure"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R6e0fb0d1",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Nagaland",
+   "title": "Nagaland targets 2,500 students under ‘One Million Voices’ movement; AI curriculum to begin next year",
+   "summary": "Kohima…",
+   "source": "Nagaland Tribune",
+   "url": "https://nagalandtribune.in/nagaland-targets-2500-students-under-one-million-voices-movement-ai-curriculum-to-begin-next-year/",
+   "image": "https://nagalandtribune.in/wp-content/uploads/2026/11/Nagaland-targets-2500-students-under-‘One-Million-Voices-movement-AI-curriculum-to-begin-next-year.png",
+   "category": "skilling",
+   "tags": [
+    "skilling"
+   ],
+   "sector": "Education",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R8b9ea930",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Nagaland",
+   "title": "Nagaland plans AI curriculum from Class 6, may extend it to Class 3",
+   "summary": "The initiative aims to collect the views and aspirations of young people aged 12 to 25 on education reforms.",
+   "source": "Careers360",
+   "url": "https://news.careers360.com/nagaland-schools-1000-students-under-one-million-voices-education-initiative/amp",
+   "image": "https://cache.careers360.mobi/media/article_images/2026/11/5/nagaland-one-million-voices-featured-image.jpg",
+   "category": "skilling",
+   "tags": [
+    "skilling"
+   ],
+   "sector": "Education",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R204957e3",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Punjab",
+   "title": "Punjab Introduces Dedicated WhatsApp Chatbot For NRI Pensioners To Submit Manual Life Certificates With Ease: Harpal Cheema",
+   "summary": "Aadhaar-Based e-KYC Mandatory For All Resident Pensioners By December 31, 2026; NRI Pensioners Exempted CHANDIGARH:  Finance Minister Harpal Singh Cheema…",
+   "source": "Punjab News Express",
+   "url": "https://punjabnewsexpress.com/punjab/news/punjab-introduces-dedicated-whatsapp-chatbot-for-nri-pensioners-to-submit-manual-life-certificates-with-ease-harpal-cheema-333347",
+   "image": "https://punjabnewsexpress.com/uploads/images/202611/image_870x580_6aec8cc6c617d.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Revenue & citizen services",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R305828a2",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Tamil Nadu",
+   "title": "TN govt joins hands with IIT Madras to create AI Data Centre for the state",
+   "summary": "TN government partners with IIT Madras to create an AI Data Centre, establishing a PMU to render state applications AI-ready.",
+   "source": "BusinessLine",
+   "url": "https://www.thehindubusinessline.com/news/national/tn-govt-joins-hands-with-iit-madras-to-create-ai-data-centre-for-the-state/article71670983.ece",
+   "image": "https://bl-i.thgim.com/public/todays-paper/tp-others/tp-states/40ifth/article71658379.ece/alternates/LANDSCAPE_1200/IIT-Madras%E2%80%99-DMSG37GOE4F2.4.jpg.jpg",
+   "category": "infrastructure",
+   "tags": [
+    "infrastructure",
+    "partnership"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R4d335ec0",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Tamil Nadu",
+   "title": "Tamil Nadu, IITM Pravartak sign MoU on AI data center",
+   "summary": "Tamil Nadu, IITM Pravartak sign MoU on AI data center",
+   "source": "NewsBytes",
+   "url": "https://www.newsbytesapp.com/news/science/tamil-nadu-iitm-pravartak-sign-mou-on-ai-data-center/tldr",
+   "image": "",
+   "category": "partnership",
+   "tags": [
+    "partnership",
+    "infrastructure"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "Rb40abf63",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Tamil Nadu",
+   "title": "Tamil Nadu’s wildlife conservation initiatives on country-made gun surrender, AI-based elephant warning system bag awards",
+   "summary": "Tamil Nadu wins national awards for wildlife conservation—curbing illegal guns, empowering communities, and an AI elephant-crossing warning system.",
+   "source": "The Hindu",
+   "url": "https://www.thehindu.com/news/national/tamil-nadu/tn-wildlife-conservation-initiatives-on-country-made-gun-surrender-ai-based-elephant-warning-system-bag-awards/article71659572.ece",
+   "image": "https://th-i.thgim.com/public/incoming/qwt4dc/article71669847.ece/alternates/LANDSCAPE_1200/10213_14_8_2024_18_15_40_1_KA15ILLICITCOUNTRYMADEGUNINHOSUR.JPG",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Policing & safety",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "Rf61a82a3",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "West Bengal",
+   "title": "West Bengal Schools to Teach Coding, Robotics in Classes 5-8",
+   "summary": "West Bengal will introduce ICT as a subject for Classes 5-8, covering coding, robotics and Python, with books from January, Dipak Barman announced.",
+   "source": "Elets Technomedia",
+   "url": "https://digitallearning.eletsonline.com/2026/11/west-bengal-ict-coding/",
+   "image": "https://digitallearning.eletsonline.com/wp-content/uploads/2026/11/west-bengal-ict-coding.jpg",
+   "category": "skilling",
+   "tags": [
+    "skilling"
+   ],
+   "sector": "Education",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R721729e0",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "Now AI will decide on which route and how many buses will run in UP? Passenger wait time to decrease on digital platform",
+   "summary": "यूपीएसआरटीसी अब आर्टिफिशियल इंटेलिजेंस एआई का उपयोग करके बसों के संचालन को सुव्यवस्थित करेगा, जिससे यात्रियों को बसों के लिए लंबा इंतजार नहीं करना पड़ेगा। यह नई व्यवस्था 30 करोड़ रुपये की लागत से लागू होगी, जो मार्गों की मांग और यात्रियों की संख्या का विश्लेषण कर बसों की…",
+   "source": "Jagran",
+   "url": "https://www.jagran.com/uttar-pradesh/lucknow-city-ai-to-optimize-upsrtc-bus-routes-reduce-wait-times-40427857.html",
+   "image": "https://www.jagranimages.com/images/2026/11/05/template/image/AI-roadways-buses-in-UP-1793845873468_v.webp",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Urban & transport",
+   "stage": "decided",
+   "n_sources": 6,
+   "also_reported_by": [
+    "Youth India Newspaper",
+    "Amrit Vichar",
+    "Dainik Bhaskar",
+    "ETV Bharat",
+    "Prabhat Khabar"
+   ],
+   "lang": "hi",
+   "title_original": "यूपी में अब AI तय करेगा किस मार्ग पर चलेंगी कितनी बसें? डिजिटल प्लेटफॉर्म पर घटेगा यात्रियों का इंतजार"
   },
   {
    "id": "Rf952376d",
@@ -1691,6 +1911,196 @@ window.TRACKER_DATA = {
    "also_reported_by": [],
    "lang": "hi",
    "title_original": "Sambhal News: अधिकारियों-कर्मचारियों को सिखाया एआई का सुरक्षित इस्तेमाल"
+  },
+  {
+   "id": "Rcb26e25c",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "Fermi AI will develop ability to think and reason instead of answering, 30 teachers of CSJMU trained",
+   "summary": "प्रशिक्षण कार्यक्रम में लाइफ साइंस, बेसिक साइंस, इंजीनियरिंग और ह्यूमैनिटीज के 30 शिक्षकों ने हिस्सा लिया.",
+   "source": "ETV Bharat",
+   "url": "https://www.etvbharat.com/hi/state/fermi-ai-will-develop-the-ability-to-think-and-reason-rather-than-just-providing-answers-ups26110506280",
+   "image": "https://imgs.etvbharat.com/etvbharat/prod-images/05-11-2026/1200-675-28046716-thumbnail-16x9-kanpur-aspera.jpg",
+   "category": "skilling",
+   "tags": [
+    "skilling"
+   ],
+   "sector": "Education",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "जवाब देने के बजाए सोचने और तर्क करने की क्षमता विकसित करेगा फर्मी AI, CSJMU के 30 टीचर्स हुए ट्रेंड"
+  },
+  {
+   "id": "Re2abe54b",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "Governor unveils new buildings at Rajju Bhaiya University, praises students' AI and agri-tech models",
+   "summary": "विश्वविद्यालय के अकादमिक और सह-अकादमिक ढांचे को मजबूती देने के लिए राज्यपाल ने कई नई सुविधाओं का शुभारंभ किया.",
+   "source": "ETV Bharat",
+   "url": "https://www.etvbharat.com/hi/state/governor-unveils-new-buildings-at-rajju-bhaiya-university-ups26110503319",
+   "image": "https://imgs.etvbharat.com/etvbharat/prod-images/05-11-2026/1200-675-28043756-thumbnail-16x9-jh.jpg",
+   "category": "infrastructure",
+   "tags": [
+    "infrastructure"
+   ],
+   "sector": "Education",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "रज्जू भैया विवि में राज्यपाल ने नए भवनों का किया अनावरण, छात्रों के AI और एग्री-टेक मॉडल्स को सराहा"
+  },
+  {
+   "id": "R768749bf",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "Agrotech 2026 in Lucknow from Dec 3: Brainstorming on AI and new tech in farming, Gadkari to inaugurate",
+   "summary": "सम्मेलन के अंत में यूपी स्टेट एक्सीलेंस अवार्ड दिए जाएंगे। इनके जरिए कृषि, कृषि कारोबार और इससे जुड़े क्षेत्रों में…",
+   "source": "Gaon Junction",
+   "url": "https://www.gaonjunction.com/khabar-junction/agrotech-2026-lucknow-december-3-gadkari-to-inaugurate-ai-and-new-technologies-in-agriculture",
+   "image": "https://staticimg.amarujala.com/assets/images/www.gaonjunction.com/2025/09/12/katharaya-saugdhaka-paravahana-matara-natana-gadakara_49255d0f2337e76fa4985cd4f7545dfd.jpeg?w=750&dpr=1.0&q=50",
+   "category": "events_outreach",
+   "tags": [
+    "events_outreach"
+   ],
+   "sector": "Agriculture",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "लखनऊ में 3 दिसंबर से एग्रोटेक 2026 : खेती में AI और नई तकनीकों पर होगा मंथन, गडकरी करेंगे उद्घाटन"
+  },
+  {
+   "id": "R13383be3",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Rajasthan",
+   "title": "IIT and ICMR will jointly make AI based diagnostic tools: Research started in Jodhpur; samples of 10 indigenous devices",
+   "summary": "IIT Jodhpur ICMR joint research center launch for AI-based medical devices in Jodhpur.",
+   "source": "Dainik Bhaskar",
+   "url": "https://www.bhaskar.com/local/rajasthan/jodhpur/news/iit-jodhpur-icmr-launch-ai-health-research-center-medical-devices-139603806.html",
+   "image": "https://images.bhaskarassets.com/thumb/730x0/web2images/521/2026/11/05/cover_1793888793300.jpg",
+   "category": "partnership",
+   "tags": [
+    "partnership",
+    "infrastructure"
+   ],
+   "sector": "Health",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "IIT और आईसीएमआर मिलकर बनाएंगे एआई बेस्ड जांच-उपकरण: जोधपुर में शुरू हुआ रिसर्च; 10 स्वदेशी उपकरण के सैंपल ह..."
+  },
+  {
+   "id": "Rd4c975e8",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Uttarakhand",
+   "title": "Uttarakhand News: CM Dhami connects with 8 lakh children, program modernized with AI",
+   "summary": "मुख्यमंत्री पुष्कर सिंह धामी ने ‘दिल की बात, अंकल धामी के साथ’ कार्यक्रम में प्रदेश के लगभग 8 लाख स्कूली बच्चों से संवाद किया। कार्यक्रम को AI और डिजिटल तकनीक से और उपयोगी बनाया जाएगा।…",
+   "source": "Uttarakhand Morning Post",
+   "url": "https://uttarakhandmorningpost.com/uncle-dhami-8-lakh-school-children-ai-program-uttarakhand/",
+   "image": "https://uttarakhandmorningpost.com/wp-content/uploads/2026/11/IMG-20261105-WA0022.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Education",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "Uttarakhand News: ‘दिल की बात’ में 8 लाख बच्चों से जुड़े अंकल धामी, AI से आधुनिक होगा कार्यक्रम"
+  },
+  {
+   "id": "R2175b66d",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Jharkhand",
+   "title": "Check on drug black-marketing using AI, new initiative in Jharkhand",
+   "summary": "झारखंड में AI आधारित पोर्टल से दवाओं की खरीद-बिक्री पर होगी पैनी नजर.",
+   "source": "Prabhat Khabar",
+   "url": "https://www.prabhatkhabar.com/state/jharkhand/ranchi/jharkhand-to-use-ai-to-track-drug-sales-curb-misuse-and-illegal-trade",
+   "image": "https://wpmedia.prabhatkhabar.com/uploads/2026/09/29/1790685714033/sizes/irfan-ansari-7-e87d50-hero.webp",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Health",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "AI से दवाओं की कालाबाजारी पर शिकंजा, झारखंड में नई पहल"
+  },
+  {
+   "id": "R9dc6c2d4",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Jharkhand",
+   "title": "Ranchi News: Use AI only as an assistant tool: DC",
+   "summary": "32वीं राष्ट्रीय बाल विज्ञान कांग्रेस के लिए प्रतिभागियों की जिला स्तरीय शॉर्ट लिस्टिंग गुरुवार को संत जेवियर्स कॉलेज के भौतिकी विभाग में की गई। कार्य, Ranchi Hindi News - Hindustan…",
+   "source": "Hindustan",
+   "url": "https://www.livehindustan.com/jharkhand/ranchi/story-use-ai-only-as-a-helpful-tool-dc-201793881152349.amp.html",
+   "image": "",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "Ranchi News: एआई का उपयोग केवल एक सहायक साधन के रूप में करें : डीसी"
+  },
+  {
+   "id": "Ra1dfd3e8",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Jharkhand",
+   "title": "Irfan Ansari's big announcement! AI portal will expose suspicious medicine trade",
+   "summary": "इरफान अंसारी का बड़ा ऐलान!",
+   "source": "Prabhat Khabar",
+   "url": "https://www.prabhatkhabar.com/video/05-11-2026-nxTRUQ6Xgzw/amp",
+   "image": "",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Health",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "इरफान अंसारी का बड़ा ऐलान! AI पोर्टल खोलेगा दवाओं के संदिग्ध कारोबार की पोल"
+  },
+  {
+   "id": "R149a8f82",
+   "date": "2026-11-05",
+   "date_precision": "day",
+   "state": "Chhattisgarh",
+   "title": "Paddy Smuggling: AI vigil on paddy smuggling in Chhattisgarh, every vehicle monitored through cameras",
+   "summary": "Paddy Smuggling राजनांदगांव में धान तस्करी रोकने के लिए महाराष्ट्र और मध्यप्रदेश सीमा पर AI कैमरे लगाए जा रहे हैं। चेक पोस्ट पर 24 घंटे वाहनों की निगरानी होगी।…",
+   "source": "Patrika News",
+   "url": "https://www.patrika.com/amp/rajnandgaon-news/chhattisgarh-paddy-smuggling-ai-surveillance-cameras-21032583",
+   "image": "https://cms.patrika.com/wp-content/uploads/2026/11/AI-Iamge.webp",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Agriculture",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "Paddy Smuggling: छत्तीसगढ़ में धान तस्करी पर AI का पहरा, अब कैमरों से होगी हर गाड़ी की निगरानी"
   },
   {
    "id": "R79e87d3a",
@@ -1870,8 +2280,10 @@ window.TRACKER_DATA = {
    ],
    "sector": "Education",
    "stage": "announced",
-   "n_sources": 1,
-   "also_reported_by": [],
+   "n_sources": 2,
+   "also_reported_by": [
+    "navarashtra"
+   ],
    "lang": "mr",
    "title_original": "AI, रोबोटिक्सचे शिक्षण आता ग्रामीण भागातही; शासनाचा नवा प्रयत्न"
   },
@@ -1959,6 +2371,27 @@ window.TRACKER_DATA = {
    "also_reported_by": [],
    "lang": "hi",
    "title_original": "Ranchi News: कचरा प्रबंधन में लें एआई का सहारा : पीएस"
+  },
+  {
+   "id": "R8247eac3",
+   "date": "2026-11-04",
+   "date_precision": "day",
+   "state": "Jharkhand",
+   "title": "AI vigil on illegal medicine trade in Jharkhand, alert issued immediately on irregularities",
+   "summary": "रांची। झारखंड में नशे के रूप में इस्तेमाल होने वाली प्रतिबंधित और दुरुपयोग की आशंका वाली दवाओं के अवैध कारोबार पर लगाम लगाने के लिए स्वास्थ्य विभाग ने बड़ी…",
+   "source": "Azad Sipahi",
+   "url": "https://azadsipahi.in/jharkhand-ai-portal-monitor-illegal-drug-trade/11/2026/",
+   "image": "https://azadsipahi.in/wp-content/uploads/2026/11/1200-675-28032580-thumbnail-16x9-ai.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Health",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "झारखंड में अवैध दवा कारोबार पर AI का पहरा, खरीद-बिक्री में गड़बड़ी होते ही जारी होगा अलर्ट"
   },
   {
    "id": "R00c17c6a",
@@ -4366,11 +4799,12 @@ window.TRACKER_DATA = {
    ],
    "sector": "Industry & startups",
    "stage": "announced",
-   "n_sources": 4,
+   "n_sources": 5,
    "also_reported_by": [
     "The Bengaluru Live",
     "Deccan Herald",
-    "YourStory.com"
+    "YourStory.com",
+    "PanAsiaBiz"
    ]
   },
   {
@@ -12051,12 +12485,11 @@ window.TRACKER_DATA = {
    "summary": "Karnataka has approved a ₹1,300.45 crore data centre policy aimed at strengthening the infrastructure needed to run artificial intelligence, cloud computing…",
    "source": "The 420.in",
    "url": "https://the420.in/karnataka-data-centre-policy-1300-crore-ai-blue-bioeconomy/",
-   "image": "",
+   "image": "https://the420.in/wp-content/uploads/2026/06/AI-data-center.webp",
    "category": "infrastructure",
    "tags": [
     "infrastructure",
-    "strategy_policy",
-    "funding_budget"
+    "strategy_policy"
    ],
    "sector": "Cross-cutting",
    "stage": "decided",
@@ -13767,30 +14200,6 @@ window.TRACKER_DATA = {
    ]
   },
   {
-   "id": "Rd1807ca7",
-   "date": "2026-09-10",
-   "date_precision": "day",
-   "state": "Uttar Pradesh",
-   "title": "UP to check old-age pension with AI — what to do",
-   "summary": "UP plans AI checks on old-age pension and Rashtriya Parivarik Labh claims to catch fraud.",
-   "source": "indianpaycalculator.in",
-   "url": "https://www.indianpaycalculator.in/govt-news/up-social-pension-ai-verification-2026-what-beneficiaries-must-do",
-   "image": "https://www.indianpaycalculator.in/news-images/up-social-pension-ai-verification-2026-what-beneficiaries-must-do-en.jpg?v=f9a25b98",
-   "category": "deployment",
-   "tags": [
-    "deployment"
-   ],
-   "sector": "Revenue & citizen services",
-   "stage": "announced",
-   "n_sources": 5,
-   "also_reported_by": [
-    "TNP News",
-    "AajTak",
-    "Prabhat Khabar",
-    "https://www.indianpaycalculator.in/"
-   ]
-  },
-  {
    "id": "R2d0f42fd",
    "date": "2026-09-10",
    "date_precision": "day",
@@ -14126,6 +14535,32 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
+   "id": "Rd1807ca7",
+   "date": "2026-09-09",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "UP to check old-age pension with AI — what to do",
+   "summary": "UP plans AI checks on old-age pension and Rashtriya Parivarik Labh claims to catch fraud.",
+   "source": "indianpaycalculator.in",
+   "url": "https://www.indianpaycalculator.in/govt-news/up-social-pension-ai-verification-2026-what-beneficiaries-must-do",
+   "image": "https://www.indianpaycalculator.in/news-images/up-social-pension-ai-verification-2026-what-beneficiaries-must-do-en.jpg?v=f9a25b98",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Revenue & citizen services",
+   "stage": "announced",
+   "n_sources": 7,
+   "also_reported_by": [
+    "Newstrack",
+    "TNP News",
+    "Nai Dunia",
+    "AajTak",
+    "Prabhat Khabar",
+    "https://www.indianpaycalculator.in/"
+   ]
+  },
+  {
    "id": "Rfaccbc95",
    "date": "2026-09-09",
    "date_precision": "day",
@@ -14226,29 +14661,6 @@ window.TRACKER_DATA = {
    "also_reported_by": [],
    "lang": "hi",
    "title_original": "आईआईटी कानपुर का एआई आधारित फैमिली स्कोर बताएगा, किस परिवार को सरकारी मदद की ज़रूरत"
-  },
-  {
-   "id": "Redec7e8e",
-   "date": "2026-09-09",
-   "date_precision": "day",
-   "state": "Uttar Pradesh",
-   "title": "UP news: AI use in education to pension, Yogi govt's social welfare department to be smart",
-   "summary": "योगी सरकार समाज कल्याण योजनाओं में AI का इस्तेमाल बढ़ाने की तैयारी कर रही है। स्मार्ट क्लास, पेंशन सत्यापन, छात्रवृत्ति मॉनिटरिंग और AI प्रशिक्षण पर जोर।…",
-   "source": "Newstrack",
-   "url": "https://newstrack.com/uttar-pradesh/yogi-government-ai-social-welfare-up-sarvodaya-schools-smart-classes-old-age-pension-skills-training-630152",
-   "image": "https://static.newstrack.com/h-upload/2026/09/09/2041980--7.jpg",
-   "category": "deployment",
-   "tags": [
-    "deployment"
-   ],
-   "sector": "Revenue & citizen services",
-   "stage": "announced",
-   "n_sources": 2,
-   "also_reported_by": [
-    "Nai Dunia"
-   ],
-   "lang": "hi",
-   "title_original": "UP News: उत्तर प्रदेश में पढ़ाई से पेंशन तक AI का इस्तेमाल, योगी सरकार का समाज कल्याण विभाग होगा स्मार्ट..."
   },
   {
    "id": "R8c53c435",
@@ -30322,25 +30734,6 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
-   "id": "R877612e8",
-   "date": "2026-06-08",
-   "date_precision": "day",
-   "state": "Odisha",
-   "title": "Odisha launches AI skills initiative to build future-ready women workforce",
-   "summary": "As part of the initiative, the Higher Education Department has signed a Memorandum of Understanding (MoU) with Edunet Foundation to implement the AI Careers for Women (AICW) programme across higher education institutions in the state.",
-   "source": "ET Enterprise AI",
-   "url": "https://enterpriseai.economictimes.indiatimes.com/amp/news/industry/odisha-launches-ai-skills-initiative-to-build-future-ready-women-workforce/131582937",
-   "image": "https://etimg.etb2bimg.com/thumb/msid-131582937,imgsize-65670,width-1200,height=627,overlay-etenterpriseai,resizemode-75/news/industry/odisha-launches-ai-skills-initiative-to-build-future-ready-women-workforce.jpg",
-   "category": "skilling",
-   "tags": [
-    "skilling"
-   ],
-   "sector": "Cross-cutting",
-   "stage": "decided",
-   "n_sources": 1,
-   "also_reported_by": []
-  },
-  {
    "id": "R0e3c8976",
    "date": "2026-06-08",
    "date_precision": "day",
@@ -30622,8 +31015,10 @@ window.TRACKER_DATA = {
    ],
    "sector": "Education",
    "stage": "decided",
-   "n_sources": 1,
-   "also_reported_by": []
+   "n_sources": 2,
+   "also_reported_by": [
+    "ET Enterprise AI"
+   ]
   },
   {
    "id": "Rf48ec14c",
@@ -38943,6 +39338,25 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
+   "id": "Raf24e317",
+   "date": "2026-03-27",
+   "date_precision": "day",
+   "state": "Odisha",
+   "title": "AI for Scalable and Inclusive Governance The Odisha Model",
+   "summary": "Artificial Intelligence (AI) represents a transformative opportunity for governments to strengthen institutional capacity, improve service delivery, and enable more responsive and inclusive governance.",
+   "source": "Elets eGov",
+   "url": "https://egov.eletsonline.com/2026/03/ai-for-scalable-and-inclusive-governance-the-odisha-model/",
+   "image": "https://egov.eletsonline.com/wp-content/uploads/2026/03/Shri-Vishal-Kumar-Dev.jpeg",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy"
+   ],
+   "sector": "Revenue & citizen services",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
    "id": "R18ad8aea",
    "date": "2026-03-27",
    "date_precision": "day",
@@ -41578,25 +41992,6 @@ window.TRACKER_DATA = {
    ]
   },
   {
-   "id": "Rf5c464bc",
-   "date": "2026-03-06",
-   "date_precision": "day",
-   "state": "Andhra Pradesh",
-   "title": "Andhra all set to roll out AI doctor",
-   "summary": "Andhra Pradesh is preparing to deploy an AI Doctor Andhra Pradesh platform across the state, offering residents free, technology-enabled medical guidance linked to digital health records.",
-   "source": "Medical Buyer",
-   "url": "https://medicalbuyer.co.in/andhra-all-set-to-roll-out-ai-doctor/",
-   "image": "https://medicalbuyer.co.in/wp-content/uploads/2026/03/Andhra-all-set-to-roll-out-AI-doctor.jpg",
-   "category": "deployment",
-   "tags": [
-    "deployment"
-   ],
-   "sector": "Health",
-   "stage": "announced",
-   "n_sources": 1,
-   "also_reported_by": []
-  },
-  {
    "id": "R1d2121b6",
    "date": "2026-03-06",
    "date_precision": "day",
@@ -41997,8 +42392,10 @@ window.TRACKER_DATA = {
    ],
    "sector": "Health",
    "stage": "announced",
-   "n_sources": 1,
-   "also_reported_by": []
+   "n_sources": 2,
+   "also_reported_by": [
+    "Medical Buyer"
+   ]
   },
   {
    "id": "R9f504d85",
@@ -43264,6 +43661,25 @@ window.TRACKER_DATA = {
    ],
    "sector": "Education",
    "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R6469e288",
+   "date": "2026-02-21",
+   "date_precision": "day",
+   "state": "Sikkim",
+   "title": "Sikkim CM Prem Singh Tamang criticises Congress remarks during Global AI Summit",
+   "summary": "Prem Singh Tamang on February 21, criticised the Congress party over its recent remarks, stating that such actions were inappropriate at a time when India is hosting the Global AI Summit in New Delhi.",
+   "source": "India Today NE",
+   "url": "https://www.indiatodayne.in/sikkim/story/sikkim-cm-prem-singh-tamang-criticises-congress-remarks-during-global-ai-summit-1349611-2026-02-21",
+   "image": "https://cf-img-a-in.tosshub.com/lingo/itne/images/story/202602/69999f078f92b-sikkim-cm-prem-singh-tamang-criticises-congress-remarks-during-global-ai-summit-210314381-16x9.jpeg",
+   "category": "events_outreach",
+   "tags": [
+    "events_outreach"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "underway",
    "n_sources": 1,
    "also_reported_by": []
   },
