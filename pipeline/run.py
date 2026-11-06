@@ -1,6 +1,6 @@
 """Run the pipeline: collect -> classify -> dedupe -> enrich -> stage -> briefs, profiles -> export.
 
-  python -m pipeline.run --backfill        12-month collection (first run, ~15 min)
+  python -m pipeline.run --backfill        full collection from BACKFILL_START (first run, hours)
   python -m pipeline.run --days 3          daily update: last 3 days, merged in
   python -m pipeline.run                   reprocess the stored raw items only
   add --no-enrich to skip URL resolving and summaries (fast, offline)
@@ -16,7 +16,7 @@ from .dates import normalize_date
 from .dedupe import cluster
 from .states import state_code
 
-BACKFILL_START = date(2025, 11, 1)
+BACKFILL_START = date(2022, 11, 30)  # ChatGPT's public launch
 SOCIAL_SOURCES = {"LinkedIn", "Instagram", "Facebook", "YouTube", "X", "Threads"}
 # Pakistani outlets: their "Punjab" is Pakistan's province, and headlines often don't say so.
 # ("The Tribune" is Indian, Chandigarh; "The Express Tribune" is Pakistani.)
@@ -116,7 +116,7 @@ def build_records(kept: list[dict], use_llm: bool) -> tuple[list[dict], list[dic
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, help="collect the last N days before processing")
-    ap.add_argument("--backfill", action="store_true", help="collect the full 12 months")
+    ap.add_argument("--backfill", action="store_true", help="collect everything since BACKFILL_START")
     ap.add_argument("--states", help="comma-separated states to collect (default: all covered)")
     ap.add_argument("--no-enrich", action="store_true", help="use stored enrichment only")
     ap.add_argument("--enrich-limit", type=int, default=200, help="max new records to enrich per run")

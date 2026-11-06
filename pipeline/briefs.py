@@ -21,7 +21,7 @@ MAX_RECORDS = 60
 MIN_RECORDS = 10  # no brief for a group with fewer records than this
 
 PROMPT = """You write short, neutral briefs for a dataset of AI policy activity by Indian
-state governments (Nov 2025 onwards). Use ONLY the records given; do not add facts,
+state governments (from November 2022). Use ONLY the records given; do not add facts,
 numbers or context that are not in them. Write 3-4 sentences on the main themes and the
 most significant actions. After each sentence, cite the record IDs it relies on in square
 brackets, e.g. [R1a2b3c4d, R5e6f7a8b]. Return JSON: {"brief": "<text with citations>"}"""

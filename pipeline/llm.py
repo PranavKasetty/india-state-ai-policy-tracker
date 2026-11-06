@@ -22,12 +22,15 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 from .classify import CATEGORY_IDS, SECTORS
+from .dates import normalize_date
 
 ROOT = Path(__file__).resolve().parent.parent
 STORE = ROOT / "data" / "raw" / "llm_labels.jsonl"
 PAIRS = ROOT / "data" / "raw" / "llm_pairs.jsonl"
 PROMPT_VERSION = "v2"  # v2: stricter on private actors, worked examples
 BATCH = 40
+MAX_BATCHES = 200  # per run (8,000 headlines): leaves the free tier's 500 daily requests room
+                   # for the other steps; a backfill's backlog is picked up by later runs
 DEFAULT_BASE = "https://generativelanguage.googleapis.com/v1beta/openai"
 DEFAULT_MODEL = "gemini-3.5-flash-lite"  # free tier: 15 RPM, 500 RPD; pinned for reproducibility
 
@@ -149,6 +152,10 @@ def label(candidates: list[dict]) -> dict[str, dict]:
         print("llm: no API key, using rules only")
         return store
     print(f"llm: {len(candidates) - len(todo)} cached, {len(todo)} to label with {model}")
+    if len(todo) > BATCH * MAX_BATCHES:  # newest first, so daily news is never stuck behind a backlog
+        todo.sort(key=lambda c: normalize_date(c["published_raw"])[0] or "", reverse=True)
+        print(f"  stopping at {MAX_BATCHES} batches; {len(todo) - BATCH * MAX_BATCHES} left for later runs")
+        todo = todo[:BATCH * MAX_BATCHES]
     session = make_session(key)
     STORE.parent.mkdir(parents=True, exist_ok=True)
     with open(STORE, "a", encoding="utf-8") as f:

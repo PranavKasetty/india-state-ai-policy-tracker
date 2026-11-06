@@ -11,7 +11,7 @@ as a static dashboard that refreshes daily.
 - **License:** the data is [CC BY 4.0](data/LICENSE.md) and the code is [MIT](LICENSE);
   both require credit. Headlines and publishers' summaries are quoted for reference and
   remain theirs. To cite, use GitHub's "Cite this repository" ([`CITATION.cff`](CITATION.cff)).
-- **Coverage:** all 28 states, 1 November 2025 onwards. English-language news, plus Hindi news for the nine Hindi-speaking states and Marathi news for Maharashtra.
+- **Coverage:** all 28 states, from ChatGPT's launch on 30 November 2022. English-language news, plus Hindi news for the nine Hindi-speaking states and Marathi news for Maharashtra.
 
 ## How it works
 
@@ -119,7 +119,8 @@ tests/               dashboard tests
 - **Coverage, not activity.** Counts measure how much the news
   covered a state's AI work. Large states and tech hubs get more coverage; small
   north-eastern states have only a handful of records, which says little about
-  their activity.
+  their activity. AI news has grown a lot since late 2022, so a rise over time
+  partly reflects more reporting.
 - **Link resolution and thumbnails** depend on an undocumented Google endpoint
   that rate-limits; unresolved records link to Google News and show no image.
 - **The repository grows daily** because the workflow commits data.

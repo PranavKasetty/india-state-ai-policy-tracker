@@ -2,7 +2,7 @@
 
 Each row of `output/records.csv` is one **development**: an action on AI or
 robotics by an Indian state government, or by the central government in a way
-tied to one state, as reported in the news from 1 November 2025: English-language news for every state, plus Hindi news for the nine Hindi-speaking states (Uttar Pradesh, Bihar, Madhya Pradesh, Rajasthan, Haryana, Uttarakhand, Himachal Pradesh, Jharkhand, Chhattisgarh) and Marathi news for Maharashtra. Translated headlines keep their original in `title_original`.
+tied to one state, as reported in the news from ChatGPT's launch on 30 November 2022: English-language news for every state, plus Hindi news for the nine Hindi-speaking states (Uttar Pradesh, Bihar, Madhya Pradesh, Rajasthan, Haryana, Uttarakhand, Himachal Pradesh, Jharkhand, Chhattisgarh) and Marathi news for Maharashtra. Translated headlines keep their original in `title_original`.
 Several reports of the same development are merged into one row.
 
 ## Files
@@ -109,7 +109,7 @@ government signal (`plus_gov_signal`).
    times are converted from UTC to IST before taking the date.
 3. **Exclude outright:** headlines with no AI or robotics term, social media posts,
    Pakistani outlets (whose "Punjab" is Pakistan's), and items dated before
-   1 November 2025.
+   30 November 2022.
 4. **Judge.** Every remaining headline that names a covered state goes to the LLM
    with the inclusion rubric (`pipeline/llm.py`). Its answer overrides the keyword
    rules; the rules stand in when it has not answered.
@@ -125,7 +125,8 @@ government signal (`plus_gov_signal`).
   dated by the report.
 - **Headline-only judgement.** Neither the rules nor the LLM read the article.
 - **Coverage, not activity.** Counts measure how much the news covered a state's
-  AI activity. States with more English-language business press look more active, and so do the ten states whose Hindi or Marathi news is also read.
+  AI activity. States with more English-language business press look more active, and so do the ten states whose Hindi or Marathi news is also read. AI news has also grown a lot since
+  late 2022, so a rise over time partly reflects more reporting.
 - **Some real items are missed.** On 60 hand-labelled headlines
   (`analysis/hand_labels/scores.csv`) the LLM rubric in use (v2) scored 97%
   precision and 81% recall. A sample this small gives wide error margins.
