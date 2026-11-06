@@ -53,8 +53,12 @@ def resolve_url(gnews_url: str) -> str:
              gid[1], int(ts[1]), sg[1]]
     body = {"f.req": json.dumps([[["Fbv4je", json.dumps(inner), None, "generic"]]])}
     resp = SESSION.post(BATCH_URL, data=body, timeout=20)
-    payload = json.loads(resp.text.split("\n\n", 1)[1])
-    return json.loads(payload[0][2])[1]
+    try:
+        payload = json.loads(resp.text.split("\n\n", 1)[1])
+        url = json.loads(payload[0][2])[1]
+    except (IndexError, ValueError, TypeError):  # an error or throttling page, not the usual reply
+        return ""
+    return url if isinstance(url, str) else ""
 
 
 def _meta(page: str, *names: str) -> str:
