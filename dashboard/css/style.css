@@ -277,8 +277,14 @@ button { font: inherit; }
 .timechart .bar { fill: var(--bar); }
 /* The month still in progress: a light fill and dashed edge, so a short bar is not read as a drop. */
 .timechart .bar.partial { fill: color-mix(in oklab, var(--bar) 35%, var(--surface)); stroke: var(--bar); stroke-width: 1.5; stroke-dasharray: 3 2; }
-.timechart .hit { fill: transparent; }
+.timechart .hit { fill: transparent; cursor: pointer; }
+/* Months outside the chosen range (a clicked month, or the From/To filters). */
+.timechart .bar.out { fill: color-mix(in oklab, var(--bar) 30%, var(--surface)); }
+.timechart .bar.partial.out { stroke: color-mix(in oklab, var(--bar) 40%, var(--surface)); }
 .timechart .hit:hover + .bar { fill: var(--bar-hover); }
+.tooltip .tip-hint { opacity: .8; font-size: 0.8125rem; }
+@media (hover: none) { .tooltip .tip-hint { display: none; } }
+details.data-table th .link-btn[aria-pressed="true"] { font-weight: 700; text-decoration-thickness: 2px; }
 
 details.data-table { margin-top: 10px; }
 details.data-table summary { cursor: pointer; color: var(--accent); font-size: 0.95rem; width: fit-content; }
@@ -471,6 +477,7 @@ details.data-table td { text-align: right; }
   .cell-btn { border: 1px solid CanvasText; }
   .cell-btn[aria-pressed="true"], .toggle-group button[aria-pressed="true"] { outline: 3px solid Highlight; }
   .rank-bar, .timechart .bar { forced-color-adjust: none; background: CanvasText; fill: CanvasText; }
+  .timechart .bar.out { fill: GrayText; }
   .rank-row[aria-pressed="true"] { outline: 3px solid Highlight; }
   .mock-banner, .load-error { border-color: CanvasText; }
   .masthead::after, .site-footer::before { display: none; }

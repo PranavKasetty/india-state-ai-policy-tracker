@@ -29,24 +29,36 @@
    * Items passing every filter except those named in `ignore`.
    * - A category matches any item carrying that tag, primary or not.
    * - Items whose month is unknown pass the date filter only when it spans the whole period.
+   * - Ignoring "from" or "to" drops the date filter altogether.
    */
   function filterItems(data, filters, { ignore = [] } = {}) {
     const use = (key) => filters[key] && !ignore.includes(key);
     const q = filters.q.trim().toLowerCase();
     const full = isFullRange(data, filters);
+    const anyDate = ignore.includes("from") || ignore.includes("to");
     return data.items.filter((it) =>
       (!use("state") || it.state === filters.state) &&
       (!use("cat") || it.tags.includes(filters.cat)) &&
       (!use("sector") || it.sector === filters.sector) &&
       (!use("focus") || (FOCUS[filters.focus] || (() => true))(it)) &&
       (!use("stage") || (STAGE[filters.stage] || (() => true))(it)) &&
-      (it.month ? it.month >= filters.from && it.month <= filters.to : full) &&
+      (anyDate || (it.month ? it.month >= filters.from && it.month <= filters.to : full)) &&
       (!q || it.search.includes(q)));
   }
 
   /** Months of the period inside the filter's range. */
   const monthsInRange = (data, filters) =>
     data.months.filter((m) => m >= filters.from && m <= filters.to);
+
+  /**
+   * The date filter after clicking month `m` on the chart: just that month, or the whole
+   * period when it was already the only month shown (a second click clears it).
+   */
+  function pickMonth(data, filters, m) {
+    return filters.from === m && filters.to === m
+      ? { from: data.months[0], to: data.months.at(-1) }
+      : { from: m, to: m };
+  }
 
   /** { month: count } for the given months, zero-filled. Items without a month are skipped. */
   function countByMonth(items, months) {
@@ -133,6 +145,6 @@
     return Date.UTC(d.getFullYear(), d.getMonth(), d.getDate());
   }
 
-  T.query = { defaultFilters, isFullRange, POLICY_TYPES, FOCUS_VALUES: Object.keys(FOCUS), STAGE_VALUES: Object.keys(STAGE), filterItems, monthsInRange, countByMonth, stateByCategory, rankBy,
+  T.query = { defaultFilters, isFullRange, POLICY_TYPES, FOCUS_VALUES: Object.keys(FOCUS), STAGE_VALUES: Object.keys(STAGE), filterItems, monthsInRange, pickMonth, countByMonth, stateByCategory, rankBy,
     sortItems, trendScore, outlets, SORT_MODES: Object.keys(SORTS) };
 })(window.Tracker = window.Tracker || {});

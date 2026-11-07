@@ -65,7 +65,7 @@
       createRankedBars({ list: $("state-bars"), more: $("state-more") }, deps, "state", { limit: 12, noun: "states" }),
       createRankedBars({ list: $("type-bars") }, deps, "cat"),
       createMatrix({ table: $("matrix"), scale: $("matrix-scale"), sub: $("matrix-sub"), modeGroup: $("matrix-mode") }, deps),
-      createTimeChart({ chart: $("timechart"), table: $("time-table"), sub: $("time-sub"), note: $("time-note") }, deps),
+      createTimeChart({ chart: $("timechart"), table: $("time-table"), sub: $("time-sub"), note: $("time-note"), clear: $("time-all") }, deps),
       createBriefs({ box: $("briefs") }, deps, itemsList.reveal),
       itemsList,
     ];

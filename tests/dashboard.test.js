@@ -87,6 +87,20 @@ test("filterItems can ignore chosen filters", () => {
   assert.equal(T.query.filterItems(data, f, { ignore: ["state"] }).length, 3);
 });
 
+test("ignoring the date filter keeps every month, and undated items", () => {
+  const march = { ...all, from: "2026-03", to: "2026-03" };
+  assert.deepEqual(plain(T.query.filterItems(data, march).map((it) => it.id)), ["3"]);
+  assert.equal(T.query.filterItems(data, march, { ignore: ["from", "to"] }).length, 4);
+});
+
+test("clicking a month shows only it; clicking it again shows every month", () => {
+  const one = T.query.pickMonth(data, all, "2026-02");
+  assert.deepEqual(plain(one), { from: "2026-02", to: "2026-02" });
+  assert.deepEqual(plain(T.query.pickMonth(data, { ...all, ...one }, "2026-02")), { from: "2026-01", to: "2026-03" });
+  assert.deepEqual(plain(T.query.pickMonth(data, { ...all, from: "2026-01", to: "2026-02" }, "2026-02")),
+    { from: "2026-02", to: "2026-02" });
+});
+
 test("search covers headline text, case-insensitively", () => {
   assert.equal(T.query.filterItems(data, { ...all, q: "CHATBOT" }).length, 1);
 });
