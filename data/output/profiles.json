@@ -89,7 +89,7 @@
  "Bihar": {
   "ai_policy": {
    "status": "announced",
-   "text": "Bihar AI Policy 2026 proposed to train 5 lakh students",
+   "text": "Bihar AI Policy 2026 proposed for training students and boosting economy",
    "cites": [
     "R4af400f2",
     "R0d276784"
@@ -97,31 +97,30 @@
   },
   "ai_body": {
    "status": "done",
-   "text": "Bihar AI Mission launched in 2026",
+   "text": "Bihar AI Mission approved by cabinet in May 2026",
    "cites": [
-    "R0f87a78a",
+    "Rc9c3c4c4",
     "Rb70e845b"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 468 crore MoUs signed at AI Impact Summit",
+   "text": "Rs 209 crore allocated for Aryabhatta Drishti Project in May 2026",
    "cites": [
-    "R44971ae6"
+    "Rc36ba196"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Artificial Intelligence Center of Excellence established in 2026",
+   "text": "Artificial Intelligence Center of Excellence established in Patna",
    "cites": [
-    "Rb48bf0e9",
-    "R24091985",
-    "R7b37b9dd"
+    "R771b1fe3",
+    "R24091985"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "97a69ed7abc2",
-  "generated_at": "2026-11-06T12:31+00:00"
+  "input_hash": "0a3319156b59",
+  "generated_at": "2026-11-08T06:04+00:00"
  },
  "Chhattisgarh": {
   "ai_policy": {
@@ -318,7 +317,7 @@
  "Karnataka": {
   "ai_policy": {
    "status": "done",
-   "text": "Karnataka Sustainable Data Centre Policy 2026-2031 approved by government in 2026",
+   "text": "Karnataka Sustainable Data Centre Policy 2026-2031 approved",
    "cites": [
     "R336c05d1",
     "R59008284",
@@ -327,30 +326,28 @@
   },
   "ai_body": {
    "status": "done",
-   "text": "Karnataka AI Committee for ethical use of AI in governance formed in 2026",
+   "text": "Karnataka forms AI Committee for ethical use of AI",
    "cites": [
     "R9b3c768e"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 1,300 crore approved for data centre policy and infrastructure in 2026",
+   "text": "Rs 1,300.45 crore data centre policy approved in 2026",
    "cites": [
-    "R59008284",
-    "Ra3ae29c4"
+    "R59008284"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Rs 35 crore AI Hub approved at IIIT Bangalore in 2026",
+   "text": "Karnataka approves 50 AI labs in government colleges",
    "cites": [
-    "R567ab120",
-    "Rb7265c49"
+    "Rb1015546"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "992954b79df3",
-  "generated_at": "2026-11-07T00:25+00:00"
+  "input_hash": "114136ce7da3",
+  "generated_at": "2026-11-08T06:04+00:00"
  },
  "Kerala": {
   "ai_policy": {
@@ -421,7 +418,7 @@
  "Maharashtra": {
   "ai_policy": {
    "status": "done",
-   "text": "Maharashtra Approves AI Policy 2026 with ₹10,000 crore investment",
+   "text": "Maharashtra Cabinet approved AI Policy 2026 with ₹10,000 crore investment",
    "cites": [
     "R562864e1",
     "Rdbb33aa8"
@@ -429,31 +426,29 @@
   },
   "ai_body": {
    "status": "done",
-   "text": "Maharashtra Cabinet approves new Department of Electronics IT and Artificial Intelligence",
+   "text": "Maharashtra Cabinet approved new Department for Electronics IT and Artificial Intelligence",
    "cites": [
-    "Rbff13ca0",
     "R6f0677ec"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 500 crore MahaAgri-AI Policy 2025-2029 approved by Maharashtra Cabinet",
+   "text": "Rs 500 crore MahaAgri-AI Policy approved in 2025",
    "cites": [
-    "R5c8784f8",
     "Rda0dbcb5"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Microsoft to establish 3 AI Centres of Excellence in Nagpur, Mumbai, Pune",
+   "text": "Microsoft to establish 3 AI Centres of Excellence in Maharashtra",
    "cites": [
     "R47ae66d7",
     "R260b8903"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "3d237862eeb3",
-  "generated_at": "2026-11-07T00:26+00:00"
+  "input_hash": "2965ba3fddba",
+  "generated_at": "2026-11-08T06:04+00:00"
  },
  "Manipur": {
   "ai_policy": {
@@ -472,13 +467,15 @@
    "cites": []
   },
   "infrastructure": {
-   "status": "none",
-   "text": "",
-   "cites": []
+   "status": "done",
+   "text": "AI career guidance hub opens at Imphal girls' school in 2026",
+   "cites": [
+    "Rbb7d36a7"
+   ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "67763f4e7c08",
-  "generated_at": "2026-11-05T00:06+00:00"
+  "input_hash": "2919ba9f6547",
+  "generated_at": "2026-11-08T06:04+00:00"
  },
  "Meghalaya": {
   "ai_policy": {
@@ -686,37 +683,37 @@
  "Tamil Nadu": {
   "ai_policy": {
    "status": "announced",
-   "text": "Tamil Nadu Artificial Intelligence Mission and AI roadmap announced in 2024-2026",
+   "text": "Tamil Nadu Artificial Intelligence Mission and AI roadmap announced",
    "cites": [
     "R74750963",
-    "R95171e6a",
-    "Raca6023a"
+    "Raca6023a",
+    "R4b3b02e5"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "Tamil Nadu Artificial Intelligence Mission restructured as non-profit and TNAIV launched in 2026",
+   "text": "Tamil Nadu Artificial Intelligence Mission (TNAIM) restructured in 2026",
    "cites": [
     "R5e1dd5d6"
    ]
   },
   "funding": {
    "status": "announced",
-   "text": "Rs 50,000-crore state investment fund for emerging sectors proposed in 2026",
+   "text": "Rs 50,000-crore state investment fund for emerging sectors in 2026",
    "cites": [
     "R162b8dce"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "South India's largest AI-ready data center campus inaugurated in Siruseri in 2025",
+   "text": "Sify AI-ready data center campus inaugurated in Siruseri in 2025",
    "cites": [
     "R70cb396d"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "c5fd4d5af8eb",
-  "generated_at": "2026-11-07T00:26+00:00"
+  "input_hash": "bf5a2d6771d9",
+  "generated_at": "2026-11-08T06:04+00:00"
  },
  "Telangana": {
   "ai_policy": {
@@ -725,11 +722,9 @@
    "cites": []
   },
   "ai_body": {
-   "status": "done",
-   "text": "Tech team formed in DGP's office for AI-based policing in 2026",
-   "cites": [
-    "Ra1409382"
-   ]
+   "status": "none",
+   "text": "",
+   "cites": []
   },
   "funding": {
    "status": "none",
@@ -738,14 +733,14 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "Telangana Green Skills & Applied AI Centre of Excellence launched in 2026",
+   "text": "Telangana Green Skills and Applied AI Centre of Excellence launched in 2026",
    "cites": [
     "R998e03d5"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "1de12f3d90ca",
-  "generated_at": "2026-11-07T00:27+00:00"
+  "input_hash": "3d2e65e97c8a",
+  "generated_at": "2026-11-08T06:04+00:00"
  },
  "Tripura": {
   "ai_policy": {

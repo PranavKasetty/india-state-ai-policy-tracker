@@ -2,9 +2,9 @@
 window.TRACKER_DATA = {
  "meta": {
   "is_mock": false,
-  "generated_at": "2026-11-07T05:57:23+00:00",
+  "generated_at": "2026-11-08T06:04:37+00:00",
   "period_start": "2022-12-01",
-  "period_end": "2026-11-06",
+  "period_end": "2026-11-08",
   "states": [
    {
     "name": "Andhra Pradesh",
@@ -208,62 +208,63 @@ window.TRACKER_DATA = {
      "generated_at": "2026-11-07T00:22+00:00"
     },
     "Bihar": {
-     "text": "The Government of Bihar has actively integrated artificial intelligence across governance, education, and public services, highlighted by major partnerships finalized at events like the AI Impact Summit and the launch of the Bihar AI Mission [R44971ae6, Rb70e845b]. State authorities have partnered with technology firms such as Google and Microsoft to train government schoolteachers in AI tools, introduce AI into school classrooms, and procure software licenses [Reb7bfdb3, R1b5b6306, R3beb3201]. Furthermore, AI applications have been deployed for administrative and public infrastructure tasks, including e-cabinet systems, public distribution system monitoring, police patrolling, and healthcare services [Re986d143, Rac954476, R79af63e1, R79e87d3a].",
+     "text": "The Government of Bihar has actively pursued artificial intelligence integration across governance, education, and infrastructure sectors through major policy initiatives and partnerships [R57e2c2ec, Rff3cbb5a]. Key actions include signing significant Memorandums of Understanding with major technology firms like Google and Microsoft to train teachers and modernise the education ecosystem [Reb7bfdb3, R1b5b6306], alongside launching targeted youth training and state-governed AI infrastructure projects [Rb70e845b, Rbc0f7b3c]. The state has also deployed AI for administrative enhancements, such as paperless e-Cabinet operations, automated traffic surveillance, and public service delivery monitoring [Re986d143, Rca207298, R6e8b2377].",
      "cited": [
-      "R44971ae6",
-      "Rb70e845b",
+      "R57e2c2ec",
+      "Rff3cbb5a",
       "Reb7bfdb3",
       "R1b5b6306",
-      "R3beb3201",
+      "Rb70e845b",
+      "Rbc0f7b3c",
       "Re986d143",
-      "Rac954476",
-      "R79af63e1",
-      "R79e87d3a"
+      "Rca207298",
+      "R6e8b2377"
      ],
-     "n_records": 243,
+     "n_records": 245,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "ed4034723990",
-     "generated_at": "2026-11-07T00:22+00:00"
+     "input_hash": "fcca17a643d1",
+     "generated_at": "2026-11-08T06:02+00:00"
     },
     "Gujarat": {
-     "text": "Gujarat has heavily invested in artificial intelligence infrastructure, policy frameworks, and governance applications, establishing specialized initiatives like data centre policies targeting Green AI capacity alongside GPU-as-a-Service and sovereign park proposals [Re041bd74, R43f4ae2b, Rd1b68bba, Rb40e306d]. The state government has integrated AI across various sectors, ranging from agricultural and educational platforms to police surveillance hackathons and crime tracking tools [Ra310e3fc, R88fee491, R28ccc09b, Rd78856c5]. Meanwhile, institutional bodies like the Gujarat High Court have engaged with the technology by enacting policies that prohibit AI use in judicial decision-making while addressing challenges related to AI-generated citations [Rbd9766bd, R3cc78d30].",
+     "text": "The Government of Gujarat has actively advanced artificial intelligence through infrastructure development, targeted governance applications, and educational initiatives. Key infrastructure efforts include the establishment of AI and data center clusters near GIFT City [Rb322fa47, R42b5efe9], a statewide GPU-as-a-Service framework [Rd1b68bba], and the Data Centre Policy 2026-29 aiming for Green AI capacity and mandatory renewable power integration [Re041bd74, R0d737a25, R43f4ae2b]. State governance is leveraging AI across sectors such as agricultural paddy quality testing [Re71562c3], dairy farming guidance via the Amul AI platform [Ra310e3fc], police surveillance challenges [R28ccc09b], and student dropout prevention [R88fee491]. Additionally, the state has initiated a major student training mission targeting 5 lakh students and thousands of faculty members [Ra6932da2], while the Gujarat High Court has concurrently enacted policies prohibiting AI use in judicial decision-making and judgment drafting [Rbd9766bd].",
      "cited": [
-      "Re041bd74",
-      "R43f4ae2b",
+      "Rb322fa47",
+      "R42b5efe9",
       "Rd1b68bba",
-      "Rb40e306d",
+      "Re041bd74",
+      "R0d737a25",
+      "R43f4ae2b",
+      "Re71562c3",
       "Ra310e3fc",
-      "R88fee491",
       "R28ccc09b",
-      "Rd78856c5",
-      "Rbd9766bd",
-      "R3cc78d30"
+      "R88fee491",
+      "Ra6932da2",
+      "Rbd9766bd"
      ],
      "n_records": 143,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "ba7d6f5e854b",
-     "generated_at": "2026-11-06T12:26+00:00"
+     "input_hash": "adbd8ef7f313",
+     "generated_at": "2026-11-08T06:02+00:00"
     },
     "Karnataka": {
-     "text": "Karnataka has pursued extensive AI integration across governance, public services, and infrastructure through partnerships with major technology entities like Anthropic and ElevenLabs [R65d60606, Rff273deb]. The state is establishing multiple Centres of Excellence, approving regional AI hubs, and advancing large-scale physical projects such as the Bidadi AI Township and the proposed Artificial Intelligence University [Re78dfed2, Rb7265c49, R2c8e9508, Rb77b1a7f]. Educational reforms feature prominently, including early tech and AI training starting from Class 6 in government schools, vocational courses, and teacher skilling initiatives [R8176ca19, R3e7508f6, R044b5fa1]. Furthermore, administrative processes utilize AI tools for tasks ranging from staff attendance and crop surveys to citizen service delivery and language translation [Rf518fff6, Ra61ec765, R9d27904f].",
+     "text": "Karnataka has actively pursued artificial intelligence integration across governance, education, and infrastructure through various strategic policy measures and partnerships [R65d60606, R2c127a87]. The state has focused heavily on educational reforms, including plans for an AI university, introducing AI and digital literacy into school curricula starting from Class 6, and establishing multiple Centres of Excellence and AI hubs [R8176ca19, R0e4ecbd7, Rb77b1a7f]. Additionally, the government has adopted AI for public service delivery and administrative efficiency, deploying tools for attendance tracking, crop surveys, language translation via Bhashini, and citizen service pilots with companies like ElevenLabs [Rf518fff6, Ra61ec765, Rff273deb, R9d27904f]. Large-scale infrastructure projects such as the Bidadi AI Township and the launch of affordable KEO computers further underline the state's push to expand its digital and deep-tech ecosystem [R3590a0eb, R9082b90f].",
      "cited": [
       "R65d60606",
-      "Rff273deb",
-      "Re78dfed2",
-      "Rb7265c49",
-      "R2c8e9508",
-      "Rb77b1a7f",
+      "R2c127a87",
       "R8176ca19",
-      "R3e7508f6",
-      "R044b5fa1",
+      "R0e4ecbd7",
+      "Rb77b1a7f",
       "Rf518fff6",
       "Ra61ec765",
-      "R9d27904f"
+      "Rff273deb",
+      "R9d27904f",
+      "R3590a0eb",
+      "R9082b90f"
      ],
-     "n_records": 295,
+     "n_records": 296,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "c27440ba97e9",
-     "generated_at": "2026-11-07T00:23+00:00"
+     "input_hash": "06cf7683877c",
+     "generated_at": "2026-11-08T06:02+00:00"
     },
     "Maharashtra": {
      "text": "Maharashtra has actively advanced its artificial intelligence ecosystem by approving a comprehensive AI policy backed by a ₹10,000 crore planned investment, establishing a dedicated IT and AI department, and deploying governance and oversight committees [R562864e1, Rd7d40f74, Rbff13ca0, R5afedf9c]. The state government has integrated AI across numerous public sectors, implementing initiatives such as the Maha AI and MahaINDUS governance platforms, police cybercrime copilots, and multilingual tools in partnership with tech entities like Microsoft, Google, and Sarvam AI [R04592b70, R68fee1a0, R7ec03dda, R03b6b6d6]. Furthermore, Maharashtra has driven large-scale infrastructure and educational projects, including massive data centre investments, mandatory teacher training, and specialized agricultural and safety programs [Re0b416d1, R2889d124, Rcd594eaf, Radc0ac36].",
@@ -287,24 +288,22 @@ window.TRACKER_DATA = {
      "generated_at": "2026-11-07T00:23+00:00"
     },
     "Odisha": {
-     "text": "Odisha is actively integrating artificial intelligence across public administration, infrastructure, and education through policy initiatives and high-value partnerships [Rc729937b, R7b1537aa]. The state has driven major technological investments, including large-scale AI data center agreements with companies like HCLTech and proposed sovereign compute projects with partners such as Sarvam AI [R31b27cb7, R230b6e3b, R3a36bb44]. Public service delivery has also expanded via AI-powered WhatsApp chatbots like 'Ama Sathi' and sector-specific tools for agriculture, traffic enforcement, and wildlife protection [Rabdf8555, Re1a077a6, R8a2dd09f, R499f4234]. Furthermore, the government has prioritized AI skill development by incorporating emerging technology courses into higher education curricula and establishing specialized training hubs [Rdb5da3c5, Re8e598e1, Re8e598e1].",
+     "text": "Odisha has advanced its artificial intelligence ecosystem through major infrastructure investments, including partnerships with companies like Sarvam AI and HCLTech to develop sovereign AI parks, data centers, and compute facilities [R31b27cb7, Re1e1271, R3a36bb44]. The state government has integrated AI into public administration and citizen services, deploying WhatsApp chatbots like 'Ama Sathi' for governance and revenue services, alongside AI surveillance for exams and automated traffic enforcement [Rabdf8555, R478c8c67, R8a2dd09f, R05090e42]. Additionally, Odisha has focused on education and workforce readiness by introducing AI curricula across schools and higher education institutions while launching specialized training programs [Rdb5da3c5, R7b1537aa, R7b9bb8d3].",
      "cited": [
-      "Rc729937b",
-      "R7b1537aa",
       "R31b27cb7",
-      "R230b6e3b",
       "R3a36bb44",
       "Rabdf8555",
-      "Re1a077a6",
+      "R478c8c67",
       "R8a2dd09f",
-      "R499f4234",
+      "R05090e42",
       "Rdb5da3c5",
-      "Re8e598e1"
+      "R7b1537aa",
+      "R7b9bb8d3"
      ],
-     "n_records": 147,
+     "n_records": 148,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "29f973348f4f",
-     "generated_at": "2026-11-07T00:23+00:00"
+     "input_hash": "12ec34bad097",
+     "generated_at": "2026-11-08T06:02+00:00"
     },
     "Punjab": {
      "text": "Punjab has pursued extensive artificial intelligence integration across education, governance, agriculture, and law enforcement. The state school education board introduced AI into the computer science curriculum and public school system for classes across various grade levels [Rf6319e99, R11fad9f5, Rf4a0d422]. In policing and public safety, the state partnered with IIT Ropar to establish an in-house AI laboratory and deployed smart technologies like voice recognition and automated tracking to combat organized crime [R7333c0ad, R132d8a77, R3ee3be90]. Additionally, Punjab advanced agricultural advisory services and healthcare diagnostics through AI-driven tools [Ree614b14, R609b6fc5].",
@@ -324,24 +323,25 @@ window.TRACKER_DATA = {
      "generated_at": "2026-11-07T00:23+00:00"
     },
     "Tamil Nadu": {
-     "text": "Tamil Nadu has significantly advanced its artificial intelligence ecosystem through major infrastructure projects, including plans for an AI city, a Sovereign AI Park, and an AI data center established in partnership with IIT Madras [R1b6cbab3, R472c3c1a, R305828a2]. The state government has integrated AI into public service delivery and governance by deploying WhatsApp chatbots like 'Namma Arasu' and 'NalamAI' for hospital and administrative services, alongside AI systems for wildlife conservation and traffic safety [R576baa19, R494484b4, Rc2b44680, R7efcaa10]. Furthermore, educational and workforce initiatives have been prioritized, such as training government school teachers and students in AI tools, introducing AI/ML trades in industrial training institutes, and partnering with technology providers to foster deep-tech skills [R9cd35018, Rfe24cede, R5742a9b1, Rae27a6f6].",
+     "text": "Tamil Nadu has driven extensive artificial intelligence adoption through infrastructure developments, public service automation, and targeted educational initiatives. Key infrastructure projects include partnering to establish a Sovereign AI Park, inaugurating South India's largest AI-ready data center campus, and collaborating with IIT Madras to create an AI Data Centre and state-owned GPU cluster [R472c3c1a, R70cb396d, R305828a2, R8b2c535d]. The state has enhanced public service delivery by deploying WhatsApp chatbots like 'Namma Arasu' for government services and launching AI systems for wildlife conservation, healthcare appointment booking, and policing [R494484b4, R31409be3, R576baa19, R76baa146]. Furthermore, Tamil Nadu has integrated AI into its education system by training government school students and teachers, launching specialized AI learning platforms, and introducing AI trades in vocational training institutes [R9cd35018, Rfe24cede, Re04bb5c4, R5742a9b1].",
      "cited": [
-      "R1b6cbab3",
       "R472c3c1a",
+      "R70cb396d",
       "R305828a2",
-      "R576baa19",
+      "R8b2c535d",
       "R494484b4",
-      "Rc2b44680",
-      "R7efcaa10",
+      "R31409be3",
+      "R576baa19",
+      "R76baa146",
       "R9cd35018",
       "Rfe24cede",
-      "R5742a9b1",
-      "Rae27a6f6"
+      "Re04bb5c4",
+      "R5742a9b1"
      ],
      "n_records": 156,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "7f34292bd310",
-     "generated_at": "2026-11-07T00:24+00:00"
+     "input_hash": "7a6a33054b98",
+     "generated_at": "2026-11-08T06:03+00:00"
     },
     "Telangana": {
      "text": "Telangana has actively pursued artificial intelligence integration across infrastructure, governance, and education through strategic partnerships and institutional frameworks [Rd6f74125, R389847d5]. The state has attracted massive investments for AI data centers and cloud infrastructure, alongside plans for a dedicated AI City [R5b4a7a80, Ra0d04f11, Rfd882f23]. Government initiatives leverage AI for public services, including policing, traffic management, agricultural market transactions, and revenue collection [Ra1409382, Rce4536fa, R45e372bd, R849548ed]. Furthermore, the state has launched extensive skilling and literacy programs to train students and government employees in artificial intelligence [R6843cc3b, R89c590e8, R59295049].",
@@ -365,23 +365,20 @@ window.TRACKER_DATA = {
      "generated_at": "2026-11-07T00:24+00:00"
     },
     "Uttar Pradesh": {
-     "text": "The Uttar Pradesh government has actively pursued artificial intelligence integration through substantial infrastructure investments, including approved data center policies, an AI city initiative in Lucknow, and a robotics and AI park in Greater Noida [R398131aa, Rbcca7384, Rb1cbd4df]. Governance and administrative processes have seen widespread deployment of AI, featuring automated checks for pensions, traffic route management, judicial transcription tools, and exam surveillance systems [Rd1807ca7, R721729e0, R231ba3cf, R840f85d3]. Additionally, the state has launched workforce skilling initiatives such as the UP Artificial Intelligence Mission, mandatory vocational training courses, and partnerships with technology firms to train millions of youth [Rb312992b, R1e320eca, R10e7268a].",
+     "text": "Uttar Pradesh has advanced its artificial intelligence ecosystem through major infrastructure projects, governance initiatives, and large-scale skilling programs [R7945996b]. The state cabinet approved the UP Artificial Intelligence Mission alongside data center and robotics policies aimed at establishing AI hubs and attracting multi-billion-dollar investments in cities like Lucknow and Noida [Rb1cbd4df, Rb312992b, R398131aa]. Furthermore, the government has integrated AI into public administration and exam monitoring, while partnering with major tech firms to train millions of youth in emerging technologies [Re0c4ff32, Rf4058825, R1a841461].",
      "cited": [
-      "R398131aa",
-      "Rbcca7384",
+      "R7945996b",
       "Rb1cbd4df",
-      "Rd1807ca7",
-      "R721729e0",
-      "R231ba3cf",
-      "R840f85d3",
       "Rb312992b",
-      "R1e320eca",
-      "R10e7268a"
+      "R398131aa",
+      "Re0c4ff32",
+      "Rf4058825",
+      "R1a841461"
      ],
-     "n_records": 579,
+     "n_records": 583,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "7d09c8a90e6c",
-     "generated_at": "2026-11-07T00:24+00:00"
+     "input_hash": "81781e080f76",
+     "generated_at": "2026-11-08T06:03+00:00"
     },
     "Kerala": {
      "text": "Kerala has advanced artificial intelligence initiatives across governance, education, law enforcement, and infrastructure development. The state government rebranded its IT department to focus on AI and future technologies, established twin AI Centres of Excellence, and attracted major investments such as a large AI-driven data centre [Rcaa18758, Ref58a154, Ra525c46d]. In the public sector and judiciary, authorities integrated AI-assisted administrative overhauls, translation and transcription tools, and traffic monitoring systems alongside robotics and cyber safety protocols [Rf2c35456, R8f4114ad, Raf4f7b8d, R70b2d101]. Educational programs have also seen widespread AI integration, ranging from specialized school training and robotics mandates to generative AI tools for students and teachers [R0689eb15, R3db21292, Rb2b9a51b, Rc3656b09].",
@@ -404,27 +401,22 @@ window.TRACKER_DATA = {
      "generated_at": "2026-11-06T12:27+00:00"
     },
     "Assam": {
-     "text": "Assam has pursued an extensive AI-driven transformation across governance, education, healthcare, and infrastructure, marked by the rollout of foundational AI roadmaps and state data capabilities [R936eb0aa, R4203359c, R416e5d33]. The state has integrated artificial intelligence into public services and disaster management, introducing tools such as the WhatsApp-based 'Jal Raksha' flood relief platform, satellite and AI forest monitoring, and AI-powered administrative systems [Rc2490b65, R9c52da90, Rdc7ff729]. Educational and workforce initiatives feature partnerships with Google and UNICEF to train teachers, deploy AI attendance systems, and establish dedicated centres of excellence [R8b7a258f, Red858166, R39b50ddb, R9c3a4d8c]. Furthermore, Assam has applied AI solutions to wildlife conservation, security, and healthcare upgrades, while addressing emerging challenges through digital voice preservation and deepfake regulations [R037e76ac, Ra093ebca, Rdc188dd0, Rf195e841].",
+     "text": "Assam has actively integrated artificial intelligence across governance, public services, and infrastructure, establishing an AI roadmap and commissioning its first government-owned GPU cluster to power state services [R936eb0aa, R4203359c]. Key initiatives include deploying AI for flood and disaster management such as the 'Jal Raksha' WhatsApp relief platform, forest and wildlife protection using satellite monitoring and AI cameras, and education reforms that incorporate AI tools in schools alongside Google and UNICEF [R9c52da90, Rc2490b65, R39b50ddb, R18a33cd7]. Additionally, the state has advanced AI applications in healthcare with patient monitoring and robotic surgeries, while also implementing regulatory and legal measures to counter deepfakes and the misuse of AI-generated content [R5068779c, Rdc188dd0, Rf972ff43].",
      "cited": [
       "R936eb0aa",
       "R4203359c",
-      "R416e5d33",
-      "Rc2490b65",
       "R9c52da90",
-      "Rdc7ff729",
-      "R8b7a258f",
-      "Red858166",
+      "Rc2490b65",
       "R39b50ddb",
-      "R9c3a4d8c",
-      "R037e76ac",
-      "Ra093ebca",
+      "R18a33cd7",
+      "R5068779c",
       "Rdc188dd0",
-      "Rf195e841"
+      "Rf972ff43"
      ],
      "n_records": 57,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "0cb8e2e09892",
-     "generated_at": "2026-11-07T00:22+00:00"
+     "input_hash": "6c4d8d252261",
+     "generated_at": "2026-11-08T06:02+00:00"
     },
     "Chhattisgarh": {
      "text": "Chhattisgarh has advanced its artificial intelligence initiatives through the approval of a Rs 500 crore AI Mission over five years, focusing on digital economy, governance, and skill development [R7cc53f61]. The state has also concentrated on infrastructure investments, including foundations for AI data center parks and special economic zones in Nava Raipur [Rcc6c8e84, Rd28b546d]. In the education sector, the government partnered with Google India to launch an AI education campaign aimed at training over 2 lakh teachers and integrating technology into tribal and rural schools [R398fad0d, Rf7c7fd70]. Furthermore, public services have integrated AI applications across domains, ranging from wildlife conservation and police investigations to road monitoring and automated alert systems [R96ea213d, Reb028d74, Re3198684, R6c86e7f3].",
@@ -517,22 +509,23 @@ window.TRACKER_DATA = {
      "generated_at": "2026-11-07T00:23+00:00"
     },
     "Manipur": {
-     "text": "Manipur has advanced its digital governance and artificial intelligence adoption through strategic partnerships and sector-specific applications, including a collaboration with Microsoft and a multilingual AI MoU with the Digital India BHASHINI Division [R8e91e0e8, Rad868781, Rdc31ca32]. The state has integrated AI across multiple domains, such as launching translation applications like 'Ishaan', exploring AI to curb wildlife trafficking, and applying technology to tribal development and tourism [R7249ca9d, R49d826c3, R3413274d, Re9f95033]. Furthermore, academic institutions and the judiciary have embraced these innovations, highlighted by research workshops at Manipur University and the Manipur High Court utilizing AI for legal research [R546f135d, R647a600d].",
+     "text": "Manipur has actively integrated artificial intelligence across governance, education, legal proceedings, and conservation efforts [Rbb7d36a7, Rc647f8ab, R7249ca9d]. Notable initiatives include the Manipur High Court utilizing AI tools like ChatGPT for judicial research and landmark verdicts, alongside partnerships with BHASHINI and Microsoft to expand multilingual AI, cybersecurity, and digital governance [Rad868781, Rdc31ca32, R647a600d]. The state has also promoted AI in academic and career settings through workshops, university programs, and the opening of an AI career guidance hub in an Imphal school [Rbb7d36a7, R546f135d, R13590541]. Furthermore, AI applications are being explored for wildlife trafficking prevention, tribal development, and digital tourism [R7249ca9d, R3413274d, Re9f95033].",
      "cited": [
-      "R8e91e0e8",
+      "Rbb7d36a7",
+      "Rc647f8ab",
+      "R7249ca9d",
       "Rad868781",
       "Rdc31ca32",
-      "R7249ca9d",
-      "R49d826c3",
-      "R3413274d",
-      "Re9f95033",
+      "R647a600d",
       "R546f135d",
-      "R647a600d"
+      "R13590541",
+      "R3413274d",
+      "Re9f95033"
      ],
-     "n_records": 14,
+     "n_records": 15,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "22bfde42bdde",
-     "generated_at": "2026-11-06T12:27+00:00"
+     "input_hash": "e7594b72dd26",
+     "generated_at": "2026-11-08T06:02+00:00"
     },
     "Meghalaya": {
      "text": "Meghalaya is actively integrating artificial intelligence across multiple sectors, including governance, education, agriculture, and public health, positioning itself as a leader in tech-driven development [Radc3741c, Rf1f88f85, R84a1eeb7]. Significant actions include drafting a new IT policy focused on AI and global capability centres, proposing a Rs 20 crore AI Centre of Excellence at Shillong Technology Park Phase II, and introducing AI-enabled learning initiatives in schools [R9625f972, Rf277c3a3, R24be49c9]. Additionally, the state has leveraged data-driven governance to improve public health metrics, deployed AI solutions for environmental and waste management, and hosted the Regional Artificial Intelligence Impact Conference [Rac5495f0, Rd7994ab1, R84a1eeb7].",
@@ -552,45 +545,40 @@ window.TRACKER_DATA = {
      "generated_at": "2026-11-06T12:27+00:00"
     },
     "Tripura": {
-     "text": "Tripura is actively advancing artificial intelligence integration across multiple sectors, aiming to launch a state-level AI policy and partnering with Google India and IIT Kharagpur to build a robust technological ecosystem [Rc68da9b5, R33168f25, R9435f1d2]. The state has introduced several educational initiatives, including free AI courses for school students, robotics and VR labs, and an AI-powered school monitoring system [R3fff65a8, R12023632, R311a6da8, R20047d48]. Furthermore, the government is deploying AI to enhance public services, governance, healthcare diagnostics, and law enforcement traffic and security management [R8edb04a8, R2235629e, Rbf61a3aa, Rdc265ce0].",
+     "text": "Tripura has undertaken extensive initiatives to integrate artificial intelligence across governance, public administration, and law enforcement, including deploying AI-based tools for tax evasion detection, traffic management, and police control rooms [Ra65da593, R8edb04a8, Rdc265ce0]. The state is launching a state-level AI policy and partnering with Google India and IIT Kharagpur to build a robust local technology and innovation ecosystem [Rc68da9b5, R33168f25, R9435f1d2]. Furthermore, Tripura has emphasized AI-driven advancements in education, healthcare, and agriculture, such as introducing free AI courses for school students, AI-powered school monitoring, and AI medical equipment [R2235629e, R3fff65a8, R20047d48, R12023632].",
      "cited": [
+      "Ra65da593",
+      "R8edb04a8",
+      "Rdc265ce0",
       "Rc68da9b5",
       "R33168f25",
       "R9435f1d2",
-      "R3fff65a8",
-      "R12023632",
-      "R311a6da8",
-      "R20047d48",
-      "R8edb04a8",
       "R2235629e",
-      "Rbf61a3aa",
-      "Rdc265ce0"
+      "R3fff65a8",
+      "R20047d48",
+      "R12023632"
      ],
-     "n_records": 27,
+     "n_records": 28,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "ad427b16b539",
-     "generated_at": "2026-11-06T12:28+00:00"
+     "input_hash": "78d22e1817e6",
+     "generated_at": "2026-11-08T06:03+00:00"
     },
     "Uttarakhand": {
-     "text": "Uttarakhand has actively advanced its artificial intelligence initiatives across governance, education, and environmental management, highlighted by events like the Devbhoomi AI Summit and various digital empowerment meetings [R8a719696, R042443f1]. The state has integrated AI into public services and safety, implementing AI agents for cyber fraud helplines, face recognition for the Chardham Yatra, and AI-driven systems to monitor tax evasion and forest encroachment [R549f779d, R9dac4ef2, Recb1f69d, Rbdd4d909]. Educational reforms include mandating AI coursework across universities, launching 'AI-for-All' programs with institutions like IIT Madras, and establishing AI facilities and labs [R42cd5368, R1742b1a0, Rcea6d545]. Additionally, conservation efforts leverage AI through acoustic surveillance in forests, wildlife monitoring, and intrusion detection systems to protect wildlife and mitigate human-animal conflicts [R994e0e10, R82962675, R0056f175].",
+     "text": "Uttarakhand has advanced its artificial intelligence agenda through several summits, educational expansions, and governance initiatives. Key actions include launching the Devbhoomi AI Summit and establishing AI courses across universities and institutions to enhance digital literacy [R8a719696, Rcea6d545]. The state has also deployed AI for practical applications such as wildlife conservation, forest monitoring, cyber fraud helplines, and revenue collection [R549f779d, Recb1f69d, Rf32d6d42, R82962675]. Additionally, AI is being integrated into public infrastructure security, transport, and administrative portals to improve governance and safety [R9dac4ef2, Rc3235cc0].",
      "cited": [
       "R8a719696",
-      "R042443f1",
-      "R549f779d",
-      "R9dac4ef2",
-      "Recb1f69d",
-      "Rbdd4d909",
-      "R42cd5368",
-      "R1742b1a0",
       "Rcea6d545",
-      "R994e0e10",
+      "R549f779d",
+      "Recb1f69d",
+      "Rf32d6d42",
       "R82962675",
-      "R0056f175"
+      "R9dac4ef2",
+      "Rc3235cc0"
      ],
-     "n_records": 97,
+     "n_records": 99,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "381d5d55ae68",
-     "generated_at": "2026-11-07T00:24+00:00"
+     "input_hash": "ca63508eccb9",
+     "generated_at": "2026-11-08T06:03+00:00"
     },
     "West Bengal": {
      "text": "West Bengal is actively integrating artificial intelligence across economic, educational, and governance domains to drive industrial revival and modernization [R2434d991, R1ada3e48]. The state's industrial strategy features initiatives such as the West Bengal AI Mission, a draft industrial policy focusing on data centers and AI, and the accelerated Silicon Valley project [Rf93d2652, R0c1ea7de, R90ad9af5]. In education, the state has introduced AI, data science, and coding curricula across schools and higher secondary boards, alongside workforce training partnerships with entities like Oracle [Rac4428c1, Rf61a82a3, R6da26467, R0c4d9eef]. Additionally, law enforcement and public administration are utilizing AI through dedicated police cells, investigation apps like Samarth, and AI-powered public helplines [Re268e526, R904a08ab, R08e415eb].",
@@ -614,21 +602,23 @@ window.TRACKER_DATA = {
      "generated_at": "2026-11-07T00:24+00:00"
     },
     "Rajasthan": {
-     "text": "The government of Rajasthan has actively integrated artificial intelligence across numerous public sectors, highlighted by the approval of the AI-ML Policy 2026 and the unveiling of specialized technology policies to attract investment [R6a6bee70, R250bc457]. Key administrative actions include deploying AI for agricultural partnerships, wildlife and water conservation, modernized policing, and traffic management [R6de84b70, R311c8976, Rd7e6b721, R0af96cb6]. Additionally, the state has adopted AI tools to enhance public grievance redressal through the Rajasthan Sampark platform and introduced digital governance initiatives alongside educational updates [Rcaf01e51, Rf789607f].",
+     "text": "The Rajasthan government has integrated artificial intelligence across numerous sectors, supported by policies like the AI-ML Policy 2026 and initiatives in digital governance and public services [R6a6bee70, R250bc457, Re0df1048]. Major advancements include the adoption of AI-driven solutions in agriculture through partnerships with Wadhwani AI, health tracking initiatives for diabetes and tuberculosis, and enhanced policing via facial recognition and automated traffic management [R6de84b70, Rb6d56877, Rd7e6b721, Re141ed2f]. Additionally, the state has advanced educational frameworks by introducing AI foundational courses, planning syllabus updates for schools, and leveraging institutional research from organizations like IIT Jodhpur [Rae2f7609, Rf789607f, R2c694631].",
      "cited": [
       "R6a6bee70",
       "R250bc457",
+      "Re0df1048",
       "R6de84b70",
-      "R311c8976",
+      "Rb6d56877",
       "Rd7e6b721",
-      "R0af96cb6",
-      "Rcaf01e51",
-      "Rf789607f"
+      "Re141ed2f",
+      "Rae2f7609",
+      "Rf789607f",
+      "R2c694631"
      ],
-     "n_records": 189,
+     "n_records": 191,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "f53b4bcb25ad",
-     "generated_at": "2026-11-07T00:23+00:00"
+     "input_hash": "49a590490412",
+     "generated_at": "2026-11-08T06:02+00:00"
     },
     "Nagaland": {
      "text": "Nagaland has actively integrated artificial intelligence across governance, public administration, and specialized sectors such as disaster preparedness, agriculture, law enforcement, and animal production [Ra8c17a13, R3a286812, R17676278, Rbf1aee2c]. Significant initiatives include launching an AI supercomputer, an AI-powered digital agriculture ecosystem, police surveillance cameras, and award-winning WhatsApp chatbots to improve public services and skill development access [Ra8c17a13, R3a286812, R1ee21379, R17676278, Rb26a6b87]. The state has also prioritized education and capacity building through the inauguration of an AI Centre of Excellence for Skilling, faculty development workshops, and plans to introduce an AI curriculum in schools starting from Class 6 [R6f55ee54, Rb7d1d850, R8b9ea930, Ree819f7b].",
@@ -670,49 +660,40 @@ window.TRACKER_DATA = {
    },
    "categories": {
     "strategy_policy": {
-     "text": "State governments across India have increasingly focused on formalizing AI strategies, establishing dedicated policies, and approving major financial investments to build local tech ecosystems [R6a6bee70, R562864e1, Rc68da9b5]. Several states like Maharashtra, Uttar Pradesh, Bihar, and Rajasthan have rolled out dedicated AI missions or policies paired with infrastructure hubs, data centers, and targeted startup goals [R6a6bee70, R562864e1, R3cf60d9f, Rb312992b, Rc9c3c4c4]. Administrations are also heavily investing in educational reforms, skilling initiatives, and public sector governance overhauls to integrate artificial intelligence into public services and classrooms [R4af400f2, R8f4114ad, R2c0df2e5, R5c2eec42].",
+     "text": "Indian state governments have increasingly prioritized AI strategy and policy, introducing dedicated missions, legislative frameworks, and substantial financial investments to boost regional ecosystems [R6a6bee70, R562864e1, Rb312992b]. States like Maharashtra, Uttar Pradesh, and Bihar have approved comprehensive AI policies and missions aimed at establishing tech hubs, expanding infrastructure, and training hundreds of thousands of students [R4af400f2, R562864e1, Rb312992b]. Additionally, administrations are focusing on specialized infrastructure through data centre policies, green AI data centres, and targeted startup ecosystems [R3eefbde9, Re041bd74, R398131aa]. State-level initiatives also heavily emphasize governance reforms, utilizing artificial intelligence for public service delivery, administrative overhauls, agricultural monitoring, and revenue generation [R45e372bd, R849548ed, R8f4114ad].",
      "cited": [
       "R6a6bee70",
       "R562864e1",
-      "Rc68da9b5",
-      "R3cf60d9f",
       "Rb312992b",
-      "Rc9c3c4c4",
       "R4af400f2",
-      "R8f4114ad",
-      "R2c0df2e5",
-      "R5c2eec42"
+      "R3eefbde9",
+      "Re041bd74",
+      "R398131aa",
+      "R45e372bd",
+      "R849548ed",
+      "R8f4114ad"
      ],
-     "n_records": 913,
+     "n_records": 915,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "2ab89426a347",
-     "generated_at": "2026-11-07T00:24+00:00"
+     "input_hash": "349e83b99ffd",
+     "generated_at": "2026-11-08T06:03+00:00"
     },
     "regulation_ethics": {
-     "text": "State governments and high courts have actively introduced regulatory frameworks and guidelines to address the ethical challenges, data privacy concerns, and risks associated with artificial intelligence. Notably, the high courts of Gujarat and Kerala, along with the Punjab and Haryana High Court, have restricted or prohibited the use of AI tools in judicial decision-making, judgment drafting, and issuing notices to preserve public trust and prevent reliance on non-existent case laws [Rbd9766bd, R12b7585e, R3cc78d30, R8eacd504, R3d477cff, Rd45f0fb4, Re909a24e]. Meanwhile, states like Karnataka, Rajasthan, Telangana, and Maharashtra have focused on responsible AI adoption by establishing ethics committees, drafting data governance frameworks, and issuing restrictive circulars to protect confidential taxpayer and student data from unauthorized platforms [R9b3c768e, R607d069a, R3f7241e3, Ra75d01a2, Rdff5f567, R680564f5]. Additionally, several administrations have targeted synthetic media misuse, implementing mandatory labeling for AI-generated content, tackling deepfake scams, and addressing digital safety concerns for students and citizens [Raf4f7b8d, R7c216cfc, R783d943c, Rf972ff43].",
+     "text": "Indian states and high courts have actively established regulatory guardrails, ethical frameworks, and administrative safeguards for artificial intelligence. Judicial bodies in states like Gujarat, Kerala, and Punjab and Haryana have introduced restrictive policies barring the use of AI tools in drafting judgments or arriving at judicial decisions [Rbd9766bd, R12b7585e, R8eacd504]. Concurrently, executive departments in states such as Telangana, Rajasthan, and Karnataka have formed dedicated committees and issued guidelines to ensure the ethical use of AI, protect taxpayer and student data privacy, and mandate labeling for synthetic or AI-generated content [R9b3c768e, R607d069a, R7c216cfc]. Furthermore, several administrations are formulating standard operating procedures to govern emerging technologies like wearable devices and automated surveillance tools [Rba8badb1, Raedfea70].",
      "cited": [
       "Rbd9766bd",
       "R12b7585e",
-      "R3cc78d30",
       "R8eacd504",
-      "R3d477cff",
-      "Rd45f0fb4",
-      "Re909a24e",
       "R9b3c768e",
       "R607d069a",
-      "R3f7241e3",
-      "Ra75d01a2",
-      "Rdff5f567",
-      "R680564f5",
-      "Raf4f7b8d",
       "R7c216cfc",
-      "R783d943c",
-      "Rf972ff43"
+      "Rba8badb1",
+      "Raedfea70"
      ],
-     "n_records": 85,
+     "n_records": 86,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "7cf8b861b3e3",
-     "generated_at": "2026-11-06T12:29+00:00"
+     "input_hash": "3931949a72f6",
+     "generated_at": "2026-11-08T06:03+00:00"
     },
     "funding_budget": {
      "text": "Indian state governments have launched substantial financial commitments and funding mechanisms to drive artificial intelligence infrastructure, data centers, and specialized missions. Notable initiatives include multi-year state missions and large-scale infrastructure investments, such as Chhattisgarh's Rs 500 crore AI Mission and Uttar Pradesh's multi-crore AI and skill development programs [R7cc53f61, Rb312992b, R297b1b1d]. States are also attracting massive private capital and international partnerships for high-capacity data centers and sovereign compute projects, ranging from large agreements in Odisha and Andhra Pradesh to major proposals in Maharashtra and Bihar [Rd3f465ac, R3eefbde9, R00b3c6a6, R3a36bb44]. Additionally, funds are being directed toward sector-specific applications such as agriculture, wildlife protection, and workforce skilling to integrate AI across public governance and higher education [R68fee1a0, Radc0ac36, R5c8784f8, R311c8976].",
@@ -735,23 +716,23 @@ window.TRACKER_DATA = {
      "generated_at": "2026-11-07T00:24+00:00"
     },
     "infrastructure": {
-     "text": "Indian state governments are aggressively scaling up AI infrastructure through massive investments in hyperscale data centers, green energy campuses, and specialized compute hubs [R31b27cb7, R5b4a7a80, R42588509]. States like Andhra Pradesh, Uttar Pradesh, Maharashtra, and Odisha have approved multibillion-dollar projects and policy frameworks—such as Uttar Pradesh's Data Centre Policy 2026 and Gujarat's Data Centre Policy 2026-29—to attract global tech giants and accelerate local compute capacities [R398131aa, Re041bd74, R657bba09]. Additionally, regional administrations are building dedicated AI cities, sovereign parks, and innovation hubs to bolster deep-tech ecosystems, research, and public sector adoption [R1b6cbab3, R472c3c1a, Re78dfed2, Rf4058825].",
+     "text": "State governments across India have actively driven AI infrastructure development through major investments in data centers, hyperscale campuses, and dedicated technology hubs. States like Andhra Pradesh, Telangana, Uttar Pradesh, and Odisha have secured massive private investments for gigawatt-scale AI data centers, sovereign compute projects, and specialized AI cities [R31b27cb7, R5b4a7a80, R42588509, R398131aa, R00b3c6a6]. Additionally, multiple states are establishing AI universities, research centers of excellence, and specialized parks—such as robotics hubs and GPUaaS frameworks—to bolster local tech ecosystems, skilling, and public sector innovation [Rc16dddf8, R2d894836, Rb1cbd4df, Rd1b68bba, Ra4c0792f].",
      "cited": [
       "R31b27cb7",
       "R5b4a7a80",
       "R42588509",
       "R398131aa",
-      "Re041bd74",
-      "R657bba09",
-      "R1b6cbab3",
-      "R472c3c1a",
-      "Re78dfed2",
-      "Rf4058825"
+      "R00b3c6a6",
+      "Rc16dddf8",
+      "R2d894836",
+      "Rb1cbd4df",
+      "Rd1b68bba",
+      "Ra4c0792f"
      ],
-     "n_records": 758,
+     "n_records": 771,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "d5097af8081a",
-     "generated_at": "2026-11-06T12:29+00:00"
+     "input_hash": "04d9b50bc000",
+     "generated_at": "2026-11-08T06:03+00:00"
     },
     "partnership": {
      "text": "Indian state governments have actively pursued partnerships and Memorandums of Understanding (MoUs) with major technology firms, academic institutions, and industry leaders to build artificial intelligence infrastructure, data centers, and skilling programs. States like Andhra Pradesh, Bihar, Gujarat, Karnataka, Maharashtra, and Telangana have secured massive investments for hyperscale AI data centers, specialized compute hubs, and Centres of Excellence [R42588509, R44971ae6, Reff5d158, Re0b416d1, R998e03d5]. Additionally, several states have engaged companies such as Google, Microsoft, and ElevenLabs to modernize education, train government teachers in AI literacy, deploy voice-powered citizen services, and improve public governance and healthcare delivery [Reb7bfdb3, R2889d124, Rff273deb, R6473839f]. These collaborative initiatives reflect a widespread regional push to expand localized digital economies, foster startup ecosystems, and integrate artificial intelligence across public administration and education [R65d2a417, R65d60606].",
@@ -774,68 +755,72 @@ window.TRACKER_DATA = {
      "generated_at": "2026-11-07T00:25+00:00"
     },
     "deployment": {
-     "text": "Indian state governments are actively deploying artificial intelligence across diverse sectors such as governance, public service delivery, education, and health. Major initiatives include the implementation of AI-powered chatbots and messaging tools for citizen services, as well as specialized platforms for administrative workflows, tax administration, and police investigations [Rabdf8555, R04592b70, R6e71a6d9]. States have also integrated AI into public safety, traffic management, and educational programs through tools like computer vision, automated surveillance, and AI-driven learning tools [R27258895, Re7e20a6f, R840f85d3].",
+     "text": "Indian state governments are actively deploying artificial intelligence across diverse sectors such as public service delivery, law enforcement, education, and healthcare [Rd731fc75, R3590a0eb, R04592b70, Rd2e6b41c]. Significant initiatives include conversational AI chatbots for citizen services via WhatsApp, AI-powered surveillance and transcription tools in the justice and police systems, and specialized educational computers and digital platforms [Rabdf8555, R04592b70, Rd2e6b41c, Rf2c35456]. States are also leveraging AI for administrative efficiency, revenue monitoring, and regional language preservation through partnerships with major technology companies and public entities [Rd731fc75, Rad868781, Rccf3ba89, R6e1a6d9].",
      "cited": [
-      "Rabdf8555",
+      "Rd731fc75",
+      "R3590a0eb",
       "R04592b70",
-      "R6e71a6d9",
-      "R27258895",
-      "Re7e20a6f",
-      "R840f85d3"
+      "Rd2e6b41c",
+      "Rabdf8555",
+      "Rf2c35456",
+      "Rad868781",
+      "Rccf3ba89"
      ],
-     "n_records": 1732,
+     "n_records": 1738,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "937b86c8e5d1",
-     "generated_at": "2026-11-07T00:25+00:00"
+     "input_hash": "3395f0458927",
+     "generated_at": "2026-11-08T06:03+00:00"
     },
     "skilling": {
-     "text": "Indian state governments have aggressively expanded artificial intelligence (AI) skilling initiatives, focusing heavily on integrating AI education into school curricula and training teachers. States like Punjab and Karnataka have introduced AI into school classes, with Punjab becoming the first state to launch AI as a mainstream subject for Classes I to XII and Karnataka planning early tech training starting from Class 6 [Rf6319e99, R8176ca19]. Numerous states have established partnerships with major technology firms and institutions like Google, Microsoft, and IITs to facilitate capacity building, digital learning spaces, and teacher training programs [Reb7bfdb3, R49bc3f02, R1b5b6306, R3bfd0d73]. Furthermore, ambitious state missions—such as those in Uttar Pradesh, Bihar, and Gujarat—aim to train hundreds of thousands of youth and government school educators in emerging digital technologies and AI applications [Rb312992b, Ra6932da2, R1a841461].",
+     "text": "State governments have launched extensive AI skilling and educational initiatives, introducing AI curricula, subjects, and learning programmes in schools. For example, Punjab made AI a mainstream subject for Classes I to XII [Rf6319e99], Karnataka introduced AI classes starting from Class 6 and vocational subjects for Classes 9 and 10 [R8176ca19, R3e7508f6], and Sikkim rolled out an AI-powered learning programme for early grades [R27258895]. States are also partnering with major technology firms and institutions like Google and Microsoft to train teachers and youth in AI literacy and digital skills [Reb7bfdb3, R2889d124, R06697b72]. Additionally, several states have approved dedicated AI missions and large-scale training targets for students and professionals [Rb312992b, Ra6932da2, R6843cc3b].",
      "cited": [
       "Rf6319e99",
       "R8176ca19",
+      "R3e7508f6",
+      "R27258895",
       "Reb7bfdb3",
-      "R49bc3f02",
-      "R1b5b6306",
-      "R3bfd0d73",
+      "R2889d124",
+      "R06697b72",
       "Rb312992b",
       "Ra6932da2",
-      "R1a841461"
+      "R6843cc3b"
      ],
-     "n_records": 663,
+     "n_records": 668,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "123243d95849",
-     "generated_at": "2026-11-07T00:25+00:00"
+     "input_hash": "57a676e37e17",
+     "generated_at": "2026-11-08T06:03+00:00"
     },
     "events_outreach": {
-     "text": "State governments across India have actively driven AI adoption and digital governance through a wide array of summits, conferences, and boot camps. Major regional and national events—such as the India AI Impact Summit, Bengaluru Tech Summit, and various regional AI impact conferences—served as platforms for states like Andhra Pradesh, Karnataka, Odisha, and Uttar Pradesh to sign deals, showcase innovations, and plan future workforce strategies [R84a7e58c, Rec3b838b, R4348031c, R4d3bfbb9]. Additionally, states have focused heavily on student and youth engagement via targeted hackathons, skill initiatives, and workshops, including police surveillance hackathons in Gujarat, AI skill initiatives for school students in Tripura, and youth conclaves in Madhya Pradesh [R3fff65a8, R28ccc09b, Re9890866]. Workshops on specialized applications like multilingual AI via BHASHINI and digital governance further highlighted state efforts to integrate artificial intelligence into public services and regional development [Rfe753238, R8e91e0e8, R28219609].",
+     "text": "States across India have extensively engaged in AI outreach through large-scale summits, tech expos, and regional conferences focusing on governance, infrastructure, and future-ready skills [R84a7e58c, Rec3b838b, Reb9a8d36, Rcfaf8a9a]. Major events like the Bengaluru Tech Summit, Telangana Global AI Summit, and various regional AI impact conferences served as platforms for forging global partnerships, showcasing innovation ecosystems, and driving investments [R84a7e58c, Rec3b838b, R1dd96b45, Reb9a8d36]. Additionally, governments and law enforcement agencies organized targeted boot camps, capacity-building workshops, and hackathons—such as police surveillance and language model training challenges—to foster local technical talent [Rb8c534c6, R28ccc09b, R1841ffbd, Rb77a4651]. Educational initiatives and student-focused skill programs were also rolled out across multiple states to promote technical awareness and responsible adoption [R3fff65a8, R51ca07a8, Raecda2fb].",
      "cited": [
       "R84a7e58c",
       "Rec3b838b",
-      "R4348031c",
-      "R4d3bfbb9",
-      "R3fff65a8",
+      "Reb9a8d36",
+      "Rcfaf8a9a",
+      "R1dd96b45",
+      "Rb8c534c6",
       "R28ccc09b",
-      "Re9890866",
-      "Rfe753238",
-      "R8e91e0e8",
-      "R28219609"
+      "R1841ffbd",
+      "Rb77a4651",
+      "R3fff65a8",
+      "R51ca07a8",
+      "Raecda2fb"
      ],
-     "n_records": 256,
+     "n_records": 260,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "048a6894560e",
-     "generated_at": "2026-11-07T00:25+00:00"
+     "input_hash": "ca547340fe1a",
+     "generated_at": "2026-11-08T06:03+00:00"
     },
     "governance_body": {
-     "text": "Several Indian states have established specialized governance bodies, ministries, and administrative departments to drive artificial intelligence integration across public administration [R2dd69e13, R6f0677ec]. Pioneering states like Kerala and Tamil Nadu have appointed dedicated ministers and rebranded IT departments to focus on AI and future technologies [Ref58a154, R1b255da2]. Additionally, states including Maharashtra, Karnataka, Gujarat, and Bihar have formed targeted AI task forces, committees, and advisory panels to oversee policy implementation, ethical frameworks, and administrative reforms [R9b3c768e, Rfb71877d, Rdc0edc3a, R301d6af1]. Law enforcement agencies in states like West Bengal, Haryana, Jharkhand, and Telangana have also created specialized AI cells and units to modernize policing and data analysis [Ra1409382, Re268e526, Ra6b5d331, R25c27df1].",
+     "text": "Several Indian states have established high-level governance structures, ministerial portfolios, and specialized administrative bodies to oversee artificial intelligence policy and adoption [R6bbe2d82, R3f8abae4, Rfb71877d]. Kerala and Tamil Nadu created dedicated AI ministerial positions and restructured their information technology departments to focus on artificial intelligence and future technologies [R6bbe2d82, Ref58a154, Ref475c84]. Other states such as Maharashtra, Gujarat, Karnataka, and Bihar have formed targeted committees, task forces, and special cells to manage AI policy implementation, ethical governance, and sector-specific applications [R3f8abae4, R301d6af1, R9b3c768e, Rfb71877d]. Additionally, police and law enforcement agencies in states like Telangana, West Bengal, Haryana, and Jharkhand have moved to create specialized AI units and task forces for tech-driven policing [Ra1409382, Re268e526, Ra6b5d331, R25c27df1].",
      "cited": [
-      "R2dd69e13",
-      "R6f0677ec",
-      "Ref58a154",
-      "R1b255da2",
-      "R9b3c768e",
+      "R6bbe2d82",
+      "R3f8abae4",
       "Rfb71877d",
-      "Rdc0edc3a",
+      "Ref58a154",
+      "Ref475c84",
       "R301d6af1",
+      "R9b3c768e",
       "Ra1409382",
       "Re268e526",
       "Ra6b5d331",
@@ -843,27 +828,30 @@ window.TRACKER_DATA = {
      ],
      "n_records": 66,
      "model": "gemini-3.5-flash-lite",
-     "input_hash": "f18c87e91f14",
-     "generated_at": "2026-11-07T00:24+00:00"
+     "input_hash": "d655ea3d0519",
+     "generated_at": "2026-11-08T06:03+00:00"
     }
    },
    "overall": {
-    "text": "Indian state governments have widely pursued artificial intelligence initiatives focusing on infrastructure, governance, and educational integration across multiple regions [R31b27cb7, Rf6319e99, R127f881c]. Several states have approved dedicated artificial intelligence policies, established high-capacity data centre campuses, and introduced specialized regional hubs and missions to attract major technology investments [R6a6bee70, R5b4a7a80, R472c3c1a]. At the same time, regional authorities are deploying artificial intelligence tools to improve public service delivery, police investigations, judicial frameworks, and school curriculums [Rd731fc75, Rbd9766bd, R27258895].",
+    "text": "Across Indian states, artificial intelligence initiatives are heavily focused on infrastructure development, education, and public service delivery. Major investments include large-scale data center projects and AI cities planned in states like Odisha, Tamil Nadu, Andhra Pradesh, and Telangana [R31b27cb7, R1b6cbab3, R5b4a7a80, R42588509]. States such as Punjab, Karnataka, Bihar, and Sikkim have introduced AI into school curricula or launched dedicated student training programs [Rf6319e99, R8176ca19, R4af400f2, R27258895]. Additionally, governments are leveraging AI for governance, policing, and language preservation through various regional portals, task forces, and partnerships [Rd731fc75, R04592b70, Rad868781, R3158dd4a].",
     "cited": [
      "R31b27cb7",
-     "Rf6319e99",
-     "R127f881c",
-     "R6a6bee70",
+     "R1b6cbab3",
      "R5b4a7a80",
-     "R472c3c1a",
+     "R42588509",
+     "Rf6319e99",
+     "R8176ca19",
+     "R4af400f2",
+     "R27258895",
      "Rd731fc75",
-     "Rbd9766bd",
-     "R27258895"
+     "R04592b70",
+     "Rad868781",
+     "R3158dd4a"
     ],
     "n_records": 56,
     "model": "gemini-3.5-flash-lite",
-    "input_hash": "6ba0d2828663",
-    "generated_at": "2026-11-07T00:22+00:00"
+    "input_hash": "3c8332c92dbe",
+    "generated_at": "2026-11-08T06:02+00:00"
    }
   },
   "profiles": {
@@ -948,7 +936,7 @@ window.TRACKER_DATA = {
    "Bihar": {
     "ai_policy": {
      "status": "announced",
-     "text": "Bihar AI Policy 2026 proposed to train 5 lakh students",
+     "text": "Bihar AI Policy 2026 proposed for training students and boosting economy",
      "cites": [
       "R4af400f2",
       "R0d276784"
@@ -956,26 +944,25 @@ window.TRACKER_DATA = {
     },
     "ai_body": {
      "status": "done",
-     "text": "Bihar AI Mission launched in 2026",
+     "text": "Bihar AI Mission approved by cabinet in May 2026",
      "cites": [
-      "R0f87a78a",
+      "Rc9c3c4c4",
       "Rb70e845b"
      ]
     },
     "funding": {
      "status": "done",
-     "text": "Rs 468 crore MoUs signed at AI Impact Summit",
+     "text": "Rs 209 crore allocated for Aryabhatta Drishti Project in May 2026",
      "cites": [
-      "R44971ae6"
+      "Rc36ba196"
      ]
     },
     "infrastructure": {
      "status": "done",
-     "text": "Artificial Intelligence Center of Excellence established in 2026",
+     "text": "Artificial Intelligence Center of Excellence established in Patna",
      "cites": [
-      "Rb48bf0e9",
-      "R24091985",
-      "R7b37b9dd"
+      "R771b1fe3",
+      "R24091985"
      ]
     }
    },
@@ -1040,7 +1027,8 @@ window.TRACKER_DATA = {
      "status": "done",
      "text": "Gujarat AI Action Plan 2025-2030, approved by the Chief Minister",
      "date": "2025-07",
-     "source": "https://www.theweek.in/wire-updates/national/2025/07/27/bes8-gj-ai-action-plan.html"
+     "source": "https://www.theweek.in/wire-updates/national/2025/07/27/bes8-gj-ai-action-plan.html",
+     "checked": "2026-11-07"
     },
     "ai_body": {
      "status": "done",
@@ -1128,9 +1116,10 @@ window.TRACKER_DATA = {
      "cites": [],
      "curated": true,
      "status": "announced",
-     "text": "Draft Jharkhand AI Policy 2026-31 released for consultation",
+     "text": "Draft Jharkhand AI Policy 2026-31 presented at a national stakeholder consultation",
      "date": "2026-07",
-     "source": "https://newsonair.gov.in/jharkhand-govt-presents-roadmap-to-become-indias-leading-ai-driven-governance-hub/"
+     "source": "https://www.medianama.com/2026/07/223-11-key-takeaways-jharkhand-draft-ai-policy/",
+     "checked": "2026-11-07"
     },
     "ai_body": {
      "status": "announced",
@@ -1159,29 +1148,28 @@ window.TRACKER_DATA = {
      "status": "announced",
      "text": "Responsible AI policy being drafted by a committee set up in March 2026",
      "date": "2026-03",
-     "source": "https://www.drishtiias.com/state-pcs-current-affairs/karnataka-constituted-committee-for-ethical-use-of-ai-in-governance"
+     "source": "https://www.drishtiias.com/state-pcs-current-affairs/karnataka-constituted-committee-for-ethical-use-of-ai-in-governance",
+     "checked": "2026-11-07"
     },
     "ai_body": {
      "status": "done",
-     "text": "Karnataka AI Committee for ethical use of AI in governance formed in 2026",
+     "text": "Karnataka forms AI Committee for ethical use of AI",
      "cites": [
       "R9b3c768e"
      ]
     },
     "funding": {
      "status": "done",
-     "text": "Rs 1,300 crore approved for data centre policy and infrastructure in 2026",
+     "text": "Rs 1,300.45 crore data centre policy approved in 2026",
      "cites": [
-      "R59008284",
-      "Ra3ae29c4"
+      "R59008284"
      ]
     },
     "infrastructure": {
      "status": "done",
-     "text": "Rs 35 crore AI Hub approved at IIIT Bangalore in 2026",
+     "text": "Karnataka approves 50 AI labs in government colleges",
      "cites": [
-      "R567ab120",
-      "Rb7265c49"
+      "Rb1015546"
      ]
     }
    },
@@ -1252,27 +1240,26 @@ window.TRACKER_DATA = {
      "status": "done",
      "text": "Maharashtra AI Policy 2026, approved by the cabinet in April 2026",
      "date": "2026-05-16",
-     "document": "https://it.maharashtra.gov.in/documents/"
+     "document": "https://it.maharashtra.gov.in/documents/",
+     "checked": "2026-11-07"
     },
     "ai_body": {
      "status": "done",
-     "text": "Maharashtra Cabinet approves new Department of Electronics IT and Artificial Intelligence",
+     "text": "Maharashtra Cabinet approved new Department for Electronics IT and Artificial Intelligence",
      "cites": [
-      "Rbff13ca0",
       "R6f0677ec"
      ]
     },
     "funding": {
      "status": "done",
-     "text": "Rs 500 crore MahaAgri-AI Policy 2025-2029 approved by Maharashtra Cabinet",
+     "text": "Rs 500 crore MahaAgri-AI Policy approved in 2025",
      "cites": [
-      "R5c8784f8",
       "Rda0dbcb5"
      ]
     },
     "infrastructure": {
      "status": "done",
-     "text": "Microsoft to establish 3 AI Centres of Excellence in Nagpur, Mumbai, Pune",
+     "text": "Microsoft to establish 3 AI Centres of Excellence in Maharashtra",
      "cites": [
       "R47ae66d7",
       "R260b8903"
@@ -1296,9 +1283,11 @@ window.TRACKER_DATA = {
      "cites": []
     },
     "infrastructure": {
-     "status": "none",
-     "text": "",
-     "cites": []
+     "status": "done",
+     "text": "AI career guidance hub opens at Imphal girls' school in 2026",
+     "cites": [
+      "Rbb7d36a7"
+     ]
     }
    },
    "Meghalaya": {
@@ -1384,7 +1373,8 @@ window.TRACKER_DATA = {
      "status": "done",
      "text": "Odisha Artificial Intelligence Policy 2025",
      "date": "2025-06-18",
-     "document": "https://it.odisha.gov.in/en/notification/circulars"
+     "document": "https://it.odisha.gov.in/en/notification/circulars",
+     "checked": "2026-11-07"
     },
     "ai_body": {
      "status": "done",
@@ -1438,7 +1428,8 @@ window.TRACKER_DATA = {
      "status": "done",
      "text": "Rajasthan AI/ML Policy 2026",
      "date": "2026-01-07",
-     "document": "https://doitc.rajasthan.gov.in/Content/PoliciesandGuidelines.aspx"
+     "document": "https://doitc.rajasthan.gov.in/Content/PoliciesandGuidelines.aspx",
+     "checked": "2026-11-07"
     },
     "ai_body": {
      "status": "none",
@@ -1490,26 +1481,27 @@ window.TRACKER_DATA = {
      "curated": true,
      "status": "done",
      "text": "Tamil Nadu Safe and Ethical Artificial Intelligence Policy 2020",
-     "date": "2020-09-18",
-     "document": "https://spc.tn.gov.in/policy/tamil-nadu-safe-and-ethical-artificial-intelligence-policy-2020/"
+     "date": "2020-09-19",
+     "document": "https://spc.tn.gov.in/policy/tamil-nadu-safe-and-ethical-artificial-intelligence-policy-2020/",
+     "checked": "2026-11-07"
     },
     "ai_body": {
      "status": "done",
-     "text": "Tamil Nadu Artificial Intelligence Mission restructured as non-profit and TNAIV launched in 2026",
+     "text": "Tamil Nadu Artificial Intelligence Mission (TNAIM) restructured in 2026",
      "cites": [
       "R5e1dd5d6"
      ]
     },
     "funding": {
      "status": "announced",
-     "text": "Rs 50,000-crore state investment fund for emerging sectors proposed in 2026",
+     "text": "Rs 50,000-crore state investment fund for emerging sectors in 2026",
      "cites": [
       "R162b8dce"
      ]
     },
     "infrastructure": {
      "status": "done",
-     "text": "South India's largest AI-ready data center campus inaugurated in Siruseri in 2025",
+     "text": "Sify AI-ready data center campus inaugurated in Siruseri in 2025",
      "cites": [
       "R70cb396d"
      ]
@@ -1522,14 +1514,13 @@ window.TRACKER_DATA = {
      "status": "done",
      "text": "Telangana AI Framework, from the IT department",
      "date": "2020-06",
-     "document": "https://startup.telangana.gov.in/wp-content/uploads/2021/04/AI-framework.pdf"
+     "document": "https://startup.telangana.gov.in/wp-content/uploads/2021/04/AI-framework.pdf",
+     "checked": "2026-11-07"
     },
     "ai_body": {
-     "status": "done",
-     "text": "Tech team formed in DGP's office for AI-based policing in 2026",
-     "cites": [
-      "Ra1409382"
-     ]
+     "status": "none",
+     "text": "",
+     "cites": []
     },
     "funding": {
      "status": "none",
@@ -1538,7 +1529,7 @@ window.TRACKER_DATA = {
     },
     "infrastructure": {
      "status": "done",
-     "text": "Telangana Green Skills & Applied AI Centre of Excellence launched in 2026",
+     "text": "Telangana Green Skills and Applied AI Centre of Excellence launched in 2026",
      "cites": [
       "R998e03d5"
      ]
@@ -1666,15 +1657,277 @@ window.TRACKER_DATA = {
  },
  "items": [
   {
-   "id": "R4ed5fa2c",
+   "id": "Re04bb5c4",
+   "date": "2026-11-08",
+   "date_precision": "day",
+   "state": "Tamil Nadu",
+   "title": "Tamil Nadu Rolls Out AI Learning in 500 Government Schools",
+   "summary": "Tamil Nadu launched AI learning for 25,140 Class 6–8 students in 500 government schools on 6 Nov 2026 via the TN PAL platform of Educational Initiatives.",
+   "source": "Elets Technomedia",
+   "url": "https://digitallearning.eletsonline.com/2026/11/tamil-nadu-ai-learning-schools/",
+   "image": "https://digitallearning.eletsonline.com/wp-content/uploads/2026/11/tamil-nadu-ai-learning.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment",
+    "skilling"
+   ],
+   "sector": "Education",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "Raecda2fb",
+   "date": "2026-11-08",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "Technical awareness program in Salempur: AI training at St. Xavier's School by SDM Kshitij Dwivedi",
+   "summary": "AI training workshop held at St Xaviers School Salempur with SDM Kshitij Dwivedi.",
+   "source": "Dainik Bhaskar",
+   "url": "https://www.bhaskar.com/local/uttar-pradesh/deoria/news/st-xaviers-school-salempur-ai-training-sdm-kshitij-dwivedi-visit-139609200.html",
+   "image": "https://images.bhaskarassets.com/thumb/730x0/web2images/521/2026/11/06/e754a303edcd42f6-1793947261813.jpg",
+   "category": "skilling",
+   "tags": [
+    "skilling",
+    "events_outreach"
+   ],
+   "sector": "Education",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "सलेमपुर में तकनीकी जागरूकता कार्यक्रम: सेंट जेवियर्स स्कूल में एआई प्रशिक्षण, उपजिलाधिकारी क्षितिज द्विवेदी..."
+  },
+  {
+   "id": "R68fca56b",
+   "date": "2026-11-08",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "AI exhibition at Deoria school: Students show technical skill through models, SDM praises innovation",
+   "summary": "Deoria students showcase artificial intelligence models at St Xaviers school exhibition.",
+   "source": "Dainik Bhaskar",
+   "url": "https://www.bhaskar.com/local/uttar-pradesh/deoria/news/deoria-st-xaviers-school-ai-exhibition-students-innovation-sdm-visit-139611750.html",
+   "image": "https://images.bhaskarassets.com/thumb/730x0/web2images/521/2026/11/06/72a36007b5c04d6e-1793964408426.jpg",
+   "category": "events_outreach",
+   "tags": [
+    "events_outreach"
+   ],
+   "sector": "Education",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "देवरिया के स्कूल में एआई प्रदर्शनी: विद्यार्थियों ने मॉडल से दिखाई तकनीकी दक्षता, एसडीएम ने नवाचार को सराहा"
+  },
+  {
+   "id": "R895de7b7",
+   "date": "2026-11-08",
+   "date_precision": "day",
+   "state": "Uttarakhand",
+   "title": "AI will help tackle climate change and disasters, international conference starts at Sridev Suman University",
+   "summary": "विशेषज्ञों ने हिमालयी क्षेत्र में अवैज्ञानिक विकास को बताया आपदाओं का बड़ा कारण, सतत पर्यटन के लिए डिजिटल तकनीक और स्थानीय समुदायों की भागीदारी पर दिया जोर टिहरी। जलवायु परिवर्तन की बढ़ती चुनौतियों, प्राकृतिक आपदाओं के खतरे और हिमालयी क्षेत्र में पर्यटन को सुरक्षित एवं टिकाऊ…",
+   "source": "liveskgnews",
+   "url": "https://liveskgnews.com/uttarakhand/ai-to-aid-in-addressing-climate-change-and-disasters-international-conference-begins-at-sridev-suman-university/",
+   "image": "https://liveskgnews.com/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-03-at-7.22.07-PM-e1794084290234.jpeg",
+   "category": "events_outreach",
+   "tags": [
+    "events_outreach"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "जलवायु परिवर्तन और आपदा से निपटने में AI बनेगा मददगार, श्रीदेव सुमन विश्वविद्यालय में अंतरराष्ट्रीय सम्मेलन का शुभारंभ"
+  },
+  {
+   "id": "Rd1a626ae",
+   "date": "2026-11-08",
+   "date_precision": "day",
+   "state": "Maharashtra",
+   "title": "AI in Polytechnic Education Maharashtra: Instructions to make AI mandatory in all state polytechnics; important decision by Technical Education Board",
+   "summary": "पुणे: तंत्रज्ञानाच्या वेगवान बदलत्या युगात विद्यार्थ्यांना आधुनिक कौशल्यांनी सज्ज करण्यासाठी महाराष्ट्र राज्य तंत्रशिक्षण मंडळाने महत्त्वपूर्ण पाऊल उचलले आहे.",
+   "source": "Pudhari News",
+   "url": "https://pudhari.news/maharashtra/pune/maharashtra-polytechnic-colleges-artificial-intelligence-education-tools-sk04",
+   "image": "https://cf-images.assettype.com/pudharinews%2F2026-04-30%2Fyndl18vl%2Fai.jpg?rect=0%2C23%2C1200%2C630&w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100",
+   "category": "skilling",
+   "tags": [
+    "skilling",
+    "regulation_ethics"
+   ],
+   "sector": "Education",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "mr",
+   "title_original": "AI in Polytechnic Education Maharashtra: राज्यातील सर्व तंत्रनिकेतनांमध्ये एआयचा वापर अनिवार्य करण्याच्या सूचना; तंत्रशिक्षण मंडळाचा महत्त्वपूर्ण निर्णय"
+  },
+  {
+   "id": "Rbb7d36a7",
+   "date": "2026-11-07",
+   "date_precision": "day",
+   "state": "Manipur",
+   "title": "AI career guidance hub opens at Imphal girls’ school",
+   "summary": "Manipur chief minister Yumnam Khemchand Singh opened an AI career guidance hub at an Imphal school and the state-level National Children’s Science Congress.",
+   "source": "The News Mill",
+   "url": "https://thenewsmill.com/2026/11/ai-career-guidance-hub-opens-at-imphal-girls-school/",
+   "image": "https://thenewsmill.com/tnm-og/616593.jpg",
+   "category": "infrastructure",
+   "tags": [
+    "infrastructure"
+   ],
+   "sector": "Education",
+   "stage": "underway",
+   "n_sources": 10,
+   "also_reported_by": [
+    "Eastern Mirror",
+    "Northeast Today",
+    "Northeast News",
+    "The Hindu",
+    "Hub News",
+    "The New Indian Express",
+    "EastMojo",
+    "The Sentinel - of this Land, for its People",
+    "NE NOW"
+   ]
+  },
+  {
+   "id": "Rbd5780f9",
+   "date": "2026-11-07",
+   "date_precision": "day",
+   "state": "Bihar",
+   "title": "Bihar Partners With 11 IT Firms To Train Government Schoolteachers In AI and Technology",
+   "summary": "The Bihar Education Department has partnered with 11 information technology (IT) companies, including Google Education, to train government schoolteachers in information technology and artificial intelligence (AI), as the state moves to strengthen digital learning and…",
+   "source": "BW Education",
+   "url": "https://www.bweducation.com/article/bihar-partners-with-11-it-firms-to-train-government-schoolteachers-in-ai-and-technology-632537",
+   "image": "https://static.businessworld.in/Green and Blue Pixelated Illustrative Game Desktop Wallpaper - 2026-11-07T093350.061_20261107093402_ogImage_43.png",
+   "category": "skilling",
+   "tags": [
+    "skilling",
+    "partnership"
+   ],
+   "sector": "Education",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R7b75a752",
+   "date": "2026-11-07",
+   "date_precision": "day",
+   "state": "Odisha",
+   "title": "AI-based model to help scrutinise Odisha pension cases",
+   "summary": "Odisha is preparing the ground for an AI-based pension model that will help examine pension cases and verify pay fixation and other service-related details of state govt employees, potentially making pension processing faster and more accurate.",
+   "source": "The Times of India",
+   "url": "https://timesofindia.indiatimes.com/city/bhubaneswar/ai-based-model-to-help-scrutinise-odisha-pension-cases/articleshow/135641873.cms",
+   "image": "https://static.toiimg.com/thumb/msid-135641867,width-1280,height-720,resizemode-6,overlay-toi_sw,pt-32,y_pad-600/photo.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Revenue & citizen services",
+   "stage": "announced",
+   "n_sources": 2,
+   "also_reported_by": [
+    "Urban Acres"
+   ]
+  },
+  {
+   "id": "R5febdbe4",
+   "date": "2026-11-07",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "AI magic in UP fields! Robot to check crop disease and soil health, tell required medicine on mobile",
+   "summary": "किसानों के लिए बड़ी खुशखबरी!",
+   "source": "Prabhat Khabar",
+   "url": "https://www.prabhatkhabar.com/state/uttar-pradesh/up-agriculture-news-pratapgarh-ai-robot-krishi-kavach-smart-farming/amp",
+   "image": "https://wpmedia.prabhatkhabar.com/uploads/2026/11/07/1794027473972/sizes/up-ai-krishi-b3035c-hero.webp",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Agriculture",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "यूपी के खेतों में दिखेगा AI का कमाल! फसल की बीमारी से मिट्टी की सेहत तक का राज खोलेगा रोबोट, मोबाइल पर बताएगा कौन सी दवा जरूरी"
+  },
+  {
+   "id": "R650930aa",
+   "date": "2026-11-07",
+   "date_precision": "day",
+   "state": "Bihar",
+   "title": "Patna AI data center to get water from STP, proposal sent to BUDA",
+   "summary": "पटना AI डेटा सेंटर को प्रतिदिन 10 लाख लीटर पानी की जरूरत है.",
+   "source": "Prabhat Khabar",
+   "url": "https://www.prabhatkhabar.com/state/bihar/patna/patna-ai-data-center-digha-stp-treated-water-supply",
+   "image": "https://wpmedia.prabhatkhabar.com/uploads/2026/11/07/1794021259171/sizes/patna-ai-data-759e74-hero.webp",
+   "category": "infrastructure",
+   "tags": [
+    "infrastructure"
+   ],
+   "sector": "Urban & transport",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "पटना के AI डेटा सेंटर को एसटीपी से मिलेगा पानी, बुडको को भेजा गया प्रस्ताव"
+  },
+  {
+   "id": "R46b3ad1e",
+   "date": "2026-11-07",
+   "date_precision": "day",
+   "state": "Rajasthan",
+   "title": "AI will detect power theft and faults, digital twin prepared: Digital clone of transformers, poles and cables",
+   "summary": "dainikbhaskar…",
+   "source": "Dainik Bhaskar",
+   "url": "https://www.bhaskar.com/local/rajasthan/jaipur/news/ai-will-detect-power-theft-and-faults-digital-twin-ready-dbp-139617663.html",
+   "image": "https://images.bhaskarassets.com/thumb/730x0/web2images/521/2026/11/07/orig_new-project-2026-11-07t041452266_1794005145.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Revenue & citizen services",
+   "stage": "underway",
+   "n_sources": 2,
+   "also_reported_by": [
+    "The Sootr"
+   ],
+   "lang": "hi",
+   "title_original": "AI बताएगा बिजली चोरी-फाल्ट का पता, डिजिटल ट्विन तैयार: ट्रांसफॉर्मर, बिजली के पोल और केबल का एक डिजिटल क्लो..."
+  },
+  {
+   "id": "R55780c12",
+   "date": "2026-11-07",
+   "date_precision": "day",
+   "state": "Uttarakhand",
+   "title": "Fake helicopter crash video uploaded using AI: User turns out to be minor, Almora police call parents",
+   "summary": "Almora police identify minor for posting fake AI generated helicopter crash video online updates.",
+   "source": "Dainik Bhaskar",
+   "url": "https://www.bhaskar.com/local/uttarakhand/almora/news/almora-police-minor-boy-ai-helicopter-crash-video-fake-news-update-139621738.html",
+   "image": "https://images.bhaskarassets.com/thumb/730x0/web2images/521/2026/11/07/8e571d75-4396-42ce-84a1-339c6c008a14_1794046361702.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Policing & safety",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "AI से बना हेलीकॉप्टर क्रैश का फेक वीडियो अपलोड: यूजर नाबालिग निकला, अल्मोड़ा पुलिस ने परिजनों को बुलाकर दोब..."
+  },
+  {
+   "id": "R0a523d7f",
    "date": "2026-11-06",
    "date_precision": "day",
    "state": "Karnataka",
-   "title": "Bengaluru Skill Summit 2026 Concludes: Karnataka Gears Up for Future Workforce with AI Focus",
-   "summary": "Karnataka Gears Up for Future Workforce with AI Focus - The Bengaluru Skill Summit 2026, hosted by the Karnataka Skill Development Corporation (KSDC), recently concluded, drawing over 9,500 participants.",
-   "source": "Lokmat Times",
-   "url": "https://www.lokmattimes.com/business/bengaluru-skill-summit-2026-concludes-karnataka-gears-up-for-future-workforce-with-ai-focus-a001-w01/",
-   "image": "https://d3pc1xvrcw35tl.cloudfront.net/ln/feedImages/1200x900/ANI-20261106101530_202611.jpg",
+   "title": "Bengaluru Skill Summit 2026 Concludes with Focus on AI, Future-Ready Skills and Global Opportunities",
+   "summary": "Bengaluru Skill Summit 2026 Concludes with Focus on AI, Future-Ready Skills and Global Opportunities -  The second edition of Bengaluru Skill Summit 2026 , organised by the Department of Skill Development,...",
+   "source": "Siliconindia",
+   "url": "https://www.siliconindia.com/news/general/bengaluru-skill-summit-2026-concludes-with-focus-on-ai-futureready-skills-and-global-opportunities-nid-243009-cid-1.html",
+   "image": "https://www.siliconindia.com/news/newsimages/fxBal8nO.jpg",
    "category": "events_outreach",
    "tags": [
     "events_outreach",
@@ -1682,8 +1935,9 @@ window.TRACKER_DATA = {
    ],
    "sector": "Education",
    "stage": "underway",
-   "n_sources": 4,
+   "n_sources": 5,
    "also_reported_by": [
+    "Lokmat Times",
     "The Tribune",
     "TheWire.in",
     "OneArabia"
@@ -1725,9 +1979,12 @@ window.TRACKER_DATA = {
    ],
    "sector": "Education",
    "stage": "underway",
-   "n_sources": 2,
+   "n_sources": 5,
    "also_reported_by": [
-    "India Today NE"
+    "India Today NE",
+    "EdexLive",
+    "Elets Technomedia",
+    "NDTV Profit"
    ]
   },
   {
@@ -1746,10 +2003,11 @@ window.TRACKER_DATA = {
    ],
    "sector": "Education",
    "stage": "announced",
-   "n_sources": 3,
+   "n_sources": 4,
    "also_reported_by": [
     "India Today",
-    "The Times of India"
+    "The Times of India",
+    "Urban Acres"
    ]
   },
   {
@@ -14479,6 +14737,30 @@ window.TRACKER_DATA = {
    ]
   },
   {
+   "id": "Rd1807ca7",
+   "date": "2026-09-10",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "UP to check old-age pension with AI — what to do",
+   "summary": "UP plans AI checks on old-age pension and Rashtriya Parivarik Labh claims to catch fraud.",
+   "source": "indianpaycalculator.in",
+   "url": "https://www.indianpaycalculator.in/govt-news/up-social-pension-ai-verification-2026-what-beneficiaries-must-do",
+   "image": "https://www.indianpaycalculator.in/news-images/up-social-pension-ai-verification-2026-what-beneficiaries-must-do-en.jpg?v=f9a25b98",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Revenue & citizen services",
+   "stage": "announced",
+   "n_sources": 5,
+   "also_reported_by": [
+    "TNP News",
+    "AajTak",
+    "Prabhat Khabar",
+    "https://www.indianpaycalculator.in/"
+   ]
+  },
+  {
    "id": "R2d0f42fd",
    "date": "2026-09-10",
    "date_precision": "day",
@@ -14814,32 +15096,6 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
-   "id": "Rd1807ca7",
-   "date": "2026-09-09",
-   "date_precision": "day",
-   "state": "Uttar Pradesh",
-   "title": "UP to check old-age pension with AI — what to do",
-   "summary": "UP plans AI checks on old-age pension and Rashtriya Parivarik Labh claims to catch fraud.",
-   "source": "indianpaycalculator.in",
-   "url": "https://www.indianpaycalculator.in/govt-news/up-social-pension-ai-verification-2026-what-beneficiaries-must-do",
-   "image": "https://www.indianpaycalculator.in/news-images/up-social-pension-ai-verification-2026-what-beneficiaries-must-do-en.jpg?v=f9a25b98",
-   "category": "deployment",
-   "tags": [
-    "deployment"
-   ],
-   "sector": "Revenue & citizen services",
-   "stage": "announced",
-   "n_sources": 7,
-   "also_reported_by": [
-    "Newstrack",
-    "TNP News",
-    "Nai Dunia",
-    "AajTak",
-    "Prabhat Khabar",
-    "https://www.indianpaycalculator.in/"
-   ]
-  },
-  {
    "id": "Rfaccbc95",
    "date": "2026-09-09",
    "date_precision": "day",
@@ -14940,6 +15196,29 @@ window.TRACKER_DATA = {
    "also_reported_by": [],
    "lang": "hi",
    "title_original": "आईआईटी कानपुर का एआई आधारित फैमिली स्कोर बताएगा, किस परिवार को सरकारी मदद की ज़रूरत"
+  },
+  {
+   "id": "Redec7e8e",
+   "date": "2026-09-09",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "UP news: AI use in education to pension, Yogi govt's social welfare department to be smart",
+   "summary": "योगी सरकार समाज कल्याण योजनाओं में AI का इस्तेमाल बढ़ाने की तैयारी कर रही है। स्मार्ट क्लास, पेंशन सत्यापन, छात्रवृत्ति मॉनिटरिंग और AI प्रशिक्षण पर जोर।…",
+   "source": "Newstrack",
+   "url": "https://newstrack.com/uttar-pradesh/yogi-government-ai-social-welfare-up-sarvodaya-schools-smart-classes-old-age-pension-skills-training-630152",
+   "image": "https://static.newstrack.com/h-upload/2026/09/09/2041980--7.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Revenue & citizen services",
+   "stage": "announced",
+   "n_sources": 2,
+   "also_reported_by": [
+    "Nai Dunia"
+   ],
+   "lang": "hi",
+   "title_original": "UP News: उत्तर प्रदेश में पढ़ाई से पेंशन तक AI का इस्तेमाल, योगी सरकार का समाज कल्याण विभाग होगा स्मार्ट..."
   },
   {
    "id": "R8c53c435",
@@ -15205,6 +15484,26 @@ window.TRACKER_DATA = {
     "strategy_policy"
    ],
    "sector": "Industry & startups",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R8ecd0900",
+   "date": "2026-09-07",
+   "date_precision": "day",
+   "state": "Karnataka",
+   "title": "Karnataka AI University sets education roadmap",
+   "summary": "The committee, chaired by Infosys co-founder and Axilor Ventures chairman Kris Gopalakrishnan and co-chaired by IT-BT and Science and Technology Department secretary Dr N Manjula, discussed a phased...",
+   "source": "The Hans India",
+   "url": "https://www.thehansindia.com/news/cities/bengaluru/karnataka-ai-university-sets-education-roadmap-1118935",
+   "image": "https://assets.thehansindia.com/h-upload/2026/09/07/1699187-karnataka.jpg",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy",
+    "infrastructure"
+   ],
+   "sector": "Education",
    "stage": "announced",
    "n_sources": 1,
    "also_reported_by": []
@@ -15657,13 +15956,12 @@ window.TRACKER_DATA = {
    ],
    "sector": "Education",
    "stage": "decided",
-   "n_sources": 7,
+   "n_sources": 6,
    "also_reported_by": [
     "ANI News",
     "BusinessLine",
     "The Siasat Daily",
     "Deccan Herald",
-    "The Hans India",
     "YourStory.com"
    ]
   },
@@ -20843,29 +21141,6 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
-   "id": "R190ffa0a",
-   "date": "2026-08-06",
-   "date_precision": "day",
-   "state": "Tamil Nadu",
-   "title": "Soil restoration, AI advisories, crop diversification among key initiatives in TN’s first agriculture budget",
-   "summary": "The Tamil Nadu government has announced a series of new initiatives in the revised agriculture budget for 2026-27, focusing on soil restoration, artifi…",
-   "source": "The New Indian Express",
-   "url": "https://www.newindianexpress.com/states/tamil-nadu/2026/Aug/06/soil-restoration-ai-advisories-crop-diversification-among-key-initiatives-in-tns-first-agriculture-budget",
-   "image": "https://cf-images.assettype.com/newindianexpress%2F2025-02-06%2Fdrfkovu0%2F1_1_ieshr2_0602mdu_2.jpg?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100",
-   "category": "deployment",
-   "tags": [
-    "deployment",
-    "strategy_policy"
-   ],
-   "sector": "Agriculture",
-   "stage": "announced",
-   "n_sources": 3,
-   "also_reported_by": [
-    "Telangana Today",
-    "YourStory.com"
-   ]
-  },
-  {
    "id": "R42b23ad0",
    "date": "2026-08-06",
    "date_precision": "day",
@@ -22456,8 +22731,9 @@ window.TRACKER_DATA = {
    ],
    "sector": "Cross-cutting",
    "stage": "underway",
-   "n_sources": 2,
+   "n_sources": 3,
    "also_reported_by": [
+    "The Des Moines Register",
     "The National Law Review"
    ]
   },
@@ -22765,7 +23041,7 @@ window.TRACKER_DATA = {
    ],
    "sector": "Industry & startups",
    "stage": "announced",
-   "n_sources": 27,
+   "n_sources": 28,
    "also_reported_by": [
     "Konsulteer",
     "Outlook Business",
@@ -22791,6 +23067,7 @@ window.TRACKER_DATA = {
     "Business Today",
     "Swarajya",
     "ET Enterprise AI",
+    "YourStory.com",
     "BusinessLine",
     "Trade Brains"
    ]
@@ -27273,23 +27550,26 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
-   "id": "Raad7299d",
+   "id": "R57e2c2ec",
    "date": "2026-07-04",
    "date_precision": "day",
    "state": "Bihar",
-   "title": "Bihar Partners with Google, Microsoft, CoRover, and Sarvam AI to Accelerate AI-Driven Governance",
-   "summary": "The Bihar government has signed memorandums of understanding (MoUs) with Google, Microsoft, CoRover (BharatGPT), and Sarvam AI as part of a major initiative to build an AI-driven governance ecosystem and accelerate the state’s digital transformation agenda.",
-   "source": "CXO Digitalpulse",
-   "url": "https://www.cxodigitalpulse.com/bihar-partners-with-google-microsoft-corover-and-sarvam-ai-to-accelerate-ai-driven-governance/",
-   "image": "https://www.cxodigitalpulse.com/wp-content/uploads/2026/07/bihar-ff.webp",
+   "title": "Bihar Government Signs MoUs with Google, Microsoft to Strengthen AI Adoption",
+   "summary": "In a move to accelerate the adoption of artificial intelligence across governance and public services, the Bihar Government has entered into strategic partnerships with Google, Microsoft, CoRover, and Sarvam AI.",
+   "source": "Elets eGov",
+   "url": "https://egov.eletsonline.com/2026/07/bihar-government-signs-mous-with-google-microsoft-to-strengthen-ai-adoption/",
+   "image": "https://egov.eletsonline.com/wp-content/uploads/2026/07/Bihar-Govt.jpg",
    "category": "partnership",
    "tags": [
-    "partnership"
+    "partnership",
+    "strategy_policy"
    ],
    "sector": "Cross-cutting",
    "stage": "decided",
-   "n_sources": 1,
-   "also_reported_by": []
+   "n_sources": 2,
+   "also_reported_by": [
+    "CXO Digitalpulse"
+   ]
   },
   {
    "id": "R974a042f",
@@ -28491,11 +28771,12 @@ window.TRACKER_DATA = {
    ],
    "sector": "Health",
    "stage": "decided",
-   "n_sources": 4,
+   "n_sources": 5,
    "also_reported_by": [
     "India Today NE",
     "NDTV",
-    "Daijiworld"
+    "Daijiworld",
+    "DD India"
    ]
   },
   {
@@ -29425,6 +29706,25 @@ window.TRACKER_DATA = {
    ],
    "sector": "Policing & safety",
    "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "Ra2c9d97f",
+   "date": "2026-06-20",
+   "date_precision": "day",
+   "state": "Telangana",
+   "title": "Telangana IT Minister Unveils Major AI, Startup Roadmaps at HEF 2026 to Drive Hyderabad’s Growth",
+   "summary": "Telangana IT Minister Unveils Major AI, Startup Roadmaps at HEF 2026 to Drive Hyderabad’s Growth",
+   "source": "The Indian Awaaz",
+   "url": "https://theindianawaaz.com/telangana-it-minister-unveils-major-ai-startup-roadmaps-at-hef-2026-to-drive-hyderabads-growth/",
+   "image": "",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy"
+   ],
+   "sector": "Industry & startups",
+   "stage": "announced",
    "n_sources": 1,
    "also_reported_by": []
   },
@@ -43983,6 +44283,25 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
+   "id": "R6b821a7c",
+   "date": "2026-02-21",
+   "date_precision": "day",
+   "state": "Rajasthan",
+   "title": "Rajasthan SOG Deploys AI To Uncover Exam Impersonation Network",
+   "summary": "After a major recruitment exam was marred by allegations of impersonation and paper leaks, Rajasthan’s Special Operations Group turned to…",
+   "source": "The 420.in",
+   "url": "https://the420.in/rajasthan-sog-ai-facial-recognition-exam-fraud-crackdown/",
+   "image": "https://the420.in/wp-content/uploads/2026/02/1lbvjrv8_exam-generic-_625x300_15_March_23.webp",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Policing & safety",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
    "id": "Ra7ee6f34",
    "date": "2026-02-21",
    "date_precision": "day",
@@ -45259,23 +45578,25 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
-   "id": "Rdc7ff729",
+   "id": "R5a187c0b",
    "date": "2026-02-16",
    "date_precision": "day",
    "state": "Assam",
-   "title": "Assam CM inaugurates new Assam Legislative Assembly Secretariat building, launches AI platform ‘ALISA’",
-   "summary": "Assam CM inaugurates new Legislative Assembly Secretariat and launches AI platform ALISA.",
-   "source": "India Today NE",
-   "url": "https://www.indiatodayne.in/assam/story/assam-cm-inaugurates-new-assam-legislative-assembly-secretariat-building-launches-ai-platform-alisa-1346978-2026-02-16",
-   "image": "https://cf-img-a-in.tosshub.com/lingo/itne/images/story/202602/6992ea47cfd81-assam-secretariat-165826532-16x9.png",
+   "title": "Assam CM inaugurates Assembly Secretariat Building, Digital Museum and AI-powered information system ‘ALISA’",
+   "summary": "Assam Chief Minister Dr. Himanta Biswa Sarma today inaugurated the new Assam Legislative Assembly Secretariat Building, a Digital Museum and the Artif…",
+   "source": "nktv.in",
+   "url": "https://www.nktv.in/assam-cm-inaugurates-assembly-secretariat-building-digital-museum-and-ai-powered-information-system-alisa/",
+   "image": "https://www.nktv.in/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-16-at-3.48.16-PM.jpeg",
    "category": "deployment",
    "tags": [
     "deployment"
    ],
-   "sector": "Revenue & citizen services",
+   "sector": "Cross-cutting",
    "stage": "underway",
-   "n_sources": 1,
-   "also_reported_by": []
+   "n_sources": 2,
+   "also_reported_by": [
+    "India Today NE"
+   ]
   },
   {
    "id": "Rf40d1020",
@@ -50902,10 +51223,11 @@ window.TRACKER_DATA = {
    ],
    "sector": "Industry & startups",
    "stage": "announced",
-   "n_sources": 9,
+   "n_sources": 10,
    "also_reported_by": [
     "The Draft",
     "The Hindu",
+    "Deccan Herald",
     "ET Realty",
     "ET Enterprise AI",
     "ETV Bharat",
@@ -63485,6 +63807,26 @@ window.TRACKER_DATA = {
     "deployment"
    ],
    "sector": "Urban & transport",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R454c4b7b",
+   "date": "2025-05-16",
+   "date_precision": "day",
+   "state": "Tripura",
+   "title": "Tripura Chief Secy inaugurates AI workshop to promote good governance",
+   "summary": "The workshop, organized in collaboration with the Union Ministry of Electronics and Information Technology aimed to raise awareness and build capacity among government officials on the transformative potential of Artificial Intelligence (AI) in public administration.",
+   "source": "ANI News",
+   "url": "https://www.aninews.in/news/national/general-news/tripura-chief-secy-inaugurates-ai-workshop-to-promote-good-governance20250516200123",
+   "image": "https://d3lzcn6mbbadaf.cloudfront.net/media/details/__sized__/ANI-20250516142042-thumbnail-320x180-70.jpg",
+   "category": "events_outreach",
+   "tags": [
+    "events_outreach",
+    "skilling"
+   ],
+   "sector": "Cross-cutting",
    "stage": "underway",
    "n_sources": 1,
    "also_reported_by": []
