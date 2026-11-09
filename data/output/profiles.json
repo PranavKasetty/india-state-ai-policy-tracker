@@ -60,7 +60,7 @@
  "Assam": {
   "ai_policy": {
    "status": "done",
-   "text": "Assam AI roadmap unveiled in 2026 to drive inclusive growth and governance",
+   "text": "Assam artificial intelligence roadmap unveiled in July 2026 for governance",
    "cites": [
     "R4203359c"
    ]
@@ -83,8 +83,8 @@
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "f13de563d219",
-  "generated_at": "2026-11-06T12:30+00:00"
+  "input_hash": "709476ce27fd",
+  "generated_at": "2026-11-09T06:29+00:00"
  },
  "Bihar": {
   "ai_policy": {
@@ -222,35 +222,35 @@
  "Haryana": {
   "ai_policy": {
    "status": "done",
-   "text": "Haryana AI Mission 2026 announced to position state as innovation hub",
+   "text": "Haryana AI Mission 2026 announced to drive AI innovation",
    "cites": [
     "R5683822a"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "Department of Future established in 2025 to drive AI development",
+   "text": "Department of Future established to drive AI and skill development",
    "cites": [
     "R1d5cc244"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 474.39 crore Haryana AI Development Project approved for 2025-2028",
+   "text": "Rs 474.39 crore Haryana AI Development Project approved in 2025",
    "cites": [
     "R56704031"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Haryana's first robotic and AI-based Center of Excellence ready in Karnal",
+   "text": "Haryana's first robotic and AI Center of Excellence in Karnal",
    "cites": [
     "R61f2cbaf"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "b59ca266f803",
-  "generated_at": "2026-11-06T12:31+00:00"
+  "input_hash": "3233606400a1",
+  "generated_at": "2026-11-09T06:29+00:00"
  },
  "Himachal Pradesh": {
   "ai_policy": {
@@ -352,36 +352,38 @@
  "Kerala": {
   "ai_policy": {
    "status": "announced",
-   "text": "Kerala AI policy to be brought out for governance reform",
+   "text": "Kerala AI policy announced under GenAI ecosystem and governance initiative",
    "cites": [
+    "R0a5d1413",
     "R219d98d4"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "Kerala sets up country's first AI department in 2026",
+   "text": "Kerala Department of IT, AI & Future Tech established in 2026",
    "cites": [
-    "R435f8de7"
+    "R435f8de7",
+    "Ref58a154"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs. 50 crore Gen-Z startup fund launched in 2026",
+   "text": "Rs 50 crore Gen-Z startup fund launched in Kerala in 2026",
    "cites": [
     "Re3333cd0"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Kerala launches twin AI Centres of Excellence in 2026",
+   "text": "Kerala twin AI Centres of Excellence launched under India AI Mission",
    "cites": [
     "Rcaa18758",
     "R82061b81"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "4796f0fd18b6",
-  "generated_at": "2026-11-07T00:26+00:00"
+  "input_hash": "aefa6021fea4",
+  "generated_at": "2026-11-09T06:29+00:00"
  },
  "Madhya Pradesh": {
   "ai_policy": {
@@ -418,7 +420,7 @@
  "Maharashtra": {
   "ai_policy": {
    "status": "done",
-   "text": "Maharashtra Cabinet approved AI Policy 2026 with ₹10,000 crore investment",
+   "text": "Maharashtra Approves AI Policy 2026 with ₹10,000 crore investment in 2026",
    "cites": [
     "R562864e1",
     "Rdbb33aa8"
@@ -426,29 +428,31 @@
   },
   "ai_body": {
    "status": "done",
-   "text": "Maharashtra Cabinet approved new Department for Electronics IT and Artificial Intelligence",
+   "text": "Maharashtra Cabinet approves new department for Electronics IT and Artificial Intelligence in 2026",
    "cites": [
-    "R6f0677ec"
+    "R6f0677ec",
+    "Rd7d40f74"
    ]
   },
   "funding": {
    "status": "done",
    "text": "Rs 500 crore MahaAgri-AI Policy approved in 2025",
    "cites": [
+    "R5c8784f8",
     "Rda0dbcb5"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Microsoft to establish 3 AI Centres of Excellence in Maharashtra",
+   "text": "Three AI Centres of Excellence established with Microsoft in Nagpur, Mumbai and Pune in 2025",
    "cites": [
     "R47ae66d7",
     "R260b8903"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "2965ba3fddba",
-  "generated_at": "2026-11-08T06:04+00:00"
+  "input_hash": "3d237862eeb3",
+  "generated_at": "2026-11-09T06:30+00:00"
  },
  "Manipur": {
   "ai_policy": {
@@ -722,9 +726,12 @@
    "cites": []
   },
   "ai_body": {
-   "status": "none",
-   "text": "",
-   "cites": []
+   "status": "done",
+   "text": "Telangana AI Innovation Hub established to boost AI R&D",
+   "cites": [
+    "Rafe9a4a2",
+    "R42f82746"
+   ]
   },
   "funding": {
    "status": "none",
@@ -733,14 +740,14 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "Telangana Green Skills and Applied AI Centre of Excellence launched in 2026",
+   "text": "Telangana Green Skills and Applied AI CoE launched in Hyderabad",
    "cites": [
     "R998e03d5"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "3d2e65e97c8a",
-  "generated_at": "2026-11-08T06:04+00:00"
+  "input_hash": "c71f94a7f748",
+  "generated_at": "2026-11-09T06:30+00:00"
  },
  "Tripura": {
   "ai_policy": {
@@ -777,19 +784,22 @@
    "text": "UP Artificial Intelligence Mission approved by cabinet in 2026",
    "cites": [
     "Rb312992b",
-    "Rd6a83602"
+    "Rd6a83602",
+    "R47a5f920"
    ]
   },
   "ai_body": {
-   "status": "announced",
-   "text": "AI committees formed to implement AI in all universities in 2026",
+   "status": "done",
+   "text": "UP AI Mission set up in 2026",
    "cites": [
-    "R7e3f0b21"
+    "Rb312992b",
+    "Rd6a83602",
+    "R47a5f920"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 2000 crore UP AI Mission announced in 2026",
+   "text": "Rs 2000 crore AI Mission announced in 2026",
    "cites": [
     "R297b1b1d"
    ]
@@ -802,8 +812,8 @@
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "e3b0a99660cf",
-  "generated_at": "2026-11-07T00:27+00:00"
+  "input_hash": "69dc85f74c69",
+  "generated_at": "2026-11-09T06:30+00:00"
  },
  "Uttarakhand": {
   "ai_policy": {
