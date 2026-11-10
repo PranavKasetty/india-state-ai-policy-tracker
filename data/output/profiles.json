@@ -7,28 +7,28 @@
   },
   "ai_body": {
    "status": "done",
-   "text": "AI Living Labs Foundation established with HQ in Amaravati",
+   "text": "AI Living Labs Foundation established in Amaravati",
    "cites": [
     "Raaed8ca2"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 99.19 crore AI traffic management system for Vizag approved",
+   "text": "Rs 99.19 crore sanctioned for AI traffic management in Vizag",
    "cites": [
     "R4075dec7"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Google AI data centre project approved in Visakhapatnam",
+   "text": "Google AI Lab inaugurated in Guntur",
    "cites": [
-    "R355de8d4"
+    "Rdbba012f"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "3183bd8b1009",
-  "generated_at": "2026-11-07T00:25+00:00"
+  "input_hash": "b3fa345c3bce",
+  "generated_at": "2026-11-10T07:21+00:00"
  },
  "Arunachal Pradesh": {
   "ai_policy": {
@@ -352,38 +352,42 @@
  "Kerala": {
   "ai_policy": {
    "status": "announced",
-   "text": "Kerala AI policy announced under GenAI ecosystem and governance initiative",
+   "text": "Kerala AI policy and initiative for governance announced in 2024",
    "cites": [
     "R0a5d1413",
+    "R94a282cc",
     "R219d98d4"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "Kerala Department of IT, AI & Future Tech established in 2026",
+   "text": "Kerala AI department and Malayalam AI mission established in 2026",
    "cites": [
     "R435f8de7",
-    "Ref58a154"
+    "Re3333cd0",
+    "R14e3f009"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 50 crore Gen-Z startup fund launched in Kerala in 2026",
+   "text": "Rs 50 crore Gen-Z startup fund launched in 2026",
    "cites": [
+    "R168c19e6",
     "Re3333cd0"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Kerala twin AI Centres of Excellence launched under India AI Mission",
+   "text": "Two AI Centres of Excellence launched under India AI Mission in 2026",
    "cites": [
     "Rcaa18758",
-    "R82061b81"
+    "R82061b81",
+    "Rd47ca5ca"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "aefa6021fea4",
-  "generated_at": "2026-11-09T06:29+00:00"
+  "input_hash": "b73997126102",
+  "generated_at": "2026-11-10T07:21+00:00"
  },
  "Madhya Pradesh": {
   "ai_policy": {
@@ -818,37 +822,34 @@
  "Uttarakhand": {
   "ai_policy": {
    "status": "announced",
-   "text": "Uttarakhand AI Mission-2025 and AI policy draft released in 2025",
+   "text": "Uttarakhand AI Mission-2025 policy and first draft released in 2025",
    "cites": [
-    "R19b60a8c",
     "R6ff3204d",
     "R582d1141"
    ]
   },
   "ai_body": {
-   "status": "announced",
-   "text": "Setu Commission preparing Uttarakhand AI policy format",
-   "cites": [
-    "Rb50a8f51"
-   ]
+   "status": "none",
+   "text": "",
+   "cites": []
   },
   "funding": {
    "status": "announced",
-   "text": "Rs 25 crore for AI mission in Uttarakhand budget 2026",
+   "text": "Rs 25 crore allocated for AI mission in Uttarakhand budget 2026",
    "cites": [
     "Rf99328af"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "NVIDIA-powered AI-HPC facility at Graphic Era University in 2025",
+   "text": "State's first AI Lab established at Dehradun tribal school in 2023",
    "cites": [
-    "R1742b1a0"
+    "Rdfb60193"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "e1419639f4f3",
-  "generated_at": "2026-11-07T00:27+00:00"
+  "input_hash": "7464bb07cb6d",
+  "generated_at": "2026-11-10T07:21+00:00"
  },
  "West Bengal": {
   "ai_policy": {
