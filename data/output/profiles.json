@@ -1,34 +1,37 @@
 {
  "Andhra Pradesh": {
   "ai_policy": {
-   "status": "none",
-   "text": "",
-   "cites": []
+   "status": "done",
+   "text": "Robotics and Physical AI Policy 2026-36 approved by AP Cabinet",
+   "cites": [
+    "Rf466bb64",
+    "R03dd4f09"
+   ]
   },
   "ai_body": {
-   "status": "done",
-   "text": "AI Living Labs Foundation established in Amaravati",
+   "status": "announced",
+   "text": "Special joint task force with Google for AI-service delivery",
    "cites": [
-    "Raaed8ca2"
+    "R26ff8f4a"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 99.19 crore sanctioned for AI traffic management in Vizag",
+   "text": "Rs 99.19 crore approved for Vizag AI traffic management system",
    "cites": [
     "R4075dec7"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Google AI Lab inaugurated in Guntur",
+   "text": "AM AI Factory 512 MW green AI data centre approved",
    "cites": [
-    "Rdbba012f"
+    "R3eefbde9"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "b3fa345c3bce",
-  "generated_at": "2026-11-10T07:21+00:00"
+  "input_hash": "4b2c16fa4ad5",
+  "generated_at": "2026-11-11T06:22+00:00"
  },
  "Arunachal Pradesh": {
   "ai_policy": {
@@ -89,7 +92,7 @@
  "Bihar": {
   "ai_policy": {
    "status": "announced",
-   "text": "Bihar AI Policy 2026 proposed for training students and boosting economy",
+   "text": "Bihar AI Policy 2026 proposed for training students",
    "cites": [
     "R4af400f2",
     "R0d276784"
@@ -97,17 +100,16 @@
   },
   "ai_body": {
    "status": "done",
-   "text": "Bihar AI Mission approved by cabinet in May 2026",
+   "text": "Bihar Artificial Intelligence Mission approved by cabinet in 2026",
    "cites": [
-    "Rc9c3c4c4",
-    "Rb70e845b"
+    "R6fdc0aaa"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 209 crore allocated for Aryabhatta Drishti Project in May 2026",
+   "text": "Rs 190 crore allocated for AI Mission in 2026",
    "cites": [
-    "Rc36ba196"
+    "R6fdc0aaa"
    ]
   },
   "infrastructure": {
@@ -119,43 +121,43 @@
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "0a3319156b59",
-  "generated_at": "2026-11-08T06:04+00:00"
+  "input_hash": "fdf4a29f264a",
+  "generated_at": "2026-11-11T06:22+00:00"
  },
  "Chhattisgarh": {
   "ai_policy": {
    "status": "done",
-   "text": "Chhattisgarh AI-powered digital transformation roadmap and plan unveiled in 2026",
+   "text": "Chhattisgarh AI-powered digital transformation plan and roadmap unveiled in 2026",
    "cites": [
     "R32faad8c"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "Chhattisgarh AI Mission set up with focus on digital economy and governance",
+   "text": "Chhattisgarh AI Mission set up with training programs launched",
    "cites": [
     "Ra8b92ce6",
-    "R7cc53f61"
+    "Rfcd4b204"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 500 crore allocated for Chhattisgarh AI Mission over 5 years in 2026",
+   "text": "Rs 500 crore approved for Chhattisgarh AI Mission over 5 years",
    "cites": [
     "R7cc53f61",
-    "R63bfb6f9"
+    "Rf9db4cfb"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Rs 1,000 crore AI Data Center Park unveiled in Nava Raipur in 2026",
+   "text": "Rs 1,000 crore AI Data Center Park unveiled in Nava Raipur",
    "cites": [
     "Recb4eed4"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "6daf15884b0a",
-  "generated_at": "2026-11-06T12:31+00:00"
+  "input_hash": "39452708a2ff",
+  "generated_at": "2026-11-11T06:22+00:00"
  },
  "Goa": {
   "ai_policy": {
@@ -174,13 +176,15 @@
    "cites": []
   },
   "infrastructure": {
-   "status": "none",
-   "text": "",
-   "cites": []
+   "status": "announced",
+   "text": "First AI Centre of Excellence in Panaji announced",
+   "cites": [
+    "R65df1ee3"
+   ]
   },
-  "model": "",
-  "input_hash": "b78f576611ec",
-  "generated_at": "2026-11-05T00:05+00:00"
+  "model": "gemini-3.5-flash-lite",
+  "input_hash": "03bef1457ad7",
+  "generated_at": "2026-11-11T06:22+00:00"
  },
  "Gujarat": {
   "ai_policy": {
