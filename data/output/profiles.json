@@ -2,36 +2,37 @@
  "Andhra Pradesh": {
   "ai_policy": {
    "status": "done",
-   "text": "Robotics and Physical AI Policy 2026-36 approved by AP Cabinet",
+   "text": "Robotics and Physical AI Policy 2026-36 approved by cabinet",
    "cites": [
+    "R78ad8544",
     "Rf466bb64",
     "R03dd4f09"
    ]
   },
   "ai_body": {
-   "status": "announced",
-   "text": "Special joint task force with Google for AI-service delivery",
+   "status": "done",
+   "text": "AI Living Labs Foundation set up with HQ in Amaravati",
    "cites": [
-    "R26ff8f4a"
+    "Raaed8ca2"
    ]
   },
   "funding": {
-   "status": "done",
-   "text": "Rs 99.19 crore approved for Vizag AI traffic management system",
-   "cites": [
-    "R4075dec7"
-   ]
+   "status": "none",
+   "text": "",
+   "cites": []
   },
   "infrastructure": {
    "status": "done",
-   "text": "AM AI Factory 512 MW green AI data centre approved",
+   "text": "Google AI data centre approved in Visakhapatnam",
    "cites": [
-    "R3eefbde9"
+    "R355de8d4",
+    "Rbfe108aa",
+    "Rab36f138"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "4b2c16fa4ad5",
-  "generated_at": "2026-11-11T06:22+00:00"
+  "input_hash": "e33deb9344f6",
+  "generated_at": "2026-11-12T07:15+00:00"
  },
  "Arunachal Pradesh": {
   "ai_policy": {
@@ -92,7 +93,7 @@
  "Bihar": {
   "ai_policy": {
    "status": "announced",
-   "text": "Bihar AI Policy 2026 proposed for training students",
+   "text": "Bihar AI Policy 2026 proposed for youth training and economy",
    "cites": [
     "R4af400f2",
     "R0d276784"
@@ -100,14 +101,14 @@
   },
   "ai_body": {
    "status": "done",
-   "text": "Bihar Artificial Intelligence Mission approved by cabinet in 2026",
+   "text": "Bihar Artificial Intelligence Mission approved with Rs 190 crore",
    "cites": [
     "R6fdc0aaa"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 190 crore allocated for AI Mission in 2026",
+   "text": "Rs 190 crore allocated for Bihar AI Mission in 2026",
    "cites": [
     "R6fdc0aaa"
    ]
@@ -121,8 +122,8 @@
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "fdf4a29f264a",
-  "generated_at": "2026-11-11T06:22+00:00"
+  "input_hash": "a19c7962caa8",
+  "generated_at": "2026-11-12T07:15+00:00"
  },
  "Chhattisgarh": {
   "ai_policy": {
@@ -134,30 +135,31 @@
   },
   "ai_body": {
    "status": "done",
-   "text": "Chhattisgarh AI Mission set up with training programs launched",
+   "text": "Chhattisgarh AI Mission established with five Centres of Excellence",
    "cites": [
     "Ra8b92ce6",
-    "Rfcd4b204"
+    "R7cc53f61",
+    "R6ae1aafc"
    ]
   },
   "funding": {
    "status": "done",
    "text": "Rs 500 crore approved for Chhattisgarh AI Mission over 5 years",
    "cites": [
-    "R7cc53f61",
-    "Rf9db4cfb"
+    "R7cc53f61"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Rs 1,000 crore AI Data Center Park unveiled in Nava Raipur",
+   "text": "India's first AI-based data center park in Nava Raipur approved and unveiled",
    "cites": [
+    "Rcc6c8e84",
     "Recb4eed4"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "39452708a2ff",
-  "generated_at": "2026-11-11T06:22+00:00"
+  "input_hash": "0b5e89ea96e8",
+  "generated_at": "2026-11-12T07:16+00:00"
  },
  "Goa": {
   "ai_policy": {
@@ -287,17 +289,17 @@
  },
  "Jharkhand": {
   "ai_policy": {
-   "status": "done",
-   "text": "Jharkhand AI Policy 2026 launched to revolutionize public governance",
+   "status": "announced",
+   "text": "Jharkhand AI Policy 2026 drafted for governance, agriculture and healthcare",
    "cites": [
     "R93418e63",
-    "R4b4e0b34",
+    "R927ec078",
     "R7694c76a"
    ]
   },
   "ai_body": {
    "status": "announced",
-   "text": "Jharkhand Police to Form AI Task Force",
+   "text": "Jharkhand Police to form AI Task Force announced in 2026",
    "cites": [
     "R25c27df1"
    ]
@@ -309,14 +311,14 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "Rs 100 crore AI Center of Excellence at BIT Mesra",
+   "text": "Rs 100 crore AI Center of Excellence at BIT Mesra in 2026",
    "cites": [
     "R86310780"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "7286b85d6982",
-  "generated_at": "2026-11-07T00:25+00:00"
+  "input_hash": "7dbde5d3a322",
+  "generated_at": "2026-11-12T07:16+00:00"
  },
  "Karnataka": {
   "ai_policy": {
@@ -396,17 +398,16 @@
  "Madhya Pradesh": {
   "ai_policy": {
    "status": "announced",
-   "text": "Madhya Pradesh AI policy announced for predictive governance in 2026",
+   "text": "Madhya Pradesh new AI policy for predictive governance announced in 2026",
    "cites": [
     "Rabe291a1"
    ]
   },
   "ai_body": {
    "status": "announced",
-   "text": "State AI Mission launched by Madhya Pradesh government in 2026",
+   "text": "Madhya Pradesh State AI Mission launched in 2026",
    "cites": [
-    "R1f2ae7f3",
-    "Rd4a8d7a0"
+    "R1f2ae7f3"
    ]
   },
   "funding": {
@@ -422,8 +423,8 @@
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "2e005d2e2fa1",
-  "generated_at": "2026-11-07T00:26+00:00"
+  "input_hash": "dd7f4efa2f27",
+  "generated_at": "2026-11-12T07:16+00:00"
  },
  "Maharashtra": {
   "ai_policy": {
@@ -729,15 +730,16 @@
  },
  "Telangana": {
   "ai_policy": {
-   "status": "none",
-   "text": "",
-   "cites": []
+   "status": "announced",
+   "text": "New Telangana GCC policy to focus on AI in 2026",
+   "cites": [
+    "R1f22b6f2"
+   ]
   },
   "ai_body": {
    "status": "done",
-   "text": "Telangana AI Innovation Hub established to boost AI R&D",
+   "text": "Telangana Artificial Intelligence Innovation Hub established in 2026",
    "cites": [
-    "Rafe9a4a2",
     "R42f82746"
    ]
   },
@@ -748,14 +750,14 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "Telangana Green Skills and Applied AI CoE launched in Hyderabad",
+   "text": "Telangana Green Skills & Applied AI CoE opened in Hyderabad 2026",
    "cites": [
     "R998e03d5"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "c71f94a7f748",
-  "generated_at": "2026-11-09T06:30+00:00"
+  "input_hash": "814c673887bc",
+  "generated_at": "2026-11-12T07:16+00:00"
  },
  "Tripura": {
   "ai_policy": {
@@ -777,14 +779,14 @@
   },
   "infrastructure": {
    "status": "announced",
-   "text": "Tripura AI push innovation hub pact with IIT Kharagpur",
+   "text": "Innovation hub pact with IIT Kharagpur in 2026",
    "cites": [
     "R9435f1d2"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "fdd01249c852",
-  "generated_at": "2026-11-06T12:32+00:00"
+  "input_hash": "5b623ea20400",
+  "generated_at": "2026-11-12T07:16+00:00"
  },
  "Uttar Pradesh": {
   "ai_policy": {
