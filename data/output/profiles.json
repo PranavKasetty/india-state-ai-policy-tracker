@@ -2,35 +2,36 @@
  "Andhra Pradesh": {
   "ai_policy": {
    "status": "done",
-   "text": "Andhra Pradesh Robotics and Physical AI Policy 2026-36 approved by cabinet",
+   "text": "Robotics and Physical AI Policy 2026-36 approved by cabinet",
    "cites": [
     "Rf466bb64",
-    "R03dd4f09",
-    "R78ad8544"
+    "R03dd4f09"
    ]
   },
   "ai_body": {
-   "status": "none",
-   "text": "",
-   "cites": []
+   "status": "done",
+   "text": "AI Living Labs Foundation established with HQ in Amaravati",
+   "cites": [
+    "Raaed8ca2"
+   ]
   },
   "funding": {
-   "status": "none",
-   "text": "",
-   "cites": []
+   "status": "done",
+   "text": "Rs 99.19 crore approved for Project Sarthi AI traffic management",
+   "cites": [
+    "R4075dec7"
+   ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Google AI data centre project approved in Visakhapatnam with $15 billion investment",
+   "text": "Google AI Lab inaugurated in Guntur",
    "cites": [
-    "R37f1fbdf",
-    "R42588509",
-    "Rbfe108aa"
+    "Rdbba012f"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "3cff60bd307e",
-  "generated_at": "2026-11-13T06:49+00:00"
+  "input_hash": "b6ce111d509a",
+  "generated_at": "2026-11-14T06:26+00:00"
  },
  "Arunachal Pradesh": {
   "ai_policy": {
@@ -91,7 +92,7 @@
  "Bihar": {
   "ai_policy": {
    "status": "announced",
-   "text": "Bihar AI Policy 2026 proposed for youth training and economy",
+   "text": "Bihar AI Policy 2026 proposed to train 5 lakh students",
    "cites": [
     "R4af400f2",
     "R0d276784"
@@ -101,26 +102,28 @@
    "status": "done",
    "text": "Bihar Artificial Intelligence Mission approved by cabinet in 2026",
    "cites": [
-    "R6fdc0aaa"
+    "R6fdc0aaa",
+    "R68b64920"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 190 crore allocated for AI Mission in 2026 cabinet approval",
+   "text": "Rs 190.32 crore Bihar AI Mission approved in 2026",
    "cites": [
-    "R6fdc0aaa"
+    "R6fdc0aaa",
+    "R68b64920"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "CtrlS Datacenters 400 crore AI data centre opened in Patna",
+   "text": "CtrlS established a 400 crore rupees data centre in Patna",
    "cites": [
     "R5bd4eaef"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "a0cb3e9b601d",
-  "generated_at": "2026-11-13T06:49+00:00"
+  "input_hash": "49b13b62c17e",
+  "generated_at": "2026-11-14T06:26+00:00"
  },
  "Chhattisgarh": {
   "ai_policy": {
@@ -488,7 +491,7 @@
  "Meghalaya": {
   "ai_policy": {
    "status": "announced",
-   "text": "Meghalaya drafting second version of IT policy with focus on AI",
+   "text": "Meghalaya is drafting a new IT policy focusing on artificial intelligence",
    "cites": [
     "R9625f972"
    ]
@@ -499,22 +502,21 @@
    "cites": []
   },
   "funding": {
+   "status": "none",
+   "text": "",
+   "cites": []
+  },
+  "infrastructure": {
    "status": "announced",
    "text": "Meghalaya proposed a Rs 20 crore AI Centre of Excellence",
    "cites": [
-    "Rf277c3a3"
-   ]
-  },
-  "infrastructure": {
-   "status": "done",
-   "text": "AI-Driven Education Centre Vidya Samiksha Kendra launched in 2024",
-   "cites": [
-    "R6aac995d"
+    "Rf277c3a3",
+    "R8d3a69d4"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "eaf4e3f94e58",
-  "generated_at": "2026-11-06T12:32+00:00"
+  "input_hash": "8a4bb389cdcb",
+  "generated_at": "2026-11-14T06:26+00:00"
  },
  "Mizoram": {
   "ai_policy": {
@@ -575,22 +577,21 @@
    "status": "done",
    "text": "Odisha Artificial Intelligence Policy-2025 approved by the state cabinet",
    "cites": [
-    "Rdecbc04d"
+    "Rdecbc04d",
+    "Rc729937b"
    ]
   },
   "ai_body": {
-   "status": "done",
-   "text": "Odisha vigilance AI cell set up to combat corruption",
+   "status": "announced",
+   "text": "Odisha plans AI Mission to drive governance and digital ecosystem growth",
    "cites": [
-    "R52b2a7e8"
+    "Ra79fa2bc"
    ]
   },
   "funding": {
-   "status": "done",
-   "text": "Rs 171 crore Joranda project approved under AI policy",
-   "cites": [
-    "Rdecbc04d"
-   ]
+   "status": "none",
+   "text": "",
+   "cites": []
   },
   "infrastructure": {
    "status": "done",
@@ -600,8 +601,8 @@
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "8073f38886f4",
-  "generated_at": "2026-11-13T06:51+00:00"
+  "input_hash": "07a24e8a3a06",
+  "generated_at": "2026-11-14T06:26+00:00"
  },
  "Punjab": {
   "ai_policy": {
@@ -645,21 +646,21 @@
   },
   "funding": {
    "status": "done",
-   "text": "Rs 35 crore investment in AI-powered energy management in 2026",
+   "text": "Rs 35 crore investment in AI-powered energy management",
    "cites": [
     "R84a8a61a"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "AI Centre of Excellence established in IIT Jodhpur",
+   "text": "Rajasthan's first high-tech AI lab opened in Bikaner",
    "cites": [
-    "Re1ef2a90"
+    "R8fecdd3d"
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "8bb4299e55fb",
-  "generated_at": "2026-11-13T06:52+00:00"
+  "input_hash": "0f75748516ac",
+  "generated_at": "2026-11-14T06:26+00:00"
  },
  "Sikkim": {
   "ai_policy": {
@@ -786,19 +787,20 @@
    "status": "done",
    "text": "UP Artificial Intelligence Mission approved by cabinet in 2026",
    "cites": [
-    "Rb312992b"
+    "Rb312992b",
+    "Rd6a83602"
    ]
   },
   "ai_body": {
    "status": "announced",
-   "text": "AI Mission Office announced under UP AI Mission 2026",
+   "text": "Two committees formed to implement AI in UP universities",
    "cites": [
-    "R297b1b1d"
+    "R7e3f0b21"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 2000 crore allocated for UP AI Mission in 2026",
+   "text": "Rs 2000 crore allocated for UP AI Mission",
    "cites": [
     "R297b1b1d"
    ]
@@ -811,8 +813,8 @@
    ]
   },
   "model": "gemini-3.5-flash-lite",
-  "input_hash": "42481c486959",
-  "generated_at": "2026-11-13T06:52+00:00"
+  "input_hash": "2f783a8099a1",
+  "generated_at": "2026-11-14T06:27+00:00"
  },
  "Uttarakhand": {
   "ai_policy": {
