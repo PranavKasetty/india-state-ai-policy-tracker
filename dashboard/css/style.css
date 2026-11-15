@@ -217,9 +217,12 @@ button { font: inherit; }
 .status-table td.num { white-space: nowrap; font-variant-numeric: tabular-nums; }
 .status-table .st-none { color: var(--ink-2); }
 .status-table tr.is-chosen th, .status-table tr.is-chosen td { background: var(--highlight-wash); }
-/* Status words: done is solid, announced dashed (as the stage tags on cards). */
-.st { display: inline-block; padding: 0 6px; border-radius: 2px; border: 1px solid var(--ink-2); font-size: 0.8rem; font-weight: 600; color: var(--ink); }
-.st-announced { border-style: dashed; font-weight: 500; color: var(--ink-2); }
+/* Status words: done is a solid green pill, announced a dashed amber outline on a tint
+   (colours in tokens.css). The border style differs too, so they differ without colour
+   and in forced-colours mode. */
+.st { display: inline-block; padding: 0 7px; border-radius: 3px; border: 1px solid var(--ink-2); font-size: 0.8rem; font-weight: 600; line-height: 1.5; }
+.st-done { background: var(--st-done); border-color: var(--st-done); color: var(--on-st-done); }
+.st-announced { background: var(--st-announced-wash); border: 1px dashed var(--st-announced); color: var(--on-st-announced); }
 .st-when { display: block; margin-top: 2px; font-size: 0.8rem; color: var(--ink-2); }
 .st-doc { font-size: 0.85rem; white-space: nowrap; }
 .st-new { font-weight: 700; color: var(--accent); }

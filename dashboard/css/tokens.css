@@ -34,6 +34,14 @@
   --highlight:      light-dark(#f2b544, #f2b544);   /* marigold: selected things */
   --on-highlight:   #1f1a14;
   --highlight-wash: light-dark(#fbecc9, #3a2f17);
+  /* Status words in "Where each state stands": done is a solid green pill, announced a
+     dashed amber outline on a tint. The word is always shown, and solid against dashed
+     tells them apart without colour. Contrast: text >= 6.5:1, borders >= 3.4:1. */
+  --st-done:        light-dark(#1e6b3a, #7fd08f);
+  --on-st-done:     light-dark(#ffffff, #0d2a16);
+  --st-announced:   light-dark(#a86a00, #d9a23a);
+  --st-announced-wash: light-dark(#fde1a0, #4d3b12);
+  --on-st-announced: light-dark(#5e3b00, #f6cf7e);
   --mock:           light-dark(#9c2f1f, #f0a48f);   /* madder */
   --mock-wash:      light-dark(#f9e3dc, #3a201a);
   --bar:            light-dark(#1d7a74, #3fa79e);
