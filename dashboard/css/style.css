@@ -92,6 +92,16 @@ button { font: inherit; }
   padding: 5px 10px; min-height: 38px; cursor: pointer; font-size: 0.95rem;
 }
 .btn-quiet:hover { background: var(--accent-wash); text-decoration: underline; }
+.to-top {
+  position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20;
+  display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 14px;
+  background: var(--accent); color: var(--on-accent); border: 0; border-radius: 22px;
+  font: inherit; font-size: 0.95rem; font-weight: 600; cursor: pointer;
+  box-shadow: 0 1px 3px rgb(0 0 0 / .3);
+}
+.to-top[hidden] { display: none; }
+.to-top:hover { filter: brightness(1.1); }
+.to-top:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 .result-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 16px; margin: 6px 0 16px; }
 .result-count { margin: 0; color: var(--ink-2); font-size: 0.95rem; }
 .result-actions { display: inline-flex; flex-wrap: wrap; gap: 0 6px; margin-inline: -10px; }
@@ -492,6 +502,6 @@ details.data-table td { text-align: right; }
   .briefs::before { display: none; }
 }
 @media print {
-  .filters, .toggle-group, .skip-link, .more, .tooltip, .disclosure::before, #to-list, .item-actions { display: none !important; }
+  .filters, .toggle-group, .skip-link, .more, .tooltip, .disclosure::before, #to-list, .to-top, .item-actions { display: none !important; }
   .panel { break-inside: avoid; }
 }

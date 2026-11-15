@@ -91,7 +91,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to the data</a>
-  <div class="page" id="top">
+  <div class="page" id="top" tabindex="-1">
     <p class="mock-banner" id="mock-banner" hidden>
       <strong>Mock data.</strong> Headlines, outlets and counts on this page are synthetic
       placeholders until the pipeline produces the real dataset.
@@ -326,6 +326,11 @@
       </p>
     </div>
   </footer>
+
+  <button type="button" class="to-top" id="to-top" hidden aria-label="Back to the top of the page">
+    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M3 10.5 8 5.5l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Top</span>
+  </button>
 
   <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
 </body>

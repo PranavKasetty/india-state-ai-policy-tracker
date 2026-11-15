@@ -72,6 +72,7 @@
 
     renderStatic(data);
     initDisclosures();
+    initBackToTop();
     // The hash holds the filters, so a plain #fragment link would clear them.
     $("to-list").addEventListener("click", () => {
       const heading = $("items-title");
@@ -167,6 +168,25 @@
         $(btn.getAttribute("aria-controls")).hidden = !open;
       });
     }
+  }
+
+  /**
+   * A floating "Top" button, shown once the reader is a screen or so down, and the footer's
+   * "Back to top" link. Both scroll without touching the URL hash, which holds the filters.
+   */
+  function initBackToTop() {
+    const btn = $("to-top");
+    const update = () => { btn.hidden = window.scrollY < window.innerHeight; };
+    const toTop = (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: T.motion.reduced() ? "auto" : "smooth" });
+      $("top").focus({ preventScroll: true });
+    };
+    btn.addEventListener("click", toTop);
+    for (const a of document.querySelectorAll('a[href="#top"]')) a.addEventListener("click", toTop);
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
   }
 
   function showError(err) {
