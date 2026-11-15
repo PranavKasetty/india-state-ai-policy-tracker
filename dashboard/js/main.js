@@ -73,6 +73,7 @@
     renderStatic(data);
     initDisclosures();
     initBackToTop();
+    keepClearOfFilters();
     // The hash holds the filters, so a plain #fragment link would clear them.
     $("to-list").addEventListener("click", () => {
       const heading = $("items-title");
@@ -168,6 +169,22 @@
         $(btn.getAttribute("aria-controls")).hidden = !open;
       });
     }
+  }
+
+  /**
+   * When the filter bar is sticky, tell the stylesheet how tall it really is (it wraps, so
+   * the height changes with the window) so scrolled-to content lands just below it.
+   */
+  function keepClearOfFilters() {
+    const bar = $("filters");
+    const root = document.documentElement;
+    const measure = () => {
+      const sticky = getComputedStyle(bar).position === "sticky" && !bar.hidden;
+      root.style.setProperty("--sticky-h", sticky ? `${Math.ceil(bar.getBoundingClientRect().height)}px` : "0px");
+    };
+    new ResizeObserver(measure).observe(bar);
+    window.addEventListener("resize", measure);
+    measure();
   }
 
   /**

@@ -69,7 +69,7 @@ button { font: inherit; }
 @media (min-width: 900px) and (min-height: 640px) {
   .filters { position: sticky; top: 0; z-index: 5; }
   /* Keep focused or scrolled-to content clear of the sticky bar (WCAG 2.4.11). */
-  html { scroll-padding-top: 120px; }
+  html { scroll-padding-top: calc(var(--sticky-h, 120px) + 12px); }
 }
 .filters label { display: flex; flex-direction: column; gap: 2px; font-size: 0.85rem; color: var(--ink-2); min-width: 0; }
 .filters .grow { flex: 1 1 200px; }
@@ -477,6 +477,7 @@ details.data-table td { text-align: right; }
 /* Transitions for the re-rendered marks; js/motion.js starts each at its old value. */
 @media (prefers-reduced-motion: no-preference) {
   .cell-btn { transition: background-color .35s ease; }
+  .item.flash { animation: flash 1.8s ease-out; }
   .rank-bar { transition: width .5s cubic-bezier(.2, .7, .2, 1); }
   .rank-row { transition: transform .45s cubic-bezier(.2, .7, .2, 1); }
   .timechart .bar { transform-box: fill-box; transform-origin: 50% 100%; transition: transform .5s cubic-bezier(.2, .7, .2, 1); }
@@ -487,6 +488,7 @@ details.data-table td { text-align: right; }
   /* Points revealed by "Show more" fade in one after another. */
   .brief-points li.extra { animation: rise-in .35s calc(var(--i, 0) * 70ms) cubic-bezier(.2, .7, .2, 1) both; }
 }
+@keyframes flash { from { background: var(--highlight-wash); } }
 @keyframes fade-in { from { opacity: 0; } }
 @keyframes rise-in { from { opacity: 0; transform: translateY(6px); } }
 @keyframes edge-in { from { transform: scaleY(0); } }

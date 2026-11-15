@@ -127,7 +127,13 @@
       const heading = list.children[at].querySelector(".item-title");
       heading.tabIndex = -1;
       heading.focus({ preventScroll: true });
-      heading.scrollIntoView({ block: "start" }); // instant: a long smooth glide only delays the reader
+      const card = list.children[at];
+      // A short glide shows which way the page moved; reduced motion jumps instead.
+      heading.scrollIntoView({ block: "start", behavior: T.motion.reduced() ? "auto" : "smooth" });
+      // Mark the card that was meant, since several may be on screen when it lands.
+      card.classList.remove("flash");
+      void card.offsetWidth; // restart the animation on a repeat click
+      card.classList.add("flash");
       return true;
     }
 
