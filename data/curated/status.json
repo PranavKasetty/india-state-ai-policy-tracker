@@ -1,8 +1,16 @@
 {
   "_about": "Hand-checked corrections to the state status table ('Where each state stands'). Each entry replaces the language model's cell for that state and marker. Fields: status (done | announced | none), text, date (YYYY-MM or YYYY-MM-DD), document (the government's own page or file), source (a report, when there is no official page), checked (the date someone confirmed the link and the text). Markers: ai_policy, ai_body, funding, infrastructure. Applied by pipeline/profiles.py apply_curated.",
+  "Andhra Pradesh": {
+    "ai_policy": {"status": "done", "text": "Robotics and Physical AI Policy 2026-36, approved by the cabinet but not yet notified; no general state AI policy found", "date": "2026-11-10",
+                  "source": "https://cio.eletsonline.com/artificial-intelligence/andhra-pradesh-physical-ai-policy/76839/", "checked": "2026-11-15"}
+  },
   "Gujarat": {
     "ai_policy": {"status": "done", "text": "Gujarat AI Action Plan 2025-2030, approved by the Chief Minister", "date": "2025-07",
                   "source": "https://www.theweek.in/wire-updates/national/2025/07/27/bes8-gj-ai-action-plan.html", "checked": "2026-11-07"}
+  },
+  "Haryana": {
+    "ai_policy": {"status": "announced", "text": "Haryana AI Mission proposed; the Rs 474 crore project behind it is still being developed", "date": "2026-04-08",
+                  "source": "https://www.dailyexcelsior.com/haryana-cm-reviews-progress-of-rs-474-cr-ai-development-programme/amp", "checked": "2026-11-15"}
   },
   "Jharkhand": {
     "ai_policy": {"status": "announced", "text": "Draft Jharkhand AI Policy 2026-31 presented at a national stakeholder consultation", "date": "2026-07",
