@@ -138,6 +138,7 @@ def build(records: list[dict]) -> dict[str, dict]:
                 answer = llm.chat_json(session, base, model, PROMPT,
                                        f"State: {state}\nRecords:\n" + "\n".join(lines))
             except Exception as e:  # keep the previous row rather than fail the run
+                llm.writing_call_failed(e)
                 print(f"  {state}: failed ({type(e).__name__})")
                 continue
             time.sleep(llm.WRITING_PAUSE)  # free-tier requests per minute

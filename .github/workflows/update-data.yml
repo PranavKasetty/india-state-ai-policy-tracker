@@ -78,5 +78,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898729+github-actions[bot]@users.noreply.github.com"
           git commit -m "Daily data update: $(date -u +%F)"
-          git pull --rebase
+          # If another run pushed first, keep this run's regenerated outputs; the raw caches
+          # merge as a union (.gitattributes), so nothing collected is lost.
+          git pull --rebase -X theirs
           git push

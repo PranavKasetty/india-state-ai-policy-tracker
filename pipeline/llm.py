@@ -130,6 +130,15 @@ def writing_call_allowed() -> bool:
     return True
 
 
+def writing_call_failed(err: Exception) -> None:
+    """After a rate-limit failure, stop making writing calls this run: the day's free quota is
+    gone (a second run on the same day, say), and each further call would only wait out its retries."""
+    global _writing_spent
+    status = getattr(getattr(err, "response", None), "status_code", None)
+    if status == 429 or isinstance(err, requests.exceptions.RetryError):
+        _writing_spent = WRITING_BUDGET
+
+
 def load_store() -> dict[str, dict]:
     if not STORE.exists():
         return {}

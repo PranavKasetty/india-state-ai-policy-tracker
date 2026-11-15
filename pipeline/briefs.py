@@ -77,6 +77,7 @@ def build(records: list[dict]) -> dict[str, dict]:
             text = llm.chat_json(session, base, model, PROMPT,
                                  f"Brief on {subject}.\nRecords:\n" + "\n".join(lines))["brief"]
         except Exception as e:  # keep the previous brief rather than fail the run
+            llm.writing_call_failed(e)
             print(f"  {gkey}: failed ({type(e).__name__})")
             continue
         valid = {ln.split(" | ")[0] for ln in lines}
