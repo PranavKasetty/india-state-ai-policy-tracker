@@ -578,34 +578,39 @@
  "Odisha": {
   "ai_policy": {
    "status": "done",
-   "text": "Odisha Artificial Intelligence Policy-2025 approved by the state cabinet",
+   "text": "Odisha Artificial Intelligence Policy 2025 approved by state cabinet",
    "cites": [
     "Rdecbc04d",
+    "Rf88dd087",
     "Rc729937b"
    ]
   },
   "ai_body": {
-   "status": "announced",
-   "text": "Odisha plans AI Mission to drive governance and digital ecosystem growth",
+   "status": "done",
+   "text": "Odisha Vigilance AI cell launched to combat corruption in public administration",
    "cites": [
-    "Ra79fa2bc"
+    "R52b2a7e8"
    ]
   },
   "funding": {
-   "status": "none",
-   "text": "",
-   "cites": []
+   "status": "done",
+   "text": "Rs 122.6 crore Odisha contract awarded for AI-enabled OSWAS 3.0 governance system",
+   "cites": [
+    "Rd731fc75"
+   ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Odisha AI CoE approved by MeitY with Blue Cloud investment",
+   "text": "Odisha HLCA approved Rs 22,634 crore SentraForge AI sovereign compute project",
    "cites": [
-    "R4fcdcf09"
+    "R00b3c6a6",
+    "R56f90fa3",
+    "R657bba09"
    ]
   },
-  "model": "gemini-3.5-flash-lite",
-  "input_hash": "07a24e8a3a06",
-  "generated_at": "2026-11-14T06:26+00:00"
+  "model": "gemini-4-hydrogen",
+  "input_hash": "ce19ee8f1da1",
+  "generated_at": "2026-11-15T08:30+00:00"
  },
  "Punjab": {
   "ai_policy": {
@@ -625,21 +630,22 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "Punjab's first state-of-the-art AI lab inaugurated in Khanna government school",
+   "text": "State-of-the-art AI lab inaugurated at Khanna government school in 2026",
    "cites": [
     "R865b1a49"
    ]
   },
-  "model": "gemini-3.5-flash-lite",
-  "input_hash": "6f7f8c418a56",
-  "generated_at": "2026-11-07T00:26+00:00"
+  "model": "gemini-4-hydrogen",
+  "input_hash": "5ab143f4e85e",
+  "generated_at": "2026-11-15T08:30+00:00"
  },
  "Rajasthan": {
   "ai_policy": {
    "status": "done",
-   "text": "Rajasthan Cabinet approves AI-ML Policy 2026",
+   "text": "Rajasthan AI-ML Policy 2026 approved by state cabinet",
    "cites": [
-    "R6a6bee70"
+    "R6a6bee70",
+    "R6a2126be"
    ]
   },
   "ai_body": {
@@ -649,21 +655,22 @@
   },
   "funding": {
    "status": "done",
-   "text": "Rs 35 crore investment in AI-powered energy management",
+   "text": "Rs 35 crore state investment for AI-powered energy management",
    "cites": [
-    "R84a8a61a"
+    "R84a8a61a",
+    "R5af2b318"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Rajasthan's first high-tech AI lab opened in Bikaner",
+   "text": "Rajasthan's first high-tech AI lab built in Bikaner",
    "cites": [
     "R8fecdd3d"
    ]
   },
-  "model": "gemini-3.5-flash-lite",
-  "input_hash": "0f75748516ac",
-  "generated_at": "2026-11-14T06:26+00:00"
+  "model": "gemini-4-hydrogen",
+  "input_hash": "8f50f700a0cd",
+  "generated_at": "2026-11-15T08:31+00:00"
  },
  "Sikkim": {
   "ai_policy": {
@@ -682,61 +689,70 @@
    "cites": []
   },
   "infrastructure": {
-   "status": "announced",
-   "text": "Sikkim Government and NIELIT Gangtok MoU to establish AI Centre of Excellence",
+   "status": "done",
+   "text": "MoU signed with NIELIT Gangtok for AI Centre of Excellence (2026)",
    "cites": [
     "Red4520ff"
    ]
   },
-  "model": "gemini-3.5-flash-lite",
-  "input_hash": "3e8eb3020cd9",
-  "generated_at": "2026-11-06T12:32+00:00"
+  "model": "gemini-4-hydrogen",
+  "input_hash": "fa6b4d1b88dd",
+  "generated_at": "2026-11-15T08:31+00:00"
  },
  "Tamil Nadu": {
   "ai_policy": {
-   "status": "announced",
-   "text": "Tamil Nadu Artificial Intelligence Mission and AI roadmap announced",
+   "status": "done",
+   "text": "Tamil Nadu Artificial Intelligence Mission (TNAIM) established and AI roadmap unveiled",
    "cites": [
-    "R74750963",
+    "R5e1dd5d6",
     "Raca6023a",
-    "R4b3b02e5"
+    "R4a9e94f6"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "Tamil Nadu Artificial Intelligence Mission (TNAIM) restructured in 2026",
+   "text": "Dedicated Ministry for Artificial Intelligence formed in May 2026",
    "cites": [
-    "R5e1dd5d6"
+    "R3150774a",
+    "R90cb32d5",
+    "Ra5e72d45"
    ]
   },
   "funding": {
    "status": "announced",
-   "text": "Rs 50,000-crore state investment fund for emerging sectors in 2026",
+   "text": "Multi-crore AI funds and Rs 30,000 AI assistive device subsidy in 2026-27 Budget",
    "cites": [
-    "R162b8dce"
+    "Ra6677335",
+    "R4a9e94f6",
+    "R95171e6a"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Sify AI-ready data center campus inaugurated in Siruseri in 2025",
+   "text": "AI Institute launched; Rs 10,000 crore Sovereign AI Park, AI Data Centre approved",
    "cites": [
-    "R70cb396d"
+    "Rfea57ae0",
+    "R472c3c1a",
+    "R305828a2"
    ]
   },
-  "model": "gemini-3.5-flash-lite",
-  "input_hash": "bf5a2d6771d9",
-  "generated_at": "2026-11-08T06:04+00:00"
+  "model": "gemini-4-hydrogen",
+  "input_hash": "dcf2bbe27093",
+  "generated_at": "2026-11-15T08:32+00:00"
  },
  "Telangana": {
   "ai_policy": {
-   "status": "none",
-   "text": "",
-   "cites": []
+   "status": "done",
+   "text": "Roadmap for AI in primary school learning launched in 2026",
+   "cites": [
+    "R6e411f1b"
+   ]
   },
   "ai_body": {
    "status": "done",
-   "text": "Telangana AI Innovation Hub established in 2026",
+   "text": "Telangana AI Innovation Hub established for AI research and partnerships",
    "cites": [
+    "Rafe9a4a2",
     "R42f82746"
    ]
   },
@@ -747,19 +763,20 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "Telangana Green Skills & Applied AI Centre of Excellence launched in 2026",
+   "text": "Telangana Green Skills and Applied AI Centre of Excellence launched in 2026",
    "cites": [
-    "R998e03d5"
+    "R998e03d5",
+    "R8807f260"
    ]
   },
-  "model": "gemini-3.5-flash-lite",
-  "input_hash": "760585438a15",
-  "generated_at": "2026-11-13T06:52+00:00"
+  "model": "gemini-4-hydrogen",
+  "input_hash": "b08147e9dd16",
+  "generated_at": "2026-11-15T08:33+00:00"
  },
  "Tripura": {
   "ai_policy": {
    "status": "announced",
-   "text": "Tripura to launch India’s first state-level AI policy",
+   "text": "State-level AI policy announced in 2026",
    "cites": [
     "Rc68da9b5"
    ]
@@ -775,15 +792,15 @@
    "cites": []
   },
   "infrastructure": {
-   "status": "announced",
-   "text": "Innovation hub pact with IIT Kharagpur in 2026",
+   "status": "done",
+   "text": "Land allocated in Agartala for data centres supporting AI and 5G (2025)",
    "cites": [
-    "R9435f1d2"
+    "R689547b0"
    ]
   },
-  "model": "gemini-3.5-flash-lite",
-  "input_hash": "5b623ea20400",
-  "generated_at": "2026-11-12T07:16+00:00"
+  "model": "gemini-4-hydrogen",
+  "input_hash": "9945dc8d088f",
+  "generated_at": "2026-11-15T08:33+00:00"
  },
  "Uttar Pradesh": {
   "ai_policy": {
@@ -791,41 +808,41 @@
    "text": "UP Artificial Intelligence Mission approved by cabinet in 2026",
    "cites": [
     "Rb312992b",
-    "Rd6a83602"
+    "Rd6a83602",
+    "R47a5f920"
    ]
   },
   "ai_body": {
-   "status": "announced",
-   "text": "Two committees formed to implement AI in UP universities",
+   "status": "done",
+   "text": "Two committees formed to implement AI in state universities in 2026",
    "cites": [
     "R7e3f0b21"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 2000 crore allocated for UP AI Mission",
+   "text": "Rs 5 crore allocated in UP Budget 2025 for Lucknow AI City",
    "cites": [
-    "R297b1b1d"
+    "R5efd6e14"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "IBM's AI GovTech Innovation Center inaugurated in Lucknow in 2026",
+   "text": "69.52-acre robotics and AI park in Greater Noida approved by cabinet in 2026",
    "cites": [
-    "Rf4058825"
+    "Rb1cbd4df"
    ]
   },
-  "model": "gemini-3.5-flash-lite",
-  "input_hash": "2f783a8099a1",
-  "generated_at": "2026-11-14T06:27+00:00"
+  "model": "gemini-4-hydrogen",
+  "input_hash": "db1ea620e49a",
+  "generated_at": "2026-11-15T08:34+00:00"
  },
  "Uttarakhand": {
   "ai_policy": {
-   "status": "announced",
-   "text": "Uttarakhand AI Mission-2025 policy and first draft released in 2025",
+   "status": "done",
+   "text": "AI Mission-2025 policy launched by Uttarakhand Governor",
    "cites": [
-    "R6ff3204d",
-    "R582d1141"
+    "R6ff3204d"
    ]
   },
   "ai_body": {
@@ -835,34 +852,34 @@
   },
   "funding": {
    "status": "announced",
-   "text": "Rs 25 crore allocated for AI mission in Uttarakhand budget 2026",
+   "text": "Rs 25 crore announced for AI mission in 2026-27 budget",
    "cites": [
     "Rf99328af"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "State's first AI Lab established at Dehradun tribal school in 2023",
+   "text": "AI labs approved for four state polytechnics in 2025",
    "cites": [
-    "Rdfb60193"
+    "Ra5275568"
    ]
   },
-  "model": "gemini-3.5-flash-lite",
-  "input_hash": "7464bb07cb6d",
-  "generated_at": "2026-11-10T07:21+00:00"
+  "model": "gemini-4-hydrogen",
+  "input_hash": "6cde46f1c57d",
+  "generated_at": "2026-11-15T08:34+00:00"
  },
  "West Bengal": {
   "ai_policy": {
    "status": "announced",
-   "text": "Draft industrial policy featuring AI impact mission",
+   "text": "West Bengal AI Mission moving towards implementation",
    "cites": [
-    "R2f526d3f",
-    "R0c1ea7de"
+    "R90ad9af5",
+    "R2f526d3f"
    ]
   },
   "ai_body": {
    "status": "announced",
-   "text": "West Bengal Police special AI Cell planned",
+   "text": "West Bengal Police plans dedicated AI Cell",
    "cites": [
     "Re268e526"
    ]
@@ -873,14 +890,12 @@
    "cites": []
   },
   "infrastructure": {
-   "status": "announced",
-   "text": "West Bengal AI Mission for infrastructure",
-   "cites": [
-    "R90ad9af5"
-   ]
+   "status": "none",
+   "text": "",
+   "cites": []
   },
-  "model": "gemini-3.5-flash-lite",
-  "input_hash": "4a90de73badd",
-  "generated_at": "2026-11-06T12:33+00:00"
+  "model": "gemini-4-hydrogen",
+  "input_hash": "0338a8b7d2c3",
+  "generated_at": "2026-11-15T08:35+00:00"
  }
 }
