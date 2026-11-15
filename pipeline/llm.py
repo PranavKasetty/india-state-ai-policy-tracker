@@ -7,6 +7,8 @@ actors, statements vs actions, crime vs policy).
 
 Any OpenAI-compatible endpoint works. Defaults to Gemini's free tier:
   LLM_API_KEY (or GOOGLE_API_KEY), LLM_MODEL, LLM_BASE_URL - from env or .env.
+The state profiles and the briefs, which are written rather than labelled, use their own
+model (LLM_WRITING_MODEL), since there are few of them and quality matters more than volume.
 No key -> the pipeline uses rules only.
 
 Labels are cached in data/raw/llm_labels.jsonl (committed) keyed by guid and
@@ -100,6 +102,32 @@ def _env(name: str) -> str:
 def config() -> tuple[str, str, str]:
     key = _env("LLM_API_KEY") or _env("GOOGLE_API_KEY")
     return key, _env("LLM_MODEL") or DEFAULT_MODEL, _env("LLM_BASE_URL") or DEFAULT_BASE
+
+
+# The profiles and briefs are few, so they can use a stronger model whose free tier is small
+# (5 requests a minute, 20 a day). WRITING_BUDGET caps the calls one run may make, leaving a
+# little room for a rerun; a profile or brief that misses out keeps its stored text until the
+# next run, and profiles, which are built first, get the first call on the budget.
+DEFAULT_WRITING_MODEL = "gemini-4-hydrogen"  # newest Gemini with a free quota: 5 RPM, 20 RPD
+WRITING_BUDGET = 18
+WRITING_PAUSE = 13  # seconds between calls: 5 requests a minute
+
+_writing_spent = 0
+
+
+def writing_config() -> tuple[str, str, str]:
+    """(key, model, base) for the profiles and briefs."""
+    key, _, base = config()
+    return key, _env("LLM_WRITING_MODEL") or DEFAULT_WRITING_MODEL, base
+
+
+def writing_call_allowed() -> bool:
+    """Take one call from this run's writing budget; False once it is used up."""
+    global _writing_spent
+    if _writing_spent >= WRITING_BUDGET:
+        return False
+    _writing_spent += 1
+    return True
 
 
 def load_store() -> dict[str, dict]:

@@ -59,7 +59,7 @@ def _groups(records: list[dict]) -> dict[str, tuple[str, list[dict]]]:
 
 def build(records: list[dict]) -> dict[str, dict]:
     store = json.loads(STORE.read_text(encoding="utf-8")) if STORE.exists() else {}
-    key, model, base = llm.config()
+    key, model, base = llm.writing_config()
     if not key:
         print("briefs: no API key, keeping stored briefs")
         return store
@@ -69,6 +69,9 @@ def build(records: list[dict]) -> dict[str, dict]:
         lines = _lines(members)
         digest = hashlib.sha1("\n".join(lines).encode()).hexdigest()[:12]
         if store.get(gkey, {}).get("input_hash") == digest:
+            continue
+        if not llm.writing_call_allowed():
+            print(f"  {gkey}: left for the next run (writing budget used)")
             continue
         try:
             text = llm.chat_json(session, base, model, PROMPT,
@@ -88,7 +91,7 @@ def build(records: list[dict]) -> dict[str, dict]:
                        "model": model, "input_hash": digest,
                        "generated_at": datetime.now(timezone.utc).isoformat(timespec="minutes")}
         made += 1
-        time.sleep(4.5)  # free-tier requests per minute
+        time.sleep(llm.WRITING_PAUSE)  # free-tier requests per minute
     STORE.parent.mkdir(parents=True, exist_ok=True)
     STORE.write_text(json.dumps(store, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"briefs: {made} generated, {len(store)} stored")

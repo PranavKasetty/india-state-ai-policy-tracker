@@ -119,7 +119,7 @@ def load() -> dict[str, dict]:
 def build(records: list[dict]) -> dict[str, dict]:
     """state -> {field: {status, text, cites}, model, input_hash, generated_at}."""
     store = load()
-    key, model, base = llm.config()
+    key, model, base = llm.writing_config()
     if not key:
         print("profiles: no API key, keeping stored profiles")
         return store
@@ -127,17 +127,20 @@ def build(records: list[dict]) -> dict[str, dict]:
     made = 0
     for state in sorted({r["state"] for r in records}):
         lines = _input([r for r in records if r["state"] == state])
-        digest = hashlib.sha1((PROFILE_VERSION + "\n".join(lines)).encode()).hexdigest()[:12]
+        digest = hashlib.sha1((PROFILE_VERSION + model + "\n".join(lines)).encode()).hexdigest()[:12]
         if store.get(state, {}).get("input_hash") == digest:
             continue
         if lines:
+            if not llm.writing_call_allowed():
+                print(f"  {state}: left for the next run (writing budget used)")
+                continue
             try:
                 answer = llm.chat_json(session, base, model, PROMPT,
                                        f"State: {state}\nRecords:\n" + "\n".join(lines))
             except Exception as e:  # keep the previous row rather than fail the run
                 print(f"  {state}: failed ({type(e).__name__})")
                 continue
-            time.sleep(4.5)  # free-tier requests per minute
+            time.sleep(llm.WRITING_PAUSE)  # free-tier requests per minute
         else:
             answer = {}
         row = _clean(answer, {ln.split(" | ")[0] for ln in lines})

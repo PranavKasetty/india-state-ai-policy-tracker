@@ -160,8 +160,9 @@ def main() -> None:
     stages = stage.load_store() if args.no_llm else stage.label(records)
     for r in records:
         r["stage"] = stages.get(r["guid"], "")
-    briefs_store = {} if args.no_llm else briefs.build(records)
+    # Profiles first: they share the writing model's small daily budget with the briefs.
     profiles_store = profiles.load() if args.no_llm else profiles.build(records)
+    briefs_store = {} if args.no_llm else briefs.build(records)
     export.write_all(records, sources, excluded, audit, briefs_store, profiles_store)
 
 

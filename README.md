@@ -59,7 +59,8 @@ Open `dashboard/index.html` in a browser to view the result.
 
 **LLM key (optional).** Put `LLM_API_KEY=...` in a `.env` file (gitignored) or the
 environment. Any OpenAI-compatible endpoint works; the default is Google Gemini's
-free tier (`gemini-3.5-flash-lite`). Override with `LLM_MODEL` and `LLM_BASE_URL`.
+free tier (`gemini-3.5-flash-lite`). Override with `LLM_MODEL` and `LLM_BASE_URL`. The state profiles and the briefs use a
+stronger model with a small free quota (`LLM_WRITING_MODEL`, at most 18 calls a run, profiles first).
 Without a key the pipeline runs on keyword rules alone. LLM answers are cached in
 `data/raw/`, so reruns are reproducible and only new items cost API calls.
 
