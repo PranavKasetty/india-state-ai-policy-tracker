@@ -216,6 +216,16 @@ def state_page(state: str, recs: list[dict], profile: dict, brief: dict | None, 
       <p class="panel-sub">Drafted by a language model from the news records and linked to them; some are corrected
       by hand and link the government's document or a report instead. "None found"
       means the news we collect does not show it, not that the state has none.</p>
+      <details class="st-legend">
+        <summary>What the markers mean</summary>
+        <dl>
+        <div><dt><span class="st st-done st-ai_policy">Adopted</span> AI policy</dt><dd>A state policy, mission, strategy or framework mainly about AI. A general IT or semiconductor policy with an AI chapter does not count.</dd></div>
+        <div><dt><span class="st st-done st-ai_body">Set up</span> Dedicated AI body</dt><dd>A body made for AI: a mission office, task force, committee, department or cell.</dd></div>
+        <div><dt><span class="st st-done st-funding">Allocated</span> State AI funding</dt><dd>State money for AI: a budget line, fund, grant or sanctioned amount. Company investment pledges do not count.</dd></div>
+        <div><dt><span class="st st-done st-infrastructure">Set up</span> AI infrastructure</dt><dd>State-backed AI infrastructure: a centre of excellence, AI lab or institute, compute facility or AI data centre.</dd></div>
+        </dl>
+        <p>A solid word means it was done: adopted, set up or allocated. A dashed word means it was announced, planned, proposed or drafted.</p>
+      </details>
       <dl class="static-status">
 {_status_rows(profile, lambda c: f"#{c}")}
       </dl>

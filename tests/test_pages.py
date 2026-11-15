@@ -67,6 +67,15 @@ class Pages(unittest.TestCase):
         self.assertEqual(item.findtext("link"), "https://example.com/a?b=1&c=2")
         self.assertTrue(item.findtext("guid").endswith("#item=R1a2b3c4d"))
 
+class MarkerLegendTests(unittest.TestCase):
+    def test_state_page_explains_the_markers(self):
+        """The legend names every marker, with the same pill the table uses."""
+        page = pages.state_page("Kerala", [], {}, None, "1 January 2026", "December 2022")
+        self.assertIn('class="st-legend"', page)
+        for field, name in pages.CELL_NAMES.items():
+            self.assertIn(f"st-{field}", page)
+            self.assertIn(name, page)
+
 
 if __name__ == "__main__":
     unittest.main()

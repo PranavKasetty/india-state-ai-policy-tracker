@@ -240,6 +240,12 @@ button { font: inherit; }
 .st-when { display: block; margin-top: 2px; font-size: 0.8rem; color: var(--ink-2); }
 .st-doc { font-size: 0.85rem; white-space: nowrap; }
 .st-new { font-weight: 700; color: var(--accent); }
+.st-legend { margin: 0 0 12px; font-size: 0.9rem; color: var(--ink-2); max-width: 80ch; }
+.st-legend summary { cursor: pointer; color: var(--accent); width: fit-content; min-height: 32px; display: flex; align-items: center; }
+.st-legend dl { margin: 6px 0; display: grid; gap: 8px; }
+.st-legend dt { font-weight: 600; color: var(--ink); }
+.st-legend dd { margin: 2px 0 0; }
+.st-legend p { margin: 4px 0 0; }
 .status-jump { display: flex; flex-direction: column; gap: 2px; font-size: 0.85rem; color: var(--ink-2); }
 .status-jump select {
   font: inherit; font-size: 0.95rem; color: var(--ink); background: var(--surface);
