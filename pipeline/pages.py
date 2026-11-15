@@ -126,7 +126,7 @@ def _status_rows(profile: dict, cite_href) -> str:
             word = CELL_WORDS[f][0 if cell["status"] == "done" else 1]
             cites = ", ".join(f'<a class="cite" href="{cite_href(c)}">{i + 1}</a>' for i, c in enumerate(cell["cites"]))
             link = cell.get("document") or cell.get("source")
-            value = (f'<span class="st st-{cell["status"]}">{word}</span> {e(cell["text"])}'
+            value = (f'<span class="st st-{cell["status"]} st-{f}">{word}</span> {e(cell["text"])}'
                      + (f' <span class="cites">[{cites}]</span>' if cites else "")
                      + (f' <a class="st-doc" href="{e(link)}" rel="noopener">'
                         f'{"Government document" if cell.get("document") else "Report"}</a>' if link else ""))

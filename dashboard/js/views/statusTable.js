@@ -81,7 +81,7 @@
       const link = c.document || c.source;
       const checked = link
         ? ` <a class="st-doc" href="${esc(link)}" target="_blank" rel="noopener">${c.document ? "Government document" : "Report"}<span class="visually-hidden"> (opens in a new tab)</span></a>` : "";
-      return `<td ${label}><span class="st st-${esc(c.status)}">${esc(words[c.status])}</span> ${esc(c.text)}${
+      return `<td ${label}><span class="st st-${esc(c.status)} st-${esc(field)}">${esc(words[c.status])}</span> ${esc(c.text)}${
         cites.length ? ` <span class="cites">[${cites.join(", ")}]</span>` : ""}${checked}${when}</td>`;
     }
 

@@ -33,6 +33,12 @@ class Pages(unittest.TestCase):
         self.assertIn('id="R1a2b3c4d"', html)
         self.assertIn("1 of them approved, signed, launched or in use", html)
 
+    def test_status_words_carry_their_marker_for_the_colour(self):
+        profile = {"ai_policy": {"status": "done", "text": "A", "cites": []}, "funding": {"status": "announced", "text": "B", "cites": []}}
+        html = pages._status_rows(profile, lambda c: f"#{c}")
+        self.assertIn('<span class="st st-done st-ai_policy">Adopted</span>', html)
+        self.assertIn('<span class="st st-announced st-funding">Announced</span>', html)
+
     def test_entries_have_a_thumbnail_over_the_state_tile(self):
         with_image = pages._record({**REC, "image_url": "https://example.com/a.jpg?w=1&h=2"})
         self.assertIn('<span class="thumb-code">TN</span><img src="https://example.com/a.jpg?w=1&amp;h=2"', with_image)
