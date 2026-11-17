@@ -63,7 +63,7 @@
  "Assam": {
   "ai_policy": {
    "status": "done",
-   "text": "Foundational artificial intelligence roadmap unveiled for inclusive growth and governance (2026)",
+   "text": "Foundational AI roadmap unveiled by Assam CM in 2026",
    "cites": [
     "R4203359c"
    ]
@@ -80,14 +80,14 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "Government-owned eight-node L40S GPU cluster commissioned at state data centre (2026)",
+   "text": "Government-owned GPU cluster commissioned at Assam state data centre in 2026",
    "cites": [
     "R936eb0aa"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "ae4122ad3994",
-  "generated_at": "2026-11-15T06:18+00:00"
+  "input_hash": "66e9ede93fbb",
+  "generated_at": "2026-11-17T08:13+00:00"
  },
  "Bihar": {
   "ai_policy": {
@@ -194,22 +194,23 @@
  "Gujarat": {
   "ai_policy": {
    "status": "done",
-   "text": "Action Plan for AI implementation approved by CM in 2025",
+   "text": "Action Plan for AI implementation approved by Chief Minister in 2025",
    "cites": [
     "Rf50fa7d9"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "AI Task Force formed in 2024 for governance and growth",
+   "text": "10-member AI Task Force formed under Science and Technology Department in 2024",
    "cites": [
     "Rfb71877d",
-    "R676ca8b3"
+    "R676ca8b3",
+    "Re88286cf"
    ]
   },
   "funding": {
    "status": "announced",
-   "text": "Rs 20 crore AI training mission proposed for 5 lakh students in 2026",
+   "text": "Proposed Rs 20 crore AI training mission for 5 lakh students",
    "cites": [
     "Ra6932da2"
    ]
@@ -224,8 +225,8 @@
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "9ba61f490135",
-  "generated_at": "2026-11-15T06:20+00:00"
+  "input_hash": "32a173dda520",
+  "generated_at": "2026-11-17T08:36+00:00"
  },
  "Haryana": {
   "ai_policy": {
@@ -278,21 +279,21 @@
   },
   "funding": {
    "status": "announced",
-   "text": "Rs 5 crore announced for BTech AI course at HPU (2026)",
+   "text": "Rs 5 crore for BTech AI course at HPU announced in 2026",
    "cites": [
     "R2a909d0d"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Vidhya Samiksha Kendra AI-driven data centre inaugurated (2023)",
+   "text": "Vidhya Samiksha Kendra AI-driven data centre inaugurated by CM in 2023",
    "cites": [
     "R39cd627c"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "f306cfedb35d",
-  "generated_at": "2026-11-15T06:21+00:00"
+  "input_hash": "883fd1c20529",
+  "generated_at": "2026-11-17T08:37+00:00"
  },
  "Jharkhand": {
   "ai_policy": {
