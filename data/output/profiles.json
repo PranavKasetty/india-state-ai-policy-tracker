@@ -2,11 +2,11 @@
  "Andhra Pradesh": {
   "ai_policy": {
    "status": "done",
-   "text": "Robotics and Physical AI Policy 2026-36 approved by cabinet",
+   "text": "Robotics and Physical AI Policy 2026-36 approved and released by Cabinet",
    "cites": [
     "Rf466bb64",
-    "R78ad8544",
-    "R03dd4f09"
+    "Re88f3385",
+    "R78ad8544"
    ]
   },
   "ai_body": {
@@ -16,22 +16,22 @@
   },
   "funding": {
    "status": "done",
-   "text": "Rs 99.19 crore sanctioned for Project Sarthi AI traffic system in Vizag",
+   "text": "Rs 99.19 crore sanctioned for Project Sarthi AI traffic system in Visakhapatnam",
    "cites": [
     "R4075dec7"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "600 acres allotted for Google AI data centres in Visakhapatnam",
+   "text": "600 acres approved in Visakhapatnam for Rs 90,000 crore Google AI data centres",
    "cites": [
     "R355de8d4",
     "R2926047f"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "ce152d1b40ca",
-  "generated_at": "2026-11-15T06:17+00:00"
+  "input_hash": "b1ebd43a8fde",
+  "generated_at": "2026-11-18T07:32+00:00"
  },
  "Arunachal Pradesh": {
   "ai_policy": {
@@ -92,23 +92,23 @@
  "Bihar": {
   "ai_policy": {
    "status": "done",
-   "text": "Bihar AI Mission approved by state cabinet in 2026",
+   "text": "Bihar AI Mission approved by cabinet and launched in 2026",
    "cites": [
-    "R6fdc0aaa",
-    "R68b64920",
-    "Rb70e845b"
+    "Rc9c3c4c4",
+    "Rb70e845b",
+    "R6fdc0aaa"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "AI committee established in state land department in 2026",
+   "text": "AI committee established in state land department (2026)",
    "cites": [
     "Rdc0edc3a"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 190.32 crore approved by cabinet for Bihar AI Mission in 2026",
+   "text": "Rs 190.32 crore approved by cabinet for Bihar AI Mission (2026)",
    "cites": [
     "R6fdc0aaa",
     "R68b64920"
@@ -116,7 +116,7 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "AI Centre of Excellence approved and established by state government in 2026",
+   "text": "Artificial Intelligence Center of Excellence established and cabinet-approved (2026)",
    "cites": [
     "R24091985",
     "R791202b9",
@@ -124,8 +124,8 @@
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "fbd728b6f717",
-  "generated_at": "2026-11-15T06:18+00:00"
+  "input_hash": "f8966a884899",
+  "generated_at": "2026-11-18T07:33+00:00"
  },
  "Chhattisgarh": {
   "ai_policy": {

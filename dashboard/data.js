@@ -2,9 +2,9 @@
 window.TRACKER_DATA = {
  "meta": {
   "is_mock": false,
-  "generated_at": "2026-11-17T08:44:37+00:00",
+  "generated_at": "2026-11-18T07:39:37+00:00",
   "period_start": "2022-12-01",
-  "period_end": "2026-11-17",
+  "period_end": "2026-11-18",
   "states": [
    {
     "name": "Andhra Pradesh",
@@ -1053,14 +1053,14 @@ window.TRACKER_DATA = {
     },
     "funding": {
      "status": "done",
-     "text": "Rs 99.19 crore sanctioned for Project Sarthi AI traffic system in Vizag",
+     "text": "Rs 99.19 crore sanctioned for Project Sarthi AI traffic system in Visakhapatnam",
      "cites": [
       "R4075dec7"
      ]
     },
     "infrastructure": {
      "status": "done",
-     "text": "600 acres allotted for Google AI data centres in Visakhapatnam",
+     "text": "600 acres approved in Visakhapatnam for Rs 90,000 crore Google AI data centres",
      "cites": [
       "R355de8d4",
       "R2926047f"
@@ -1131,14 +1131,14 @@ window.TRACKER_DATA = {
     },
     "ai_body": {
      "status": "done",
-     "text": "AI committee established in state land department in 2026",
+     "text": "AI committee established in state land department (2026)",
      "cites": [
       "Rdc0edc3a"
      ]
     },
     "funding": {
      "status": "done",
-     "text": "Rs 190.32 crore approved by cabinet for Bihar AI Mission in 2026",
+     "text": "Rs 190.32 crore approved by cabinet for Bihar AI Mission (2026)",
      "cites": [
       "R6fdc0aaa",
       "R68b64920"
@@ -1146,7 +1146,7 @@ window.TRACKER_DATA = {
     },
     "infrastructure": {
      "status": "done",
-     "text": "AI Centre of Excellence approved and established by state government in 2026",
+     "text": "Artificial Intelligence Center of Excellence established and cabinet-approved (2026)",
      "cites": [
       "R24091985",
       "R791202b9",
@@ -1876,6 +1876,254 @@ window.TRACKER_DATA = {
  },
  "items": [
   {
+   "id": "Re88f3385",
+   "date": "2026-11-18",
+   "date_precision": "day",
+   "state": "Andhra Pradesh",
+   "title": "AP takes aim at global race for chips, robots & AI",
+   "summary": "Releases 3 policies on Semiconductor, Robotics and Physical AI   Targets industries shaping the global economy, positioning AP to move beyond conventional manufacturing into semiconductors…",
+   "source": "The Hans India",
+   "url": "https://www.thehansindia.com/news/cities/amaravati/ap-takes-aim-at-global-race-for-chips-robots-ai-1143082",
+   "image": "https://assets.thehansindia.com/h-upload/2026/09/15/1702358-indias-semiconductor-sector-has-raised-a-total-of-14-billion.jpg",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy"
+   ],
+   "sector": "Industry & startups",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R29a365b6",
+   "date": "2026-11-18",
+   "date_precision": "day",
+   "state": "Himachal Pradesh",
+   "title": "Himachal varsity integrates AI into courses to prepare students for future",
+   "summary": "Taking progressive steps to make students technologically proficient and equip them for future opportunities, Himachal Pradesh University (HPU) has taken several significant initiatives this year to integrate Artificial Intelligence (AI) into its curriculum and day-to-day…",
+   "source": "The Tribune",
+   "url": "https://www.tribuneindia.com/news/himachal/himachal-varsity-integrates-ai-into-courses-to-prepare-students-for-future/",
+   "image": "https://www.tribuneindia.com/sortd-service/imaginary/v22-01/jpg/large/high?url=dGhldHJpYnVuZS1zb3J0ZC1wcm8tcHJvZC1zb3J0ZC9tZWRpYTY0ZTdlYTIwLWUyYmUtMTFmMS1hMTc4LTA3OWEzYTA3ZTExMS5qcGc=",
+   "category": "skilling",
+   "tags": [
+    "skilling"
+   ],
+   "sector": "Education",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "Rf6faa665",
+   "date": "2026-11-18",
+   "date_precision": "day",
+   "state": "Karnataka",
+   "title": "KEONICS plans wider deployment of AI-ready KEO devices across Karnataka schools, libraries",
+   "summary": "The organisation is also working to enhance the device's capabilities by modifying its language models.",
+   "source": "ET Government",
+   "url": "https://government.economictimes.indiatimes.com/news/education/keonics-plans-wider-deployment-of-ai-ready-keo-devices-across-karnataka-schools-libraries/135951893",
+   "image": "https://etimg.etb2bimg.com/thumb/msid-135951893,imgsize-109110,width-1200,height=627,overlay-etgovernment,resizemode-75/news/education/keonics-plans-wider-deployment-of-ai-ready-keo-devices-across-karnataka-schools-libraries.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Education",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "Rec04642c",
+   "date": "2026-11-18",
+   "date_precision": "day",
+   "state": "Karnataka",
+   "title": "AI in Urban Governance: Karnataka’s Digital Roadmap",
+   "summary": "Rajesh Gowda, MD of KRIDL, outlines how AI in urban governance, 360-degree IT integration, and unified data can transform citizen services in Karnataka.",
+   "source": "Elets Technomedia",
+   "url": "https://smartcity.eletsonline.com/ai-data-digital-technologies-urban-governance/",
+   "image": "https://smartcity.eletsonline.com/wp-content/uploads/2026/11/KARNTAKA-URBAN-SEPTEMBER-2026-SOCIAL-CREATIVES3.jpg",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy"
+   ],
+   "sector": "Urban & transport",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "Rce761c70",
+   "date": "2026-11-18",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "The Economic Times Vision Conclave | Making AI Work for Uttar Pradesh",
+   "summary": "At The Economic Times Vision Conclave, Aman Mehra, Head – Strategy and Transformation at Sify Technologies Limited, participated in the session titled **“..",
+   "source": "ET Government",
+   "url": "https://government.economictimes.indiatimes.com/amp/videos/the-economic-times-vision-conclave-making-ai-work-for-uttar-pradesh/135918904",
+   "image": "https://etimg.etb2bimg.com/thumb/135918904.cms?width=1600&height=900",
+   "category": "events_outreach",
+   "tags": [
+    "events_outreach",
+    "strategy_policy"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "Rdfc6c9ed",
+   "date": "2026-11-18",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "Varanasi police used AI to reunite a missing woman with her family",
+   "summary": "चौक पुलिस ने AI तकनीक का उपयोग कर आंध्र प्रदेश से काशी आई एक गुमशुदा महिला को उसके परिजनों से मिलाया।…",
+   "source": "Jagran",
+   "url": "https://www.jagran.com/uttar-pradesh/varanasi-city-varanasi-police-use-ai-to-reunite-lost-andhra-woman-to-her-relatives-and-friends-40440194.html?utm_source=homepage&utm_medium=uttar-pradesh&utm_campaign=hyperlocal",
+   "image": "https://www.jagranimages.com/images/2026/11/18/template/image/varanasi-police-women-(1)-1794974382512_v.webp",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Policing & safety",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "तेलुगु नहीं समझ आई तो AI की ली मदद, वाराणसी पुलिस ने आंध्र प्रदेश की गुमशुदा महिला को परिजनों से मिलाया"
+  },
+  {
+   "id": "Rd93f80c3",
+   "date": "2026-11-18",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "AI-based 3-Tesla MRI machine to be installed at Lohia Institute in Lucknow",
+   "summary": "लखनऊ के लोहिया संस्थान में दिसंबर से 30 करोड़ रुपये की लागत से अत्याधुनिक AI आधारित थ्री टेस्ला एमआरआई मशीन लगेगी। इससे जांच का समय 40-50 कम होगा और मरीजों की लंबी प्रतीक्षा सूची समाप्त होगी, जिससे गंभीर रोगियों को तत्काल निदान मिल सकेगा।…",
+   "source": "Jagran",
+   "url": "https://www.jagran.com/uttar-pradesh/lucknow-city-lucknow-lohia-institute-gets-ai-3tesla-mri-reduces-wait-40440094.html?utm_source=homepage&utm_medium=uttar-pradesh&utm_campaign=hyperlocal",
+   "image": "https://www.jagranimages.com/images/2026/11/18/article/image/15_06_2025-bhagalpur_news_32_23964721-1794959851362_v.webp",
+   "category": "deployment",
+   "tags": [
+    "deployment",
+    "infrastructure"
+   ],
+   "sector": "Health",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "लखनऊ के लोहिया संस्थान में लगेगी AI आधारित 3-टेस्ला MRI मशीन, वेटिंग लिस्ट होगी कम"
+  },
+  {
+   "id": "R181506a6",
+   "date": "2026-11-18",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "Teachers to become proficient in AI from home: Pilot project starts in UP and six states",
+   "summary": "अब घर बैठे शिक्षक भी एआई में होंगे दक्ष: यूपी समेत छह राज्यों में पायलट प्रोजेक्ट शुरू, मिलेगा सर्टिफिकेट ai-literacy-for-teachers-pilot-project-six-states-10-lakh-teachers-training…",
+   "source": "Amar Ujala",
+   "url": "https://www.amarujala.com/amp/india-news/ai-literacy-for-teachers-pilot-project-six-states-10-lakh-teachers-training-2026-11-18",
+   "image": "https://staticimg.amarujala.com/assets/images/2026/11/18/ai_4775ebf226b784025beb7699db9026e6.jpeg?w=1200&dpr=1.0",
+   "category": "skilling",
+   "tags": [
+    "skilling",
+    "deployment"
+   ],
+   "sector": "Education",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "अब घर बैठे शिक्षक भी एआई में होंगे दक्ष: यूपी समेत छह राज्यों में पायलट प्रोजेक्ट शुरू, मिलेगा सर्टिफिकेट"
+  },
+  {
+   "id": "Rc9ad64e3",
+   "date": "2026-11-18",
+   "date_precision": "day",
+   "state": "Bihar",
+   "title": "Samrat Cabinet meeting today: 190 crore approved for AI project",
+   "summary": "बिहार और झारखंड में 18 जिलों के 50 से अधिक प्रमुख मार्गों पर AI-युक्त टोल प्लाजा खुलेंगे.",
+   "source": "Prabhat Khabar",
+   "url": "https://www.prabhatkhabar.com/state/bihar/jharkhand-bihar-toll-plaza-ai-powered-in-18-districts-start-soon",
+   "image": "https://wpmedia.prabhatkhabar.com/uploads/2026/11/18/1794984579779/sizes/ai-toll-plaza-7b3439-hero.webp",
+   "category": "funding_budget",
+   "tags": [
+    "funding_budget",
+    "strategy_policy"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "बिहार-झारखंड में AI टोल प्लाजा: इन्हें मिलेगी टैक्स में छूट"
+  },
+  {
+   "id": "R09640f9f",
+   "date": "2026-11-18",
+   "date_precision": "day",
+   "state": "Bihar",
+   "title": "AI-equipped toll plazas to be built in 18 districts of Bihar, roadmap ready",
+   "summary": "Samrat Chaudhary Bihar Cabinet meeting today latest updates AI project approval and policy decisions.",
+   "source": "Dainik Bhaskar",
+   "url": "https://www.bhaskar.com/g/local/bihar/patna/news/samrat-chaudhary-cabinet-meeting-patna-bihar-agenda-ai-project-139722512.html",
+   "image": "https://images.bhaskarassets.com/thumb/730x0/web2images/521/2026/11/18/1000657548_1794972576.gif",
+   "category": "deployment",
+   "tags": [
+    "deployment",
+    "infrastructure"
+   ],
+   "sector": "Urban & transport",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "सम्राट कैबिनेट की बैठक आज 12:30 बजे: पिछली बैठक में 32 एजेंडों को मिली थी मंजूरी, AI परियोजना के लिए 190 कर..."
+  },
+  {
+   "id": "Reb8317eb",
+   "date": "2026-11-18",
+   "date_precision": "day",
+   "state": "Bihar",
+   "title": "Big change in Bihar universities: AI experts to design syllabus, committee to be formed",
+   "summary": "यात्रियों को टोल बूथ पर लगने वाले लंबे जाम से निजात दिलाने के लिए इन सभी नए टोल प्लाजा को आर्टिफिशियल इंटेलिजेंस आधारित कैमरों और ऑटोमैटिक नंबर प्लेट रिकग्निशन तकनीक से लैस किया जाएगा।, Bihar Hindi News - Hindustan…",
+   "source": "Hindustan",
+   "url": "https://www.livehindustan.com/bihar/eighteen-new-toll-plaza-in-bihar-jharkhand-connected-with-ai-bhagalpur-purnia-will-start-soon-201794978090168.html",
+   "image": "https://www.livehindustan.com/lh-img/smart/img/smart/2026/11/18/1600x900/logo/Toll_Plaza_1745848178623_1794979412582_pqGD_90dfa23a-440d-4dfb-8a95-c62ff239134a_LyqQ.jpg",
+   "category": "governance_body",
+   "tags": [
+    "governance_body",
+    "skilling"
+   ],
+   "sector": "Education",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "बिहार-झारखंड के 18 जिलों में बनेंगे एआई से लैस टोल प्लाजा, भागलपुर-पूर्णिया में जल्द होगा शुरू; रोडमैप तैयार"
+  },
+  {
+   "id": "R363c2e9c",
+   "date": "2026-11-18",
+   "date_precision": "day",
+   "state": "Bihar",
+   "title": "Good news for Bihar farmers: Subsidy on agricultural equipment, ID and chatbot facility",
+   "summary": "Good news for Bihar farmers: Subsidy on agricultural equipment, ID and chatbot facility",
+   "source": "News18 Hindi",
+   "url": "https://hindi.news18.com/news/career/education-bihar-state-universities-mandate-course-committees-for-vocational-courses-with-ai-experts-industry-specialists-10994970.html",
+   "image": "",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Agriculture",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "बिहार की यूनिवर्सिटीज में बड़ा चेंज, अब AI एक्सपर्ट्स बनाएंगे सिलेबस, बनेगी कमेटी"
+  },
+  {
    "id": "R0517c46b",
    "date": "2026-11-17",
    "date_precision": "day",
@@ -1898,69 +2146,6 @@ window.TRACKER_DATA = {
    ]
   },
   {
-   "id": "Ra6706f9b",
-   "date": "2026-11-17",
-   "date_precision": "day",
-   "state": "Karnataka",
-   "title": "Bengaluru Tech Summit inaugurated; Karnataka aims to emerge as global hub for AI, deep tech, semiconductors: CM Shivakumar",
-   "summary": "Bengaluru Tech Summit inaugurated; Karnataka aims to emerge as global hub for AI, deep tech, semiconductors: CM Shivakumar",
-   "source": "www.thehawk.in",
-   "url": "https://www.thehawk.in/news/states-and-uts/karnataka/bengaluru-tech-summit-inaugurated-karnataka-aims-to-emerge-as-global-hub-for-ai-deep-tech-semiconductors-cm-shivakumar",
-   "image": "",
-   "category": "events_outreach",
-   "tags": [
-    "events_outreach",
-    "strategy_policy"
-   ],
-   "sector": "Industry & startups",
-   "stage": "announced",
-   "n_sources": 5,
-   "also_reported_by": [
-    "The Bengaluru Live",
-    "GK Today",
-    "The Tribune",
-    "Economic Times"
-   ]
-  },
-  {
-   "id": "R75ad17a9",
-   "date": "2026-11-17",
-   "date_precision": "day",
-   "state": "Karnataka",
-   "title": "Karnataka charts next tech leap to push AI, deep-tech",
-   "summary": "Karnataka unveils bold AI, deep-tech expansion at Bengaluru Tech Summit 2026, detailing funding, reskilling, and manufacturing-led path to global innovation leadership.",
-   "source": "The Hindu",
-   "url": "https://www.thehindu.com/news/cities/bangalore/karnataka-charts-next-tech-leap-to-push-ai-deep-tech-cm/article71710810.ece",
-   "image": "https://th-i.thgim.com/public/incoming/x4yw4r/article71710845.ece/alternates/LANDSCAPE_1200/PTI11_17_2026_000046B.jpg",
-   "category": "strategy_policy",
-   "tags": [
-    "strategy_policy"
-   ],
-   "sector": "Industry & startups",
-   "stage": "decided",
-   "n_sources": 1,
-   "also_reported_by": []
-  },
-  {
-   "id": "R3120f10a",
-   "date": "2026-11-17",
-   "date_precision": "day",
-   "state": "Karnataka",
-   "title": "Bengaluru Tech Summit: Karnataka unveils 6 deeptech, AI and semiconductor initiatives",
-   "summary": "The state government also announces an AI skilling programmes targeting 63,200 students and engineers through industry partnerships…",
-   "source": "Moneycontrol.com",
-   "url": "https://www.moneycontrol.com/news/business/startup/bengaluru-tech-summit-karnataka-unveils-6-deeptech-ai-and-semiconductor-initiatives-14082193.html",
-   "image": "https://images.moneycontrol.com/static-mcnews/2026/11/20261117070359_pic.jpg",
-   "category": "strategy_policy",
-   "tags": [
-    "strategy_policy"
-   ],
-   "sector": "Industry & startups",
-   "stage": "announced",
-   "n_sources": 1,
-   "also_reported_by": []
-  },
-  {
    "id": "R3c1e6036",
    "date": "2026-11-17",
    "date_precision": "day",
@@ -1976,8 +2161,11 @@ window.TRACKER_DATA = {
    ],
    "sector": "Industry & startups",
    "stage": "underway",
-   "n_sources": 1,
-   "also_reported_by": []
+   "n_sources": 3,
+   "also_reported_by": [
+    "Deccan Chronicle",
+    "NewsBytes"
+   ]
   },
   {
    "id": "Rb2656a63",
@@ -2033,6 +2221,122 @@ window.TRACKER_DATA = {
    ],
    "sector": "Education",
    "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "Rb73e6538",
+   "date": "2026-11-17",
+   "date_precision": "day",
+   "state": "Tamil Nadu",
+   "title": "Madras HC Directs Tamil Nadu DGP to Submit District-Wise Missing Persons Data, Seeks Details on AI Tools",
+   "summary": "Madras High Court directs Tamil Nadu DGP to submit missing persons data and details of AI tools used by police in search operations.",
+   "source": "Indian Masterminds",
+   "url": "https://indianmasterminds.com/news/madras-hc-tamil-nadu-missing-persons-data-ai-tools-251064/",
+   "image": "https://indianmasterminds.com/wp-content/uploads/2025/08/madras-high-court-01.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Policing & safety",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R7ffe8102",
+   "date": "2026-11-17",
+   "date_precision": "day",
+   "state": "Karnataka",
+   "title": "In Karnataka, Krishi Robot gives farmers soil analysis and crop advisory with just a click",
+   "summary": "Krishi Robot in Karnataka offers soil analysis and crop advisory via LRI cards, with Kannada voice guidance, boosting farmer access without smartphones.",
+   "source": "The Hindu",
+   "url": "https://www.thehindu.com/news/national/karnataka/in-karnataka-krishi-robot-gives-farmers-soil-analysis-and-crop-advisory-with-just-a-click/article71712012.ece",
+   "image": "https://th-i.thgim.com/public/incoming/fkws0a/article71712593.ece/alternates/LANDSCAPE_1200/1000917514%201.JPG",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Agriculture",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R237ed400",
+   "date": "2026-11-17",
+   "date_precision": "day",
+   "state": "Karnataka",
+   "title": "Karnataka Government pivots economic strategy from software services to AI and semiconductors",
+   "summary": "Karnataka is transitioning its economic strategy toward AI, semiconductors, and deep tech, investing over ₹23,000 crore in chip manufacturing and research to move…",
+   "source": "PravdaReport",
+   "url": "https://english.pravda.ru/news/world/173197-karnataka-ai-semiconductor-manufacturing-pivot/",
+   "image": "https://english.pravda.ru/image/preview/article/1/9/7/173197_amp.jpeg",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy"
+   ],
+   "sector": "Industry & startups",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R0a32d0f0",
+   "date": "2026-11-17",
+   "date_precision": "day",
+   "state": "Karnataka",
+   "title": "The best of AI is yet to come, say experts at Bengaluru Tech Summit",
+   "summary": "During a panel discussion, Karnataka Home and IT Minister Priyank Kharge, Infosys Co-founder S Gopalakrishnan, Biocon Group Chairperson Kiran Mazumdar Shaw, and Accel India Founding Partner Prashanth Prakash stressed the potential of AI to create solutions with population-scale…",
+   "source": "YourStory.com",
+   "url": "https://yourstory.com/2026/11/the-best-of-ai-is-yet-to-come-say-experts-at-bengaluru-tech-summit",
+   "image": "https://images.yourstory.com/cs/2/220356402d6d11e9aa979329348d4c3e/BTS-photo-1794922396761.png",
+   "category": "events_outreach",
+   "tags": [
+    "events_outreach"
+   ],
+   "sector": "Industry & startups",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R020af986",
+   "date": "2026-11-17",
+   "date_precision": "day",
+   "state": "Karnataka",
+   "title": "India just unveiled its AI blueprint at the Bengaluru Tech Summit 2026 🤖",
+   "summary": "The 29th Bengaluru Tech Summit opened Nov.",
+   "source": "Tech Times",
+   "url": "https://www.techtimes.com/articles/330928/20261117/1000-startups-60000-visitors-indias-first-ai-university-horizon-bengaluru-tech-summit-2026.htm",
+   "image": "https://d.techtimes.com/en/full/478525/bengaluru-tech-summit.png",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy",
+    "events_outreach"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R176bb5b1",
+   "date": "2026-11-17",
+   "date_precision": "day",
+   "state": "Karnataka",
+   "title": "Bengaluru Tech Summit: AI can improve government services and cybersecurity",
+   "summary": "Bengaluru Tech Summit: AI can improve government services and cybersecurity",
+   "source": "NewsBytes",
+   "url": "https://www.newsbytesapp.com/news/science/bengaluru-tech-summit-ai-can-improve-government-services-and-cybersecurity/tldr",
+   "image": "",
+   "category": "events_outreach",
+   "tags": [
+    "events_outreach",
+    "deployment"
+   ],
+   "sector": "Policing & safety",
+   "stage": "underway",
    "n_sources": 1,
    "also_reported_by": []
   },
@@ -2099,6 +2403,51 @@ window.TRACKER_DATA = {
    "also_reported_by": [],
    "lang": "hi",
    "title_original": "Hamirpur (Himachal) News: रोबोट बनाएंगे स्कूली बच्चे, शिक्षक सीख रहे तकनीक"
+  },
+  {
+   "id": "Rc02f620b",
+   "date": "2026-11-17",
+   "date_precision": "day",
+   "state": "Bihar",
+   "title": "Where are five new sugar mills going to start in Bihar? Answers to every question from 'Ganna Sathi AI Chatbot'",
+   "summary": "बेंगलुरु टेक समिट-2026 में बिहार के स्टार्टअप और प्रौद्योगिकी इको-सिस्टम की क्षमता का प्रदर्शन किया जा रहा है। उद्योग विभाग की पहल 'स्टार्टअप बिहार' के तहत छह स्टार्टअप रोबोटिक्स, AI, ड्रोन और अन्य नवाचारों को प्रस्तुत कर रहे हैं।…",
+   "source": "Jagran",
+   "url": "https://www.jagran.com/bihar/patna-city-bihar-startups-shine-at-bengaluru-tech-summit-2026-40439684.html",
+   "image": "https://www.jagranimages.com/images/2026/11/17/template/image/Bengluru-Tech-summit-1794922613472_v.webp",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Agriculture",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "बेंगलुरू टेक समिट में बिहार की धमक, रोबोट से लेकर AI इंजन और ड्रोन तक; 6 स्टार्टअप्स ने खींचा ध्यान"
+  },
+  {
+   "id": "R4fc32c5a",
+   "date": "2026-11-17",
+   "date_precision": "day",
+   "state": "Bihar",
+   "title": "Bihar: Six startups of Bihar showing strength at Bengaluru Tech Summit, innovation from AI to drone technology",
+   "summary": "बिहार के मुख्यमंत्री सम्राट चौधरी ने कहा कि राज्य में फिलहाल 10 चीनी मिलें काम कर रही हैं और पांच और मिलें जल्द शुरू की जाएंगी। उन्होंने कहा कि नई चीनी मिलों की स्थापना और बंद पड़ी पुरानी मिलों के पुनरुद्धार के माध्यम से राज्य में चीनी उद्योग को मजबूत बनाया जाएगा। बिहार सरकार की…",
+   "source": "Navbharat Times",
+   "url": "https://navbharattimes.indiatimes.com/state/bihar/patna/bihar-new-sugar-mills-sugarcane-development-chariot-2026-ganna-sathi-ai-chatbot/articleshow/135929460.cms",
+   "image": "https://static.langimg.com/nbt/thumb/135929627/sugarcane-development-chariot-2026.jpg?imgsize=867837&width=1600&height=900&resizemode=75",
+   "category": "events_outreach",
+   "tags": [
+    "events_outreach"
+   ],
+   "sector": "Industry & startups",
+   "stage": "announced",
+   "n_sources": 3,
+   "also_reported_by": [
+    "Amar Ujala",
+    "Oneindia Hindi"
+   ],
+   "lang": "hi",
+   "title_original": "बिहार में कहां शुरू होने वाली है पांच नई चीनी मिलें? 'गन्ना साथी AI चैटबॉट' से हर सवाल का जवाब"
   },
   {
    "id": "Rc078b93c",
@@ -2366,8 +2715,10 @@ window.TRACKER_DATA = {
    ],
    "sector": "Policing & safety",
    "stage": "underway",
-   "n_sources": 1,
-   "also_reported_by": [],
+   "n_sources": 2,
+   "also_reported_by": [
+    "AajTak"
+   ],
    "lang": "hi",
    "title_original": "पुष्कर मेले में बॉडी लैंग्वेज पढ़कर संदिग्धों को पकड़ेगी पुलिस: AI कैमरों से रखेंगे नजर, QR कोड स्कैन करते ही..."
   },
@@ -2392,6 +2743,27 @@ window.TRACKER_DATA = {
    "also_reported_by": [],
    "lang": "hi",
    "title_original": "छत्तीसगढ़ के सरकारी कर्मचारियों को मिलेगी AI और साइबर सुरक्षा की ट्रेनिंग, CM साय ने शुरू किया केंद्र"
+  },
+  {
+   "id": "R7ad08af6",
+   "date": "2026-11-16",
+   "date_precision": "day",
+   "state": "Maharashtra",
+   "title": "Indian Armed Forces: Who will dominate in war, man or AI? Important seminar held in Pune's MILIT",
+   "summary": "संरक्षण क्षेत्रातील तांत्रिक स्वावलंबनासाठी स्वदेशी एआय तंत्रज्ञान विकसित करण्याची गरजही व्यक्त करण्यात आली.",
+   "source": "navarashtra",
+   "url": "https://www.navarashtra.com/maharashtra/pune/indian-armed-forces-discussion-on-ai-vs-ai-conflict-held-at-military-institute-of-technology-deffence-pune-tb-1382561.html",
+   "image": "https://d2lkn59rua3ry2.cloudfront.net/wp-content/uploads/2026/11/New-Project-2026-11-16T175758.991.jpg",
+   "category": "events_outreach",
+   "tags": [
+    "events_outreach"
+   ],
+   "sector": "Policing & safety",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "mr",
+   "title_original": "Indian Armed Forces: युद्धात कोण ठरणार वरचढ, माणूस की AI? पुण्यातील 'मिलिट'मध्ये रंगले महत्त्वाचे चर्चासत्र"
   },
   {
    "id": "Ra62f32cd",
@@ -2498,6 +2870,26 @@ window.TRACKER_DATA = {
    ]
   },
   {
+   "id": "Rd06dc5f6",
+   "date": "2026-11-15",
+   "date_precision": "day",
+   "state": "Karnataka",
+   "title": "IIIT-Bangalore to showcase AI research, digital public infrastructure and deep-tech innovations at Bengaluru Tech Summit 2026",
+   "summary": "The institute will present projects spanning AI skilling, healthcare, smart manufacturing, telecommunications and digital public infrastructure, including initiatives supporting more than 45 countries.",
+   "source": "ET Education",
+   "url": "http://education.economictimes.indiatimes.com/news/industry/iiit-bangalore-to-showcase-ai-research-digital-public-infrastructure-and-deep-tech-innovations-at-bengaluru-tech-summit-2026/135850790",
+   "image": "https://etimg.etb2bimg.com/thumb/msid-135850790,imgsize-217806,width-1200,height=627,overlay-eteducation,resizemode-75/news/industry/iiit-bangalore-to-showcase-ai-research-digital-public-infrastructure-and-deep-tech-innovations-at-bengaluru-tech-summit-2026.jpg",
+   "category": "infrastructure",
+   "tags": [
+    "infrastructure",
+    "events_outreach"
+   ],
+   "sector": "Education",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
    "id": "Re0716a9f",
    "date": "2026-11-15",
    "date_precision": "day",
@@ -2534,12 +2926,13 @@ window.TRACKER_DATA = {
    ],
    "sector": "Education",
    "stage": "decided",
-   "n_sources": 5,
+   "n_sources": 6,
    "also_reported_by": [
     "Hindi Khabar",
     "Jagran",
     "Head Topics",
-    "Amar Ujala"
+    "Amar Ujala",
+    "Edristi"
    ],
    "lang": "hi",
    "title_original": "यूपी के सरकारी स्कूलों में डिजिटल शिक्षा को मिलेगी नई उड़ान, शिक्षकों को AI की मिलेगी ट्रेनिंग"
@@ -2951,12 +3344,22 @@ window.TRACKER_DATA = {
    ],
    "sector": "Industry & startups",
    "stage": "announced",
-   "n_sources": 5,
+   "n_sources": 15,
    "also_reported_by": [
     "Hub News",
     "The Times of India",
     "Shillong Today",
-    "Syllad"
+    "Syllad",
+    "The Meghalayan Express",
+    "Northeast Live",
+    "Rediff",
+    "India Today NE",
+    "ET Government",
+    "Northeast News",
+    "The Hawk",
+    "Highland Post",
+    "The Sentinel - of this Land, for its People",
+    "Press Trust of India"
    ]
   },
   {
@@ -3503,7 +3906,7 @@ window.TRACKER_DATA = {
    ],
    "sector": "Education",
    "stage": "underway",
-   "n_sources": 18,
+   "n_sources": 19,
    "also_reported_by": [
     "ET Government",
     "Chief Minister of Odisha",
@@ -3521,7 +3924,8 @@ window.TRACKER_DATA = {
     "The Daily Jagran",
     "ET Education",
     "Dainik Jagran MP CG",
-    "College Mentor"
+    "College Mentor",
+    "PW"
    ]
   },
   {
@@ -27080,13 +27484,47 @@ window.TRACKER_DATA = {
    ],
    "sector": "Cross-cutting",
    "stage": "underway",
-   "n_sources": 6,
+   "n_sources": 40,
    "also_reported_by": [
     "Deccan Herald",
     "CXOToday.com",
     "GK Today",
     "The News Minute",
-    "ET Enterprise AI"
+    "Fortune India",
+    "thepublicworld.com",
+    "Urban Acres",
+    "ET Enterprise AI",
+    "The Hindu",
+    "www.thehawk.in",
+    "EdexLive",
+    "Economic Times",
+    "Moneycontrol.com",
+    "APAC Media",
+    "BW Businessworld",
+    "CNBC TV18",
+    "Deccan Chronicle",
+    "Hindusthan Samachar English",
+    "Country and Politics",
+    "ETV Bharat",
+    "The Bengaluru Live",
+    "Analytics India Magazine",
+    "Bisinfotech",
+    "Business Standard",
+    "Vartha Bharati",
+    "The Tribune",
+    "Devdiscourse",
+    "Mangalore Today",
+    "DQ",
+    "NewsBytes",
+    "The Indian Express",
+    "Careers360",
+    "Business Upturn",
+    "coastaldigest.com",
+    "ET Government",
+    "The New Indian Express",
+    "Hindustan Times",
+    "Inshorts",
+    "BW People"
    ]
   },
   {
@@ -52429,7 +52867,7 @@ window.TRACKER_DATA = {
    ],
    "sector": "Industry & startups",
    "stage": "decided",
-   "n_sources": 13,
+   "n_sources": 14,
    "also_reported_by": [
     "PR Newswire Canada",
     "CNBC TV18",
@@ -52438,6 +52876,7 @@ window.TRACKER_DATA = {
     "Amar Ujala",
     "Livemint",
     "BusinessLine",
+    "Machine Maker",
     "ET Enterprise AI",
     "Hindustan",
     "ABP News",
@@ -53693,6 +54132,25 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
+   "id": "R902e7421",
+   "date": "2026-01-07",
+   "date_precision": "day",
+   "state": "Karnataka",
+   "title": "AI-based cameras to monitor packing of products at Karnataka Milk Federation",
+   "summary": "Karnataka Milk Federation plans AI-based cameras to monitor milk and product packing, improve transparency, reduce errors, and automate crate counting at key centres.",
+   "source": "Deccan Herald",
+   "url": "https://www.deccanherald.com/india/karnataka/ai-based-cameras-to-monitor-packing-of-products-at-karnataka-milk-federation-3853656",
+   "image": "https://media.assettype.com/deccanherald%2F2024-06%2F445f9fe4-33ee-4616-a1db-0e43989d3c99%2Ffile7t96j22pbuo119zd94cc.jpg?rect=0%2C9%2C1200%2C630&w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Agriculture",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
    "id": "R2eba79b5",
    "date": "2026-01-07",
    "date_precision": "day",
@@ -54078,10 +54536,8 @@ window.TRACKER_DATA = {
    ],
    "sector": "Agriculture",
    "stage": "announced",
-   "n_sources": 2,
-   "also_reported_by": [
-    "Deccan Herald"
-   ]
+   "n_sources": 1,
+   "also_reported_by": []
   },
   {
    "id": "R3d37595f",
@@ -67066,8 +67522,10 @@ window.TRACKER_DATA = {
    ],
    "sector": "Cross-cutting",
    "stage": "underway",
-   "n_sources": 1,
-   "also_reported_by": []
+   "n_sources": 2,
+   "also_reported_by": [
+    "PIB"
+   ]
   },
   {
    "id": "R475988af",
@@ -70358,9 +70816,10 @@ window.TRACKER_DATA = {
    ],
    "sector": "Revenue & citizen services",
    "stage": "underway",
-   "n_sources": 2,
+   "n_sources": 3,
    "also_reported_by": [
-    "The Assam Tribune"
+    "The Assam Tribune",
+    "SAG Infotech Official Tax Blog"
    ]
   },
   {
@@ -74712,6 +75171,25 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
+   "id": "R51b24250",
+   "date": "2024-09-06",
+   "date_precision": "day",
+   "state": "Telangana",
+   "title": "Global AI Summit 2024: Telangana CM Revanth Reddy assures govt support for AI promotion",
+   "summary": "Global AI Summit 2024: Telangana CM Revanth Reddy assures govt support for AI promotion",
+   "source": "ET Government",
+   "url": "http://government.economictimes.indiatimes.com/news/policy/global-ai-summit-2024-telangana-cm-revanth-reddy-assures-govt-support-for-ai-promotion/113094189",
+   "image": "",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
    "id": "Re4acc6ec",
    "date": "2024-09-06",
    "date_precision": "day",
@@ -74962,11 +75440,10 @@ window.TRACKER_DATA = {
    ],
    "sector": "Cross-cutting",
    "stage": "announced",
-   "n_sources": 5,
+   "n_sources": 4,
    "also_reported_by": [
     "Prokerala",
     "The South First",
-    "ET Government",
     "Economic Times"
    ]
   },
