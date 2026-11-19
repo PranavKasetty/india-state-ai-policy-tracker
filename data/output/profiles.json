@@ -2,7 +2,7 @@
  "Andhra Pradesh": {
   "ai_policy": {
    "status": "done",
-   "text": "Robotics and Physical AI Policy 2026-36 approved and released by Cabinet",
+   "text": "Robotics and Physical AI Policy 2026-36 cleared by cabinet and released",
    "cites": [
     "Rf466bb64",
     "Re88f3385",
@@ -16,22 +16,23 @@
   },
   "funding": {
    "status": "done",
-   "text": "Rs 99.19 crore sanctioned for Project Sarthi AI traffic system in Visakhapatnam",
+   "text": "Rs 99.19 crore sanctioned for Project Sarthi AI traffic system in Vizag",
    "cites": [
     "R4075dec7"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "600 acres approved in Visakhapatnam for Rs 90,000 crore Google AI data centres",
+   "text": "600 acres approved for Google's Rs 90,000 crore AI data centres in Vizag",
    "cites": [
     "R355de8d4",
-    "R2926047f"
+    "R53aec446",
+    "Rbfe108aa"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "b1ebd43a8fde",
-  "generated_at": "2026-11-18T07:32+00:00"
+  "input_hash": "5168c93f7eea",
+  "generated_at": "2026-11-19T07:28+00:00"
  },
  "Arunachal Pradesh": {
   "ai_policy": {
@@ -94,43 +95,44 @@
    "status": "done",
    "text": "Bihar AI Mission approved by cabinet and launched in 2026",
    "cites": [
-    "Rc9c3c4c4",
+    "R6fdc0aaa",
     "Rb70e845b",
-    "R6fdc0aaa"
+    "Rc9c3c4c4"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "AI committee established in state land department (2026)",
+   "text": "AI committee brought to state land department in 2026",
    "cites": [
     "Rdc0edc3a"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 190.32 crore approved by cabinet for Bihar AI Mission (2026)",
+   "text": "Rs 190.32 crore approved by cabinet for Bihar AI Mission in 2026",
    "cites": [
     "R6fdc0aaa",
-    "R68b64920"
+    "R68b64920",
+    "Rc9ad64e3"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Artificial Intelligence Center of Excellence established and cabinet-approved (2026)",
+   "text": "AI Center of Excellence approved and established in 2026",
    "cites": [
     "R24091985",
-    "R791202b9",
-    "R7b37b9dd"
+    "R7b37b9dd",
+    "R791202b9"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "f8966a884899",
-  "generated_at": "2026-11-18T07:33+00:00"
+  "input_hash": "51aff1746727",
+  "generated_at": "2026-11-19T07:29+00:00"
  },
  "Chhattisgarh": {
   "ai_policy": {
    "status": "done",
-   "text": "Chhattisgarh AI Mission approved with Rs 500 crore over five years",
+   "text": "Chhattisgarh AI Mission approved in 2026 with Rs 500 crore outlay",
    "cites": [
     "R7cc53f61",
     "R63bfb6f9",
@@ -148,12 +150,12 @@
    "cites": [
     "R7cc53f61",
     "R63bfb6f9",
-    "Rf9db4cfb"
+    "R6ae1aafc"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Rs 1,000 crore Nava Raipur AI Data Center Park unveiled, foundation laid",
+   "text": "Rs 1,000 crore AI Data Center Park unveiled in Nava Raipur",
    "cites": [
     "Rcc6c8e84",
     "Recb4eed4",
@@ -161,8 +163,8 @@
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "4a69918ede68",
-  "generated_at": "2026-11-15T06:19+00:00"
+  "input_hash": "20ad3534a317",
+  "generated_at": "2026-11-19T07:29+00:00"
  },
  "Goa": {
   "ai_policy": {
@@ -340,7 +342,7 @@
   },
   "ai_body": {
    "status": "done",
-   "text": "AI Committee for ethical use of AI in governance formed in 2026",
+   "text": "AI Committee for Ethical Use of AI in Governance formed in 2026",
    "cites": [
     "R9b3c768e"
    ]
@@ -349,20 +351,21 @@
    "status": "done",
    "text": "Rs 35 crore approved for AI Hub at IIIT Bangalore in 2026",
    "cites": [
-    "R567ab120"
+    "R567ab120",
+    "R4e70432e"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Rs 35 crore AI Hub at IIIT Bangalore approved by Cabinet in 2026",
+   "text": "Rs 35 crore AI Hub at IIIT Bangalore approved by cabinet in 2026",
    "cites": [
     "R567ab120",
     "R4e70432e"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "93207e11a69f",
-  "generated_at": "2026-11-15T06:22+00:00"
+  "input_hash": "89f4cd74ca86",
+  "generated_at": "2026-11-19T07:30+00:00"
  },
  "Kerala": {
   "ai_policy": {
@@ -405,10 +408,11 @@
  "Madhya Pradesh": {
   "ai_policy": {
    "status": "done",
-   "text": "Madhya Pradesh State AI Mission launched in 2026",
+   "text": "State AI Mission launched in 2026 focusing on predictive governance",
    "cites": [
     "R1f2ae7f3",
-    "Rd4a8d7a0"
+    "Rd4a8d7a0",
+    "R36eaafc7"
    ]
   },
   "ai_body": {
@@ -423,7 +427,7 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "AI labs started in government schools in Damoh and Khandwa",
+   "text": "AI labs set up in government schools in Damoh and Khandwa",
    "cites": [
     "R083c59bf",
     "R38e59b75",
@@ -431,24 +435,22 @@
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "050ff80cf9e0",
-  "generated_at": "2026-11-15T06:23+00:00"
+  "input_hash": "6144988f5d4e",
+  "generated_at": "2026-11-19T07:31+00:00"
  },
  "Maharashtra": {
   "ai_policy": {
    "status": "done",
-   "text": "Maharashtra AI Policy 2026 approved by state Cabinet",
+   "text": "Maharashtra AI Policy 2026 approved by Cabinet",
    "cites": [
     "R562864e1",
-    "R90b8debc",
     "Rdbb33aa8"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "Department of Electronics, IT and Artificial Intelligence approved by Cabinet",
+   "text": "Department of Electronics, IT and Artificial Intelligence cleared by Cabinet",
    "cites": [
-    "R6f0677ec",
     "Rd7d40f74",
     "Rbff13ca0"
    ]
@@ -463,16 +465,15 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "MoUs signed with Microsoft and Google for four AI Centres of Excellence",
+   "text": "Three AI Centres of Excellence partnered with Microsoft in Nagpur, Mumbai, Pune",
    "cites": [
-    "R260b8903",
     "R47ae66d7",
-    "R8ea0ad08"
+    "R260b8903"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "f25b3d57562f",
-  "generated_at": "2026-11-16T06:34+00:00"
+  "input_hash": "0e4e069252fb",
+  "generated_at": "2026-11-19T07:31+00:00"
  },
  "Manipur": {
   "ai_policy": {
@@ -782,7 +783,7 @@
  "Tripura": {
   "ai_policy": {
    "status": "announced",
-   "text": "State-level AI policy announced in 2026",
+   "text": "Tripura state-level AI policy announced (2026)",
    "cites": [
     "Rc68da9b5"
    ]
@@ -799,49 +800,50 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "Land allocated in Agartala for data centres supporting AI and 5G (2025)",
+   "text": "Land allocated for data centres in Agartala to support AI (2025)",
    "cites": [
     "R689547b0"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "9945dc8d088f",
-  "generated_at": "2026-11-15T08:33+00:00"
+  "input_hash": "38c7e21f0153",
+  "generated_at": "2026-11-19T07:32+00:00"
  },
  "Uttar Pradesh": {
   "ai_policy": {
    "status": "done",
-   "text": "UP Artificial Intelligence Mission approved by state Cabinet in October 2026",
+   "text": "UP Artificial Intelligence Mission (2026) approved by Cabinet",
    "cites": [
     "Rb312992b",
-    "Rd6a83602",
-    "R47a5f920"
+    "R297b1b1d"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "Two committees constituted in 2026 for AI implementation in UP universities",
+   "text": "Two committees formed by Governor for university AI implementation in 2026",
    "cites": [
     "R7e3f0b21"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 5 crore allocated in UP Budget 2025 for Lucknow AI City",
+   "text": "Rs 2,000 crore UP AI Mission approved by Cabinet in 2026",
    "cites": [
-    "R5efd6e14"
+    "Rb312992b",
+    "R297b1b1d",
+    "R77645065"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "69.52-acre robotics and AI park approved in Greater Noida by Cabinet in 2026",
+   "text": "69.52-acre Greater Noida Robotics and AI Hub approved by UP Cabinet in 2026",
    "cites": [
     "Rb1cbd4df"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "467c568f8b0d",
-  "generated_at": "2026-11-16T06:37+00:00"
+  "input_hash": "06952b1c6da1",
+  "generated_at": "2026-11-19T07:32+00:00"
  },
  "Uttarakhand": {
   "ai_policy": {
