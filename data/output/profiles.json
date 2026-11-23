@@ -276,7 +276,7 @@
   },
   "funding": {
    "status": "announced",
-   "text": "Rs 5 crore announced for BTech AI course at HPU (2026)",
+   "text": "Rs 5 crore announced in 2026 for BTech AI course at HPU",
    "cites": [
     "R2a909d0d"
    ]
@@ -289,8 +289,8 @@
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "412e648f558e",
-  "generated_at": "2026-11-22T06:54+00:00"
+  "input_hash": "5c63f257c9f2",
+  "generated_at": "2026-11-23T07:40+00:00"
  },
  "Jharkhand": {
   "ai_policy": {
@@ -330,47 +330,49 @@
  "Karnataka": {
   "ai_policy": {
    "status": "announced",
-   "text": "Draft policy on Responsible AI announced for release (2026)",
+   "text": "Draft policy on Responsible AI announced",
    "cites": [
     "Rdff5f567"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "AI Committee for Ethical Use of AI in Governance formed (2026)",
+   "text": "AI committee for ethical use of AI in governance formed",
    "cites": [
     "R9b3c768e"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 35 crore approved for AI Hub at IIIT Bangalore (2026)",
+   "text": "Rs 35 crore approved for AI Hub at IIIT Bangalore",
    "cites": [
     "R567ab120"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "AI Centre of Excellence in Bengaluru's Electronics City launched (2026)",
+   "text": "AI Centre of Excellence launched in Bengaluru's Electronics City",
    "cites": [
     "Ra4c0792f"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "3fe3b5adbef2",
-  "generated_at": "2026-11-22T06:55+00:00"
+  "input_hash": "85902618684b",
+  "generated_at": "2026-11-23T07:40+00:00"
  },
  "Kerala": {
   "ai_policy": {
    "status": "done",
-   "text": "Malayalam AI Mission launched by Kerala government in 2026",
+   "text": "Malayalam AI Mission launched; K-AI Initiative operating under Kerala AI Mission (K-AIM)",
    "cites": [
-    "Re3333cd0"
+    "Re3333cd0",
+    "R9641614e",
+    "R9548a686"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "Dedicated AI department created; IT department renamed IT, AI & Future Tech (2026)",
+   "text": "Dedicated AI department created; IT department renamed IT, AI & Future Tech",
    "cites": [
     "R435f8de7",
     "Ref58a154",
@@ -379,22 +381,22 @@
   },
   "funding": {
    "status": "done",
-   "text": "Funds allocated for Kochi AI city in Kerala 2026-27 budget",
+   "text": "2026-27 state budget allocates funds for Kochi AI city project",
    "cites": [
     "R168c19e6"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Kerala AI Centre of Excellence launched in Thiruvananthapuram in 2026",
+   "text": "Two AI Centres of Excellence approved; Thiruvananthapuram AI CoE launched in 2026",
    "cites": [
     "Rd47ca5ca",
     "R82061b81"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "dbc44c5a32dc",
-  "generated_at": "2026-11-22T06:57+00:00"
+  "input_hash": "5ae2e7c2fb3b",
+  "generated_at": "2026-11-23T07:41+00:00"
  },
  "Madhya Pradesh": {
   "ai_policy": {
@@ -441,7 +443,7 @@
   },
   "ai_body": {
    "status": "done",
-   "text": "Department of Electronics, IT and Artificial Intelligence cleared by cabinet",
+   "text": "Independent Department of Electronics, IT and Artificial Intelligence cleared by cabinet",
    "cites": [
     "Rd7d40f74",
     "Rbff13ca0"
@@ -449,25 +451,22 @@
   },
   "funding": {
    "status": "done",
-   "text": "Rs 500 crore AI startup fund and Rs 500 crore MahaAgri-AI outlay approved",
+   "text": "Rs 500 crore startup fund approved under AI Policy 2026",
    "cites": [
-    "Rdbb33aa8",
-    "Rda0dbcb5",
-    "R5c8784f8"
+    "Rdbb33aa8"
    ]
   },
   "infrastructure": {
-   "status": "done",
-   "text": "AI Centres of Excellence via state MoUs with Microsoft, Google and NIELIT",
+   "status": "announced",
+   "text": "Six AI Centres of Excellence and 2,000-GPU compute facility planned",
    "cites": [
-    "R260b8903",
-    "R8ea0ad08",
-    "R686499f4"
+    "R55a39cb0",
+    "R091243f1"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "b07f501c667d",
-  "generated_at": "2026-11-22T07:02+00:00"
+  "input_hash": "0d17aa66dcc4",
+  "generated_at": "2026-11-23T07:46+00:00"
  },
  "Manipur": {
   "ai_policy": {
@@ -751,7 +750,7 @@
   },
   "ai_body": {
    "status": "done",
-   "text": "Telangana AI Innovation Hub established to drive AI research and partnerships",
+   "text": "Telangana AI Innovation Hub established to drive AI research and innovation",
    "cites": [
     "Rafe9a4a2",
     "R42f82746"
@@ -764,15 +763,15 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "Telangana Green Skills and Applied AI Centre of Excellence launched in Hyderabad",
+   "text": "Telangana Green Skills & Applied AI Centre of Excellence launched in 2026",
    "cites": [
     "R998e03d5",
     "R8807f260"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "a0918283dcda",
-  "generated_at": "2026-11-22T07:05+00:00"
+  "input_hash": "8979f8b331a1",
+  "generated_at": "2026-11-23T07:47+00:00"
  },
  "Tripura": {
   "ai_policy": {
@@ -806,7 +805,7 @@
  "Uttar Pradesh": {
   "ai_policy": {
    "status": "done",
-   "text": "UP Artificial Intelligence Mission approved by cabinet (2026)",
+   "text": "UP Artificial Intelligence Mission approved by cabinet in 2026",
    "cites": [
     "Rb312992b",
     "R297b1b1d"
@@ -814,14 +813,14 @@
   },
   "ai_body": {
    "status": "done",
-   "text": "Two committees formed to implement AI across state universities (2026)",
+   "text": "Two committees formed for AI implementation in UP universities in 2026",
    "cites": [
     "R7e3f0b21"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 2,000 crore UP AI Mission approved by cabinet (2026)",
+   "text": "Rs 2,000 crore UP AI Mission approved by cabinet in 2026",
    "cites": [
     "Rb312992b",
     "R297b1b1d",
@@ -830,14 +829,14 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "Centre for Green Skills and Applied AI launched at Lucknow University (2026)",
+   "text": "Greater Noida 69.52-acre robotics and AI park approved by cabinet in 2026",
    "cites": [
-    "Rdb5d7c8e"
+    "Rb1cbd4df"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "60ee3286ec3c",
-  "generated_at": "2026-11-22T07:06+00:00"
+  "input_hash": "7d990e64afb2",
+  "generated_at": "2026-11-23T07:51+00:00"
  },
  "Uttarakhand": {
   "ai_policy": {
