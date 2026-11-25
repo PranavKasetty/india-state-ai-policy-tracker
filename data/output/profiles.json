@@ -2,7 +2,7 @@
  "Andhra Pradesh": {
   "ai_policy": {
    "status": "done",
-   "text": "Robotics and Physical AI Policy 2026-36 approved and released",
+   "text": "Robotics and Physical AI Policy 2026-36 approved by cabinet and released",
    "cites": [
     "Rf466bb64",
     "Re88f3385",
@@ -15,22 +15,23 @@
    "cites": []
   },
   "funding": {
-   "status": "none",
-   "text": "",
-   "cites": []
+   "status": "done",
+   "text": "Rs 99.19 crore sanctioned for Project Sarthi AI traffic system in Vizag",
+   "cites": [
+    "R4075dec7"
+   ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "600 acres approved for Rs 90,000 crore Google AI data centres in Visakhapatnam",
+   "text": "600 acres allotted for Rs 90,000 crore Google AI data centres in Vizag",
    "cites": [
     "R355de8d4",
-    "R2926047f",
-    "R53aec446"
+    "R2926047f"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "aa33fe92a347",
-  "generated_at": "2026-11-22T06:51+00:00"
+  "input_hash": "6a5897b7286b",
+  "generated_at": "2026-11-25T08:48+00:00"
  },
  "Arunachal Pradesh": {
   "ai_policy": {
@@ -49,20 +50,20 @@
    "cites": []
   },
   "infrastructure": {
-   "status": "announced",
-   "text": "MoU with NIT Arunachal to establish AI Centre of Excellence (2026)",
+   "status": "done",
+   "text": "MoU signed with NIT Arunachal to establish AI Centre of Excellence in 2026",
    "cites": [
     "Rc2b51146"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "0d2176fd83bf",
-  "generated_at": "2026-11-15T06:17+00:00"
+  "input_hash": "09f0032f65aa",
+  "generated_at": "2026-11-25T08:54+00:00"
  },
  "Assam": {
   "ai_policy": {
    "status": "done",
-   "text": "Assam foundational artificial intelligence roadmap unveiled in 2026",
+   "text": "Assam foundational AI roadmap unveiled for inclusive growth and governance in 2026",
    "cites": [
     "R4203359c"
    ]
@@ -79,30 +80,30 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "First govt-owned eight-node L40S GPU cluster commissioned at state data centre (2026)",
+   "text": "First government-owned eight-node GPU cluster commissioned at state data centre (2026)",
    "cites": [
     "R936eb0aa"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "5a7b37d8f50f",
-  "generated_at": "2026-11-20T07:19+00:00"
+  "input_hash": "94a510364dc8",
+  "generated_at": "2026-11-25T08:55+00:00"
  },
  "Bihar": {
   "ai_policy": {
    "status": "done",
-   "text": "Bihar Artificial Intelligence Mission approved by state cabinet in 2026",
+   "text": "Bihar AI Mission approved by cabinet in 2026 with GFTN partnership",
    "cites": [
-    "Rff3cbb5a",
-    "Rc9c3c4c4",
-    "R6fdc0aaa"
+    "R6fdc0aaa",
+    "R68b64920",
+    "Rb70e845b"
    ]
   },
   "ai_body": {
-   "status": "done",
-   "text": "AI committee set up in Bihar land department in 2026",
+   "status": "announced",
+   "text": "Special AI cell planned in every district for land-revenue work",
    "cites": [
-    "Rdc0edc3a"
+    "Ra3ee576b"
    ]
   },
   "funding": {
@@ -116,20 +117,20 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "AI Center of Excellence approved by Bihar cabinet in July 2026",
+   "text": "AI Centre of Excellence approved by Bihar cabinet in 2026",
    "cites": [
     "R791202b9",
     "R7b37b9dd"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "cd9fad84b0bb",
-  "generated_at": "2026-11-24T10:31+00:00"
+  "input_hash": "b62f7a4e3eda",
+  "generated_at": "2026-11-25T08:56+00:00"
  },
  "Chhattisgarh": {
   "ai_policy": {
    "status": "done",
-   "text": "Chhattisgarh AI Mission approved in 2026 with Rs 500 crore outlay",
+   "text": "Chhattisgarh AI Mission approved with Rs 500 crore over five years",
    "cites": [
     "R7cc53f61",
     "R63bfb6f9",
@@ -152,7 +153,7 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "Rs 1,000 crore AI Data Center Park unveiled in Nava Raipur",
+   "text": "Foundation stone laid for Rs 1,000 crore Nava Raipur AI Data Center Park",
    "cites": [
     "Rcc6c8e84",
     "Recb4eed4",
@@ -160,8 +161,8 @@
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "20ad3534a317",
-  "generated_at": "2026-11-19T07:29+00:00"
+  "input_hash": "1f1e1b0ae117",
+  "generated_at": "2026-11-25T08:56+00:00"
  },
  "Goa": {
   "ai_policy": {
@@ -228,11 +229,11 @@
  "Haryana": {
   "ai_policy": {
    "status": "done",
-   "text": "Haryana AI Mission unveiled in 2026 with Rs 474 crore outlay",
+   "text": "Haryana AI Mission unveiled in 2026",
    "cites": [
     "Ra92a52de",
-    "Rced0a45a",
-    "R56704031"
+    "R5683822a",
+    "R27de87ff"
    ]
   },
   "ai_body": {
@@ -253,15 +254,15 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "Rs 40 crore AI hubs approved for Gurugram and Panchkula in 2026",
+   "text": "Rs 40 crore AI hubs in Gurugram and Panchkula cleared in 2026",
    "cites": [
     "Ra31f6469",
     "R98f27034"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "d6d4f48d7041",
-  "generated_at": "2026-11-16T06:31+00:00"
+  "input_hash": "a6bb5f41f0e7",
+  "generated_at": "2026-11-25T09:00+00:00"
  },
  "Himachal Pradesh": {
   "ai_policy": {
@@ -276,21 +277,21 @@
   },
   "funding": {
    "status": "announced",
-   "text": "Rs 5 crore announced for BTech AI course at Himachal Pradesh University",
+   "text": "Rs 5 crore announced for BTech AI course at HPU in 2026",
    "cites": [
     "R2a909d0d"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Vidhya Samiksha Kendra AI-driven data centre inaugurated for school education",
+   "text": "Vidhya Samiksha Kendra AI-driven data centre inaugurated in 2023",
    "cites": [
     "R39cd627c"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "03684f1907b2",
-  "generated_at": "2026-11-24T10:31+00:00"
+  "input_hash": "c45b7044176d",
+  "generated_at": "2026-11-25T09:00+00:00"
  },
  "Jharkhand": {
   "ai_policy": {
