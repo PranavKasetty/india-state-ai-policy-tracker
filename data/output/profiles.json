@@ -2,7 +2,7 @@
  "Andhra Pradesh": {
   "ai_policy": {
    "status": "done",
-   "text": "Robotics and Physical AI Policy 2026-36 approved by cabinet and released",
+   "text": "Robotics and Physical AI Policy 2026-36 cleared by Cabinet and released",
    "cites": [
     "Rf466bb64",
     "Re88f3385",
@@ -15,23 +15,22 @@
    "cites": []
   },
   "funding": {
-   "status": "done",
-   "text": "Rs 99.19 crore sanctioned for Project Sarthi AI traffic system in Vizag",
-   "cites": [
-    "R4075dec7"
-   ]
+   "status": "none",
+   "text": "",
+   "cites": []
   },
   "infrastructure": {
    "status": "done",
-   "text": "600 acres allotted for Rs 90,000 crore Google AI data centres in Vizag",
+   "text": "600 acres allotted for Rs 90,000 crore Google AI data centres in Visakhapatnam",
    "cites": [
     "R355de8d4",
-    "R2926047f"
+    "R2926047f",
+    "R53aec446"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "6a5897b7286b",
-  "generated_at": "2026-11-25T08:48+00:00"
+  "input_hash": "d0b32b597d0b",
+  "generated_at": "2026-11-26T08:28+00:00"
  },
  "Arunachal Pradesh": {
   "ai_policy": {
@@ -92,11 +91,11 @@
  "Bihar": {
   "ai_policy": {
    "status": "done",
-   "text": "Bihar AI Mission approved by cabinet in 2026 with GFTN partnership",
+   "text": "Bihar AI Mission approved by state cabinet in 2026",
    "cites": [
     "R6fdc0aaa",
     "R68b64920",
-    "Rb70e845b"
+    "Rc9c3c4c4"
    ]
   },
   "ai_body": {
@@ -117,15 +116,15 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "AI Centre of Excellence approved by Bihar cabinet in 2026",
+   "text": "AI Center of Excellence approved by state cabinet in 2026",
    "cites": [
     "R791202b9",
     "R7b37b9dd"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "b62f7a4e3eda",
-  "generated_at": "2026-11-25T08:56+00:00"
+  "input_hash": "c882acaf2cb0",
+  "generated_at": "2026-11-26T08:34+00:00"
  },
  "Chhattisgarh": {
   "ai_policy": {
@@ -330,35 +329,36 @@
  "Karnataka": {
   "ai_policy": {
    "status": "announced",
-   "text": "Draft policy on Responsible AI planned for release",
+   "text": "Draft policy on Responsible AI announced by state government in 2026",
    "cites": [
     "Rdff5f567"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "AI Committee formed for ethical use of AI in governance",
+   "text": "AI Committee for Ethical Use of AI in Governance formed in 2026",
    "cites": [
     "R9b3c768e"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 35 crore approved for AI Hub at IIIT Bangalore",
+   "text": "Rs 35 crore approved for AI Hub at IIIT Bangalore in 2026",
    "cites": [
-    "R567ab120"
+    "R567ab120",
+    "R4e70432e"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "AI Centre of Excellence launched in Bengaluru's Electronics City",
+   "text": "Centre for Applied AI (CATS) CoE in Bengaluru approved in 2026",
    "cites": [
-    "Ra4c0792f"
+    "R3fcc3171"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "167a2745b440",
-  "generated_at": "2026-11-24T10:34+00:00"
+  "input_hash": "e57cd9e213ec",
+  "generated_at": "2026-11-26T08:34+00:00"
  },
  "Kerala": {
   "ai_policy": {

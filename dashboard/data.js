@@ -2,9 +2,9 @@
 window.TRACKER_DATA = {
  "meta": {
   "is_mock": false,
-  "generated_at": "2026-11-25T09:05:06+00:00",
+  "generated_at": "2026-11-26T08:40:56+00:00",
   "period_start": "2022-12-01",
-  "period_end": "2026-11-25",
+  "period_end": "2026-11-26",
   "states": [
    {
     "name": "Andhra Pradesh",
@@ -1142,18 +1142,17 @@ window.TRACKER_DATA = {
      "cites": []
     },
     "funding": {
-     "status": "done",
-     "text": "Rs 99.19 crore sanctioned for Project Sarthi AI traffic system in Vizag",
-     "cites": [
-      "R4075dec7"
-     ]
+     "status": "none",
+     "text": "",
+     "cites": []
     },
     "infrastructure": {
      "status": "done",
-     "text": "600 acres allotted for Rs 90,000 crore Google AI data centres in Vizag",
+     "text": "600 acres allotted for Rs 90,000 crore Google AI data centres in Visakhapatnam",
      "cites": [
       "R355de8d4",
-      "R2926047f"
+      "R2926047f",
+      "R53aec446"
      ]
     }
    },
@@ -1237,7 +1236,7 @@ window.TRACKER_DATA = {
     },
     "infrastructure": {
      "status": "done",
-     "text": "AI Centre of Excellence approved by Bihar cabinet in 2026",
+     "text": "AI Center of Excellence approved by state cabinet in 2026",
      "cites": [
       "R791202b9",
       "R7b37b9dd"
@@ -1445,23 +1444,24 @@ window.TRACKER_DATA = {
     },
     "ai_body": {
      "status": "done",
-     "text": "AI Committee formed for ethical use of AI in governance",
+     "text": "AI Committee for Ethical Use of AI in Governance formed in 2026",
      "cites": [
       "R9b3c768e"
      ]
     },
     "funding": {
      "status": "done",
-     "text": "Rs 35 crore approved for AI Hub at IIIT Bangalore",
+     "text": "Rs 35 crore approved for AI Hub at IIIT Bangalore in 2026",
      "cites": [
-      "R567ab120"
+      "R567ab120",
+      "R4e70432e"
      ]
     },
     "infrastructure": {
      "status": "done",
-     "text": "AI Centre of Excellence launched in Bengaluru's Electronics City",
+     "text": "Centre for Applied AI (CATS) CoE in Bengaluru approved in 2026",
      "cites": [
-      "Ra4c0792f"
+      "R3fcc3171"
      ]
     }
    },
@@ -1960,6 +1960,146 @@ window.TRACKER_DATA = {
  },
  "items": [
   {
+   "id": "Rc1fd27dd",
+   "date": "2026-11-26",
+   "date_precision": "day",
+   "state": "Andhra Pradesh",
+   "title": "Andhra: NTRUHS plans AI, ML-based courses",
+   "summary": "Dr NTR University of Health Sciences (NTRUHS) is moving to weave Artificial Intelligence (AI), Machine Learning (ML), and emerging technologies into…",
+   "source": "The New Indian Express",
+   "url": "https://www.newindianexpress.com/amp/story/states/andhra-pradesh/2026/Nov/26/andhra-ntruhs-plans-ai-ml-based-courses",
+   "image": "https://cf-images.assettype.com/newindianexpress%2F2026-11-26%2Fpudvazik%2FNTRUHS.jpg?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100",
+   "category": "skilling",
+   "tags": [
+    "skilling"
+   ],
+   "sector": "Education",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R455b51df",
+   "date": "2026-11-26",
+   "date_precision": "day",
+   "state": "Bihar",
+   "title": "Bihar Unveils AI-Driven Roadmap to Strengthen Public Healthcare & Emergency Services",
+   "summary": "Bihar Unveils AI-Driven Roadmap to Strengthen Public Healthcare & Emergency Services",
+   "source": "Digital Health News",
+   "url": "https://www.digitalhealthnews.com/bihar-unveils-ai-driven-roadmap-to-strengthen-public-healthcare-emergency-services",
+   "image": "https://d33xmv9j3wn8v0.cloudfront.net/uploads/2026/11/bihar-health-minister-feature.jpg",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy"
+   ],
+   "sector": "Health",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R4f1fc945",
+   "date": "2026-11-26",
+   "date_precision": "day",
+   "state": "Bihar",
+   "title": "CIMP Patna, South Korea’s Kyonggi University Sign MoU For AI-Driven Cooperation",
+   "summary": "Chandragupt Institute of Management Patna (CIMP) has signed a Memorandum of Understanding (MoU) with Kyonggi University, Suwon, Republic of…",
+   "source": "Patna Press",
+   "url": "https://patnapress.com/bihar-cimp-kyonggi-university-south-korea-ai-cooperation-mou/",
+   "image": "https://patnapress.com/wp-content/uploads/2026/11/Patna-CIMP-Korea-University-MoU.jpg",
+   "category": "partnership",
+   "tags": [
+    "partnership"
+   ],
+   "sector": "Education",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R6fc67689",
+   "date": "2026-11-26",
+   "date_precision": "day",
+   "state": "Chhattisgarh",
+   "title": "Chhattisgarh Dharohar Portal Pilots AI Deed Drafting in Raipur",
+   "summary": "Dharohar portal pilot in Raipur brings AI deed drafting, Aadhaar e-KYC, online fee payment and appointments to Chhattisgarh property registration.",
+   "source": "Elets eGov",
+   "url": "https://egov.eletsonline.com/2026/11/chhattisgarh-dharohar-portal/",
+   "image": "https://egov.eletsonline.com/wp-content/uploads/2026/11/dharohar-portal-chhattisgarh-1.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Revenue & citizen services",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "Rd045a993",
+   "date": "2026-11-26",
+   "date_precision": "day",
+   "state": "Karnataka",
+   "title": "Karnataka government schools to teach AI from Class 3",
+   "summary": "Karnataka government schools to teach AI from Class 3",
+   "source": "NewsBytes",
+   "url": "https://www.newsbytesapp.com/news/india/karnataka-government-schools-to-teach-ai-from-class-3/tldr",
+   "image": "",
+   "category": "skilling",
+   "tags": [
+    "skilling"
+   ],
+   "sector": "Education",
+   "stage": "announced",
+   "n_sources": 2,
+   "also_reported_by": [
+    "Deccan Herald"
+   ]
+  },
+  {
+   "id": "R996d7f51",
+   "date": "2026-11-26",
+   "date_precision": "day",
+   "state": "Punjab",
+   "title": "Punjab Approves 50 AI-Powered Electric Vehicles for Police",
+   "summary": "Punjab approves 50 AI-powered electric vehicles for Punjab Police and 10 additional operational vehicles for Murree Police.",
+   "source": "Pakwheels",
+   "url": "https://www.pakwheels.com/blog/punjab-police-ai-powered-electric-vehicles/",
+   "image": "https://static.pakwheels.com/2026/11/cms_40126629.w1200.webp",
+   "category": "deployment",
+   "tags": [
+    "deployment",
+    "funding_budget"
+   ],
+   "sector": "Policing & safety",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R16c8e078",
+   "date": "2026-11-26",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "IIT Kanpur connects government school children to modern tech and AI, UP govt allocates Rs 96.60 lakh",
+   "summary": "IIT Kanpur connects government school children to modern tech and AI, UP govt allocates Rs 96.60 lakh",
+   "source": "News18 Hindi",
+   "url": "https://hindi.news18.com/news/uttar-pradesh/kanpur-iit-kanpur-training-government-school-students-teachers-modern-technology-up-government-budget-local18-ws-l-11013206.html",
+   "image": "",
+   "category": "funding_budget",
+   "tags": [
+    "funding_budget",
+    "skilling",
+    "partnership"
+   ],
+   "sector": "Education",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "आईआईटी कानपुर सरकारी स्कूलों के बच्चों को आधुनिक तकनीक और एआई से जोड़ रहा, यूपी सरकार ने 96.60 लाख रुपये का..."
+  },
+  {
    "id": "R36a4110a",
    "date": "2026-11-25",
    "date_precision": "day",
@@ -2002,25 +2142,158 @@ window.TRACKER_DATA = {
    ]
   },
   {
-   "id": "R70f59030",
+   "id": "R8e3eca93",
+   "date": "2026-11-25",
+   "date_precision": "day",
+   "state": "Andhra Pradesh",
+   "title": "Andhra Pradesh Plans AI System for Property Tax Collection",
+   "summary": "Andhra Pradesh plans an AI-based property-tax system for 123 Urban Local Bodies as officials seek higher municipal revenue without new taxes.",
+   "source": "Urban Acres",
+   "url": "https://urbanacres.in/andhra-pradesh-links-municipal-revenue-growth-to-ai-tax-systems-ua808ba21d111f9cdb/",
+   "image": "https://urbanacres.in/wp-content/uploads/2026/11/urban-acres-news-314139.webp",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Revenue & citizen services",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R3d357842",
+   "date": "2026-11-25",
+   "date_precision": "day",
+   "state": "Madhya Pradesh",
+   "title": "Explurger’s NiVU AI Expands Across India, Madhya Pradesh Goes Live with Its First Smart Tourism Site at Gandhi Sagar Dam",
+   "summary": "After Andhra Pradesh and Goa, Explurger has taken its AI-powered tourism innovation, NiVU AI, to Madhya Pradesh, marking another significant step in its expanding national footprint.",
+   "source": "Sangri Today",
+   "url": "https://www.sangritoday.com/spotlight/business/explurgers-nivu-ai-expands-across-india-madhya-pradesh-goes-live-with-its-first-smart-tourism-site-at-gandhi-sagar-dam",
+   "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgssR2XbpS4UFqarRqCn6H7Q9X3NMy9mp1P5soTmth_jm9KdXR0CBujnKTzDfDpUx8s0NZgFKv6NOGvXGJBNb4GBs17OOa_AfdlN_05VaHkIzp9aF3V_MccHlPx_mWVr0OkC3ZouJ1bnG-upyRhi4Q6t28kWvCH8iy2-nxxM2hp7UnPpQq7t9RoeNwvxW7y/w1600/Gandhi%20Sagar%20Dam.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Urban & transport",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R66c0af89",
    "date": "2026-11-25",
    "date_precision": "day",
    "state": "Bihar",
-   "title": "Preparations for AI Center of Excellence speed up in Bihar, MeitY team reviews progress at IIT Patna",
+   "title": "AI to boost diagnostics, telemedicine in Bihar: Nishant",
+   "summary": "Health minister Nishant Kumar on Wednesday said artificial intelligence (AI) would be used to strengthen Bihar’s healthcare system, from diagnostics and telemedicine to smart ambulances and real-time information on hospital bed availability.",
+   "source": "The Times of India",
+   "url": "https://timesofindia.indiatimes.com/city/patna/ai-to-boost-diagnostics-telemedicine-in-bihar-nishant/articleshow/136167349.cms",
+   "image": "https://static.toiimg.com/thumb/msid-136167348,width-1280,height-720,resizemode-6,overlay-toi_sw,pt-32,y_pad-600/photo.jpg",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy"
+   ],
+   "sector": "Health",
+   "stage": "announced",
+   "n_sources": 13,
+   "also_reported_by": [
+    "22Scope",
+    "Bengal Mirror - Think Positive",
+    "Jammu Links News",
+    "News24 Hindi",
+    "Chhapra Today",
+    "The Impressive Times",
+    "ABP News",
+    "www.jaipurtimes.org",
+    "sandhya samay news",
+    "आर्यावर्त",
+    "Kashish News",
+    "eHealth Magazine"
+   ]
+  },
+  {
+   "id": "Rdfdb12f5",
+   "date": "2026-11-25",
+   "date_precision": "day",
+   "state": "Maharashtra",
+   "title": "MOIL and ICAI Organise Two-Day AI Training Programme in Nagpur, Focus on Finance and Industry Applications",
+   "summary": "MOIL and ICAI organise a two-day AI training programme in Nagpur, focusing on finance, emerging technologies, innovation and industrial applications.",
+   "source": "Indian Masterminds",
+   "url": "https://indianmasterminds.com/news/moil-icai-two-day-ai-training-programme-nagpur-253332/",
+   "image": "https://indianmasterminds.com/wp-content/uploads/2026/11/moil.jpg",
+   "category": "skilling",
+   "tags": [
+    "skilling"
+   ],
+   "sector": "Industry & startups",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R88641b6f",
+   "date": "2026-11-25",
+   "date_precision": "day",
+   "state": "Karnataka",
+   "title": "DIDAC India 2026: Karnataka plans Rs 700 crore investment in skill centres, targets AI training for 5 lakh youth",
+   "summary": "With an aim to prepare a workforce for emerging industries, including semiconductors, robotics and aerospace, Karnataka is planning to invest nearly Rs…",
+   "source": "Education Times",
+   "url": "https://www.educationtimes.com/news/karnataka-plans-rs-700-crore-investment-in-skill-centres-targets-ai-training-for-5-lakh-youth/articleshow/136159562.cms",
+   "image": "https://static.toiimg.com/thumb/msid-136159699,width-1280,height-720,imgsize-243190,resizemode-6,y_pad-600/photo.jpg",
+   "category": "skilling",
+   "tags": [
+    "skilling",
+    "funding_budget",
+    "infrastructure"
+   ],
+   "sector": "Education",
+   "stage": "announced",
+   "n_sources": 3,
+   "also_reported_by": [
+    "Tech Observer Magazine",
+    "India Education Diary"
+   ]
+  },
+  {
+   "id": "R9e695129",
+   "date": "2026-11-25",
+   "date_precision": "day",
+   "state": "Kerala",
+   "title": "AI-powered robot deployed for canal cleaning in Thiruvananthapuram",
+   "summary": "AI-powered robot deployed for canal cleaning in Thiruvananthapuram",
+   "source": "DD News",
+   "url": "https://ddnews.gov.in/en/ai-powered-robot-deployed-for-canal-cleaning-in-thiruvananthapuram/",
+   "image": "",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Urban & transport",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R68354961",
+   "date": "2026-11-25",
+   "date_precision": "day",
+   "state": "Bihar",
+   "title": "IIT Patna AI Center progress: MeitY team visits",
    "summary": "IIT पटना में AI सेंटर ऑफ एक्सीलेंस की समीक्षा के लिए MeitY के उच्चस्तरीय दल ने दौरा किया.",
    "source": "Prabhat Khabar",
    "url": "https://www.prabhatkhabar.com/state/bihar/patna/meity-team-reviews-progress-at-iit-patnas-ai-centre-of-excellence",
    "image": "https://wpmedia.prabhatkhabar.com/uploads/2026/11/25/1795586239687/sizes/iit-patna-ai-centre-of-excellence-c3e331-hero.webp",
    "category": "infrastructure",
    "tags": [
-    "infrastructure"
+    "infrastructure",
+    "governance_body"
    ],
-   "sector": "Cross-cutting",
-   "stage": "announced",
+   "sector": "Education",
+   "stage": "underway",
    "n_sources": 1,
    "also_reported_by": [],
    "lang": "hi",
-   "title_original": "बिहार में AI सेंटर ऑफ एक्सीलेंस की तैयारी तेज, MeitY की टीम ने IIT पटना में प्रगति जांची"
+   "title_original": "IIT पटना AI सेंटर की प्रगति: MeitY टीम का दौरा"
   },
   {
    "id": "R03d98eee",
@@ -2045,27 +2318,6 @@ window.TRACKER_DATA = {
    "title_original": "पटना के सरकारी स्कूलों में शुरू हुई AI की पढ़ाई, प्रोजेक्ट मेधा से बदलेगी शिक्षा की तस्वीर"
   },
   {
-   "id": "R4827d1cd",
-   "date": "2026-11-25",
-   "date_precision": "day",
-   "state": "Bihar",
-   "title": "Patna: AI will transform Bihar's health system: Health Minister",
-   "summary": "Patna: AI will transform Bihar's health system: Health Minister",
-   "source": "आर्यावर्त",
-   "url": "https://www.liveaaryaavart.com/2026/11/Ai-in-health-sector-bihar-nishant.html",
-   "image": "",
-   "category": "strategy_policy",
-   "tags": [
-    "strategy_policy"
-   ],
-   "sector": "Health",
-   "stage": "announced",
-   "n_sources": 1,
-   "also_reported_by": [],
-   "lang": "hi",
-   "title_original": "पटना : AI से बदलेगी बिहार की स्वास्थ्य व्यवस्था की तस्वीर : स्वास्थ्य मंत्री"
-  },
-  {
    "id": "R42e3f55a",
    "date": "2026-11-25",
    "date_precision": "day",
@@ -2087,6 +2339,71 @@ window.TRACKER_DATA = {
    "title_original": "अलीगढ़-उनियारा में असली पैंथर की तलाश के बीच AI तस्वीरों का खौफ, वन विभाग की बढ़ी चुनौती"
   },
   {
+   "id": "R1a5f7a2e",
+   "date": "2026-11-25",
+   "date_precision": "day",
+   "state": "Madhya Pradesh",
+   "title": "Census-2027: MP Chief Secretary Ashok Barnwal issues strict instructions",
+   "summary": "मध्यप्रदेश के मुख्य सचिव अशोक बर्णवाल ने जनगणना-2027 की तैयारियों को लेकर कलेक्टरों, संभागायुक्तों और नगर निगम कमिश्नरों को सख्त निर्देश दिए हैं। जानें भोपाल में आयोजित राज्य स्तरीय प्रशिक्षण कॉन्फ्रेंस की मुख्य बातें।…",
+   "source": "स्टार समाचार",
+   "url": "https://starsamachar.com/mp-census-2027-preparation-cs-ashok-barnwal-strict-instructions-collectors",
+   "image": "https://admin.starsamachar.com/uploads/images/202611/image_870x_6b06a9ce1e317.jpg",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy",
+    "deployment"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "जनगणना-2027: एमपी के मुख्य सचिव अशोक बर्णवाल के सख्त निर्देश, बोले- आंकड़ों में चूक बर्दाश्त नहीं, AI से तय होंगी रोजगार नीतियां"
+  },
+  {
+   "id": "Rdfef3f4e",
+   "date": "2026-11-25",
+   "date_precision": "day",
+   "state": "Madhya Pradesh",
+   "title": "Extortion via fake receipts using AI exposed at MYH hospital, employee removed",
+   "summary": "इंदौर के एमवायएच अस्पताल में एआई से नकली रसीदें तैयार कर मरीजों से पैसे वसूलने का मामला सामने आया है। आउटसोर्स कर्मचारी को हटाकर जांच शुरू कर दी गई है।…",
+   "source": "Raj Express",
+   "url": "https://rajexpress.com/madhya-pradesh-news/indore-myh-hospital-fake-receipts-generated-using-ai-free-scan-scam-outsourced-staff-removed",
+   "image": "https://rajexpress.com/cdn-cgi/image/width=1200,quality=80,format=auto,height=630,fit=cover,gravity=auto,onerror=redirect/https://storage.googleapis.com/raj-express-raw-media/raj-express-production/images/ae887a22-9ca3-4896-9b57-a8ac3c212fcc.webp",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Health",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "MYH अस्पताल में AI से फर्जी रसीदें बनाकर वसूली का खुलासा, कर्मचारी हटाया गया"
+  },
+  {
+   "id": "R1adc0204",
+   "date": "2026-11-25",
+   "date_precision": "day",
+   "state": "Maharashtra",
+   "title": "AI in Polytechnic: Directorate of Technical Education's big step for students, made new changes in curriculum",
+   "summary": "तंत्रशिक्षण मंडळाचे विद्यार्थ्यांसाठी मोठे पाऊल!अभ्यासक्रमात केले 'हे' नवीन बदल विद्यार्थ्यांना उद्योगक्षेत्रातील कौशल्ये आत्मसात करण्याची संधी मिळणारAI in Poly…",
+   "source": "Navarashtra",
+   "url": "https://www.navarashtra.com/career/msbte-engineering-syllabus-update-ai-in-polytechnic-digital-technology-marathi-news-sd",
+   "image": "https://media.assettype.com/navarashtra%2F2026-11-25%2F4cvux98y%2Fcareer?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100",
+   "category": "skilling",
+   "tags": [
+    "skilling",
+    "strategy_policy"
+   ],
+   "sector": "Education",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "mr",
+   "title_original": "AI in Polytechnic: तंत्रशिक्षण मंडळाचे विद्यार्थ्यांसाठी मोठे पाऊल! अभ्यासक्रमात केले 'हे' नवीन बदल"
+  },
+  {
    "id": "R6e920db4",
    "date": "2026-11-24",
    "date_precision": "day",
@@ -2102,9 +2419,10 @@ window.TRACKER_DATA = {
    ],
    "sector": "Revenue & citizen services",
    "stage": "announced",
-   "n_sources": 2,
+   "n_sources": 3,
    "also_reported_by": [
-    "NorthBlockSouthBlock"
+    "NorthBlockSouthBlock",
+    "Elets eGov"
    ]
   },
   {
@@ -2122,25 +2440,6 @@ window.TRACKER_DATA = {
     "skilling"
    ],
    "sector": "Urban & transport",
-   "stage": "underway",
-   "n_sources": 1,
-   "also_reported_by": []
-  },
-  {
-   "id": "R3ca4ed2d",
-   "date": "2026-11-24",
-   "date_precision": "day",
-   "state": "Maharashtra",
-   "title": "Maharashtra ITIs Add AI and Drone Training Courses",
-   "summary": "Maharashtra’s third ITI training phase offers 26,520 seats, including courses in AI, drones, cybersecurity, electric vehicles and semiconductors.",
-   "source": "Urban Acres",
-   "url": "https://urbanacres.in/maharashtra-expands-iti-network-with-ai-and-drone-training-ua41a0fd3696e7442f/",
-   "image": "https://urbanacres.in/wp-content/uploads/2026/11/urban-acres-news-312301.webp",
-   "category": "skilling",
-   "tags": [
-    "skilling"
-   ],
-   "sector": "Education",
    "stage": "underway",
    "n_sources": 1,
    "also_reported_by": []
@@ -2221,9 +2520,10 @@ window.TRACKER_DATA = {
    ],
    "sector": "Industry & startups",
    "stage": "decided",
-   "n_sources": 3,
+   "n_sources": 4,
    "also_reported_by": [
     "India TV Hindi",
+    "Khabargaon",
     "Rozana Spokesman"
    ]
   },
@@ -2244,8 +2544,18 @@ window.TRACKER_DATA = {
    ],
    "sector": "Policing & safety",
    "stage": "announced",
-   "n_sources": 1,
-   "also_reported_by": []
+   "n_sources": 10,
+   "also_reported_by": [
+    "GreatAndhra",
+    "Telangana Today",
+    "Munsif News 24x7",
+    "The Hawk",
+    "The News Mill",
+    "The Pioneer",
+    "ANI News",
+    "The Indian EYE",
+    "ETV Bharat"
+   ]
   },
   {
    "id": "R76f34ccf",
@@ -2257,6 +2567,64 @@ window.TRACKER_DATA = {
    "source": "NewsMeter",
    "url": "https://newsmeter.in/top-stories/mobile-use-distracted-driving-ai-cameras-flag-20437-violations-by-telangana-rtc-drivers-779911",
    "image": "https://newsmeter.in/h-upload/2026/11/24/447914-395015-tsrtc.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Urban & transport",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R4b4deba7",
+   "date": "2026-11-24",
+   "date_precision": "day",
+   "state": "Andhra Pradesh",
+   "title": "Andhra Govt Joins Forces with IBM for AI and Quantum Center",
+   "summary": "Andhra Pradesh launches Amaravati Quantum and AI Innovation Centre with IBM to boost innovation, research and investment.",
+   "source": "M9.news",
+   "url": "https://www.m9.news/politics/amaravati-quantum-ai-centre-ibm-andhra-pradesh-launch/amp/",
+   "image": "https://www.m9.news/wp-content/uploads/2026/06/amaravati-quantum-and-ai-innovation-centre.jpg",
+   "category": "partnership",
+   "tags": [
+    "partnership",
+    "infrastructure"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "Rbd09e92b",
+   "date": "2026-11-24",
+   "date_precision": "day",
+   "state": "Maharashtra",
+   "title": "India's first AI-enabled drug-testing van deployed at Worli Racecourse concert in Mumbai",
+   "summary": "India's first AI-enabled drug-testing van deployed at Worli Racecourse concert in Mumbai",
+   "source": "The Times of India",
+   "url": "https://timesofindia.indiatimes.com/city/mumbai/indias-first-ai-enabled-drug-testing-van-deployed-at-worli-racecourse-concert-in-mumbai/amp_articleshow/136117315.cms",
+   "image": "https://static.toiimg.com/thumb/msid-136117327,width-1280,height-720,imgsize-49794,resizemode-75,overlay-toi_sw,pt-32,y_pad-600/photo.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Health",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R1474e373",
+   "date": "2026-11-24",
+   "date_precision": "day",
+   "state": "Maharashtra",
+   "title": "Nagpur AI Smart Toilet: The First AI Smart Public Toilet in the Country! Free Usage for Citizens",
+   "summary": "Nagpur Municipal Corporation's smart sanitation experiment; Toilet maintenance will be done using AI, IoT, and QR codes.",
+   "source": "Lokshahi English News",
+   "url": "https://english.lokshahi.com/maharashtra/nagpur-municipal-corporation-smart-indias-first-ai-based-smart-toilet-12838557",
+   "image": "https://img-cdn.publive.online/fit-in/1200x675/lokshahi-eng/media/media_files/2026/11/24/nagpuraitoilet-1-2026-11-24-21-59-53.png",
    "category": "deployment",
    "tags": [
     "deployment"
@@ -2395,27 +2763,6 @@ window.TRACKER_DATA = {
    "title_original": "AI Based Learning: रायपुर के 22 कॉलेजों के 500 से अधिक शिक्षक सीखेंगे एआई का उपयोग, शिक्षा विभाग और गूगल फॉर एजुकेशन के बीच एमओयू"
   },
   {
-   "id": "R53eec2f8",
-   "date": "2026-11-24",
-   "date_precision": "day",
-   "state": "Maharashtra",
-   "title": "ITI New Courses: Drone technology, AI and semiconductors lessons now in ITI! Golden opportunity of 2 to 4 hours training along with job-education",
-   "summary": "राज्यातील औद्योगिक प्रशिक्षण संस्थांमध्ये  आता युवकांना ड्रोन तंत्रज्ञान आणि कृत्रिम प्रज्ञेचे  प्रशिक्षण मिळणार आहे.",
-   "source": "Maharashtra Times",
-   "url": "https://maharashtratimes.com/career/career-news/new-courses-in-maharashtra-iti-opportunity-for-youth-in-job-search-with-drone-ai-and-semiconductor-training/articleshow/136125717.cms",
-   "image": "https://static.langimg.com/mt/thumb/136126212/maharashtraitidroneaicoursessantrohidasshorttermemployabilityprogramphase3mangalprabhatlodhamumbai.jpg?imgsize=113291&width=1600&height=900&resizemode=75",
-   "category": "skilling",
-   "tags": [
-    "skilling"
-   ],
-   "sector": "Education",
-   "stage": "underway",
-   "n_sources": 1,
-   "also_reported_by": [],
-   "lang": "mr",
-   "title_original": "ITI New Courses: 'आयटीआय'मध्ये आता ड्रोन तंत्रज्ञान, AI आणि सेमीकंडक्टरचे धडे! नोकरी-शिक्षणासोबत फक्त २ ते ४ तासांच्या प्रशिक्षणाची सुवर्णसंधी"
-  },
-  {
    "id": "R85eba842",
    "date": "2026-11-24",
    "date_precision": "day",
@@ -2436,6 +2783,27 @@ window.TRACKER_DATA = {
    "also_reported_by": [],
    "lang": "hi",
    "title_original": "बिहार के युवाओं को मिलेगी AI और मशीन लर्निंग की ट्रेनिंग, सरकार ने टेक कंपनी के साथ किया MoU"
+  },
+  {
+   "id": "R18dc43e5",
+   "date": "2026-11-24",
+   "date_precision": "day",
+   "state": "Himachal Pradesh",
+   "title": "Learned techniques of AI, machine learning and data analytics",
+   "summary": "बाहरा यूनिवर्सिटी में कॉर्पोरेट वीक इमर्शन-2026 में 300 से ज्यादा छात्रों को दिया प्रशिक्षण स्टाफ रिपोर्टर-सोलन बाहरा यूनिवर्सिटी के अल्फा स्कूल की ओर से आयोजित सात दिवसीय कॉर्पोरेट वीक इमर्शन-2026 का समापन हुआ। कार्यक्रम में 300 से अधिक विद्यार्थियों ने आर्टिफिशियल इंटेलिजेंस,…",
+   "source": "Divya Himachal",
+   "url": "https://www.divyahimachal.com/?p=3787438",
+   "image": "https://www.divyahimachal.com/wp-content/uploads/2026/11/24so13-4.jpg",
+   "category": "skilling",
+   "tags": [
+    "skilling"
+   ],
+   "sector": "Education",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "एआई, मशीन लर्निंग और डेटा एनालिटिक्स की तकनीकें सीखीं"
   },
   {
    "id": "R9245ef13",
@@ -2513,8 +2881,12 @@ window.TRACKER_DATA = {
    ],
    "sector": "Education",
    "stage": "decided",
-   "n_sources": 1,
-   "also_reported_by": []
+   "n_sources": 4,
+   "also_reported_by": [
+    "Maharashtra Times",
+    "Urban Acres",
+    "Hindustan Times"
+   ]
   },
   {
    "id": "R78d675af",
@@ -2533,9 +2905,10 @@ window.TRACKER_DATA = {
    ],
    "sector": "Urban & transport",
    "stage": "decided",
-   "n_sources": 2,
+   "n_sources": 3,
    "also_reported_by": [
-    "Maharashtra Times"
+    "Maharashtra Times",
+    "Pune Prime News"
    ]
   },
   {
@@ -3063,7 +3436,7 @@ window.TRACKER_DATA = {
    ],
    "sector": "Revenue & citizen services",
    "stage": "decided",
-   "n_sources": 15,
+   "n_sources": 17,
    "also_reported_by": [
     "Business Upturn",
     "Kalkine India",
@@ -3071,12 +3444,14 @@ window.TRACKER_DATA = {
     "Multibagg AI",
     "The Hans India",
     "ETLegalWorld.com",
+    "tennews.in",
     "Daijiworld",
     "ET Infra",
     "CNBC TV18",
     "Business Remedies",
     "Trade Brains",
     "Indian Masterminds",
+    "ETLegalWorld",
     "FlipItMoney",
     "Construction World"
    ]
@@ -3401,12 +3776,13 @@ window.TRACKER_DATA = {
    ],
    "sector": "Policing & safety",
    "stage": "announced",
-   "n_sources": 5,
+   "n_sources": 6,
    "also_reported_by": [
     "Jagran",
     "Dynamite News Hindi",
     "Prabhat Khabar",
-    "Dainik Bhaskar"
+    "Dainik Bhaskar",
+    "Newsnation"
    ]
   },
   {
@@ -3611,7 +3987,7 @@ window.TRACKER_DATA = {
    ],
    "sector": "Cross-cutting",
    "stage": "decided",
-   "n_sources": 14,
+   "n_sources": 16,
    "also_reported_by": [
     "TimesTech",
     "ET Datacenters",
@@ -3625,7 +4001,9 @@ window.TRACKER_DATA = {
     "Inshorts",
     "ABP News",
     "Construction Week India",
-    "Convergence Now"
+    "Convergence Now",
+    "Navbharat Live",
+    "AajTak"
    ]
   },
   {
@@ -4016,6 +4394,25 @@ window.TRACKER_DATA = {
     "News9live",
     "India Today"
    ]
+  },
+  {
+   "id": "Rd2a227ef",
+   "date": "2026-11-19",
+   "date_precision": "day",
+   "state": "Karnataka",
+   "title": "Karnataka Leads India's AI and Semiconductor Push",
+   "summary": "Bengaluru Tech Summit 2026 highlights enterprise AI maturity, semiconductor investments and India's ambition for technological self-reliance.",
+   "source": "varindia",
+   "url": "https://www.varindia.com/news/karnataka-leads-india-s-ai-and-semiconductor-push",
+   "image": "https://newapi.varindia.com/storage/news/2026/11/i0iNKEUxBYSwfLyS5edvxmiHzGjrDXEJ6IXSFzwX.jpg",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
   },
   {
    "id": "Rdf8cfb9a",
@@ -10984,6 +11381,26 @@ window.TRACKER_DATA = {
    ]
   },
   {
+   "id": "R960d9392",
+   "date": "2026-10-28",
+   "date_precision": "day",
+   "state": "Bihar",
+   "title": "State Governments of Bihar, Punjab, UP and Haryana Are Now Using AI to Uplift Lakhs of Low Income Rural Women, Partner with Leap 300",
+   "summary": "State Governments of Bihar, Punjab, UP and Haryana Are Now Using AI to Uplift Lakhs of Low Income Rural Women, Partner with Leap 300",
+   "source": "India Education Diary",
+   "url": "https://indiaeducationdiary.in/state-governments-of-bihar-punjab-up-and-haryana-are-now-using-ai-to-uplift-lakhs-of-low-income-rural-women-partner-with-leap-300/",
+   "image": "",
+   "category": "partnership",
+   "tags": [
+    "partnership",
+    "deployment"
+   ],
+   "sector": "Revenue & citizen services",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
    "id": "Rc77cb00d",
    "date": "2026-10-28",
    "date_precision": "day",
@@ -13633,7 +14050,7 @@ window.TRACKER_DATA = {
    ],
    "sector": "Revenue & citizen services",
    "stage": "decided",
-   "n_sources": 10,
+   "n_sources": 11,
    "also_reported_by": [
     "Konsulteer",
     "LatestLY",
@@ -13642,6 +14059,7 @@ window.TRACKER_DATA = {
     "www.pib.gov.in",
     "ANI News",
     "APAC Media",
+    "nenews.in",
     "Utkarsh Classes",
     "tele.net"
    ]
@@ -22539,7 +22957,7 @@ window.TRACKER_DATA = {
    ],
    "sector": "Education",
    "stage": "decided",
-   "n_sources": 12,
+   "n_sources": 13,
    "also_reported_by": [
     "Northeast Today",
     "India Today NE",
@@ -22551,7 +22969,8 @@ window.TRACKER_DATA = {
     "Economic Times",
     "Awaz The Voice",
     "ET Enterprise AI",
-    "Borok Times"
+    "Borok Times",
+    "ET Education"
    ]
   },
   {
@@ -23828,23 +24247,25 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
-   "id": "R4a9e94f6",
+   "id": "R35a5a198",
    "date": "2026-08-25",
    "date_precision": "day",
    "state": "Tamil Nadu",
-   "title": "Tamil Nadu govt launches Artificial Intelligence, deep-tech push with new initiatives",
-   "summary": "The new announcements encompass multi-crore funds, state-of-the-art infrastructure, public-private partnerships, and specialised AI tools across multiple sectors.",
-   "source": "Moneycontrol.com",
-   "url": "https://www.moneycontrol.com/news/business/tamil-nadu-govt-launches-artificial-intelligence-deep-tech-push-with-new-initiatives-14015396.html",
-   "image": "https://images.moneycontrol.com/static-mcnews/2024/04/artificial-intelligence-6767502_1280-1.jpg",
-   "category": "strategy_policy",
+   "title": "TN Launches AI, Deep-Tech Initiatives; Rs 50 Cr Fund",
+   "summary": "Tamil Nadu government unveils new initiatives to become a national leader in AI & deep-tech.",
+   "source": "Rediff MoneyWiz",
+   "url": "https://money.rediff.com/news/market/tn-launches-ai-deep-tech-initiatives-rs-50-cr-fund/53169320260825",
+   "image": "https://im.rediff.com/news/2023/jan/10tamil-nadu.jpg?fr=money",
+   "category": "funding_budget",
    "tags": [
+    "funding_budget",
     "strategy_policy"
    ],
    "sector": "Industry & startups",
    "stage": "underway",
-   "n_sources": 2,
+   "n_sources": 3,
    "also_reported_by": [
+    "Moneycontrol.com",
     "YourStory.com"
    ]
   },
@@ -25887,9 +26308,10 @@ window.TRACKER_DATA = {
    ],
    "sector": "Industry & startups",
    "stage": "decided",
-   "n_sources": 3,
+   "n_sources": 4,
    "also_reported_by": [
     "The Tribune",
+    "ANI News",
     "Deccan Chronicle"
    ]
   },
@@ -26420,6 +26842,26 @@ window.TRACKER_DATA = {
     "Dainik Bhaskar",
     "Jagran"
    ]
+  },
+  {
+   "id": "R0b7eb0dc",
+   "date": "2026-08-10",
+   "date_precision": "day",
+   "state": "Punjab",
+   "title": "NITI Aayog School Education Quality Index 2026: Punjab Overtakes Kerala to Secure No. 1 Rank, Mission Samarth, PACE & AI Education Model",
+   "summary": "Punjab has claimed the No. 1 position in the NITI Aayog School Education Quality Index (SEQI) 2026, surpassing Kerala.",
+   "source": "Sanskriti IAS",
+   "url": "https://www.sanskritiias.com/current-affairs/niti-aayog-school-education-quality-index-2026-punjab-overtakes-kerala-to-secure-no-1-rank-mission-s",
+   "image": "",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy",
+    "skilling"
+   ],
+   "sector": "Education",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
   },
   {
    "id": "R802f4de8",
@@ -30270,7 +30712,7 @@ window.TRACKER_DATA = {
    ],
    "sector": "Cross-cutting",
    "stage": "underway",
-   "n_sources": 65,
+   "n_sources": 64,
    "also_reported_by": [
     "Deccan Herald",
     "CXOToday.com",
@@ -30333,7 +30775,6 @@ window.TRACKER_DATA = {
     "ETHRWorld.com",
     "The 420.in",
     "boldnewsonline.com",
-    "varindia",
     "tele.net.in",
     "Convergence Now"
    ]
@@ -30916,7 +31357,7 @@ window.TRACKER_DATA = {
    ],
    "sector": "Education",
    "stage": "underway",
-   "n_sources": 20,
+   "n_sources": 21,
    "also_reported_by": [
     "News18",
     "ETV Bharat",
@@ -30931,6 +31372,7 @@ window.TRACKER_DATA = {
     "The Tribune",
     "ET Enterprise AI",
     "ET Education",
+    "Storyboard18",
     "Livemint",
     "Careers360",
     "The Times of India",
@@ -37071,6 +37513,25 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
+   "id": "R65534b87",
+   "date": "2026-06-15",
+   "date_precision": "day",
+   "state": "Telangana",
+   "title": "Democratising Data, Powering Innovation: Telangana’s Blueprint for AI-Enabled Governance",
+   "summary": "Telangana’s approach to artificial intelligence in governance is anchored in a simple but powerful belief: public data, when responsibly opened and combined with access to modern computing resources, can unlock innovation far beyond the government itself.",
+   "source": "Elets eGov",
+   "url": "https://egov.eletsonline.com/2026/06/democratising-data-powering-innovation-telanganas-blueprint-for-ai-enabled-governance/",
+   "image": "https://egov.eletsonline.com/wp-content/uploads/2026/06/Shri-T.-Ravikiran-IFS.jpeg",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
    "id": "R39db28c9",
    "date": "2026-06-15",
    "date_precision": "day",
@@ -37863,6 +38324,25 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
+   "id": "R877612e8",
+   "date": "2026-06-08",
+   "date_precision": "day",
+   "state": "Odisha",
+   "title": "Odisha launches AI skills initiative to build future-ready women workforce",
+   "summary": "As part of the initiative, the Higher Education Department has signed a Memorandum of Understanding (MoU) with Edunet Foundation to implement the AI Careers for Women (AICW) programme across higher education institutions in the state.",
+   "source": "ET Enterprise AI",
+   "url": "https://enterpriseai.economictimes.indiatimes.com/amp/news/industry/odisha-launches-ai-skills-initiative-to-build-future-ready-women-workforce/131582937",
+   "image": "https://etimg.etb2bimg.com/thumb/msid-131582937,imgsize-65670,width-1200,height=627,overlay-etenterpriseai,resizemode-75/news/industry/odisha-launches-ai-skills-initiative-to-build-future-ready-women-workforce.jpg",
+   "category": "skilling",
+   "tags": [
+    "skilling"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
    "id": "R0e3c8976",
    "date": "2026-06-08",
    "date_precision": "day",
@@ -38202,10 +38682,8 @@ window.TRACKER_DATA = {
    ],
    "sector": "Education",
    "stage": "decided",
-   "n_sources": 2,
-   "also_reported_by": [
-    "ET Enterprise AI"
-   ]
+   "n_sources": 1,
+   "also_reported_by": []
   },
   {
    "id": "R3d37f8b4",
@@ -44714,6 +45192,25 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
+   "id": "R682dc8da",
+   "date": "2026-04-17",
+   "date_precision": "day",
+   "state": "Punjab",
+   "title": "How Punjab Schools Plan To Integrate AI Into Education",
+   "summary": "Punjab School Education Board announces integration of Artificial Intelligence as a core component of the school curriculum, with learning outcomes reflected on student certificates.",
+   "source": "Rediff.com",
+   "url": "https://www.rediff.com/news/report/punjab-schools-to-integrate-ai-as-core-subject/20260417.htm",
+   "image": "https://im.rediff.com/1200-630/getahead/2017/apr/artificial-intelligence.jpg",
+   "category": "skilling",
+   "tags": [
+    "skilling"
+   ],
+   "sector": "Education",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
    "id": "R6e9d9512",
    "date": "2026-04-17",
    "date_precision": "day",
@@ -45674,6 +46171,25 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
+   "id": "R6d97b840",
+   "date": "2026-04-08",
+   "date_precision": "day",
+   "state": "Haryana",
+   "title": "Haryana's AI Programme Gains Momentum with World Bank Collaboration",
+   "summary": "Haryana's Chief Minister Nayab Singh Saini reviewed the progress of the Haryana AI Development Programme (HAIDP), a Rs 474-crore initiative developed with the World Bank, focusing on AI skilling, startup incubation, and ethical AI governance.",
+   "source": "Rediff",
+   "url": "https://www.rediff.com/business/report/haryana-ai-development-programme-progress-reviewed/20260408.htm",
+   "image": "https://im.rediff.com/1200-630/money/2018/jun/21ai.jpg",
+   "category": "partnership",
+   "tags": [
+    "partnership"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
    "id": "R43c3d081",
    "date": "2026-04-08",
    "date_precision": "day",
@@ -45916,23 +46432,25 @@ window.TRACKER_DATA = {
    ]
   },
   {
-   "id": "R0d6ad96b",
+   "id": "Rdb5ca44f",
    "date": "2026-04-07",
    "date_precision": "day",
    "state": "Haryana",
-   "title": "Haryana Urges Officials To Embrace AI Training For Better Governance",
-   "summary": "Haryana Chief Secretary urges officials to train in AI via iGOT Karmayogi which offers free certified courses to build digital skills and improve citizen focused governance…",
-   "source": "News18",
-   "url": "https://www.news18.com/india/haryana-urges-officials-to-embrace-ai-training-for-better-governance-ws-l-10018749.html",
-   "image": "https://images.news18.com/ibnlive/uploads/2025/11/Artificial-Intelligence-Dominance-3-2025-11-693c3d92cf2e704f93b590496338b638-16x9.jpg",
+   "title": "Haryana Government Recommends AI Skilling Courses For Better Governance",
+   "summary": "Haryana Government Recommends AI Skilling Courses For Better Governance",
+   "source": "NDTV",
+   "url": "https://www.ndtv.com/education/haryana-government-recommends-ai-skilling-courses-for-better-governance-ai-adoption-across-sectors-11322778",
+   "image": "",
    "category": "skilling",
    "tags": [
     "skilling"
    ],
-   "sector": "Cross-cutting",
+   "sector": "Education",
    "stage": "announced",
-   "n_sources": 1,
-   "also_reported_by": []
+   "n_sources": 2,
+   "also_reported_by": [
+    "News18"
+   ]
   },
   {
    "id": "R2c756e9f",
@@ -46071,8 +46589,9 @@ window.TRACKER_DATA = {
    ],
    "sector": "Revenue & citizen services",
    "stage": "decided",
-   "n_sources": 4,
+   "n_sources": 5,
    "also_reported_by": [
+    "ET Enterprise AI",
     "The Hindu",
     "The Times of India",
     "News Arena India"
@@ -57794,8 +58313,10 @@ window.TRACKER_DATA = {
    ],
    "sector": "Industry & startups",
    "stage": "decided",
-   "n_sources": 1,
-   "also_reported_by": []
+   "n_sources": 2,
+   "also_reported_by": [
+    "Elets eGov"
+   ]
   },
   {
    "id": "Rad34abc4",
@@ -58750,12 +59271,13 @@ window.TRACKER_DATA = {
    ],
    "sector": "Education",
    "stage": "underway",
-   "n_sources": 5,
+   "n_sources": 6,
    "also_reported_by": [
     "Careers360",
     "India Today",
     "ET Enterprise AI",
-    "ET Education"
+    "ET Education",
+    "Hub News"
    ]
   },
   {
@@ -66262,6 +66784,26 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
+   "id": "Rc7762046",
+   "date": "2025-08-24",
+   "date_precision": "day",
+   "state": "Manipur",
+   "title": "The Department of Information Technology (DIT), Manipur, in collaboration with the National e-Governance Division (NeGD) under the Ministry of Electronics and Information Technology (MeitY), Government of India, conducted a state-level workshop titled “AI f",
+   "summary": "To accelerate the integration of Artificial Intelligence in governance, the Department of Information Technology (DIT), Manipur, in partnership with the National e-Governance Division (NeGD) under the…",
+   "source": "PIB",
+   "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2160363",
+   "image": "https://pbs.twimg.com/media/GzHncF-XgAA30cj?format=jpg&name=small",
+   "category": "events_outreach",
+   "tags": [
+    "events_outreach",
+    "skilling"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
    "id": "R5057ca8c",
    "date": "2025-08-23",
    "date_precision": "day",
@@ -66834,6 +67376,26 @@ window.TRACKER_DATA = {
     "deployment"
    ],
    "sector": "Policing & safety",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R677ec7d6",
+   "date": "2025-08-12",
+   "date_precision": "day",
+   "state": "Tamil Nadu",
+   "title": "Guidance TN partners with Google to train technical students in AI",
+   "summary": "As a part of the State-owned Guidance Tamil Nadu’s ongoing partnership with Google to strengthen Artificial Intelligence (AI) skills, the registration…",
+   "source": "DT Next",
+   "url": "https://www.dtnext.in/news/tamilnadu/guidance-tn-partners-with-google-to-train-technical-students-in-ai-843080",
+   "image": "https://media.assettype.com/dt-next%2Fimport%2Fh-upload%2F2023%2F11%2F25%2F782520-openai.webp?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100",
+   "category": "partnership",
+   "tags": [
+    "partnership",
+    "skilling"
+   ],
+   "sector": "Education",
    "stage": "underway",
    "n_sources": 1,
    "also_reported_by": []
@@ -71301,9 +71863,10 @@ window.TRACKER_DATA = {
    ],
    "sector": "Cross-cutting",
    "stage": "decided",
-   "n_sources": 2,
+   "n_sources": 3,
    "also_reported_by": [
-    "Swarajya"
+    "Swarajya",
+    "Deccan Herald"
    ]
   },
   {
@@ -73123,9 +73686,10 @@ window.TRACKER_DATA = {
    ],
    "sector": "Revenue & citizen services",
    "stage": "underway",
-   "n_sources": 3,
+   "n_sources": 4,
    "also_reported_by": [
     "ANI News",
+    "APAC Media",
     "Adda247"
    ]
   },
@@ -76455,6 +77019,26 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
+   "id": "Rc4386f0c",
+   "date": "2024-12-17",
+   "date_precision": "day",
+   "state": "Tamil Nadu",
+   "title": "Google, Tamil Nadu govt hold forum to discuss AI innovation in state",
+   "summary": "Company and state government in August signed agreement for technology advancement…",
+   "source": "Business Standard",
+   "url": "https://www.business-standard.com/industry/news/google-guidance-tamil-nadu-to-develop-ai-ecosystem-across-sectors-124121700246_1.html",
+   "image": "https://bsmedia.business-standard.com/_media/bs/img/article/2024-12/05/thumb/fitandfill/400X400/1733379128-7511.jpg",
+   "category": "events_outreach",
+   "tags": [
+    "events_outreach",
+    "partnership"
+   ],
+   "sector": "Industry & startups",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
    "id": "Rfb71877d",
    "date": "2024-12-16",
    "date_precision": "day",
@@ -76818,25 +77402,6 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
-   "id": "R8a23bf03",
-   "date": "2024-12-04",
-   "date_precision": "day",
-   "state": "Uttarakhand",
-   "title": "India’s Uttarakhand State 1st to Use AI for Forest Conservation",
-   "summary": "Uttarakhand, an Indian state, has become the first in the country to integrate artificial intelligence (AI) into its forest management strategies.",
-   "source": "Daily News Egypt",
-   "url": "https://dailynewsegypt.com/2024/12/04/indias-uttarakhand-state-1st-to-use-ai-for-forest-conservation/",
-   "image": "https://images.dailynewsegypt.com/2024/12/Indias-Uttarakhand-State-1st-to-Use-AI-for-Forest-Conservation.jpeg",
-   "category": "deployment",
-   "tags": [
-    "deployment"
-   ],
-   "sector": "Policing & safety",
-   "stage": "underway",
-   "n_sources": 1,
-   "also_reported_by": []
-  },
-  {
    "id": "R071b286e",
    "date": "2024-12-03",
    "date_precision": "day",
@@ -76890,9 +77455,10 @@ window.TRACKER_DATA = {
    ],
    "sector": "Cross-cutting",
    "stage": "underway",
-   "n_sources": 2,
+   "n_sources": 3,
    "also_reported_by": [
-    "ANI News"
+    "ANI News",
+    "Daily News Egypt"
    ]
   },
   {
@@ -76952,9 +77518,10 @@ window.TRACKER_DATA = {
    ],
    "sector": "Cross-cutting",
    "stage": "announced",
-   "n_sources": 3,
+   "n_sources": 4,
    "also_reported_by": [
     "The Times of India",
+    "The Haryana Story",
     "ETV Bharat"
    ]
   },
@@ -79565,6 +80132,25 @@ window.TRACKER_DATA = {
    ],
    "sector": "Policing & safety",
    "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R6e1585df",
+   "date": "2024-07-24",
+   "date_precision": "day",
+   "state": "Arunachal Pradesh",
+   "title": "AI-based CCTV cameras at 22 check gates in Arunachal Pradesh",
+   "summary": "Arunachal Pradesh Home Minister Mama Natung said that the state government has decided to install AI-based CCTV cameras at 22 check gates across the state.",
+   "source": "Hub News",
+   "url": "https://hubnetwork.in/ai-based-cctv-cameras-at-22-check-gates-in-arunachal-pradesh/",
+   "image": "https://hubnetwork.in/wp-content/uploads/2024/05/0_gH0_un3RMJV95jF4-scaled.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Policing & safety",
+   "stage": "decided",
    "n_sources": 1,
    "also_reported_by": []
   },
