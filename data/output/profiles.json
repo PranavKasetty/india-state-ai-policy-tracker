@@ -2,7 +2,7 @@
  "Andhra Pradesh": {
   "ai_policy": {
    "status": "done",
-   "text": "Robotics and Physical AI Policy 2026-36 cleared by Cabinet and released",
+   "text": "Robotics and Physical AI Policy 2026-36 approved and released",
    "cites": [
     "Rf466bb64",
     "Re88f3385",
@@ -21,16 +21,15 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "600 acres allotted for Rs 90,000 crore Google AI data centres in Visakhapatnam",
+   "text": "Amaravati Quantum and AI Innovation Centre launched with IBM",
    "cites": [
-    "R355de8d4",
-    "R2926047f",
-    "R53aec446"
+    "R4b4deba7",
+    "R550e2fcf"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "d0b32b597d0b",
-  "generated_at": "2026-11-26T08:28+00:00"
+  "input_hash": "53056af68819",
+  "generated_at": "2026-11-27T08:37+00:00"
  },
  "Arunachal Pradesh": {
   "ai_policy": {
@@ -91,49 +90,47 @@
  "Bihar": {
   "ai_policy": {
    "status": "done",
-   "text": "Bihar AI Mission approved by state cabinet in 2026",
+   "text": "Bihar AI Policy 2026 approved for sovereign AI, data centres and training",
    "cites": [
-    "R6fdc0aaa",
-    "R68b64920",
-    "Rc9c3c4c4"
+    "R493cca37",
+    "R4af400f2"
    ]
   },
   "ai_body": {
    "status": "announced",
-   "text": "Special AI cell planned in every district for land-revenue work",
+   "text": "Special AI cells planned in every district for land-revenue work",
    "cites": [
     "Ra3ee576b"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 190.32 crore approved by cabinet for Bihar AI Mission in 2026",
+   "text": "Rs 190.32 crore approved by Bihar cabinet for AI Mission in 2026",
    "cites": [
     "R6fdc0aaa",
-    "R68b64920",
-    "Rc9ad64e3"
+    "R68b64920"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "AI Center of Excellence approved by state cabinet in 2026",
+   "text": "AI Center of Excellence approved by Bihar cabinet in July 2026",
    "cites": [
     "R791202b9",
     "R7b37b9dd"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "c882acaf2cb0",
-  "generated_at": "2026-11-26T08:34+00:00"
+  "input_hash": "342bf5cce7b5",
+  "generated_at": "2026-11-27T08:38+00:00"
  },
  "Chhattisgarh": {
   "ai_policy": {
    "status": "done",
-   "text": "Chhattisgarh AI Mission approved with Rs 500 crore over five years",
+   "text": "Chhattisgarh AI Mission approved in 2026",
    "cites": [
     "R7cc53f61",
-    "R63bfb6f9",
-    "R6ae1aafc"
+    "Ra8b92ce6",
+    "R63bfb6f9"
    ]
   },
   "ai_body": {
@@ -152,7 +149,7 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "Foundation stone laid for Rs 1,000 crore Nava Raipur AI Data Center Park",
+   "text": "Rs 1,000 crore AI Data Center Park launched in Nava Raipur",
    "cites": [
     "Rcc6c8e84",
     "Recb4eed4",
@@ -160,8 +157,8 @@
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "1f1e1b0ae117",
-  "generated_at": "2026-11-25T08:56+00:00"
+  "input_hash": "be5a2251b738",
+  "generated_at": "2026-11-27T08:38+00:00"
  },
  "Goa": {
   "ai_policy": {
@@ -193,28 +190,28 @@
  "Gujarat": {
   "ai_policy": {
    "status": "done",
-   "text": "Action Plan for AI implementation approved by Chief Minister (2025)",
+   "text": "Action Plan for AI implementation in governance approved by CM (2025)",
    "cites": [
     "Rf50fa7d9"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "Gujarat AI Task Force formed for tech-driven governance and growth (2024)",
+   "text": "AI Task Force formed for governance and socio-economic development (2024)",
    "cites": [
     "Rfb71877d"
    ]
   },
   "funding": {
    "status": "announced",
-   "text": "Proposed Rs 20 crore mission for AI training of 5 lakh students (2026)",
+   "text": "Rs 20 crore mission proposed for AI training of 5 lakh students (2026)",
    "cites": [
     "Ra6932da2"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "AI Centre of Excellence at GIFT City inaugurated and IAIRO SPV formed (2025-26)",
+   "text": "AI Centre of Excellence at GIFT City inaugurated by CM (2025)",
    "cites": [
     "R1841ffbd",
     "Ra9ed9573",
@@ -222,29 +219,31 @@
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "6177d1bc38b0",
-  "generated_at": "2026-11-22T06:54+00:00"
+  "input_hash": "03852291366e",
+  "generated_at": "2026-11-27T08:39+00:00"
  },
  "Haryana": {
   "ai_policy": {
    "status": "done",
-   "text": "Haryana AI Mission unveiled in 2026",
+   "text": "Haryana AI Mission (2026) unveiled and AI Development Project 2025-28 approved",
    "cites": [
     "Ra92a52de",
-    "R5683822a",
+    "R56704031",
     "R27de87ff"
    ]
   },
   "ai_body": {
-   "status": "announced",
-   "text": "Haryana Police Artificial Intelligence Task Force proposed in 2026",
+   "status": "done",
+   "text": "Department of Future established in 2025 to drive AI and skill development",
    "cites": [
-    "Ra6b5d331"
+    "R1d5cc244",
+    "Rd0ffa930",
+    "Rb03c20fb"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 474.39 crore approved for Haryana AI Development Project (2025-2028)",
+   "text": "Rs 474.39 crore outlay approved for Haryana AI Development Project (2025-28)",
    "cites": [
     "R56704031",
     "Rced0a45a",
@@ -253,15 +252,14 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "Rs 40 crore AI hubs in Gurugram and Panchkula cleared in 2026",
+   "text": "First robotic and AI Centre of Excellence ready at Karnal ITI (2026)",
    "cites": [
-    "Ra31f6469",
-    "R98f27034"
+    "R61f2cbaf"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "a6bb5f41f0e7",
-  "generated_at": "2026-11-25T09:00+00:00"
+  "input_hash": "be1bc1519b63",
+  "generated_at": "2026-11-27T08:40+00:00"
  },
  "Himachal Pradesh": {
   "ai_policy": {
@@ -276,21 +274,21 @@
   },
   "funding": {
    "status": "announced",
-   "text": "Rs 5 crore announced for BTech AI course at HPU in 2026",
+   "text": "Rs 5 crore announced by CM for BTech AI course at HPU (2026)",
    "cites": [
     "R2a909d0d"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Vidhya Samiksha Kendra AI-driven data centre inaugurated in 2023",
+   "text": "Vidhya Samiksha Kendra AI-driven data centre inaugurated by Chief Minister (2023)",
    "cites": [
     "R39cd627c"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "c45b7044176d",
-  "generated_at": "2026-11-25T09:00+00:00"
+  "input_hash": "9b88488ce57e",
+  "generated_at": "2026-11-27T08:40+00:00"
  },
  "Jharkhand": {
   "ai_policy": {
@@ -363,49 +361,47 @@
  "Kerala": {
   "ai_policy": {
    "status": "done",
-   "text": "Malayalam AI Mission launched; K-AI Initiative operating under Kerala AI Mission (K-AIM)",
+   "text": "Malayalam AI Mission launched in 2026 alongside broader state AI policy plans",
    "cites": [
     "Re3333cd0",
-    "R9641614e",
-    "R9548a686"
+    "R219d98d4"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "Dedicated AI department created; IT department renamed IT, AI & Future Tech",
+   "text": "Dedicated AI department created and IT department renamed IT, AI and Future Tech",
    "cites": [
     "R435f8de7",
-    "Ref58a154",
-    "R0182578b"
+    "R0182578b",
+    "Ref58a154"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "2026-27 state budget allocates funds for Kochi AI city project",
+   "text": "Funds allocated for Kochi AI city in 2026-27 Kerala budget",
    "cites": [
     "R168c19e6"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Two AI Centres of Excellence approved; Thiruvananthapuram AI CoE launched in 2026",
+   "text": "Kerala AI Centre of Excellence launched in Thiruvananthapuram; two CoEs established (2026)",
    "cites": [
     "Rd47ca5ca",
     "R82061b81"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "5ae2e7c2fb3b",
-  "generated_at": "2026-11-23T07:41+00:00"
+  "input_hash": "3f734872c017",
+  "generated_at": "2026-11-27T08:40+00:00"
  },
  "Madhya Pradesh": {
   "ai_policy": {
    "status": "done",
-   "text": "State AI Mission launched in 2026 focusing on predictive governance",
+   "text": "State AI Mission launched in February 2026 with NVIDIA-Google partnership",
    "cites": [
     "R1f2ae7f3",
-    "Rd4a8d7a0",
-    "R36eaafc7"
+    "Rd4a8d7a0"
    ]
   },
   "ai_body": {
@@ -420,30 +416,28 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "AI labs set up in government schools in Damoh and Khandwa",
+   "text": "Rs 500 crore AI data centre foundation stone laid in Pithampur (2024)",
    "cites": [
-    "R083c59bf",
-    "R38e59b75",
-    "R09931c73"
+    "R130dfa49",
+    "R09a6e8a4"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "6144988f5d4e",
-  "generated_at": "2026-11-19T07:31+00:00"
+  "input_hash": "8a1c1f3479c9",
+  "generated_at": "2026-11-27T08:44+00:00"
  },
  "Maharashtra": {
   "ai_policy": {
    "status": "done",
-   "text": "Maharashtra AI Policy 2026 approved by cabinet",
+   "text": "Maharashtra AI Policy 2026 approved by Cabinet",
    "cites": [
     "R562864e1",
-    "Rdbb33aa8",
-    "Rd3701e67"
+    "Rdbb33aa8"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "Cabinet cleared Department of Electronics, IT and Artificial Intelligence",
+   "text": "Independent Department of Electronics, IT and AI cleared by Cabinet",
    "cites": [
     "Rd7d40f74",
     "Rbff13ca0"
@@ -451,22 +445,23 @@
   },
   "funding": {
    "status": "done",
-   "text": "Rs 500 crore AI startup fund approved under AI Policy 2026",
+   "text": "Rs 500 crore outlay approved for MahaAgri-AI Policy 2025-2029",
    "cites": [
-    "Rdbb33aa8"
+    "Rda0dbcb5",
+    "R5c8784f8"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Three AI Centres of Excellence partnered with Microsoft in Nagpur, Mumbai, Pune",
+   "text": "Three AI Centres of Excellence in Nagpur, Mumbai and Pune via Microsoft MoU",
    "cites": [
-    "R47ae66d7",
-    "R260b8903"
+    "R260b8903",
+    "R47ae66d7"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "b5276e725939",
-  "generated_at": "2026-11-24T10:35+00:00"
+  "input_hash": "8fcaa39b8ef7",
+  "generated_at": "2026-11-27T08:46+00:00"
  },
  "Manipur": {
   "ai_policy": {
@@ -581,13 +576,12 @@
    "text": "Odisha Artificial Intelligence Policy 2025 approved by state cabinet",
    "cites": [
     "Rdecbc04d",
-    "Rf88dd087",
-    "Ra79fa2bc"
+    "Rf88dd087"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "Odisha Vigilance launched AI cell to combat corruption",
+   "text": "Odisha vigilance launched AI cell to combat corruption",
    "cites": [
     "R52b2a7e8"
    ]
@@ -609,8 +603,8 @@
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "245cc63f82e1",
-  "generated_at": "2026-11-22T07:02+00:00"
+  "input_hash": "333ec67cc6ae",
+  "generated_at": "2026-11-27T08:47+00:00"
  },
  "Punjab": {
   "ai_policy": {
@@ -630,14 +624,14 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "Punjab's first AI lab inaugurated at Khanna Government School in 2026",
+   "text": "State-of-the-art AI lab inaugurated in Khanna government school in 2026",
    "cites": [
     "R865b1a49"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "23bc26fed675",
-  "generated_at": "2026-11-20T07:24+00:00"
+  "input_hash": "eaa89f0bb1b7",
+  "generated_at": "2026-11-27T08:52+00:00"
  },
  "Rajasthan": {
   "ai_policy": {
@@ -656,7 +650,7 @@
   },
   "funding": {
    "status": "done",
-   "text": "Rs 35 crore state investment for AI-powered energy management",
+   "text": "Rs 35 crore state investment for AI-powered energy management system",
    "cites": [
     "R84a8a61a",
     "R5af2b318"
@@ -664,14 +658,16 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "Rajasthan's first high-tech AI lab built in Bikaner",
+   "text": "High-tech AI lab built in Bikaner and AI training centres in Kota, Sikar",
    "cites": [
-    "R8fecdd3d"
+    "R8fecdd3d",
+    "R0b278a96",
+    "Reb6c83f8"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "547c2e8c3a27",
-  "generated_at": "2026-11-24T10:36+00:00"
+  "input_hash": "27754407dbd8",
+  "generated_at": "2026-11-27T08:52+00:00"
  },
  "Sikkim": {
   "ai_policy": {
@@ -693,50 +689,48 @@
    "status": "done",
    "text": "MoU signed with NIELIT Gangtok for AI Centre of Excellence (2026)",
    "cites": [
-    "Red4520ff"
+    "Redf6087a"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "fa6b4d1b88dd",
-  "generated_at": "2026-11-15T08:31+00:00"
+  "input_hash": "8bc2acb8e00d",
+  "generated_at": "2026-11-27T08:53+00:00"
  },
  "Tamil Nadu": {
   "ai_policy": {
    "status": "done",
-   "text": "Tamil Nadu Artificial Intelligence Mission (TNAIM) established in 2026",
+   "text": "Tamil Nadu AI Mission (TNAIM) and AI, deep-tech initiatives launched in 2026",
    "cites": [
-    "R5e1dd5d6",
-    "R74750963",
-    "R8fa4a6b6"
+    "R35a5a198",
+    "R5e1dd5d6"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "Dedicated AI cabinet ministry and minister created in May 2026",
+   "text": "Dedicated Ministry of Artificial Intelligence and AI cabinet minister appointed in 2026",
    "cites": [
     "Rb2e378a6",
     "R3150774a",
-    "Ra5e72d45"
+    "R90cb32d5"
    ]
   },
   "funding": {
-   "status": "announced",
-   "text": "50% subsidy up to Rs 30,000 for AI assistive devices in 2026-27 budget",
+   "status": "done",
+   "text": "Rs 50 crore fund for AI and deep-tech initiatives launched in 2026",
    "cites": [
-    "Ra6677335"
+    "R35a5a198"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "State AI Data Centre approved with IIT Madras in 2026",
+   "text": "Rs 10,000 crore Sovereign AI Park approved with Sarvam AI in 2026",
    "cites": [
-    "R305828a2",
-    "R4d335ec0"
+    "R472c3c1a"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "7dce94a94a2d",
-  "generated_at": "2026-11-22T07:04+00:00"
+  "input_hash": "39ca31e065af",
+  "generated_at": "2026-11-27T08:54+00:00"
  },
  "Telangana": {
   "ai_policy": {
