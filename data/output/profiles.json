@@ -90,47 +90,46 @@
  "Bihar": {
   "ai_policy": {
    "status": "done",
-   "text": "Bihar AI Policy 2026 approved for sovereign AI, data centres and training",
+   "text": "Bihar AI Policy 2026 approved by state government",
    "cites": [
-    "R493cca37",
-    "R4af400f2"
+    "R493cca37"
    ]
   },
   "ai_body": {
    "status": "announced",
-   "text": "Special AI cells planned in every district for land-revenue work",
+   "text": "Special AI cell for land-revenue work planned in every district",
    "cites": [
     "Ra3ee576b"
    ]
   },
   "funding": {
    "status": "done",
-   "text": "Rs 190.32 crore approved by Bihar cabinet for AI Mission in 2026",
+   "text": "Rs 190.32 crore approved by cabinet for Bihar AI Mission",
    "cites": [
     "R6fdc0aaa",
-    "R68b64920"
+    "R68b64920",
+    "Rc9ad64e3"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "AI Center of Excellence approved by Bihar cabinet in July 2026",
+   "text": "AI Center of Excellence approved by Bihar cabinet",
    "cites": [
     "R791202b9",
     "R7b37b9dd"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "342bf5cce7b5",
-  "generated_at": "2026-11-27T08:38+00:00"
+  "input_hash": "d34c673c7ab7",
+  "generated_at": "2026-11-28T07:51+00:00"
  },
  "Chhattisgarh": {
   "ai_policy": {
    "status": "done",
-   "text": "Chhattisgarh AI Mission approved in 2026",
+   "text": "Chhattisgarh AI Mission approved in 2026 with Rs 500 crore outlay",
    "cites": [
     "R7cc53f61",
-    "Ra8b92ce6",
-    "R63bfb6f9"
+    "R6ae1aafc"
    ]
   },
   "ai_body": {
@@ -140,7 +139,7 @@
   },
   "funding": {
    "status": "done",
-   "text": "Rs 500 crore approved for Chhattisgarh AI Mission over five years",
+   "text": "Rs 500 crore approved in 2026 for five-year Chhattisgarh AI Mission",
    "cites": [
     "R7cc53f61",
     "R63bfb6f9",
@@ -149,7 +148,7 @@
   },
   "infrastructure": {
    "status": "done",
-   "text": "Rs 1,000 crore AI Data Center Park launched in Nava Raipur",
+   "text": "Nava Raipur AI Data Center Park unveiled, foundation stone laid in 2025",
    "cites": [
     "Rcc6c8e84",
     "Recb4eed4",
@@ -157,8 +156,8 @@
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "be5a2251b738",
-  "generated_at": "2026-11-27T08:38+00:00"
+  "input_hash": "97328b2ec5c5",
+  "generated_at": "2026-11-28T07:56+00:00"
  },
  "Goa": {
   "ai_policy": {
@@ -190,28 +189,28 @@
  "Gujarat": {
   "ai_policy": {
    "status": "done",
-   "text": "Action Plan for AI implementation in governance approved by CM (2025)",
+   "text": "Action Plan for AI implementation approved by CM in 2025",
    "cites": [
     "Rf50fa7d9"
    ]
   },
   "ai_body": {
    "status": "done",
-   "text": "AI Task Force formed for governance and socio-economic development (2024)",
+   "text": "Indian AI Research Organization (IAIRO) SPV established by state in 2026",
    "cites": [
-    "Rfb71877d"
+    "Ra9ed9573"
    ]
   },
   "funding": {
    "status": "announced",
-   "text": "Rs 20 crore mission proposed for AI training of 5 lakh students (2026)",
+   "text": "Rs 20 crore AI training mission for 5 lakh students proposed in 2026",
    "cites": [
     "Ra6932da2"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "AI Centre of Excellence at GIFT City inaugurated by CM (2025)",
+   "text": "AI Centre of Excellence at GIFT City inaugurated by CM in 2025",
    "cites": [
     "R1841ffbd",
     "Ra9ed9573",
@@ -219,8 +218,8 @@
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "03852291366e",
-  "generated_at": "2026-11-27T08:39+00:00"
+  "input_hash": "10579966543a",
+  "generated_at": "2026-11-28T08:01+00:00"
  },
  "Haryana": {
   "ai_policy": {
@@ -327,7 +326,7 @@
  "Karnataka": {
   "ai_policy": {
    "status": "announced",
-   "text": "Draft policy on Responsible AI announced by state government in 2026",
+   "text": "Draft Responsible AI policy announced for release in 2026",
    "cites": [
     "Rdff5f567"
    ]
@@ -343,20 +342,20 @@
    "status": "done",
    "text": "Rs 35 crore approved for AI Hub at IIIT Bangalore in 2026",
    "cites": [
-    "R567ab120",
-    "R4e70432e"
+    "R567ab120"
    ]
   },
   "infrastructure": {
    "status": "done",
-   "text": "Centre for Applied AI (CATS) CoE in Bengaluru approved in 2026",
+   "text": "Rs 35 crore AI Hub at IIIT Bangalore approved by cabinet in 2026",
    "cites": [
-    "R3fcc3171"
+    "R4e70432e",
+    "R567ab120"
    ]
   },
   "model": "gemini-4-hydrogen",
-  "input_hash": "e57cd9e213ec",
-  "generated_at": "2026-11-26T08:34+00:00"
+  "input_hash": "2ed90c4e3fd7",
+  "generated_at": "2026-11-28T08:02+00:00"
  },
  "Kerala": {
   "ai_policy": {

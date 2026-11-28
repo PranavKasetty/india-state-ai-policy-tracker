@@ -2,9 +2,9 @@
 window.TRACKER_DATA = {
  "meta": {
   "is_mock": false,
-  "generated_at": "2026-11-27T09:01:06+00:00",
+  "generated_at": "2026-11-28T08:09:06+00:00",
   "period_start": "2022-12-01",
-  "period_end": "2026-11-27",
+  "period_end": "2026-11-28",
   "states": [
    {
     "name": "Andhra Pradesh",
@@ -1219,22 +1219,23 @@ window.TRACKER_DATA = {
     },
     "ai_body": {
      "status": "announced",
-     "text": "Special AI cells planned in every district for land-revenue work",
+     "text": "Special AI cell for land-revenue work planned in every district",
      "cites": [
       "Ra3ee576b"
      ]
     },
     "funding": {
      "status": "done",
-     "text": "Rs 190.32 crore approved by Bihar cabinet for AI Mission in 2026",
+     "text": "Rs 190.32 crore approved by cabinet for Bihar AI Mission",
      "cites": [
       "R6fdc0aaa",
-      "R68b64920"
+      "R68b64920",
+      "Rc9ad64e3"
      ]
     },
     "infrastructure": {
      "status": "done",
-     "text": "AI Center of Excellence approved by Bihar cabinet in July 2026",
+     "text": "AI Center of Excellence approved by Bihar cabinet",
      "cites": [
       "R791202b9",
       "R7b37b9dd"
@@ -1258,7 +1259,7 @@ window.TRACKER_DATA = {
     },
     "funding": {
      "status": "done",
-     "text": "Rs 500 crore approved for Chhattisgarh AI Mission over five years",
+     "text": "Rs 500 crore approved in 2026 for five-year Chhattisgarh AI Mission",
      "cites": [
       "R7cc53f61",
       "R63bfb6f9",
@@ -1267,7 +1268,7 @@ window.TRACKER_DATA = {
     },
     "infrastructure": {
      "status": "done",
-     "text": "Rs 1,000 crore AI Data Center Park launched in Nava Raipur",
+     "text": "Nava Raipur AI Data Center Park unveiled, foundation stone laid in 2025",
      "cites": [
       "Rcc6c8e84",
       "Recb4eed4",
@@ -1315,21 +1316,21 @@ window.TRACKER_DATA = {
     },
     "ai_body": {
      "status": "done",
-     "text": "AI Task Force formed for governance and socio-economic development (2024)",
+     "text": "Indian AI Research Organization (IAIRO) SPV established by state in 2026",
      "cites": [
-      "Rfb71877d"
+      "Ra9ed9573"
      ]
     },
     "funding": {
      "status": "announced",
-     "text": "Rs 20 crore mission proposed for AI training of 5 lakh students (2026)",
+     "text": "Rs 20 crore AI training mission for 5 lakh students proposed in 2026",
      "cites": [
       "Ra6932da2"
      ]
     },
     "infrastructure": {
      "status": "done",
-     "text": "AI Centre of Excellence at GIFT City inaugurated by CM (2025)",
+     "text": "AI Centre of Excellence at GIFT City inaugurated by CM in 2025",
      "cites": [
       "R1841ffbd",
       "Ra9ed9573",
@@ -1452,15 +1453,15 @@ window.TRACKER_DATA = {
      "status": "done",
      "text": "Rs 35 crore approved for AI Hub at IIIT Bangalore in 2026",
      "cites": [
-      "R567ab120",
-      "R4e70432e"
+      "R567ab120"
      ]
     },
     "infrastructure": {
      "status": "done",
-     "text": "Centre for Applied AI (CATS) CoE in Bengaluru approved in 2026",
+     "text": "Rs 35 crore AI Hub at IIIT Bangalore approved by cabinet in 2026",
      "cites": [
-      "R3fcc3171"
+      "R4e70432e",
+      "R567ab120"
      ]
     }
    },
@@ -1958,6 +1959,145 @@ window.TRACKER_DATA = {
  },
  "items": [
   {
+   "id": "R6bb5fdfa",
+   "date": "2026-11-28",
+   "date_precision": "day",
+   "state": "Maharashtra",
+   "title": "MahaGPT: Maharashtra AI for Government GRs",
+   "summary": "MahaGPT: Maharashtra AI for Government GRs",
+   "source": "Elets eGov",
+   "url": "https://egov.eletsonline.com/2026/11/mahagpt-maharashtra-ai-pilot/",
+   "image": "",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Revenue & citizen services",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "Rcd21fd50",
+   "date": "2026-11-28",
+   "date_precision": "day",
+   "state": "Gujarat",
+   "title": "Gujarat social justice dept explores AI-led governance at three-day camp in Valsad",
+   "summary": "Gujarat SJE department held ‘Utkarsh Samvad-2026’ in Valsad to plan AI-led digital governance, disability inclusion and 100% welfare scheme coverage.",
+   "source": "The Times of India",
+   "url": "https://timesofindia.indiatimes.com/city/ahmedabad/gujarat-social-justice-dept-explores-ai-led-governance-at-three-day-camp-in-valsad/amp_articleshow/136232275.cms",
+   "image": "https://static.toiimg.com/thumb/msid-136232271,width-1280,height-720,imgsize-2232564,resizemode-75,overlay-toi_sw,pt-32,y_pad-600/photo.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Revenue & citizen services",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R45f62b4c",
+   "date": "2026-11-28",
+   "date_precision": "day",
+   "state": "Himachal Pradesh",
+   "title": "Himachal: Experts converge at Shoolini varsity for summit on AI",
+   "summary": "Shoolini Business School, Shoolini University, is hosting the first International Summit on “The Age of Polycrisis, AI and Climate Anomalies in Alliance with Viksit Bharat 2047” from November 27 and 28, bringing together academicians, researchers and industry experts from India…",
+   "source": "The Tribune",
+   "url": "https://www.tribuneindia.com/news/himachal/himachal-experts-converge-at-shoolini-varsity-for-summit-on-ai/",
+   "image": "https://www.tribuneindia.com/sortd-service/imaginary/v22-01/jpg/large/high?url=dGhldHJpYnVuZS1zb3J0ZC1wcm8tcHJvZC1zb3J0ZC9tZWRpYWEwZmFmNjUwLWVhOWUtMTFmMS05MzQzLTdiNzlkNDBmMWQ3OC5qcGc=",
+   "category": "events_outreach",
+   "tags": [
+    "events_outreach"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R47e5e6e5",
+   "date": "2026-11-28",
+   "date_precision": "day",
+   "state": "Maharashtra",
+   "title": "Maharashtra Transport Dept Approves Rs. 1.84 mn for AI Road Survey",
+   "summary": "AI survey to identify accident-prone stretches on Old Pune-Mumbai highway…",
+   "source": "Construction World",
+   "url": "https://www.constructionworld.in/transport-infrastructure/highways-and-roads-infrastructure/maharashtra-transport-dept-approves-rs.-1.84-mn-for-ai-road-survey/101036",
+   "image": "https://www.constructionworld.in/assets/uploads/s_img_42782_1795839004.webp",
+   "category": "funding_budget",
+   "tags": [
+    "funding_budget",
+    "deployment"
+   ],
+   "sector": "Urban & transport",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "Rb5222d70",
+   "date": "2026-11-28",
+   "date_precision": "day",
+   "state": "Punjab",
+   "title": "Punjab to deploy AI-enabled bikes, use social media to monitor civic issues",
+   "summary": "The Punjab govt will deploy 131 AI-enabled bikes and use social media platforms and its M-Seva app to monitor civic problems, including garbage accumulation, potholes and uncovered manholes, as part of Mission Clean Punjab 3.",
+   "source": "The Times of India",
+   "url": "https://timesofindia.indiatimes.com/city/chandigarh/punjab-to-deploy-ai-enabled-bikes-use-social-media-to-monitor-civic-issues/articleshow/136230375.cms",
+   "image": "https://static.toiimg.com/thumb/msid-136230371,width-1280,height-720,resizemode-6,overlay-toi_sw,pt-32,y_pad-600/photo.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Urban & transport",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "Rda2d7fcc",
+   "date": "2026-11-28",
+   "date_precision": "day",
+   "state": "Bihar",
+   "title": "ANGA 2026: 30 VCs and agricultural scientists in Bihar Agricultural University, roadmap for AI and smart farming",
+   "summary": "बिहार कृषि विश्वविद्यालय, सबौर में 28-29 नवंबर को 'एएनजीए-2026' सम्मेलन आयोजित हो रहा है, जिसमें 30 से अधिक कृषि विश्वविद्यालयों के कुलपति और विशेषज्ञ जुटेंगे। यह आयोजन खेती में आर्टिफिशियल इंटेलिजेंस, स्मार्ट फार्मिंग और आधुनिक तकनीकों के उपयोग से आत्मनिर्भर कृषि का रोडमैप…",
+   "source": "Jagran",
+   "url": "https://www.jagran.com/bihar/bhagalpur-anga-2026-bau-sabour-hosts-vc-meet-on-ai-smart-farming-40450871.html",
+   "image": "https://www.jagranimages.com/images/2026/11/28/template/image/ANGA-2026-BAU-Sabour-Hosts-VC-Meet-on-AI-Smart-Farming-1795813645541_v.webp",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy",
+    "events_outreach"
+   ],
+   "sector": "Agriculture",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "एएनजीए 2026 : ब‍िहार कृषि विव‍ि में आएंगे 30 VC और कृषि वैज्ञानिक, खेती में AI और स्मार्ट फार्मिंग का बनेगा रोडमैप"
+  },
+  {
+   "id": "R3e6db4ed",
+   "date": "2026-11-28",
+   "date_precision": "day",
+   "state": "Madhya Pradesh",
+   "title": "Drone equipped with AI, thermal imaging and high-resolution cameras to monitor Pench dense forests",
+   "summary": "वन्यजीवों की निगरानी करते समय निर्धारित दूरी बनाए रखने और वन्यप्राणियों को अनावश्यक परेशानी से बचाने के संबंध में भी विशेष प्रशिक्षण दिया गया।…",
+   "source": "Nai Dunia",
+   "url": "https://www.naidunia.com/madhya-pradesh/seoni-drone-squad-established-for-wildlife-monitoring-in-pench-tiger-reserve-8479738",
+   "image": "https://img.naidunia.com/naidunia/ndnimg/28112026/28_11_2026-pench_tiger_reserve27.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Policing & safety",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "एआई, थर्मल इमेजिंग और हाई-रिजाल्यूशन कैमरों से लैस ड्रोन करेगा पेंच के घने वनों की निगरानी"
+  },
+  {
    "id": "R5104c883",
    "date": "2026-11-27",
    "date_precision": "day",
@@ -2030,11 +2170,161 @@ window.TRACKER_DATA = {
    ],
    "sector": "Education",
    "stage": "announced",
-   "n_sources": 4,
+   "n_sources": 5,
    "also_reported_by": [
     "Urban Acres",
     "Times Now",
+    "Hiru News",
     "India Today"
+   ]
+  },
+  {
+   "id": "Ra118e869",
+   "date": "2026-11-27",
+   "date_precision": "day",
+   "state": "Uttarakhand",
+   "title": "Uttarakhand AI Task Force: Anand Bardhan Orders State Data Lake",
+   "summary": "Uttarakhand AI Task Force: Anand Bardhan Orders State Data Lake",
+   "source": "Elets eGov",
+   "url": "https://egov.eletsonline.com/2026/11/uttarakhand-ai-task-force-data-lake/",
+   "image": "",
+   "category": "governance_body",
+   "tags": [
+    "governance_body",
+    "infrastructure"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R5453e0d9",
+   "date": "2026-11-27",
+   "date_precision": "day",
+   "state": "Gujarat",
+   "title": "IORA backs Gujarat Maritime Law Centre, recognises Goa institute as Digital Hub; identifies cybersecurity, AI as key cooperation areas",
+   "summary": "The decisions aim to strengthen regional cooperation by enhancing maritime legal capabilities, improving access to scientific knowledge and promoting technical expertise and training across the Indian Ocean Region.",
+   "source": "ANI News",
+   "url": "https://www.aninews.in/news/world/asia/iora-backs-gujarat-maritime-law-centre-recognises-goa-institute-as-digital-hub-identifies-cybersecurity-ai-as-key-cooperation-areas20261127202844",
+   "image": "https://d3lzcn6mbbadaf.cloudfront.net/media/details/__sized__/ANI-20261127145832-thumbnail-320x180-70.jpg",
+   "category": "infrastructure",
+   "tags": [
+    "infrastructure"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "decided",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R2fdb69d2",
+   "date": "2026-11-27",
+   "date_precision": "day",
+   "state": "Odisha",
+   "title": "Odisha To Get 7 New Govt ITIs, Introduce Courses In AI, Drone Piloting & Solar Technology",
+   "summary": "Seven new Government Industrial Training Institutes (ITIs) are being set up across Odisha with plans to introduce modern courses…",
+   "source": "Odisha Bytes",
+   "url": "https://odishabytes.com/odisha-to-get-7-new-govt-itis-introduce-courses-in-ai-drone-piloting-solar-technology/",
+   "image": "https://assets.odishabytes.com/wp-content/uploads/2026/11/Screenshot-2026-11-27-172410.webp",
+   "category": "skilling",
+   "tags": [
+    "skilling",
+    "infrastructure"
+   ],
+   "sector": "Education",
+   "stage": "decided",
+   "n_sources": 4,
+   "also_reported_by": [
+    "Pragativadi",
+    "thesamaja.com",
+    "www.thesamaja.com"
+   ]
+  },
+  {
+   "id": "Ra8e80634",
+   "date": "2026-11-27",
+   "date_precision": "day",
+   "state": "Meghalaya",
+   "title": "AI and money management may soon enter Meghalaya school curriculum",
+   "summary": "The Education Department is considering introducing Artificial Intelligence (AI) and financial literacy in schools to prepare students for a technology-driven economy, Deputy Secretary Richa Kulkarni said on Friday.",
+   "source": "Hub News",
+   "url": "https://hubnetwork.in/ai-and-money-management-may-soon-enter-meghalaya-school-curriculum/",
+   "image": "https://hubnetwork.in/wp-content/uploads/2026/11/Richa-Kulkarni-.jpeg",
+   "category": "skilling",
+   "tags": [
+    "skilling",
+    "strategy_policy"
+   ],
+   "sector": "Education",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R65d68f0d",
+   "date": "2026-11-27",
+   "date_precision": "day",
+   "state": "Odisha",
+   "title": "Global Conference on AI in Litigation: Odisha Chief Secretary Reviews Prep",
+   "summary": "Join the Global Conference on AI in Litigation to explore vital issues and challenges in legal technologies on December 12-13, 2026.",
+   "source": "Pragativadi",
+   "url": "https://pragativadi.com/global-conference-on-ai-in-litigation-odisha-chief-secretary-reviews-prep/",
+   "image": "https://pragativadi.com/wp-content/uploads/2026/11/b20e54d2-5ab6-454e-a5fb-696e9684b1a2.jpg",
+   "category": "events_outreach",
+   "tags": [
+    "events_outreach"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "announced",
+   "n_sources": 7,
+   "also_reported_by": [
+    "ODISHA RAY",
+    "Ommcom News",
+    "prameyanews.com",
+    "thesamikhsya.com",
+    "Industry Odisha",
+    "Odisha Bytes"
+   ]
+  },
+  {
+   "id": "Ra7fd3566",
+   "date": "2026-11-27",
+   "date_precision": "day",
+   "state": "Odisha",
+   "title": "Digital Push at Odisha Khadi & MSME Expo 2026: ORMS and WhatsApp Chatbot Take Centre Stage",
+   "summary": "Day 3 of Odisha Khadi & MSME Expo 2026 featured a seminar on ORMS and WhatsApp Chatbot to empower artisans and entrepreneurs.",
+   "source": "Pragativadi",
+   "url": "https://pragativadi.com/digital-push-at-odisha-khadi-msme-expo-2026-orms-and-whatsapp-chatbot-take-centre-stage/",
+   "image": "https://pragativadi.com/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-27-at-17.17.35.jpeg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Industry & startups",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "Rcf4a9936",
+   "date": "2026-11-27",
+   "date_precision": "day",
+   "state": "Punjab",
+   "title": "Punjab Police Officers Receive Training in Artificial Intelligence and Cyber Security at Phillaur Academy",
+   "summary": "In a significant initiative to enhance the technological capabilities of Punjab Police personnel, the first-ever three-day training programme…",
+   "source": "Punjab News Express",
+   "url": "https://punjabnewsexpress.com/crime-justice/news/punjab-police-officers-receive-training-in-artificial-intelligence-and-cyber-security-at-phillaur-academy-334292",
+   "image": "https://punjabnewsexpress.com/uploads/images/202611/image_870x580_6b0988e6065e6.jpg",
+   "category": "skilling",
+   "tags": [
+    "skilling"
+   ],
+   "sector": "Policing & safety",
+   "stage": "underway",
+   "n_sources": 2,
+   "also_reported_by": [
+    "The Tribune"
    ]
   },
   {
@@ -2079,6 +2369,157 @@ window.TRACKER_DATA = {
    "also_reported_by": [],
    "lang": "hi",
    "title_original": "शहडोल में AI काॅलिंग साॅफ्टवेयर ‘मातृ साथी’ से उच्च जोखिम गर्भवती महिलाओं को राहत"
+  },
+  {
+   "id": "Rfc923432",
+   "date": "2026-11-27",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "Surgeon conclave at AIIMS Gorakhpur; advantage of AI from disease detection to surgery in health sector",
+   "summary": "फेफड़ों की भी परेशानी को एआई तकनीक वाली एक्स-रे मशीन काफी सटीक तरीके के साथ रिपोर्ट कर रही है.",
+   "source": "ETV Bharat",
+   "url": "https://www.etvbharat.com/hi/state/surgeon-conclave-at-aiims-gorakhpur-the-utility-of-ai-in-the-health-sector-ups26112702709",
+   "image": "https://imgs.etvbharat.com/etvbharat/prod-images/27-11-2026/1200-675-28207671-thumbnail-16x9-gorakhpur-aspera.jpg",
+   "category": "events_outreach",
+   "tags": [
+    "events_outreach"
+   ],
+   "sector": "Health",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "AIIMS गोरखपुर में सर्जन कान्क्लेव; हेल्थ सेक्टर में बीमारी की पहचान से सर्जरी तक AI का फायदा"
+  },
+  {
+   "id": "Racac9cc8",
+   "date": "2026-11-27",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "Bareilly Cantonment to be revamped... AI technology, Nakatia riverfront and Dhopeshwarnath temple will boost tourism",
+   "summary": "Bareilly Cantonment to be revamped... AI technology, Nakatia riverfront and Dhopeshwarnath temple will boost tourism",
+   "source": "News18 Hindi",
+   "url": "https://hindi.news18.com/amp/news/uttar-pradesh/bareilly-cantonment-board-development-plan-nakatia-riverfront-dhopeshwarnath-temple-ai-scada-system-local18-11017153.html",
+   "image": "",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy",
+    "infrastructure"
+   ],
+   "sector": "Urban & transport",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "बरेली कैंट का होगा कायाकल्प... AI तकनीक, नकटिया रिवरफ्रंट और धोपेश्वरनाथ मंदिर से बढ़ेगा पर्यटन, जानें क्या..."
+  },
+  {
+   "id": "Ra6492d0c",
+   "date": "2026-11-27",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "AI kept guiding, doctors kept fixing screws in spine; first spine AI surgery in Hallet hospital",
+   "summary": "कानपुर के हैलट अस्पताल में डॉक्टरों ने एआई की मदद से 16 वर्षीय गोविंद की जन्मजात टेढ़ी रीढ़ की जटिल सर्जरी की। आठ घंटे चले ऑपरेशन में रीढ़ को सीधा करने के लिए 16 पेंच लगाए गए। सर्जरी सफल रही और किशोर अब स्वस्थ है।, Uttar-pradesh Hindi News - Hindustan…",
+   "source": "Hindustan",
+   "url": "https://www.livehindustan.com/uttar-pradesh/first-ai-spine-surgery-at-hallet-hospital-kanpur-doctors-inserted-16-screws-201795776959809.html",
+   "image": "https://www.livehindustan.com/lh-img/smart/img/smart/2026/11/27/1600x900/logo/jkkfkp_1795777531197_i4bN_1795777550046_E7w5_0e33c31a-b4aa-46c2-bade-f34de1ab347a_0ydr.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Health",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "एआई बताता रहा, डॉक्टर कसते रहे रीढ़ में पेंच; हैलेट में पहली बार स्पाइन की AI सर्जरी"
+  },
+  {
+   "id": "R575d31eb",
+   "date": "2026-11-27",
+   "date_precision": "day",
+   "state": "Bihar",
+   "title": "Business landscape to change with AI, new opportunities for Bihar entrepreneurs",
+   "summary": "Business landscape to change with AI, new opportunities for Bihar entrepreneurs",
+   "source": "Insider Live",
+   "url": "https://www.insiderlive.in/2026/11/bihar-entrepreneurs-association-founders-meet-discusses-ai-business-opportunities.html",
+   "image": "",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy"
+   ],
+   "sector": "Industry & startups",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "एआई से बदलेगी कारोबार की तस्वीर, बिहार के उद्यमियों के लिए खुलेंगे नए अवसर"
+  },
+  {
+   "id": "R6de88b0e",
+   "date": "2026-11-27",
+   "date_precision": "day",
+   "state": "Madhya Pradesh",
+   "title": "MP out of top-12 in company formation race, yet how Indore is becoming India's new 'tech and AI powerhouse'!",
+   "summary": "मीडियावाला ख़ास — कंपनियां खोलने की दौड़ में एमपी टॉप-12 से ब…",
+   "source": "Mediawala",
+   "url": "https://mediawala.in/madhya-pradesh-may-be-outside-the-top-12-states/",
+   "image": "https://cdn.mediawala.in/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-27-at-17.29.42.jpeg",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy"
+   ],
+   "sector": "Industry & startups",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "कंपनियां खोलने की दौड़ में एमपी टॉप-12 से बाहर, फिर भी कैसे देश का नया ‘टेक और AI पावरहाउस’ बन रहा इंदौर!"
+  },
+  {
+   "id": "R1a97ce1b",
+   "date": "2026-11-27",
+   "date_precision": "day",
+   "state": "Jharkhand",
+   "title": "Ranchi News: Students given practical knowledge of AI tools and techniques",
+   "summary": "रांची विश्वविद्यालय के एमसीए विभाग और ऑल इंडिया होपलाइन वेलफेयर चैरिटेबल यूथ सोसाइटी ने एआई कार्यशाला आयोजित की। इसमें एमसीए और गणित विभाग के विद्यार्थियों तथा शिक्षकों ने हिस्सा लिया। विद्यार्थियों को एआई टूल्स, तकनीकों और उनके व्यावहारिक उपयोग की जानकारी दी गई। वक्ताओं ने…",
+   "source": "Hindustan",
+   "url": "https://www.livehindustan.com/jharkhand/ranchi/story-ranchi-university-holds-artificial-intelligence-workshop-for-students-201795780152335.amp.html",
+   "image": "",
+   "category": "skilling",
+   "tags": [
+    "skilling"
+   ],
+   "sector": "Education",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": [],
+   "lang": "hi",
+   "title_original": "Ranchi News: विद्यार्थियों को एआई टूल्स व तकनीकों के व्यावहारिक उपयोग की दी गई जानकारी"
+  },
+  {
+   "id": "Rdd2e301f",
+   "date": "2026-11-27",
+   "date_precision": "day",
+   "state": "Maharashtra",
+   "title": "AI use should complement human capabilities, not replace: Good governance, transparency in AI use",
+   "summary": "वयाच्या 16 व्या वर्षी रूसचे राष्ट्रपति व्लादीमीर  पुतीन यांच्यासोबत सेल्फी काढली.",
+   "source": "Maharashtra Times",
+   "url": "https://maharashtratimes.com/international/international-news/ai-kid-of-india-raul-john-aju-takes-selfie-with-vladimir-putin-at-ai-journey-2026-post-viral/articleshow/136213525.cms",
+   "image": "https://static.langimg.com/mt/thumb/136213910/raul-john-aju-takes-selfie-with-vladimir-putin.jpg?imgsize=146811&width=1600&height=900&resizemode=75",
+   "category": "regulation_ethics",
+   "tags": [
+    "regulation_ethics",
+    "strategy_policy"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "announced",
+   "n_sources": 2,
+   "also_reported_by": [
+    "Divya Marathi"
+   ],
+   "lang": "mr",
+   "title_original": "पुतिन यांच्याशी AI वर चर्चा करणारा हा भारतीय मुलगा कोण? 16 व्या वर्षी सुरू केली स्वतःची कंपनी, इंटरनेटवर याचीच चर्चा"
   },
   {
    "id": "Rc1fd27dd",
@@ -2278,6 +2719,63 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
+   "id": "Ra6dc41e0",
+   "date": "2026-11-26",
+   "date_precision": "day",
+   "state": "Gujarat",
+   "title": "Saviour or Devil, India Must Engage With AI: Industry, Government, and Global Experts at the Ahmedabad Dialogue Call for Impact Over Pilots",
+   "summary": "Saviour or Devil, India Must Engage With AI: Industry, Government, and Global Experts at the Ahmedabad Dialogue Call for Impact Over Pilots",
+   "source": "Press Trust of India",
+   "url": "https://www.ptinews.com/press-release/saviour-or-devil-india-must-engage-with-ai-industry-government-and-global-experts-at-the-ahmedabad-dialogue-call-for-impact-over-pilots/4295106",
+   "image": "",
+   "category": "events_outreach",
+   "tags": [
+    "events_outreach"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "R9b57b244",
+   "date": "2026-11-26",
+   "date_precision": "day",
+   "state": "Telangana",
+   "title": "Telangana emerging as hub for AI-driven innovation: IT Minister",
+   "summary": "Telangana emerging as hub for AI-driven innovation: IT Minister",
+   "source": "DD News",
+   "url": "https://ddnews.gov.in/en/telangana-emerging-as-hub-for-ai-driven-innovation-it-minister/",
+   "image": "",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy"
+   ],
+   "sector": "Industry & startups",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
+   "id": "Rfa0cac7b",
+   "date": "2026-11-26",
+   "date_precision": "day",
+   "state": "Uttar Pradesh",
+   "title": "Uttar Pradesh Plans AI for Over 240 Million Residents",
+   "summary": "Uttar Pradesh is considering an AI system for over 240 million residents.",
+   "source": "Brief IA",
+   "url": "https://www.briefia.fr/en/article/l-uttar-pradesh-projette-une-ia-pour-plus-de-240-millions-d-habitants",
+   "image": "https://uknohvstpdmdzjugegft.supabase.co/storage/v1/object/public/article-images/articles/l-uttar-pradesh-projette-une-ia-pour-plus-de-240-millions-d-.jpg",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
    "id": "R6eb5a7db",
    "date": "2026-11-26",
    "date_precision": "day",
@@ -2426,14 +2924,16 @@ window.TRACKER_DATA = {
    ],
    "sector": "Cross-cutting",
    "stage": "announced",
-   "n_sources": 7,
+   "n_sources": 9,
    "also_reported_by": [
     "Lalluram",
     "Janta Se Rishta",
     "Jagran",
     "Uttarakhand Morning Post",
     "IBC24",
-    "Shikhar Himalaya"
+    "liveskgnews",
+    "Shikhar Himalaya",
+    "Ghamasan News"
    ],
    "lang": "hi",
    "title_original": "उत्तराखंड में बनेगी AI टास्क फोर्स, सरकारी कामों में आएगी तेजी, जानिए पूरी प्लानिंग"
@@ -2517,8 +3017,10 @@ window.TRACKER_DATA = {
    ],
    "sector": "Education",
    "stage": "announced",
-   "n_sources": 1,
-   "also_reported_by": [],
+   "n_sources": 2,
+   "also_reported_by": [
+    "Divya Marathi"
+   ],
    "lang": "mr",
    "title_original": "MPSC recruitment: एआय, आयटीसह तीन विभागांची भरती MPSC मार्फत होणार; अभ्यासक्रमात बदल करण्याचा निर्णय"
   },
@@ -2619,7 +3121,7 @@ window.TRACKER_DATA = {
    ],
    "sector": "Health",
    "stage": "announced",
-   "n_sources": 18,
+   "n_sources": 20,
    "also_reported_by": [
     "22Scope",
     "Bengal Mirror - Think Positive",
@@ -2637,7 +3139,9 @@ window.TRACKER_DATA = {
     "Digital Health News",
     "Medical Buyer",
     "The Indian Express",
-    "Medical Dialogues"
+    "Bold News",
+    "Medical Dialogues",
+    "Prabhat Khabar"
    ]
   },
   {
@@ -2677,10 +3181,11 @@ window.TRACKER_DATA = {
    ],
    "sector": "Education",
    "stage": "announced",
-   "n_sources": 4,
+   "n_sources": 5,
    "also_reported_by": [
     "Tech Observer Magazine",
     "India Education Diary",
+    "Bold News",
     "CXO Digitalpulse"
    ]
   },
@@ -4900,25 +5405,6 @@ window.TRACKER_DATA = {
     "News9live",
     "India Today"
    ]
-  },
-  {
-   "id": "Rd2a227ef",
-   "date": "2026-11-19",
-   "date_precision": "day",
-   "state": "Karnataka",
-   "title": "Karnataka Leads India's AI and Semiconductor Push",
-   "summary": "Bengaluru Tech Summit 2026 highlights enterprise AI maturity, semiconductor investments and India's ambition for technological self-reliance.",
-   "source": "varindia",
-   "url": "https://www.varindia.com/news/karnataka-leads-india-s-ai-and-semiconductor-push",
-   "image": "https://newapi.varindia.com/storage/news/2026/11/i0iNKEUxBYSwfLyS5edvxmiHzGjrDXEJ6IXSFzwX.jpg",
-   "category": "strategy_policy",
-   "tags": [
-    "strategy_policy"
-   ],
-   "sector": "Cross-cutting",
-   "stage": "underway",
-   "n_sources": 1,
-   "also_reported_by": []
   },
   {
    "id": "Rdf8cfb9a",
@@ -21886,6 +22372,27 @@ window.TRACKER_DATA = {
    ]
   },
   {
+   "id": "Ra11f046b",
+   "date": "2026-09-10",
+   "date_precision": "day",
+   "state": "Uttarakhand",
+   "title": "Nitin Nabin, CM Dhami meet Uttarakhand youth, discuss jobs, AI and startups",
+   "summary": "BJP National President Nitin Nabin and Uttarakhand Chief Minister Pushkar Singh Dhami interacted with young people in Haldwani on jobs, startups, AI, skills and the future of the state.",
+   "source": "News9live",
+   "url": "https://www.news9live.com/featured/nitin-nabin-cm-dhami-uttarakhand-youth-jobs-ai-startups-3006490",
+   "image": "https://images.news9live.com/wp-content/uploads/2026/09/nitin-nabin-cm-dhami-uttarakhand.png",
+   "category": "strategy_policy",
+   "tags": [
+    "strategy_policy"
+   ],
+   "sector": "Industry & startups",
+   "stage": "announced",
+   "n_sources": 2,
+   "also_reported_by": [
+    "India TV Hindi"
+   ]
+  },
+  {
    "id": "R13bb774f",
    "date": "2026-09-10",
    "date_precision": "day",
@@ -21950,27 +22457,6 @@ window.TRACKER_DATA = {
    "also_reported_by": [],
    "lang": "hi",
    "title_original": "MP Passenger Transport Vision Summit 2026: इंदौर में जुटेंगे देशभर के एक्सपर्ट, AI से लेकर ग्रीन मोबिलिटी तक बनेगी परिवहन की नई रणनीति"
-  },
-  {
-   "id": "R532dd3e7",
-   "date": "2026-09-10",
-   "date_precision": "day",
-   "state": "Uttarakhand",
-   "title": "Nitin Nabin and Pushkar Dhami interact with youth in Haldwani, discussion ranges from jobs to AI",
-   "summary": "हल्द्वानी में बीजेपी के राष्ट्रीय अध्यक्ष नितिन नबीन और मुख्यमंत्री पुष्कर सिंह धामी ने युवाओं से बातचीत की। इस दौरान रोजगार, सरकारी नौकरी, स्वरोजगार, स्टार्टअप, AI, डिजिटल तकनीक, कौशल विकास और खेल जैसे मुद्दों पर चर्चा हुई।…",
-   "source": "India TV Hindi",
-   "url": "https://www.indiatv.in/india/national/nitin-nabin-and-pushkar-dhami-interact-with-youth-in-haldwani-employment-ai-startups-2026-09-10-1242429",
-   "image": "https://resize.indiatv.in/resize/newbucket/1200_-/2026/09/nitin-nabin-1789028908.jpg",
-   "category": "events_outreach",
-   "tags": [
-    "events_outreach"
-   ],
-   "sector": "Cross-cutting",
-   "stage": "announced",
-   "n_sources": 1,
-   "also_reported_by": [],
-   "lang": "hi",
-   "title_original": "हल्द्वानी में नितिन नबीन और पुष्कर धामी ने युवाओं से किया संवाद, रोजगार से लेकर AI तक चर्चा"
   },
   {
    "id": "R49ffd0ec",
@@ -22408,8 +22894,9 @@ window.TRACKER_DATA = {
    ],
    "sector": "Revenue & citizen services",
    "stage": "decided",
-   "n_sources": 22,
+   "n_sources": 23,
    "also_reported_by": [
+    "Outlook Business",
     "Trade Brains",
     "Rediff MoneyWiz",
     "News18",
@@ -24839,15 +25326,15 @@ window.TRACKER_DATA = {
    ]
   },
   {
-   "id": "R66f87829",
+   "id": "Rd7d2be91",
    "date": "2026-08-24",
    "date_precision": "day",
    "state": "Punjab",
-   "title": "Punjab fast emerging as major IT destination, Mohali set to become AI hub: Mann",
-   "summary": "Stay updated with ThePrint: Preferred Source Google Discover Chandigarh, Aug 24 (PTI) Punjab Chief Minister Bhagwant Mann on Monday said the state is fast emerging as a major IT destination, with Mohali set to become a leading hub for AI, digital innovation and global capability…",
-   "source": "ThePrint",
-   "url": "https://theprint.in/india/punjab-fast-emerging-as-major-it-destination-mohali-set-to-become-ai-hub-mann/3023880/",
-   "image": "",
+   "title": "Mohali set to become major IT, AI and Digital Innovation Hub: Punjab CM Mann",
+   "summary": "Mohali set to become major IT, AI and Digital Innovation Hub: Punjab CM Mann…",
+   "source": "Babushahi.com",
+   "url": "https://www.babushahi.com/view-news.php?id=225811",
+   "image": "https://www.babushahi.com/upload/image/CM-1-178757107009.jpg",
    "category": "strategy_policy",
    "tags": [
     "strategy_policy",
@@ -24855,28 +25342,11 @@ window.TRACKER_DATA = {
    ],
    "sector": "Industry & startups",
    "stage": "announced",
-   "n_sources": 1,
-   "also_reported_by": []
-  },
-  {
-   "id": "R726e1fc5",
-   "date": "2026-08-24",
-   "date_precision": "day",
-   "state": "Punjab",
-   "title": "Punjab Emerging as Major Hub for AI, Digital Innovation and Global Capability Centres: CM Bhagwant Mann",
-   "summary": "The Chief Minister said world-class infrastructure, a strong skilled talent pool, lower business costs, Invest Punjab and the new GCC Policy 2026 are creating a strong ecosystem for technology companies and fresh investment.",
-   "source": "The Statesman",
-   "url": "https://www.thestatesman.com/india/punjab-emerging-as-major-hub-for-ai-digital-innovation-and-global-capability-centres-cm-bhagwant-mann-1503630788.html",
-   "image": "https://www.thestatesman.com/wp-content/uploads/2026/08/Bhagwant-Mann-_20260824_221623_0000.webp",
-   "category": "strategy_policy",
-   "tags": [
-    "strategy_policy",
-    "infrastructure"
-   ],
-   "sector": "Industry & startups",
-   "stage": "announced",
-   "n_sources": 1,
-   "also_reported_by": []
+   "n_sources": 3,
+   "also_reported_by": [
+    "The Statesman",
+    "ThePrint"
+   ]
   },
   {
    "id": "R6832f6e6",
@@ -26125,11 +26595,12 @@ window.TRACKER_DATA = {
    ],
    "sector": "Cross-cutting",
    "stage": "decided",
-   "n_sources": 4,
+   "n_sources": 5,
    "also_reported_by": [
     "Indianmasterminds",
     "CIOL",
-    "Express Computer"
+    "Express Computer",
+    "Machine Maker"
    ]
   },
   {
@@ -31245,7 +31716,7 @@ window.TRACKER_DATA = {
    ],
    "sector": "Cross-cutting",
    "stage": "underway",
-   "n_sources": 66,
+   "n_sources": 67,
    "also_reported_by": [
     "Deccan Herald",
     "CXOToday.com",
@@ -31308,6 +31779,7 @@ window.TRACKER_DATA = {
     "ETHRWorld.com",
     "The 420.in",
     "boldnewsonline.com",
+    "varindia",
     "tele.net.in",
     "Convergence Now",
     "Education Times",
@@ -36499,6 +36971,26 @@ window.TRACKER_DATA = {
    "also_reported_by": [
     "The National Law Review"
    ]
+  },
+  {
+   "id": "Rf82c04dc",
+   "date": "2026-06-26",
+   "date_precision": "day",
+   "state": "Kerala",
+   "title": "Kochi to host India's first public AI literacy summit on July 3",
+   "summary": "Kochi to host India's first public AI literacy summit on July 3…",
+   "source": "DhanamOnline",
+   "url": "https://english.dhanamonline.com/business-kerala/kochi-to-host-indias-first-public-ai-literacy-summit-on-july-3-9003500",
+   "image": "https://media.assettype.com/dhanamonline-english%2F2026-06-26%2Fekkv9e1y%2FAIimage.jpg?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100",
+   "category": "events_outreach",
+   "tags": [
+    "events_outreach",
+    "skilling"
+   ],
+   "sector": "Education",
+   "stage": "announced",
+   "n_sources": 1,
+   "also_reported_by": []
   },
   {
    "id": "R88fee491",
@@ -47129,9 +47621,10 @@ window.TRACKER_DATA = {
    ],
    "sector": "Revenue & citizen services",
    "stage": "decided",
-   "n_sources": 5,
+   "n_sources": 6,
    "also_reported_by": [
     "ET Enterprise AI",
+    "Law Trend",
     "The Hindu",
     "The Times of India",
     "News Arena India"
@@ -64688,6 +65181,25 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
+   "id": "R4b0fb18d",
+   "date": "2025-10-12",
+   "date_precision": "day",
+   "state": "Punjab",
+   "title": "AI enters public health in Punjab: Over 700 suspected stroke patients screened",
+   "summary": "Within just a few months of its launch, Punjab's AI-Driven Stroke Project has screened more than 700 suspected patients.",
+   "source": "The Times of India",
+   "url": "https://timesofindia.indiatimes.com/city/chandigarh/ai-enters-public-health-in-punjab-over-700-suspected-stroke-patients-screened/articleshow/124487808.cms",
+   "image": "https://static.toiimg.com/thumb/msid-124487806,width-1070,height-580,imgsize-45972,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg",
+   "category": "deployment",
+   "tags": [
+    "deployment"
+   ],
+   "sector": "Health",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
    "id": "R0897bf66",
    "date": "2025-10-11",
    "date_precision": "day",
@@ -69410,6 +69922,26 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
+   "id": "R059e982b",
+   "date": "2025-07-16",
+   "date_precision": "day",
+   "state": "Tripura",
+   "title": "Tripura Pioneers AI Training for Smarter Governance with DES Workshop",
+   "summary": "Agartala, July 16 (FD) Tripura is fast emerging as a frontrunner in embracing Artificial Intelligence (AI) to enhance governance and administrative efficiency....",
+   "source": "First Despatch",
+   "url": "https://firstdespatch.com/fdn/tripura-pioneers-ai-training-for-smarter-governance-with-des-workshop-16797.html",
+   "image": "https://firstdespatch.com/backOffice/NewsImages/16797.jpg",
+   "category": "skilling",
+   "tags": [
+    "skilling",
+    "governance_body"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
    "id": "R0622886d",
    "date": "2025-07-16",
    "date_precision": "day",
@@ -71595,15 +72127,15 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
-   "id": "Rd28b546d",
+   "id": "Rb1734c74",
    "date": "2025-05-27",
    "date_precision": "day",
    "state": "Chhattisgarh",
-   "title": "India's First AI SEZ in Chhattisgarh: RackBank to Invest ₹1000 Crore",
-   "summary": "The zone will host state-of-the-art computer systems and servers that will run AI systems capable of human-like reasoning, making it a hub for major global companies to carry out their digital operations.",
-   "source": "ET Government",
-   "url": "https://government.economictimes.indiatimes.com/news/economy/rackbank-launches-indias-first-ai-sez-with-1000-crore-investment-in-chhattisgarh/121453278",
-   "image": "https://etimg.etb2bimg.com/thumb/msid-121453278,imgsize-27762,width-1200,height=627,overlay-etgovernment,resizemode-75/news/economy/rackbank-launches-indias-first-ai-sez-with-1000-crore-investment-in-chhattisgarh.jpg",
+   "title": "India's first AI SEZ in Chhattisgarh RackBank to invest Rs 1000 crores",
+   "summary": "In Nava Raipur, Chhattisgarh, India's first AI-based \"RackBank Data Center SEZ\" will be developed.",
+   "source": "ANI News",
+   "url": "https://www.aninews.in/news/national/general-news/indias-first-ai-sez-in-chhattisgarh-rackbank-to-invest-rs-1000-crores20250527212314",
+   "image": "https://d3lzcn6mbbadaf.cloudfront.net/media/details/__sized__/ANI-20250527143943-thumbnail-320x180-70.jpg",
    "category": "infrastructure",
    "tags": [
     "infrastructure",
@@ -71611,10 +72143,11 @@ window.TRACKER_DATA = {
    ],
    "sector": "Industry & startups",
    "stage": "announced",
-   "n_sources": 9,
+   "n_sources": 10,
    "also_reported_by": [
     "Dainik Bhaskar",
     "Jagran",
+    "ET Government",
     "Livemint",
     "The Times of India",
     "AffairsCloud",
@@ -79891,6 +80424,25 @@ window.TRACKER_DATA = {
    "also_reported_by": []
   },
   {
+   "id": "R4b11028f",
+   "date": "2024-09-05",
+   "date_precision": "day",
+   "state": "Telangana",
+   "title": "Telangana Chief Minister Revanth Reddy inaugurates Global AI Summit",
+   "summary": "Telangana Chief Minister Revanth Reddy inaugurates Global AI Summit",
+   "source": "Prokerala",
+   "url": "https://www.prokerala.com/news/photos/telangana-chief-minister-revanth-reddy-inaugurates-global-ai-summit-3711703.html",
+   "image": "",
+   "category": "events_outreach",
+   "tags": [
+    "events_outreach"
+   ],
+   "sector": "Cross-cutting",
+   "stage": "underway",
+   "n_sources": 1,
+   "also_reported_by": []
+  },
+  {
    "id": "R1dd96b45",
    "date": "2024-09-03",
    "date_precision": "day",
@@ -79906,9 +80458,8 @@ window.TRACKER_DATA = {
    ],
    "sector": "Cross-cutting",
    "stage": "announced",
-   "n_sources": 4,
+   "n_sources": 3,
    "also_reported_by": [
-    "Prokerala",
     "The South First",
     "Economic Times"
    ]
